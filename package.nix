@@ -56,17 +56,43 @@ buildNpmPackage {
   postPatch = ''
     srcRoot=${assetsSrc}/packages/coding-agent/src
 
-    install -Dm644 "$srcRoot"/modes/interactive/theme/dark.json         dist/modes/interactive/theme/dark.json
-    install -Dm644 "$srcRoot"/modes/interactive/theme/light.json        dist/modes/interactive/theme/light.json
-    install -Dm644 "$srcRoot"/modes/interactive/theme/theme-schema.json dist/modes/interactive/theme/theme-schema.json
+    # Each entry: "<relative dir> <shell glob>" — mirrors upstream copy-assets
+    # exactly (see packages/coding-agent/package.json scripts.copy-assets) so we
+    # do not accidentally ship TypeScript sources or other non-asset files.
+    copyGlob() {
+      local dir="$1"
+      local glob="$2"
+      if [ ! -d "$srcRoot/$dir" ]; then
+        echo "ERROR: expected asset directory $srcRoot/$dir not found (upstream layout changed?)" >&2
+        exit 1
+      fi
+      mkdir -p "dist/$dir"
+      shopt -s nullglob
+      local matched=("$srcRoot/$dir"/$glob)
+      shopt -u nullglob
+      if [ ''${#matched[@]} -eq 0 ]; then
+        echo "ERROR: no files matched $srcRoot/$dir/$glob (upstream layout changed?)" >&2
+        exit 1
+      fi
+      cp "''${matched[@]}" "dist/$dir/"
+    }
 
-    install -Dm644 "$srcRoot"/modes/interactive/assets/clankolas.png    dist/modes/interactive/assets/clankolas.png
+    copyGlob modes/interactive/theme       '*.json'
+    copyGlob modes/interactive/assets      '*.png'
+    copyGlob core/export-html/vendor       '*.js'
 
-    install -Dm644 "$srcRoot"/core/export-html/template.html            dist/core/export-html/template.html
-    install -Dm644 "$srcRoot"/core/export-html/template.css             dist/core/export-html/template.css
-    install -Dm644 "$srcRoot"/core/export-html/template.js              dist/core/export-html/template.js
-    install -Dm644 "$srcRoot"/core/export-html/vendor/highlight.min.js  dist/core/export-html/vendor/highlight.min.js
-    install -Dm644 "$srcRoot"/core/export-html/vendor/marked.min.js     dist/core/export-html/vendor/marked.min.js
+    # core/export-html/ gets three specific files (not a glob) — upstream does
+    # the same to avoid pulling sources like template.ts.
+    mkdir -p dist/core/export-html
+    for f in template.html template.css template.js; do
+      if [ ! -f "$srcRoot/core/export-html/$f" ]; then
+        echo "ERROR: expected $srcRoot/core/export-html/$f not found" >&2
+        exit 1
+      fi
+      cp "$srcRoot/core/export-html/$f" dist/core/export-html/
+    done
+
+    chmod -R u+w dist
   '';
 
   # senpi requires Node.js 24+ at runtime.

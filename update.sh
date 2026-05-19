@@ -14,7 +14,6 @@ set -euo pipefail
 NPM_PACKAGE="@code-yeongyu/senpi"
 HASHES_JSON="hashes.json"
 LOCKFILE="package-lock.json"
-PACKAGE_NIX="package.nix"
 
 # Placeholder used while letting Nix discover npmDepsHash.
 DUMMY_HASH="sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
@@ -56,7 +55,6 @@ if [ "$current_version" = "$latest_version" ]; then
 fi
 
 tarball_url=$(jq -r '.dist.tarball' "$meta_json")
-integrity=$(jq -r '.dist.integrity' "$meta_json")
 
 if [ -z "$tarball_url" ] || [ "$tarball_url" = "null" ]; then
   echo "Tarball URL missing in registry metadata" >&2
