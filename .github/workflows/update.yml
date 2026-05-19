@@ -13,18 +13,19 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.0
 
-      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/nix-installer-action@00199f951aeb9404028a6e4b95ad42546f73296a # main
 
       - name: Check for updates
         id: check
         run: |
+          set -euo pipefail
           ./update.sh
           if git diff --quiet; then
             echo "updated=false" >> "$GITHUB_OUTPUT"
           else
-            VERSION=$(awk -F'"' '/version = / { print $2; exit }' package.nix)
+            VERSION=$(jq -r '.version' hashes.json)
             echo "updated=true" >> "$GITHUB_OUTPUT"
             echo "version=$VERSION" >> "$GITHUB_OUTPUT"
           fi
@@ -32,20 +33,28 @@ jobs:
       - name: Verify build after update
         if: steps.check.outputs.updated == 'true'
         run: |
+          set -euo pipefail
           nix flake check
           nix build .#senpi
           test -x ./result/bin/senpi
-          ./result/bin/senpi --version || true
+          test -L ./result/bin/pi
+          expected="${{ steps.check.outputs.version }}"
+          actual="$(./result/bin/senpi --version 2>&1)"
+          if [ "$actual" != "$expected" ]; then
+            echo "Version mismatch: expected '$expected', got '$actual'" >&2
+            exit 1
+          fi
+          ./result/bin/senpi --help 2>&1 | grep -qi 'senpi'
 
       - name: Create Pull Request
         if: steps.check.outputs.updated == 'true'
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           commit-message: "update: senpi to ${{ steps.check.outputs.version }}"
           title: "update: senpi to ${{ steps.check.outputs.version }}"
           body: |
             Automated update of senpi to version `${{ steps.check.outputs.version }}`.
 
-            Source: https://github.com/code-yeongyu/senpi/releases/tag/v${{ steps.check.outputs.version }}
+            Source: https://www.npmjs.com/package/@code-yeongyu/senpi/v/${{ steps.check.outputs.version }}
           branch: auto-update/senpi-${{ steps.check.outputs.version }}
           delete-branch: true

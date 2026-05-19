@@ -8,11 +8,15 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.0
 
-      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/nix-installer-action@00199f951aeb9404028a6e4b95ad42546f73296a # main
 
       - name: nix flake check
         run: nix flake check --print-build-logs
@@ -22,6 +26,13 @@ jobs:
 
       - name: Verify binary
         run: |
+          set -euo pipefail
           test -x ./result/bin/senpi
           test -L ./result/bin/pi
-          ./result/bin/senpi --version
+          expected="$(jq -r '.version' hashes.json)"
+          actual="$(./result/bin/senpi --version 2>&1)"
+          if [ "$actual" != "$expected" ]; then
+            echo "Version mismatch: expected '$expected', got '$actual'" >&2
+            exit 1
+          fi
+          ./result/bin/senpi --help 2>&1 | grep -qi 'senpi'

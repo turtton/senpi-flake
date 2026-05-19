@@ -1,81 +1,60 @@
 {
   lib,
-  stdenv,
+  buildNpmPackage,
   fetchurl,
-  autoPatchelfHook,
   makeWrapper,
+  nodejs_24,
+  runCommand,
 }:
 
 let
-  version = "2026.5.15-2";
+  versionData = lib.importJSON ./hashes.json;
+  version = versionData.version;
 
-  platforms = {
-    "x86_64-linux" = {
-      suffix = "linux-x64";
-      hash = "sha256-pe0GnmdbjVN57uKZiHekksTwYFnxmJsJXLBNyf2UdjA=";
-    };
-    "aarch64-linux" = {
-      suffix = "linux-arm64";
-      hash = "sha256-hfEO+c4biwjoRYkOVQsn0qL+T//tUN48lals9Y1vi9w=";
-    };
-    "x86_64-darwin" = {
-      suffix = "darwin-x64";
-      hash = "sha256-qvLtl3m9Z4aVZxLuP9GOEpLlh+v4eOzT3MRXxEztgEw=";
-    };
-    "aarch64-darwin" = {
-      suffix = "darwin-arm64";
-      hash = "sha256-c7oYgFPIqtPk/fZWEGsfvPfgsgsgjx2tCYSO/7rfV2A=";
-    };
+  tarball = fetchurl {
+    url = "https://registry.npmjs.org/@code-yeongyu/senpi/-/senpi-${version}.tgz";
+    hash = versionData.sourceHash;
   };
 
-  platform =
-    platforms.${stdenv.hostPlatform.system}
-      or (throw "Unsupported platform: ${stdenv.hostPlatform.system}");
+  # The npm tarball does not ship package-lock.json, so we generate one out-of-band
+  # (committed at the flake root) and inject it into the source tree before npm install.
+  srcWithLock = runCommand "senpi-src-with-lock" { } ''
+    mkdir -p $out
+    tar -xzf ${tarball} -C $out --strip-components=1
+    cp ${./package-lock.json} $out/package-lock.json
+  '';
 in
-stdenv.mkDerivation {
+buildNpmPackage {
   pname = "senpi";
   inherit version;
 
-  src = fetchurl {
-    url = "https://github.com/code-yeongyu/senpi/releases/download/v${version}/pi-${platform.suffix}.tar.gz";
-    hash = platform.hash;
-  };
+  src = srcWithLock;
 
-  nativeBuildInputs =
-    [
-      makeWrapper
-    ]
-    ++ lib.optionals stdenv.hostPlatform.isLinux [
-      autoPatchelfHook
-    ];
+  npmDepsHash = versionData.npmDepsHash;
+  npmDepsFetcherVersion = 2;
+  makeCacheWritable = true;
 
-  sourceRoot = "pi";
+  # The npm tarball already ships dist/, no build step required.
+  dontNpmBuild = true;
 
-  dontConfigure = true;
-  dontBuild = true;
+  nativeBuildInputs = [ makeWrapper ];
 
-  installPhase = ''
-    runHook preInstall
+  # senpi requires Node.js 24+ at runtime.
+  postFixup = ''
+    wrapProgram $out/bin/senpi \
+      --prefix PATH : ${lib.makeBinPath [ nodejs_24 ]}
 
-    mkdir -p $out/lib/senpi $out/bin
-    cp -r . $out/lib/senpi/
-
-    chmod +x $out/lib/senpi/pi
-
-    # senpi is the canonical name. pi is kept as an alias for upstream compatibility.
-    makeWrapper $out/lib/senpi/pi $out/bin/senpi
+    # pi alias for compatibility with upstream's binary name.
     ln -s $out/bin/senpi $out/bin/pi
-
-    runHook postInstall
   '';
 
   meta = {
-    description = "Coding agent CLI with read, bash, edit, write tools and session management (opinionated pi-mono fork)";
+    description = "Coding agent CLI with read, bash, edit, write tools and session management";
     homepage = "https://github.com/code-yeongyu/senpi";
     changelog = "https://github.com/code-yeongyu/senpi/releases";
     license = lib.licenses.mit;
-    sourceProvenance = with lib.sourceTypes; [ binaryNativeCode ];
-    platforms = builtins.attrNames platforms;
+    sourceProvenance = with lib.sourceTypes; [ binaryBytecode ];
+    platforms = lib.platforms.all;
     mainProgram = "senpi";
   };
 }
