@@ -1,0 +1,51 @@
+name: Auto Update
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - name: Check for updates
+        id: check
+        run: |
+          ./update.sh
+          if git diff --quiet; then
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+          else
+            VERSION=$(awk -F'"' '/version = / { print $2; exit }' package.nix)
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+            echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Verify build after update
+        if: steps.check.outputs.updated == 'true'
+        run: |
+          nix flake check
+          nix build .#senpi
+          test -x ./result/bin/senpi
+          ./result/bin/senpi --version || true
+
+      - name: Create Pull Request
+        if: steps.check.outputs.updated == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "update: senpi to ${{ steps.check.outputs.version }}"
+          title: "update: senpi to ${{ steps.check.outputs.version }}"
+          body: |
+            Automated update of senpi to version `${{ steps.check.outputs.version }}`.
+
+            Source: https://github.com/code-yeongyu/senpi/releases/tag/v${{ steps.check.outputs.version }}
+          branch: auto-update/senpi-${{ steps.check.outputs.version }}
+          delete-branch: true
