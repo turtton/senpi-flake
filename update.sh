@@ -81,6 +81,20 @@ new_source_hash=$(
     --hash-algo sha256 --to sri "$prefetch_hex"
 )
 
+# Prefetch the GitHub source tarball for the matching tag (used to inject
+# assets that upstream's copy-assets script would have built into dist/).
+echo "Prefetching GitHub source tarball for assets..."
+assets_url="https://github.com/code-yeongyu/senpi/archive/refs/tags/v${latest_version}.tar.gz"
+assets_prefetch_hex=$(nix-prefetch-url --unpack --type sha256 "$assets_url" 2>/dev/null | tail -n1)
+if [ -z "$assets_prefetch_hex" ]; then
+  echo "nix-prefetch-url failed for $assets_url" >&2
+  exit 1
+fi
+new_assets_source_hash=$(
+  nix --extra-experimental-features nix-command hash convert \
+    --hash-algo sha256 --to sri "$assets_prefetch_hex"
+)
+
 # Regenerate package-lock.json against the latest tarball.
 workdir=$(mktemp -d)
 trap 'rm -rf "$workdir" "$meta_json"' EXIT
@@ -94,8 +108,9 @@ cp "$workdir/package/package-lock.json" "$LOCKFILE"
 tmp_hashes=$(mktemp)
 jq --arg v "$latest_version" \
    --arg sh "$new_source_hash" \
+   --arg ah "$new_assets_source_hash" \
    --arg dh "$DUMMY_HASH" \
-   '. + {version: $v, sourceHash: $sh, npmDepsHash: $dh}' \
+   '. + {version: $v, sourceHash: $sh, assetsSourceHash: $ah, npmDepsHash: $dh}' \
    "$HASHES_JSON" > "$tmp_hashes"
 mv "$tmp_hashes" "$HASHES_JSON"
 

@@ -2,6 +2,7 @@
   lib,
   buildNpmPackage,
   fetchurl,
+  fetchFromGitHub,
   makeWrapper,
   nodejs_24,
   runCommand,
@@ -14,6 +15,17 @@ let
   tarball = fetchurl {
     url = "https://registry.npmjs.org/@code-yeongyu/senpi/-/senpi-${version}.tgz";
     hash = versionData.sourceHash;
+  };
+
+  # Upstream's `copy-assets` build script (which would normally populate dist/
+  # with non-JS assets like theme JSON, PNG, HTML templates, and vendored JS)
+  # is not run when consuming the npm tarball. We fetch the source tree from
+  # GitHub at the matching tag and inject those assets into dist/ ourselves.
+  assetsSrc = fetchFromGitHub {
+    owner = "code-yeongyu";
+    repo = "senpi";
+    rev = "v${version}";
+    hash = versionData.assetsSourceHash;
   };
 
   # The npm tarball does not ship package-lock.json, so we generate one out-of-band
@@ -38,6 +50,24 @@ buildNpmPackage {
   dontNpmBuild = true;
 
   nativeBuildInputs = [ makeWrapper ];
+
+  # Inject assets that upstream's `copy-assets` script would have placed in dist/.
+  # Mirrors the destinations from packages/coding-agent/package.json scripts.
+  postPatch = ''
+    srcRoot=${assetsSrc}/packages/coding-agent/src
+
+    install -Dm644 "$srcRoot"/modes/interactive/theme/dark.json         dist/modes/interactive/theme/dark.json
+    install -Dm644 "$srcRoot"/modes/interactive/theme/light.json        dist/modes/interactive/theme/light.json
+    install -Dm644 "$srcRoot"/modes/interactive/theme/theme-schema.json dist/modes/interactive/theme/theme-schema.json
+
+    install -Dm644 "$srcRoot"/modes/interactive/assets/clankolas.png    dist/modes/interactive/assets/clankolas.png
+
+    install -Dm644 "$srcRoot"/core/export-html/template.html            dist/core/export-html/template.html
+    install -Dm644 "$srcRoot"/core/export-html/template.css             dist/core/export-html/template.css
+    install -Dm644 "$srcRoot"/core/export-html/template.js              dist/core/export-html/template.js
+    install -Dm644 "$srcRoot"/core/export-html/vendor/highlight.min.js  dist/core/export-html/vendor/highlight.min.js
+    install -Dm644 "$srcRoot"/core/export-html/vendor/marked.min.js     dist/core/export-html/vendor/marked.min.js
+  '';
 
   # senpi requires Node.js 24+ at runtime.
   postFixup = ''
