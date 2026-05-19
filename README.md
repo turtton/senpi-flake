@@ -2,7 +2,11 @@
 
 Nix flake for [code-yeongyu/senpi](https://github.com/code-yeongyu/senpi) — a coding agent CLI.
 
-npm registry に公開されている `@code-yeongyu/senpi` を [`buildNpmPackage`](https://nixos.org/manual/nixpkgs/stable/#javascript-buildNpmPackage) でパッケージ化します。実行には Node.js 24 を同梱しており、`senpi` ラッパーが自動で `PATH` を解決します。
+Packages the `@code-yeongyu/senpi` release published on the npm registry via
+[`buildNpmPackage`](https://nixos.org/manual/nixpkgs/stable/#javascript-buildNpmPackage).
+Node.js 24 is bundled and a `senpi` wrapper resolves `PATH` automatically.
+
+日本語版 README は [README.ja.md](./README.ja.md) を参照してください。
 
 ## Supported systems
 
@@ -41,31 +45,40 @@ nix profile install github:turtton/senpi-flake
 }
 ```
 
-公開されるバイナリ:
+Binaries exposed:
 
-- `senpi` — 正式名
-- `pi` — upstream 互換のためのエイリアス（`senpi` へのシンボリックリンク）
+- `senpi` — canonical name
+- `pi` — upstream-compatible alias (symlink to `senpi`)
 
 ## Auto-update
 
-`.github/workflows/update.yml` が毎日 cron で実行され、npm registry 上の `@code-yeongyu/senpi` の最新バージョンを検出すると以下を更新します:
+`.github/workflows/update.yml` runs on a daily cron. When it detects a new
+version of `@code-yeongyu/senpi` on the npm registry, it updates:
 
-- `hashes.json`（`version` / `sourceHash` / `npmDepsHash`）
-- `package-lock.json`（最新 tarball から再生成）
+- `hashes.json` (`version` / `sourceHash` / `assetsSourceHash` / `npmDepsHash`)
+- `package-lock.json` (regenerated from the latest tarball)
 
-そのうえで `nix flake check` と `nix build .#senpi` で検証し、`senpi --version` の出力が新バージョンと一致することを確認したうえで Pull Request を作成します。
+> The package is built from **dual sources**. The main bundle comes from the
+> npm tarball (`sourceHash`). Because the npm tarball does **not** ship the
+> static assets produced by upstream's `copy-assets` build script (theme JSON,
+> PNGs, HTML templates, vendored JS), this flake additionally fetches the
+> matching GitHub tag archive (`assetsSourceHash`) and injects those assets
+> into `dist/` during `postPatch`.
 
-ローカルで手動更新する場合:
+The workflow then runs `nix flake check` and `nix build .#senpi`, verifies
+`senpi --version` matches the new version, and opens a pull request.
+
+To run the update locally:
 
 ```sh
 ./update.sh
 nix build .#senpi
 ```
 
-> 必要コマンド: `curl`, `jq`, `nix`, `nix-prefetch-url`, `npm`, `tar`。
+> Required tools: `curl`, `jq`, `nix`, `nix-prefetch-url`, `npm`, `tar`.
 
 ## License
 
-This flake (packaging code) is provided as-is.
+This flake (the packaging code) is provided as-is.
 The packaged `senpi` binary is distributed under its upstream license — see the
 [senpi repository](https://github.com/code-yeongyu/senpi).
