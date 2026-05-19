@@ -28,7 +28,7 @@ require_cmd() {
   done
 }
 
-require_cmd curl jq nix npm tar
+require_cmd curl jq nix nix-prefetch-url npm tar
 
 current_version=$(jq -r '.version' "$HASHES_JSON")
 

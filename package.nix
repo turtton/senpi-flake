@@ -54,7 +54,7 @@ buildNpmPackage {
     changelog = "https://github.com/code-yeongyu/senpi/releases";
     license = lib.licenses.mit;
     sourceProvenance = with lib.sourceTypes; [ binaryBytecode ];
-    platforms = lib.platforms.all;
+    platforms = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
     mainProgram = "senpi";
   };
 }

@@ -62,7 +62,7 @@ nix profile install github:turtton/senpi-flake
 nix build .#senpi
 ```
 
-> 必要コマンド: `curl`, `jq`, `nix`, `npm`, `tar`。
+> 必要コマンド: `curl`, `jq`, `nix`, `nix-prefetch-url`, `npm`, `tar`。
 
 ## License
 
