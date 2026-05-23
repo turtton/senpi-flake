@@ -3,6 +3,7 @@
   buildNpmPackage,
   fetchurl,
   fetchFromGitHub,
+  jq,
   makeWrapper,
   nodejs_24,
   runCommand,
@@ -28,12 +29,36 @@ let
     hash = versionData.assetsSourceHash;
   };
 
-  # The npm tarball does not ship package-lock.json, so we generate one out-of-band
-  # (committed at the flake root) and inject it into the source tree before npm install.
-  srcWithLock = runCommand "senpi-src-with-lock" { } ''
+  # The npm tarball may ship npm-shrinkwrap.json (which takes precedence over
+  # package-lock.json) or omit a lockfile entirely.  We remove any shrinkwrap
+  # and inject our committed package-lock.json so buildNpmPackage has a
+  # consistent lockfile regardless of upstream's packaging choices.
+  #
+  # Bundled dependencies (@earendil-works/pi-*) are shipped in node_modules/
+  # rather than fetched from the registry; their lockfile entries lack integrity
+  # hashes and must be stripped from both the lockfile (done in update.sh) and
+  # package.json (done here).  We preserve them in a side directory so they can
+  # be restored after npm install (which would otherwise remove them).
+  srcWithLock = runCommand "senpi-src-with-lock" { nativeBuildInputs = [ jq ]; } ''
     mkdir -p $out
     tar -xzf ${tarball} -C $out --strip-components=1
+    rm -f $out/npm-shrinkwrap.json
     cp ${./package-lock.json} $out/package-lock.json
+
+    # Preserve the entire node_modules/ before we strip bundled deps from
+    # package.json.  npm install would remove bundled packages and their
+    # transitive dependencies (some of which, like @google/genai, are not
+    # declared in the root package.json and therefore won't be re-installed).
+    # Stashing the whole tree lets us merge it back after npm install.
+    mkdir -p $out/.bundled-deps
+    cp -r $out/node_modules $out/.bundled-deps/
+
+    tmp=$(mktemp)
+    jq 'del(.dependencies["@earendil-works/pi-agent-core"]) |
+        del(.dependencies["@earendil-works/pi-ai"]) |
+        del(.dependencies["@earendil-works/pi-tui"]) |
+        del(.bundledDependencies)' \
+      $out/package.json > "$tmp" && mv "$tmp" $out/package.json
   '';
 in
 buildNpmPackage {
@@ -93,6 +118,37 @@ buildNpmPackage {
     done
 
     chmod -R u+w dist
+  '';
+
+  # Restore packages from the tarball's node_modules/ that are absent from
+  # npm's installed tree.  Bundled packages (@earendil-works/pi-*) are not on
+  # the npm registry and their transitive dependencies (e.g. @google/genai)
+  # are absent from the lockfile, so npm never fetches them.  We copy only
+  # packages that don't already exist to avoid creating hybrid directories
+  # where files from two different versions of the same package coexist.
+  postInstall = ''
+    bundledDir=$out/lib/node_modules/@code-yeongyu/senpi/node_modules
+    srcDir=${srcWithLock}/.bundled-deps/node_modules
+
+    # Copy unscoped packages absent from npm's tree
+    for dir in "$srcDir"/*; do
+      name=$(basename "$dir")
+      if [ ! -e "$bundledDir/$name" ]; then
+        cp -r "$dir" "$bundledDir/$name"
+      fi
+    done
+
+    # Copy @scoped packages absent from npm's tree
+    for scopedDir in "$srcDir"/@*; do
+      scope=$(basename "$scopedDir")
+      mkdir -p "$bundledDir/$scope"
+      for pkg in "$scopedDir"/*; do
+        name=$(basename "$pkg")
+        if [ ! -e "$bundledDir/$scope/$name" ]; then
+          cp -r "$pkg" "$bundledDir/$scope/$name"
+        fi
+      done
+    done
   '';
 
   # senpi requires Node.js 24+ at runtime.

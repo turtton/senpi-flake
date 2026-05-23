@@ -3,8 +3,9 @@
 #
 # Strategy:
 # 1. Query the npm registry for the latest version + tarball integrity (SRI base64).
-# 2. Regenerate package-lock.json via `npm install --package-lock-only --ignore-scripts`
-#    inside the freshly extracted tarball.
+# 2. Strip bundledDependencies from package.json, remove npm-shrinkwrap.json and
+#    node_modules/ from the extracted tarball, then regenerate package-lock.json
+#    via `npm install --package-lock-only --ignore-scripts` in a clean directory.
 # 3. Stamp npmDepsHash with a placeholder and let `nix build` discover the real one.
 # 4. Rewrite hashes.json atomically.
 #
@@ -27,7 +28,7 @@ require_cmd() {
   done
 }
 
-require_cmd curl jq nix nix-prefetch-url npm tar
+require_cmd curl jq nix nix-prefetch-url tar
 
 current_version=$(jq -r '.version' "$HASHES_JSON")
 
@@ -99,7 +100,31 @@ trap 'rm -rf "$workdir" "$meta_json"' EXIT
 echo "Downloading tarball and regenerating $LOCKFILE..."
 curl -fsSL "$tarball_url" -o "$workdir/pkg.tgz"
 tar -xzf "$workdir/pkg.tgz" -C "$workdir"
-( cd "$workdir/package" && npm install --package-lock-only --ignore-scripts >/dev/null )
+
+# Strip bundled dependencies from package.json before generating the lockfile.
+# Bundled deps (@earendil-works/pi-*) are shipped in node_modules/ rather than
+# fetched from the registry; their lockfile entries lack "integrity" hashes,
+# which causes buildNpmPackage's fetcher to panic.  We remove them from
+# package.json so they are not included in the lockfile; package.nix restores
+# the entire tarball node_modules/ (bundled packages + their transitive deps)
+# from .bundled-deps/ after npm install.
+jq 'del(.dependencies["@earendil-works/pi-agent-core"]) |
+    del(.dependencies["@earendil-works/pi-ai"]) |
+    del(.dependencies["@earendil-works/pi-tui"]) |
+    del(.bundledDependencies)' \
+  "$workdir/package/package.json" > "$workdir/package/package.json.tmp" \
+  && mv "$workdir/package/package.json.tmp" "$workdir/package/package.json"
+
+# Remove any npm-shrinkwrap.json (takes precedence over package-lock.json and
+# would prevent npm from generating a fresh lockfile) and the pre-bundled
+# node_modules/ (which causes npm to produce incomplete lockfile entries
+# missing "resolved"/"integrity" fields for packages already present locally).
+rm -f "$workdir/package/npm-shrinkwrap.json" "$workdir/package/package-lock.json"
+rm -rf "$workdir/package/node_modules"
+
+# Generate a clean lockfile from the stripped package.json in a pristine
+# directory (no pre-existing node_modules/ to confuse npm).
+( cd "$workdir/package" && nix shell nixpkgs#nodejs_24 -c npm install --package-lock-only --ignore-scripts >/dev/null )
 cp "$workdir/package/package-lock.json" "$LOCKFILE"
 
 # Write hashes.json with placeholder for npmDepsHash, then let Nix discover it.
