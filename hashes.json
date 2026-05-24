@@ -2,5 +2,10 @@
   "version": "2026.5.23-2",
   "sourceHash": "sha256-IrugdwaO9rFB+m03HZYhTaVnsf3G435hTLrsZQY09oo=",
   "npmDepsHash": "sha256-nejnN+Rz8Zccn6Op/DTd/xJ7Yidw2vLAmqwOqxzvwO4=",
-  "assetsSourceHash": "sha256-ru5BC6jD61FjlZ5Zw5rbjjozkvGcWg6cL4eQ/eUSOVY="
+  "assetsSourceHash": "sha256-ru5BC6jD61FjlZ5Zw5rbjjozkvGcWg6cL4eQ/eUSOVY=",
+  "bundledDependencies": [
+    "@earendil-works/pi-agent-core",
+    "@earendil-works/pi-ai",
+    "@earendil-works/pi-tui"
+  ]
 }

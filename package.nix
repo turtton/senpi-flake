@@ -54,11 +54,13 @@ let
     cp -r $out/node_modules $out/.bundled-deps/
 
     tmp=$(mktemp)
-    jq 'del(.dependencies["@earendil-works/pi-agent-core"]) |
-        del(.dependencies["@earendil-works/pi-ai"]) |
-        del(.dependencies["@earendil-works/pi-tui"]) |
-        del(.bundledDependencies)' \
-      $out/package.json > "$tmp" && mv "$tmp" $out/package.json
+    jq --argjson deps '${builtins.toJSON (versionData.bundledDependencies or versionData.bundleDependencies or [])}' '
+      reduce ($deps[] | tostring) as $dep (.;
+        del(.dependencies[$dep])
+      )
+      | del(.bundledDependencies)
+      | del(.bundleDependencies)
+    ' $out/package.json > "$tmp" && mv "$tmp" $out/package.json
   '';
 in
 buildNpmPackage {
@@ -134,7 +136,7 @@ buildNpmPackage {
     for dir in "$srcDir"/*; do
       name=$(basename "$dir")
       if [ ! -e "$bundledDir/$name" ]; then
-        cp -r "$dir" "$bundledDir/$name"
+        cp -a "$dir" "$bundledDir/$name"
       fi
     done
 
@@ -145,7 +147,7 @@ buildNpmPackage {
       for pkg in "$scopedDir"/*; do
         name=$(basename "$pkg")
         if [ ! -e "$bundledDir/$scope/$name" ]; then
-          cp -r "$pkg" "$bundledDir/$scope/$name"
+          cp -a "$pkg" "$bundledDir/$scope/$name"
         fi
       done
     done

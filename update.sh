@@ -16,8 +16,26 @@ NPM_PACKAGE="@code-yeongyu/senpi"
 HASHES_JSON="hashes.json"
 LOCKFILE="package-lock.json"
 
-# Placeholder used while letting Nix discover npmDepsHash.
 DUMMY_HASH="sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+
+_cleanup_items=()
+
+register_temp() {
+  for item in "$@"; do
+    _cleanup_items+=("$item")
+  done
+}
+
+cleanup() {
+  local item
+  for item in "${_cleanup_items[@]}"; do
+    if [ -e "$item" ] || [ -L "$item" ]; then
+      rm -rf -- "$item"
+    fi
+  done
+}
+
+trap cleanup EXIT
 
 require_cmd() {
   for cmd in "$@"; do
@@ -34,7 +52,7 @@ current_version=$(jq -r '.version' "$HASHES_JSON")
 
 # Fetch latest version metadata from the npm registry.
 meta_json=$(mktemp)
-trap 'rm -f "$meta_json"' EXIT
+register_temp "$meta_json"
 
 latest_version=$(
   curl -fsSL "https://registry.npmjs.org/${NPM_PACKAGE}/latest" \
@@ -96,23 +114,30 @@ new_assets_source_hash=$(
 
 # Regenerate package-lock.json against the latest tarball.
 workdir=$(mktemp -d)
-trap 'rm -rf "$workdir" "$meta_json"' EXIT
+register_temp "$workdir"
+
 echo "Downloading tarball and regenerating $LOCKFILE..."
 curl -fsSL "$tarball_url" -o "$workdir/pkg.tgz"
 tar -xzf "$workdir/pkg.tgz" -C "$workdir"
 
 # Strip bundled dependencies from package.json before generating the lockfile.
-# Bundled deps (@earendil-works/pi-*) are shipped in node_modules/ rather than
-# fetched from the registry; their lockfile entries lack "integrity" hashes,
-# which causes buildNpmPackage's fetcher to panic.  We remove them from
-# package.json so they are not included in the lockfile; package.nix restores
-# the entire tarball node_modules/ (bundled packages + their transitive deps)
-# from .bundled-deps/ after npm install.
-jq 'del(.dependencies["@earendil-works/pi-agent-core"]) |
-    del(.dependencies["@earendil-works/pi-ai"]) |
-    del(.dependencies["@earendil-works/pi-tui"]) |
-    del(.bundledDependencies)' \
-  "$workdir/package/package.json" > "$workdir/package/package.json.tmp" \
+# Bundled deps are shipped in node_modules/ rather than fetched from the
+# registry; their lockfile entries lack "integrity" hashes, which causes
+# buildNpmPackage's fetcher to panic.  We remove them from package.json so
+# they are not included in the lockfile; package.nix restores the entire
+# tarball node_modules/ (bundled packages + their transitive deps) from
+# .bundled-deps/ after npm install.
+bundled_deps=$(jq '
+  (.bundledDependencies // .bundleDependencies // []) |
+  if type == "array" then . else error("bundledDependencies must be an array") end
+' "$workdir/package/package.json")
+jq --argjson deps "$bundled_deps" '
+  reduce ($deps[] | tostring) as $dep (.;
+    del(.dependencies[$dep])
+  )
+  | del(.bundledDependencies)
+  | del(.bundleDependencies)
+' "$workdir/package/package.json" > "$workdir/package/package.json.tmp" \
   && mv "$workdir/package/package.json.tmp" "$workdir/package/package.json"
 
 # Remove any npm-shrinkwrap.json (takes precedence over package-lock.json and
@@ -129,18 +154,20 @@ cp "$workdir/package/package-lock.json" "$LOCKFILE"
 
 # Write hashes.json with placeholder for npmDepsHash, then let Nix discover it.
 tmp_hashes=$(mktemp)
+register_temp "$tmp_hashes"
 jq --arg v "$latest_version" \
    --arg sh "$new_source_hash" \
    --arg ah "$new_assets_source_hash" \
    --arg dh "$DUMMY_HASH" \
-   '. + {version: $v, sourceHash: $sh, assetsSourceHash: $ah, npmDepsHash: $dh}' \
+   --argjson bd "$bundled_deps" \
+   '. + {version: $v, sourceHash: $sh, assetsSourceHash: $ah, npmDepsHash: $dh, bundledDependencies: $bd}' \
    "$HASHES_JSON" > "$tmp_hashes"
 mv "$tmp_hashes" "$HASHES_JSON"
 
 # Trigger a build to discover the real npmDepsHash.
 echo "Discovering npmDepsHash via nix build..."
 build_log=$(mktemp)
-trap 'rm -rf "$workdir" "$meta_json" "$build_log"' EXIT
+register_temp "$build_log"
 if nix build .#senpi --no-link 2> "$build_log"; then
   echo "Build unexpectedly succeeded with placeholder hash" >&2
   exit 1
@@ -162,10 +189,10 @@ fi
 echo "Discovered npmDepsHash: $new_npm_deps_hash"
 
 tmp_hashes=$(mktemp)
+register_temp "$tmp_hashes"
 jq --arg dh "$new_npm_deps_hash" '.npmDepsHash = $dh' "$HASHES_JSON" > "$tmp_hashes"
 mv "$tmp_hashes" "$HASHES_JSON"
 
-# Final verification: real build must now succeed.
 echo "Verifying with real build..."
 nix build .#senpi --no-link
 

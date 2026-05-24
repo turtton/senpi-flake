@@ -55,7 +55,7 @@ Binaries exposed:
 `.github/workflows/update.yml` runs on a daily cron. When it detects a new
 version of `@code-yeongyu/senpi` on the npm registry, it updates:
 
-- `hashes.json` (`version` / `sourceHash` / `assetsSourceHash` / `npmDepsHash`)
+- `hashes.json` (`version` / `sourceHash` / `assetsSourceHash` / `npmDepsHash` / `bundledDependencies`)
 - `package-lock.json` (regenerated from the latest tarball)
 
 > The package is built from **dual sources**. The main bundle comes from the
