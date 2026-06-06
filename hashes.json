@@ -1,8 +1,8 @@
 {
-  "version": "2026.6.3",
-  "sourceHash": "sha256-6hh0AnHr4xel8o69YNq6TxFD78tNGHfxdeewFfQTOaE=",
-  "npmDepsHash": "sha256-gKca68PU9O+n319w5E6Q6UYyMDZ1rWtT1IduLfxT6Lw=",
-  "assetsSourceHash": "sha256-9As5bVd7RfOPpgngmNIjbx7pqzoFSi0VqI1LCpKzpCs=",
+  "version": "2026.6.4",
+  "sourceHash": "sha256-oq/6acomScW+hkJ/oPgXMyD17qGX1LzCYAnu/ON/d/M=",
+  "npmDepsHash": "sha256-/aikFVqrJDadx4XXDcBucETvGZPI39ExB/IEZw2zP5E=",
+  "assetsSourceHash": "sha256-2x9pYV+LGWulWG96ilSfvDknqjVgn+DfaML3txr2sgk=",
   "bundledDependencies": [
     "@earendil-works/pi-agent-core",
     "@earendil-works/pi-ai",
