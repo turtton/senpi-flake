@@ -1,0 +1,12 @@
+queue_rules:
+  - name: default
+    conditions: []
+
+pull_request_rules:
+  - name: auto-merge auto-update PRs
+    conditions:
+      - head=auto-update
+    actions:
+      queue:
+        name: default
+        method: squash
