@@ -1,8 +1,9 @@
 queue_rules:
   - name: default
     merge_method: squash
-    merge_conditions:
-      - check-success="CI / build"
+    merge_protection_settings:
+      auto_merge_conditions:
+          - check-success="CI / build"
 
 pull_request_rules:
   - name: auto-merge auto-update PRs
