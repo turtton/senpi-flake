@@ -1,15 +1,13 @@
 queue_rules:
   - name: default
     merge_method: squash
-    merge_protection_settings:
-      auto_merge_conditions:
-          - check-success="CI / build"
 
 pull_request_rules:
   - name: auto-merge auto-update PRs
     conditions:
       - head=auto-update
       - author=turtton
+      - check-success="CI / build"
     actions:
       queue:
         name: default
