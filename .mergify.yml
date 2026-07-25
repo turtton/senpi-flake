@@ -7,6 +7,7 @@ pull_request_rules:
   - name: auto-merge auto-update PRs
     conditions:
       - head=auto-update
+      - author=turtton
     actions:
       queue:
         name: default
