@@ -32,5 +32,9 @@
       overlays.default = final: _prev: {
         senpi = final.callPackage ./package.nix { };
       };
+
+      checks = forAllSystems (system: {
+        default = self.packages.${system}.default;
+      });
     };
 }
