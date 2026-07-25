@@ -1,0 +1,14 @@
+queue_rules:
+  - name: default
+    conditions:
+      - check-success="CI / build"
+
+pull_request_rules:
+  - name: auto-merge auto-update PRs
+    conditions:
+      - head=auto-update
+      - author=turtton
+    actions:
+      queue:
+        name: default
+        method: squash
