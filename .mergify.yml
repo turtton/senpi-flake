@@ -1,6 +1,7 @@
 queue_rules:
   - name: default
-    conditions: []
+    conditions:
+      - check-success="CI / build"
 
 pull_request_rules:
   - name: auto-merge auto-update PRs
