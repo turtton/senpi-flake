@@ -7,7 +7,7 @@ pull_request_rules:
     conditions:
       - head=auto-update
       - author=turtton
-      - check-success="CI / build"
+      - check-success="build"
     actions:
       queue:
         name: default
