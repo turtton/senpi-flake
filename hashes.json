@@ -1,9 +1,10 @@
 {
-  "version": "2026.7.25-2",
-  "sourceHash": "sha256-jTiRYVdci8naotp6PWKrWPVzuVR/wJs9gH+epbve9RI=",
-  "npmDepsHash": "sha256-5GWsPyaSoNvL497vopeLV+KbbrdFSfCnApr9sLE6/b0=",
-  "assetsSourceHash": "sha256-3t4VfJRG3OX/48Y+xE/BxQ2cUBw+LY5NhpmOhy9JseY=",
+  "version": "2026.7.28-3",
+  "sourceHash": "sha256-DHrJY5Ny2nn7Zpc1LfcMDiFWgtBWZ2zFUYNxVDkBUj0=",
+  "npmDepsHash": "sha256-ehCWtKTEsbewLmTKvJbNpestzZ/QZR8JicF6oi4RqgY=",
+  "assetsSourceHash": "sha256-ip4rqB2KtKjzSFQQ05tS9RSP1j8O+oeYpUxBUtsDAuU=",
   "bundledDependencies": [
+    "@anthropic-ai/claude-agent-sdk",
     "@anthropic-ai/sdk",
     "@asamuzakjp/css-color",
     "@asamuzakjp/dom-selector",
