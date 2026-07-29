@@ -7,7 +7,8 @@ pull_request_rules:
     conditions:
       - head=auto-update
       - author=turtton
-      - check-success="build"
+      - check-success="build (ubuntu-latest)"
+      - check-success="build (macos-latest)"
     actions:
       queue:
         name: default
