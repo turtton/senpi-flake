@@ -101,15 +101,23 @@ let
         cp -R "$wsModules" "$out/$wsModules"
       done
 
+      # Remove non-deterministic bun temp/artifact files recursively.
+      # bun --frozen-lockfile can produce slightly different output across
+      # builds (e.g. temp cache files or hardlinks whose content varies by
+      # the order of resolution).  Stripping these patterns guarantees that
+      # the FOD hash only covers the actual dependency tree.
+      find $out -name '.bun-tag*' -delete 2>/dev/null || true
+      find $out -name 'bun.lock' -delete 2>/dev/null || true
+      find $out -name '.bun-cache' -type d -exec rm -rf {} + 2>/dev/null || true
+      find $out -name '.bun' -type d ! -path '*/node_modules/.bun' -exec rm -rf {} + 2>/dev/null || true
+
       runHook postInstall
     '';
 
-    # bun stores absolute paths in binary lockfiles and hardlinks into its
-    # cache; strip the generated lockfile so the output only contains the tree.
-    postFixup = ''
-      rm -f $out/node_modules/.bun-tag* $out/bun.lock
-    '';
-
+    # Skip the fixup phase (patchelf / strip) to avoid any ELF-binary
+    # transformations that could differ between builds.  The node_modules
+    # tree is consumed as-is by the parent derivation.
+    dontFixup = true;
     dontPatchShebangs = true;
 
     # node_modules/@oh-my-opencode/* are relative symlinks into ../packages/*,
