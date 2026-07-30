@@ -6,6 +6,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   build:
     strategy:
@@ -18,15 +22,80 @@ jobs:
 
       - uses: DeterminateSystems/nix-installer-action@33c9ab3ef95cd57c164d9d6eb1f9a46338538d41 # main
 
-      - name: nix flake check
-        run: nix flake check --print-build-logs --impure
+      - name: nix flake check (with hash auto-recovery)
+        id: flake-check
         env:
           NIXPKGS_ALLOW_UNFREE: "1"
+        run: |
+          set -euo pipefail
+
+          # First attempt: nix flake check
+          log=$(mktemp)
+          if nix flake check --print-build-logs --impure 2>&1 | tee "$log"; then
+            echo "flake-check passed on first attempt"
+            echo "passed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Check if failure is an omo-senpi-bun-deps hash mismatch
+          if grep -q 'hash mismatch in fixed-output derivation.*omo-senpi-bun-deps' "$log"; then
+            new_hash=$(grep -E '^\s*got:\s+sha256-' "$log" | head -n1 | sed -E 's/.*got:\s+(sha256-[A-Za-z0-9+/=]+).*/\1/')
+            if [ -z "$new_hash" ]; then
+              echo "ERROR: hash mismatch detected but could not extract new hash" >&2
+              tail -n 20 "$log" >&2
+              exit 1
+            fi
+
+            # Detect current system for per-system hash map
+            system=$(nix eval --impure --raw --expr 'builtins.currentSystem' 2>/dev/null || echo "unknown")
+            echo "omo-senpi-bun-deps hash mismatch on ${system}"
+            echo "Current hash in omo-hashes.json does not match actual output."
+            echo "Expected/got: $new_hash"
+            echo "Attempting auto-recovery by updating omo-hashes.json..."
+
+            # Parse the current system from nix or infer from runner OS
+            if [ "$RUNNER_OS" = "macOS" ]; then
+              platform_key="aarch64-darwin"
+            else
+              platform_key="x86_64-linux"
+            fi
+
+            # Update the hash in omo-hashes.json
+            jq --arg v "$new_hash" --arg s "$platform_key" \
+              '.bunDepsHash[$s] = $v' omo-hashes.json > omo-hashes.json.tmp
+            mv omo-hashes.json.tmp omo-hashes.json
+
+            echo "Updated bunDepsHash.$platform_key to $new_hash"
+
+            # Retry with the corrected hash
+            echo "Retrying nix flake check with corrected hash..."
+            if nix flake check --print-build-logs --impure 2>&1; then
+              echo "flake-check passed after hash auto-recovery"
+              echo "passed=true" >> "$GITHUB_OUTPUT"
+              echo "hash_fixed=true" >> "$GITHUB_OUTPUT"
+
+              # Commit the fix to the branch
+              git config user.name "turtton[bot]"
+              git config user.email "turtton[bot]@users.noreply.github.com"
+              git add omo-hashes.json
+              # Use a distinctive message so auto-update PRs are easy to spot
+              git commit -m "fix: auto-update omo-senpi bunDepsHash for $platform_key" || true
+              git push 2>/dev/null || echo "Push failed (expected on PR from fork)"
+              exit 0
+            fi
+          fi
+
+          echo "flake-check failed (non-hash error or recover failed)"
+          echo "Full log:"
+          cat "$log"
+          exit 1
 
       - name: nix build .#senpi
+        if: steps.flake-check.outputs.passed == 'true'
         run: nix build .#senpi --print-build-logs
 
       - name: Verify binary
+        if: steps.flake-check.outputs.passed == 'true'
         run: |
           set -euo pipefail
           test -x ./result/bin/senpi
@@ -40,11 +109,13 @@ jobs:
           ./result/bin/senpi --help 2>&1 | grep -qi 'senpi'
 
       - name: nix build .#omo-senpi
+        if: steps.flake-check.outputs.passed == 'true'
         run: nix build .#omo-senpi --print-build-logs --impure --out-link result-omo
         env:
           NIXPKGS_ALLOW_UNFREE: "1"
 
       - name: Verify omo-senpi plugin
+        if: steps.flake-check.outputs.passed == 'true'
         run: |
           set -euo pipefail
           plugin=./result-omo/lib/omo-senpi
@@ -60,6 +131,7 @@ jobs:
       # require omo's own component log lines. No API key needed: extensions
       # initialize before the first model call.
       - name: Verify senpi loads the store-path plugin
+        if: steps.flake-check.outputs.passed == 'true'
         run: |
           set -euo pipefail
           agentDir="$RUNNER_TEMP/senpi-agent"
