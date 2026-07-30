@@ -56,7 +56,13 @@ set_hash() {
   local key="$1" value="$2" tmp
   tmp=$(mktemp)
   register_temp "$tmp"
-  jq --arg v "$value" ".${key} = \$v" "$HASHES_JSON" > "$tmp"
+  if [ "$key" = "bunDepsHash" ]; then
+    local system
+    system=$(nix eval --impure --raw --expr 'builtins.currentSystem')
+    jq --arg v "$value" --arg s "$system" '.bunDepsHash[$s] = $v' "$HASHES_JSON" > "$tmp"
+  else
+    jq --arg v "$value" ".${key} = \$v" "$HASHES_JSON" > "$tmp"
+  fi
   mv "$tmp" "$HASHES_JSON"
 }
 
