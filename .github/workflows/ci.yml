@@ -46,19 +46,17 @@ jobs:
               exit 1
             fi
 
-            # Detect current system for per-system hash map
+            # Detect current system for per-system hash map.
+            # builtins.currentSystem returns the Nix platform string
+            # (e.g. x86_64-linux, aarch64-darwin) which matches the
+            # keys in omo-hashes.json's bunDepsHash map.
             system=$(nix eval --impure --raw --expr 'builtins.currentSystem' 2>/dev/null || echo "unknown")
             echo "omo-senpi-bun-deps hash mismatch on ${system}"
             echo "Current hash in omo-hashes.json does not match actual output."
             echo "Expected/got: $new_hash"
             echo "Attempting auto-recovery by updating omo-hashes.json..."
 
-            # Parse the current system from nix or infer from runner OS
-            if [ "$RUNNER_OS" = "macOS" ]; then
-              platform_key="aarch64-darwin"
-            else
-              platform_key="x86_64-linux"
-            fi
+            platform_key="$system"
 
             # Update the hash in omo-hashes.json
             jq --arg v "$new_hash" --arg s "$platform_key" \
