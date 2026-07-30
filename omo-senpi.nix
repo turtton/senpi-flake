@@ -8,6 +8,7 @@
   npmHooks,
   cacert,
   git,
+  system,
 }:
 
 let
@@ -118,7 +119,7 @@ let
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = hashesData.bunDepsHash;
+    outputHash = hashesData.bunDepsHash.${system} or (throw "omo-senpi: no bunDepsHash for system \"${system}\"");
 
     impureEnvVars = lib.fetchers.proxyImpureEnvVars;
     SSL_CERT_FILE = "${cacert}/etc/ssl/certs/ca-bundle.crt";

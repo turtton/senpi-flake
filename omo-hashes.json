@@ -2,6 +2,9 @@
   "rev": "f2872273d6866026a2262315e54dbf21760154d3",
   "version": "4.19.3",
   "srcHash": "sha256-iugwFOJY5IEBYqGyTJdGVpIP64hZhqxqjuqjO3vNyqE=",
-  "bunDepsHash": "sha256-siN+OAeD3khFeNtUbkDY6jJowRP4i62dowlDG/sRPbk=",
+  "bunDepsHash": {
+    "x86_64-linux": "sha256-siN+OAeD3khFeNtUbkDY6jJowRP4i62dowlDG/sRPbk=",
+    "aarch64-darwin": "sha256-NnY7swBj2RfBKf+PVfzC34rMQyEwamz4at+tnigXIJc="
+  },
   "lspDaemonNpmDepsHash": "sha256-dLsA61D2vzqOQMbVpGZlkPFpPNVcv6hRcgRrhij8Dqc="
 }
