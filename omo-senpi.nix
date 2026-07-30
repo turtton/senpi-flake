@@ -135,8 +135,10 @@ stdenvNoCC.mkDerivation {
   # executed as a nix-provided entrypoint, so no shebang needs patching.
   dontPatchShebangs = true;
 
-  # bun install needs network access to download packages.  These env vars
-  # ensure SSL certificates and proxy settings are available inside the sandbox.
+  # bun install needs network access to download packages.  Nix's build
+  # sandbox blocks network by default; __noChroot = true relaxes this.
+  # These env vars ensure SSL certificates are available.
+  __noChroot = true;
   impureEnvVars = lib.fetchers.proxyImpureEnvVars;
   SSL_CERT_FILE = "${cacert}/etc/ssl/certs/ca-bundle.crt";
   GIT_SSL_CAINFO = "${cacert}/etc/ssl/certs/ca-bundle.crt";
