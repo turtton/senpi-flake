@@ -3,7 +3,7 @@
   "version": "4.19.3",
   "srcHash": "sha256-iugwFOJY5IEBYqGyTJdGVpIP64hZhqxqjuqjO3vNyqE=",
   "bunDepsHash": {
-    "x86_64-linux": "sha256-siN+OAeD3khFeNtUbkDY6jJowRP4i62dowlDG/sRPbk=",
+    "x86_64-linux": "sha256-dLLUowuuIv5/D6aam/pffp7knitm+Pfhn6v5hED5tNI=",
     "aarch64-darwin": "sha256-NnY7swBj2RfBKf+PVfzC34rMQyEwamz4at+tnigXIJc="
   },
   "lspDaemonNpmDepsHash": "sha256-dLsA61D2vzqOQMbVpGZlkPFpPNVcv6hRcgRrhij8Dqc="
