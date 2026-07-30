@@ -25,16 +25,21 @@
         in
         {
           senpi = pkgs.callPackage ./package.nix { };
+          # Senpi edition of oh-my-openagent (task/team subagents, LSP tools,
+          # skills).  Unfree: Sustainable Use License, non-commercial only.
+          omo-senpi = pkgs.callPackage ./omo-senpi.nix { };
           default = self.packages.${system}.senpi;
         }
       );
 
       overlays.default = final: _prev: {
         senpi = final.callPackage ./package.nix { };
+        omo-senpi = final.callPackage ./omo-senpi.nix { };
       };
 
       checks = forAllSystems (system: {
         default = self.packages.${system}.default;
+        omo-senpi = self.packages.${system}.omo-senpi;
       });
     };
 }

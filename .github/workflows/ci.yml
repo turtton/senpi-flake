@@ -19,7 +19,9 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@33c9ab3ef95cd57c164d9d6eb1f9a46338538d41 # main
 
       - name: nix flake check
-        run: nix flake check --print-build-logs
+        run: nix flake check --print-build-logs --impure
+        env:
+          NIXPKGS_ALLOW_UNFREE: "1"
 
       - name: nix build .#senpi
         run: nix build .#senpi --print-build-logs
@@ -36,3 +38,43 @@ jobs:
             exit 1
           fi
           ./result/bin/senpi --help 2>&1 | grep -qi 'senpi'
+
+      - name: nix build .#omo-senpi
+        run: nix build .#omo-senpi --print-build-logs --impure --out-link result-omo
+        env:
+          NIXPKGS_ALLOW_UNFREE: "1"
+
+      - name: Verify omo-senpi plugin
+        run: |
+          set -euo pipefail
+          plugin=./result-omo/lib/omo-senpi
+          test -f "$plugin/extensions/omo.js"
+          test -f "$plugin/extensions/omo-member.js"
+          test -f "$plugin/runtime/lsp-daemon/dist/cli.js"
+          test -f "$plugin/runtime/lsp-daemon/dist/.omo-runtime-manifest.json"
+          test -d "$plugin/skills/ast-grep"
+          jq -e '.pi.extensions[0] == "./extensions/omo.js"' "$plugin/package.json" > /dev/null
+
+      # A path-only check would still pass if the extension bundle could not be
+      # loaded from a read-only store path, so drive a real senpi startup and
+      # require omo's own component log lines. No API key needed: extensions
+      # initialize before the first model call.
+      - name: Verify senpi loads the store-path plugin
+        run: |
+          set -euo pipefail
+          agentDir="$RUNNER_TEMP/senpi-agent"
+          mkdir -p "$agentDir"
+          plugin="$(realpath ./result-omo)/lib/omo-senpi"
+          jq -n --arg p "$plugin" '{packages: [$p]}' > "$agentDir/settings.json"
+
+          SENPI_CODING_AGENT_DIR="$agentDir" ./result/bin/senpi list --no-approve \
+            | grep -qF "$plugin"
+
+          log="$RUNNER_TEMP/omo-load.log"
+          SENPI_CODING_AGENT_DIR="$agentDir" \
+            ./result/bin/senpi -p --no-session 'hi' > "$log" 2>&1 || true
+          if ! grep -q '^omo-senpi ' "$log"; then
+            echo "omo-senpi extension did not initialize from $plugin" >&2
+            cat "$log" >&2
+            exit 1
+          fi

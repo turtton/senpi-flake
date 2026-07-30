@@ -19,24 +19,36 @@ jobs:
 
       - uses: DeterminateSystems/nix-installer-action@33c9ab3ef95cd57c164d9d6eb1f9a46338538d41 # main
 
+      # senpi and omo-senpi are updated in lockstep: omo pins senpi peer
+      # versions exactly, so shipping one without the other is what silently
+      # disables the task/team components.
       - name: Check for updates
         id: check
+        env:
+          NIXPKGS_ALLOW_UNFREE: "1"
         run: |
           set -euo pipefail
           ./update.sh
+          ./update-omo.sh
           if git diff --quiet; then
             echo "updated=false" >> "$GITHUB_OUTPUT"
           else
             VERSION=$(jq -r '.version' hashes.json)
+            OMO_VERSION=$(jq -r '.version' omo-hashes.json)
+            OMO_REV=$(jq -r '.rev' omo-hashes.json)
             echo "updated=true" >> "$GITHUB_OUTPUT"
             echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+            echo "omo_version=$OMO_VERSION" >> "$GITHUB_OUTPUT"
+            echo "omo_rev=$OMO_REV" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Verify build after update
         if: steps.check.outputs.updated == 'true'
+        env:
+          NIXPKGS_ALLOW_UNFREE: "1"
         run: |
           set -euo pipefail
-          nix flake check
+          nix flake check --impure
           nix build .#senpi
           test -x ./result/bin/senpi
           test -L ./result/bin/pi
@@ -48,19 +60,24 @@ jobs:
           fi
           ./result/bin/senpi --help 2>&1 | grep -qi 'senpi'
 
+          nix build .#omo-senpi --impure --out-link result-omo
+          test -f ./result-omo/lib/omo-senpi/extensions/omo.js
+          test -f ./result-omo/lib/omo-senpi/runtime/lsp-daemon/dist/cli.js
+          test -d ./result-omo/lib/omo-senpi/skills/ast-grep
+
       - name: Create Pull Request
         if: steps.check.outputs.updated == 'true'
         uses: peter-evans/create-pull-request@c66b8cb0050a39d19695bb3389f91c393c60f7f7 # v7
         with:
           token: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
-          commit-message: "chore: update senpi to ${{ steps.check.outputs.version }}"
-          title: "chore: update senpi to ${{ steps.check.outputs.version }}"
+          commit-message: "chore: update senpi to ${{ steps.check.outputs.version }} and omo-senpi to ${{ steps.check.outputs.omo_version }}"
+          title: "chore: update senpi to ${{ steps.check.outputs.version }} and omo-senpi to ${{ steps.check.outputs.omo_version }}"
           body: |
-            Automated update of senpi to version `${{ steps.check.outputs.version }}`.
+            Automated lockstep update of senpi and omo-senpi.
 
-            - **Version**: ${{ steps.check.outputs.version }}
-            - **Source**: [@code-yeongyu/senpi on npm](https://www.npmjs.com/package/@code-yeongyu/senpi/v/${{ steps.check.outputs.version }})
+            - **senpi**: ${{ steps.check.outputs.version }} — [npm](https://www.npmjs.com/package/@code-yeongyu/senpi/v/${{ steps.check.outputs.version }})
+            - **omo-senpi**: ${{ steps.check.outputs.omo_version }} — [`${{ steps.check.outputs.omo_rev }}`](https://github.com/code-yeongyu/oh-my-openagent/commit/${{ steps.check.outputs.omo_rev }})
 
-            Built successfully; CI (`.github/workflows/ci.yml`) verifies the binary on pull_request.
+            Built successfully; CI (`.github/workflows/ci.yml`) verifies both on pull_request.
           branch: auto-update
           delete-branch: true
