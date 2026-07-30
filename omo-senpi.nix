@@ -76,10 +76,20 @@ let
       export HOME=$TMPDIR/home
       mkdir -p "$HOME"
 
+      # Isolate bun's global cache completely to make install output
+      # deterministic across builds.  bun's default --backend=hardlink
+      # references inodes from the cache, and the cache state (hit/miss)
+      # varies between sandbox sessions, causing the FOD hash to flip
+      # between two values.  --backend=copyfile and an isolated cache dir
+      # eliminate this source of non-determinism.
+      export BUN_INSTALL_CACHE_DIR=$TMPDIR/bun-cache
+      mkdir -p "$BUN_INSTALL_CACHE_DIR"
+
       bun install \
         --frozen-lockfile \
         --ignore-scripts \
-        --no-progress
+        --no-progress \
+        --backend=copyfile
 
       runHook postBuild
     '';
@@ -101,15 +111,16 @@ let
         cp -R "$wsModules" "$out/$wsModules"
       done
 
+      # Remove non-deterministic bun temp/artifact files recursively
+      find $out -name '.bun-tag*' -delete 2>/dev/null || true
+      find $out -name 'bun.lock' -delete 2>/dev/null || true
+
       runHook postInstall
     '';
 
-    # bun stores absolute paths in binary lockfiles and hardlinks into its
-    # cache; strip the generated lockfile so the output only contains the tree.
-    postFixup = ''
-      rm -f $out/node_modules/.bun-tag* $out/bun.lock
-    '';
-
+    # Skip fixup phase (patchelf / strip) to avoid ELF-binary
+    # transformations.  The node_modules tree is consumed as-is.
+    dontFixup = true;
     dontPatchShebangs = true;
 
     # node_modules/@oh-my-opencode/* are relative symlinks into ../packages/*,

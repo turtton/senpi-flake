@@ -4,7 +4,7 @@
   "srcHash": "sha256-iugwFOJY5IEBYqGyTJdGVpIP64hZhqxqjuqjO3vNyqE=",
   "bunDepsHash": {
     "x86_64-linux": "sha256-siN+OAeD3khFeNtUbkDY6jJowRP4i62dowlDG/sRPbk=",
-    "aarch64-darwin": "sha256-NnY7swBj2RfBKf+PVfzC34rMQyEwamz4at+tnigXIJc="
+    "aarch64-darwin": "sha256-1yRyPNuaIr48h3XLNf57epFtMRTENz/hBNBgrQ6J7BM="
   },
   "lspDaemonNpmDepsHash": "sha256-dLsA61D2vzqOQMbVpGZlkPFpPNVcv6hRcgRrhij8Dqc="
 }
