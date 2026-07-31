@@ -6,15 +6,18 @@ Nix flake for [@code-yeongyu/senpi](https://github.com/code-yeongyu/senpi), an n
 
 | File | Purpose |
 |---|---|
-| `flake.nix` | Flake entrypoint — calls `package.nix` / `omo-senpi.nix` per system, exposes an overlay + checks |
+| `flake.nix` | Flake entrypoint — calls `package.nix` / `omo-senpi.nix` / `omo-cli.nix` / `comment-checker.nix` per system, exposes an overlay + checks |
 | `package.nix` | senpi derivation — fetches npm tarball + GitHub source, handles bundled deps, wraps binary |
 | `hashes.json` | senpi version + SRI hashes (sourceHash, assetsSourceHash, npmDepsHash) + bundledDependencies list |
 | `package-lock.json` | Committed lockfile for reproducible npm dependency resolution |
 | `update.sh` | senpi: NPM registry → tarball → npmDepsHash discovery workflow |
+| `omo-common.nix` | Shared omo inputs — monorepo checkout + `bun install` FOD, consumed by both `omo-senpi.nix` and `omo-cli.nix` |
 | `omo-senpi.nix` | omo-senpi derivation — builds `packages/omo-senpi/plugin` from the oh-my-openagent monorepo |
-| `omo-hashes.json` | omo pin: rev, version, srcHash, bunDepsHash, lspDaemonNpmDepsHash |
-| `update-omo.sh` | omo: GitHub HEAD → submodule prefetch → two-stage FOD hash discovery |
-| `.github/workflows/ci.yml` | PR/push CI: `nix flake check`, both builds, binary + plugin-load verification |
+| `omo-cli.nix` | omo CLI derivation — `omo` (bun bundle), `omo-ulw-loop` (node bundle), `comment-checker` symlink |
+| `comment-checker.nix` | comment-checker derivation — per-platform prebuilt binary from upstream GitHub releases |
+| `omo-hashes.json` | omo pin: rev, version, srcHash, bunDepsHash, lspDaemonNpmDepsHash + commentChecker version/per-system hashes |
+| `update-omo.sh` | omo: GitHub HEAD → submodule prefetch → two-stage FOD hash discovery; comment-checker: npm registry → direct archive prefetch |
+| `.github/workflows/ci.yml` | PR/push CI: `nix flake check`, all builds, binary + plugin-load + omo-cli delegation verification |
 | `.github/workflows/update.yml` | Daily cron: `update.sh` + `update-omo.sh` → build → PR (with PAT_TOKEN fallback) |
 | `AGENTS.md` | This file — maintainer documentation |
 
@@ -55,7 +58,7 @@ nix build .#senpi
 ./result/bin/senpi --version
 ./result/bin/pi --version  # alias
 
-# Run flake checks (builds both packages; omo-senpi is unfree)
+# Run flake checks (builds all packages; the omo packages are unfree)
 NIXPKGS_ALLOW_UNFREE=1 nix flake check --impure
 
 # Update to latest upstream release (keep both in lockstep)
@@ -65,6 +68,14 @@ bash update-omo.sh
 # Build and install the omo-senpi plugin into senpi
 NIXPKGS_ALLOW_UNFREE=1 nix build .#omo-senpi --impure
 senpi install "$(realpath ./result)/lib/omo-senpi"
+
+# Build the omo CLI bundle (omo / omo-ulw-loop / comment-checker) so the
+# plugin's ulw-loop and comment-checker components activate; install it so
+# its bin/ is on PATH (omo-senpi discovers the binaries via PATH lookup)
+NIXPKGS_ALLOW_UNFREE=1 nix build .#omo-cli --impure
+./result/bin/omo --version
+./result/bin/omo ulw-loop status --json   # JSON; ULW_LOOP_PLAN_MISSING + exit 1 when idle
+./result/bin/comment-checker --help       # no --version flag upstream
 ```
 
 ## How update.sh works (npm registry → tarball → npmDepsHash discovery)
@@ -106,11 +117,14 @@ Upstream states the install surface is local-path only: `extensions/` and `skill
 | `rev` | Pinned oh-my-openagent commit |
 | `version` | Monorepo root `package.json` version at that commit |
 | `srcHash` | `fetchgit` hash **with submodules** (`packages/shared-skills/upstreams/*` feed the frontend skill references) |
-| `bunDepsHash` | FOD hash of the `bun install` tree |
+| `bunDepsHash` | FOD hash of the `bun install` tree (per system; only `x86_64-linux` and `aarch64-darwin` are pinned, so the omo packages evaluate on those two systems only) |
 | `lspDaemonNpmDepsHash` | `fetchNpmDeps` hash for `packages/lsp-daemon` (its own npm lockfile) |
+| `commentChecker.version` | comment-checker release version (independent of the monorepo pin) |
+| `commentChecker.hashes` | Per-system SRI hashes of the four upstream release archives (`x86_64-linux` / `aarch64-linux` / `x86_64-darwin` / `aarch64-darwin`) |
 
 ### Packaging quirks
 
+- **Shared inputs in `omo-common.nix`**: the checkout (`fetchgit`), the manifest collector, and the `bun install` FOD are factored out so `omo-senpi.nix` and `omo-cli.nix` stay on the same pin and share one realised FOD. The FOD's derivation hash is part of the `bunDepsHash` pin — keep its inputs identical or rediscover the hash with `update-omo.sh`.
 - **Two dependency managers**: the repo is a bun workspace, but `packages/lsp-daemon` is built with `npm ci` against its own `package-lock.json`. The derivation lets `npmConfigHook` populate it (`npmRoot = "packages/lsp-daemon"`) and patches the `npm ci` out of the build script.
 - **bun deps as an FOD**: nixpkgs has no bun lockfile fetcher. `bun install` output was verified byte-identical across independent runs (`diff -r` over two installs with separate `HOME`s), so a fixed-output derivation is sound.
 - **Per-workspace `node_modules`**: bun creates a `node_modules/` inside each of the 24 workspace packages, and some links exist *only* there — e.g. `packages/omo-senpi/node_modules/@oh-my-opencode/omo-opencode`. Keeping only the root tree makes `bun build` fail to resolve `@oh-my-opencode/omo-opencode/config-migration`.
@@ -128,23 +142,60 @@ Upstream states the install surface is local-path only: `extensions/` and `skill
 - A child agent spawned through `task` runs to completion from the store path.
 - All mutable state goes to `$HOME/.omo/` (`lsp-daemon/v0.1.0/daemon.{sock,pid,log,auth}`, `codegraph/`). Nothing is written into the store path.
 - Build artifacts contain no build-machine absolute paths.
-- `omo binary not found` and `comment-checker binary unavailable` are expected startup lines: those components need the separate `omo` CLI and are skipped without it. The task/team and LSP components do not require it.
+- With `omo-cli`'s `bin/` on PATH, the ulw-loop component activates and polls `omo ulw-loop status --json` on session events; in a directory without a plan this logs `omo-senpi ulw-loop status ignored { reason: 'non-zero-exit', code: 1 }` (the bundled CLI answers `ULW_LOOP_PLAN_MISSING` with exit 1), which is the component working as designed, not skipping. Without `omo-cli`, startup logs `omo binary not found` and the component self-skips. The comment-checker component resolves its binary lazily (first edit/write), so `comment-checker binary unavailable` appears at that point if `comment-checker` is not on PATH. The task/team and LSP components require neither binary.
 
 ### Version coupling
 
 `packages/senpi-task` pins its senpi peer exactly (e.g. `@code-yeongyu/senpi: 2026.7.26`). The extension bundle externalizes the senpi peer family and resolves it from the host at runtime, so a drifting senpi can make components self-skip rather than crash — the task tool would silently disappear. Hence `update.yml` runs `update.sh` and `update-omo.sh` in the same job so both move together.
 
+## omo-cli (omo / omo-ulw-loop / comment-checker on PATH)
+
+`omo-cli` bundles the binaries omo-senpi's ulw-loop and comment-checker components look up on PATH, from the same monorepo pin as the plugin:
+
+- **`omo`** — `bun build packages/omo-opencode/src/cli/index.ts --target bun` (mirrors the `cli` node of upstream `script/build.ts`, which has no deps because the bundle inlines every workspace import). Runs under **bun** at runtime via a `makeWrapper` around `${bun}/bin/bun`.
+- **`omo-ulw-loop`** — the ulw-loop component CLI (`packages/omo-codex/plugin/components/ulw-loop`), a zero-dependency TypeScript package with no lockfile, so `bun build --target node` is the only sandbox-compatible build. Runs under **nodejs_24** at runtime.
+- **`comment-checker`** — symlink to the `comment-checker` package below.
+
+### Runtime wiring (verified against the pinned source)
+
+1. The ulw-loop component resolves `omo` via `$OMO_BIN`, then PATH (`resolveOmoBin`), and spawns `omo ulw-loop status --json` on session events.
+2. The omo CLI's `ulw-loop` subcommand delegates (`codexUlwLoop`): the first candidate is `$CODEX_LOCAL_BIN_DIR/omo-ulw-loop`, then `~/.local/bin`, then `~/.codex/bin`, then the codex plugin cache. The `omo` wrapper sets `CODEX_LOCAL_BIN_DIR` with makeWrapper's `--set-default` (a user's own setting wins) so a bare profile install always delegates to the bundled component CLI.
+3. The comment-checker component resolves `$OMO_COMMENT_CHECKER_BIN` (absolute), then `require('@code-yeongyu/comment-checker')`, then PATH — lazily, on the first edit/write tool result.
+
+### Packaging quirks
+
+- **Shared FOD**: the checkout and `bunDeps` come from `omo-common.nix`, so building `omo-senpi` and `omo-cli` together realises the dependency FOD once. Any change to the FOD's inputs invalidates `bunDepsHash` for both packages at once.
+- **node_modules must be copied, not symlinked**: the deps FOD's `@oh-my-opencode/*` entries are relative symlinks into `../packages/*`; placing the tree next to the checkout resolves them, but symlinking the tree itself makes them resolve inside the FOD (where `packages/*/package.json` does not exist) and `bun build` fails with `Could not resolve: @oh-my-opencode/utils/...`.
+- **No patchShebangs**: unlike the plugin build (which runs `tsc` from `node_modules/.bin`), both `bun build` invocations need no node_modules scripts.
+- **`directive.md` layout**: the ulw-loop bundle reads `../directive.md` relative to itself, so it is installed as `$out/lib/ulw-loop/dist/cli.js` + `$out/lib/ulw-loop/directive.md` — the upstream package layout (`dist/cli.js` beside `directive.md`).
+- **Scope**: the CLI exists here to serve omo-senpi (`ulw-loop status`, `boulder`). Other subcommands (`install`/`run`/`doctor`) target opencode/codex hosts and are not the supported use in this flake.
+- **Unfree**: same Sustainable Use License as omo-senpi; same `NIXPKGS_ALLOW_UNFREE=1 --impure` requirement.
+
+## comment-checker (prebuilt tree-sitter binary)
+
+`comment-checker.nix` fetches the per-platform release archive from [go-claude-code-comment-checker](https://github.com/code-yeongyu/go-claude-code-comment-checker) — the same URL the npm package's `postinstall.js` would download (`comment-checker_v{version}_{os}_{arch}.tar.gz`, GoReleaser `amd64` naming, ~6 MB). The npm package itself is unusable in the sandbox (its postinstall needs network) and bundles all five platforms (~268 MB unpacked).
+
+- **MIT licensed** (the archive ships `LICENSE`), so unlike the omo packages it needs no unfree opt-in.
+- **Linux**: the CGO binary links glibc/libgcc and references the FHS ELF interpreter, so `autoPatchelfHook` + `stdenv.cc.cc.lib` rewrite it. Darwin binaries need no treatment.
+- **`sourceRoot = "."`**: the archive ships bare files with no top-level directory, which the default unpack phase rejects.
+- **No `--version` flag** upstream (clap parser without a version subcommand) — verify with `--help`.
+- Versioned independently of the monorepo; `update-omo.sh` tracks `@code-yeongyu/comment-checker/latest` on the npm registry and prefetches all four archives directly (plain `fetchurl` hashes — no placeholder/discovery build), so a comment-checker-only update runs even when the monorepo pin is unchanged.
+
 ## Build verification
 
 The CI workflow verifies the build on every PR and push to `main`:
-- `nix flake check` — validates flake structure + builds both packages via `checks`
+- `nix flake check` — validates flake structure + builds all packages via `checks`
 - `nix build .#senpi` — builds the derivation
 - Binary exists at `./result/bin/senpi` and is executable
 - `pi` alias is a symlink
 - `senpi --version` matches the version in `hashes.json`
 - `senpi --help` mentions 'senpi'
 - `nix build .#omo-senpi` — builds the plugin, then asserts the artifacts `scripts/install.mjs` validates
-- Real senpi startup with the store path registered must emit omo's `omo-senpi ` component log lines (a path-only check would pass even if the bundle could not load)
+- `nix build .#omo-cli` — builds the CLI bundle, then:
+  - `omo --version` matches `version` in `omo-hashes.json`
+  - `omo ulw-loop status --json` in an empty directory exits 1 with a `ULW_LOOP_PLAN_MISSING` JSON body, proving the wrapper's `CODEX_LOCAL_BIN_DIR` default delegates to the bundled component CLI
+  - `comment-checker --help` runs (no `--version` flag upstream)
+- Real senpi startup with the store path registered must emit omo's `omo-senpi ` component log lines (a path-only check would pass even if the bundle could not load), and with `result-omo-cli/bin` on PATH the log must **not** contain `omo binary not found`
 
 Do not add a `--rebuild` reproducibility gate for `omo-senpi`: `bun build --minify` is not deterministic upstream (see Packaging quirks).
 
@@ -152,7 +203,7 @@ Do not add a `--rebuild` reproducibility gate for `omo-senpi`: `bun build --mini
 
 The auto-update workflow (`.github/workflows/update.yml`) runs daily at 00:00 UTC and can be triggered manually via `workflow_dispatch`. It runs `update.sh` and `update-omo.sh`, verifies both builds, and opens a PR on the `auto-update` branch.
 
-`update-omo.sh` discovers `lspDaemonNpmDepsHash` before `bunDepsHash`: the lsp-daemon FOD is realised first, so its mismatch would otherwise mask the bun hash. Each discovery stamps a placeholder, runs a build that is expected to fail, and scrapes `got: sha256-...`.
+`update-omo.sh` discovers `lspDaemonNpmDepsHash` before `bunDepsHash`: the lsp-daemon FOD is realised first, so its mismatch would otherwise mask the bun hash. Each discovery stamps a placeholder, runs a build that is expected to fail, and scrapes `got: sha256-...`. comment-checker is the exception: its four release archives are plain `fetchurl` inputs, so `nix-prefetch-url` is authoritative and no discovery build exists for them. The verification at the end of the script builds both `.#omo-senpi` and `.#omo-cli`.
 
 For CI to run automatically on those PRs (via the `pull_request` trigger in `ci.yml`), a **GitHub Personal Access Token (PAT)** must be configured:
 
@@ -172,4 +223,4 @@ Without `PAT_TOKEN`, the workflow falls back to `GITHUB_TOKEN`. PRs are still cr
 
 ## No tests
 
-There are no unit or integration tests. Verification is: `nix flake check` and both builds succeed, the binary reports the expected version, and senpi loads the omo-senpi plugin from its store path.
+There are no unit or integration tests. Verification is: `nix flake check` and all builds succeed, the binaries report the expected versions, `omo ulw-loop` delegates to the bundled component CLI, and senpi loads the omo-senpi plugin from its store path with `omo`/`comment-checker` resolvable on PATH.
