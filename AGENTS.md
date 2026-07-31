@@ -11,12 +11,15 @@ Nix flake for [@code-yeongyu/senpi](https://github.com/code-yeongyu/senpi), an n
 | `hashes.json` | senpi version + SRI hashes (sourceHash, assetsSourceHash, npmDepsHash) + bundledDependencies list |
 | `package-lock.json` | Committed lockfile for reproducible npm dependency resolution |
 | `update.sh` | senpi: NPM registry → tarball → npmDepsHash discovery workflow |
-| `omo-common.nix` | Shared omo inputs — monorepo checkout + `bun install` FOD, consumed by both `omo-senpi.nix` and `omo-cli.nix` |
+| `omo-common.nix` | Shared omo inputs — monorepo checkout + per-tarball `fetchurl` bun dependency tree, consumed by both `omo-senpi.nix` and `omo-cli.nix` |
 | `omo-senpi.nix` | omo-senpi derivation — builds `packages/omo-senpi/plugin` from the oh-my-openagent monorepo |
 | `omo-cli.nix` | omo CLI derivation — `omo` (bun bundle), `omo-ulw-loop` (node bundle), `comment-checker` symlink |
 | `comment-checker.nix` | comment-checker derivation — per-platform prebuilt binary from upstream GitHub releases |
-| `omo-hashes.json` | omo pin: rev, version, srcHash, bunDepsHash, lspDaemonNpmDepsHash + commentChecker version/per-system hashes |
-| `update-omo.sh` | omo: GitHub HEAD → submodule prefetch → two-stage FOD hash discovery; comment-checker: npm registry → direct archive prefetch |
+| `omo-hashes.json` | omo pin: rev, version, srcHash, lspDaemonNpmDepsHash + commentChecker version/per-system hashes |
+| `omo-npm-packages.json` | Generated from bun.lock — per-tarball URL + integrity hash for every npm package, plus workspace/file link data |
+| `generate-npm-packages.py` | bun.lock (JSONC) → `omo-npm-packages.json` generator; run by `update-omo.sh` on every rev bump |
+| `assemble-node-modules.cjs` | Build-time assembler — unpacks the fetched tarballs into a bun-shaped node_modules (workspace links + `.bin`) |
+| `update-omo.sh` | omo: GitHub HEAD → submodule prefetch → bun.lock regeneration → lsp-daemon hash discovery; comment-checker: npm registry → direct archive prefetch |
 | `.github/workflows/ci.yml` | PR/push CI: `nix flake check`, all builds, binary + plugin-load + omo-cli delegation verification |
 | `.github/workflows/update.yml` | Daily cron: `update.sh` + `update-omo.sh` → build → PR (with PAT_TOKEN fallback) |
 | `AGENTS.md` | This file — maintainer documentation |
@@ -117,20 +120,21 @@ Upstream states the install surface is local-path only: `extensions/` and `skill
 | `rev` | Pinned oh-my-openagent commit |
 | `version` | Monorepo root `package.json` version at that commit |
 | `srcHash` | `fetchgit` hash **with submodules** (`packages/shared-skills/upstreams/*` feed the frontend skill references) |
-| `bunDepsHash` | FOD hash of the `bun install` tree (per system; only `x86_64-linux` and `aarch64-darwin` are pinned, so the omo packages evaluate on those two systems only) |
-| `lspDaemonNpmDepsHash` | `fetchNpmDeps` hash for `packages/lsp-daemon` (its own npm lockfile) |
+| `lspDaemonNpmDepsHash` | `fetchNpmDeps` hash for `packages/lsp-daemon` (its own npm lockfile); the only remaining discovery FOD |
 | `commentChecker.version` | comment-checker release version (independent of the monorepo pin) |
 | `commentChecker.hashes` | Per-system SRI hashes of the four upstream release archives (`x86_64-linux` / `aarch64-linux` / `x86_64-darwin` / `aarch64-darwin`) |
 
+Note: there is intentionally **no `bunDepsHash`** — bun dependency hashes live per-tarball in `omo-npm-packages.json` (see Packaging quirks), which is platform-independent, so the omo packages evaluate on all four supported systems.
+
 ### Packaging quirks
 
-- **Shared inputs in `omo-common.nix`**: the checkout (`fetchgit`), the manifest collector, and the `bun install` FOD are factored out so `omo-senpi.nix` and `omo-cli.nix` stay on the same pin and share one realised FOD. The FOD's derivation hash is part of the `bunDepsHash` pin — keep its inputs identical or rediscover the hash with `update-omo.sh`.
+- **Shared inputs in `omo-common.nix`**: the checkout (`fetchgit`) and the bun dependency tree are factored out so `omo-senpi.nix` and `omo-cli.nix` stay on the same pin and share one realised dependency derivation.
+- **bun deps as per-tarball `fetchurl`, not a FOD**: nixpkgs has no bun lockfile fetcher, and the previous single-output `bun install` FOD proved unstable in CI — its hash flipped across environments even with `--backend=copyfile` and cache isolation (observed as `discover-macos-hash` failures after merges). `generate-npm-packages.py` therefore parses bun.lock (JSONC) into `omo-npm-packages.json` — URL + lockfile integrity hash per npm package, workspace/file link data, bin entries — and `omo-common.nix` fetches each tarball individually and assembles node_modules at build time with `assemble-node-modules.cjs`. Every byte is covered by a lockfile hash, so nothing needs discovery and nothing can flip. The generator runs **without os/cpu filtering** (all platform variants are unpacked; non-matching ones are inert), which keeps the tree platform-independent.
 - **Two dependency managers**: the repo is a bun workspace, but `packages/lsp-daemon` is built with `npm ci` against its own `package-lock.json`. The derivation lets `npmConfigHook` populate it (`npmRoot = "packages/lsp-daemon"`) and patches the `npm ci` out of the build script.
-- **bun deps as an FOD**: nixpkgs has no bun lockfile fetcher. `bun install` output was verified byte-identical across independent runs (`diff -r` over two installs with separate `HOME`s), so a fixed-output derivation is sound.
-- **Per-workspace `node_modules`**: bun creates a `node_modules/` inside each of the 24 workspace packages, and some links exist *only* there — e.g. `packages/omo-senpi/node_modules/@oh-my-opencode/omo-opencode`. Keeping only the root tree makes `bun build` fail to resolve `@oh-my-opencode/omo-opencode/config-migration`.
-- **Manifest-only FOD input**: the deps FOD consumes just `package.json` + `bun.lock` + every workspace manifest (including `packages/lsp-daemon`, which is reached via `file:../lsp-daemon` and is absent from the `workspaces` array). Its hash therefore only moves when a manifest or the lockfile moves.
-- **Shebangs**: the deps FOD keeps upstream `#!/usr/bin/env node` shebangs so its hash is store-path independent; `configurePhase` runs `patchShebangs` afterwards, otherwise `node_modules/.bin/tsc` fails with `bad interpreter`.
-- **Dangling symlinks in the FOD**: `node_modules/@oh-my-opencode/*` are relative links into `../packages/*` and only resolve once copied next to the checkout, so `dontCheckForBrokenSymlinks = true`.
+- **Per-workspace `node_modules`**: bun.lock's key structure encodes where each package installs (root vs a workspace's own `node_modules/`); the assembler reproduces that layout, and workspace-specific links (e.g. `packages/omo-senpi/node_modules/@code-yeongyu/lsp-daemon`) are created as relative symlinks into the checkout.
+- **file: deps are links, not copies**: entries nested under a `file:` package (e.g. `typescript` keyed under `@code-yeongyu/lsp-daemon`) are skipped by the assembler — the linked source directory's own dependency manager (`packages/lsp-daemon`'s npm ci) already provides them, and unpacking them would collide with the symlink.
+- **Shebangs**: tarballs keep upstream `#!/usr/bin/env node` shebangs; `configurePhase` runs `patchShebangs` after copying the tree next to the checkout, otherwise `node_modules/.bin/tsc` fails with `bad interpreter`.
+- **Dangling symlinks in the deps derivation**: `node_modules/@oh-my-opencode/*` are relative links into `../packages/*` and only resolve once copied next to the checkout, so `dontCheckForBrokenSymlinks = true`.
 - **Submodule script**: `materialize-shared-upstreams.mjs --strict` runs `git submodule update --init`, impossible in the sandbox. `fetchSubmodules` already supplies the trees, so `postPatch` drops `--strict` to take the script's documented "continuing without submodule refresh" path.
 - **Unfree**: Sustainable Use License (non-commercial, free-of-charge distribution only). Every `nix` invocation needs `NIXPKGS_ALLOW_UNFREE=1` and `--impure`.
 - **Shebangs in `skills/`**: top-level `dontPatchShebangs = true`. `skills/` ships portable helper scripts (`skills/ast-grep/install.sh`, the `programming` scripts) that the agent runs on the user's machine, so their `#!/usr/bin/env bash` must survive. The `patchShebangs` call inside `configurePhase` is explicit and still runs.
@@ -164,8 +168,8 @@ Upstream states the install surface is local-path only: `extensions/` and `skill
 
 ### Packaging quirks
 
-- **Shared FOD**: the checkout and `bunDeps` come from `omo-common.nix`, so building `omo-senpi` and `omo-cli` together realises the dependency FOD once. Any change to the FOD's inputs invalidates `bunDepsHash` for both packages at once.
-- **node_modules must be copied, not symlinked**: the deps FOD's `@oh-my-opencode/*` entries are relative symlinks into `../packages/*`; placing the tree next to the checkout resolves them, but symlinking the tree itself makes them resolve inside the FOD (where `packages/*/package.json` does not exist) and `bun build` fails with `Could not resolve: @oh-my-opencode/utils/...`.
+- **Shared dependency tree**: the checkout and `bunDeps` come from `omo-common.nix`, so building `omo-senpi` and `omo-cli` together realises the dependency derivation once.
+- **node_modules must be copied, not symlinked**: the deps derivation's `@oh-my-opencode/*` entries are relative symlinks into `../packages/*`; placing the tree next to the checkout resolves them, but symlinking the tree itself makes them resolve inside the deps derivation (where `packages/*/package.json` does not exist) and `bun build` fails with `Could not resolve: @oh-my-opencode/utils/...`.
 - **No patchShebangs**: unlike the plugin build (which runs `tsc` from `node_modules/.bin`), both `bun build` invocations need no node_modules scripts.
 - **`directive.md` layout**: the ulw-loop bundle reads `../directive.md` relative to itself, so it is installed as `$out/lib/ulw-loop/dist/cli.js` + `$out/lib/ulw-loop/directive.md` — the upstream package layout (`dist/cli.js` beside `directive.md`).
 - **Scope**: the CLI exists here to serve omo-senpi (`ulw-loop status`, `boulder`). Other subcommands (`install`/`run`/`doctor`) target opencode/codex hosts and are not the supported use in this flake.
@@ -203,7 +207,7 @@ The CI workflow verifies the build on every PR and push to `main`:
 
 The auto-update workflow (`.github/workflows/update.yml`) runs daily at 00:00 UTC and can be triggered manually via `workflow_dispatch`. It runs `update.sh` and `update-omo.sh`, verifies both builds, and opens a PR on the `auto-update` branch.
 
-`update-omo.sh` discovers `lspDaemonNpmDepsHash` before `bunDepsHash`: the lsp-daemon FOD is realised first, so its mismatch would otherwise mask the bun hash. Each discovery stamps a placeholder, runs a build that is expected to fail, and scrapes `got: sha256-...`. comment-checker is the exception: its four release archives are plain `fetchurl` inputs, so `nix-prefetch-url` is authoritative and no discovery build exists for them. The verification at the end of the script builds both `.#omo-senpi` and `.#omo-cli`.
+`update-omo.sh` regenerates `omo-npm-packages.json` from the new rev's bun.lock on every bump (byte-identical output when the lockfile is unchanged), and discovers only `lspDaemonNpmDepsHash` via the placeholder build — the bun dependency tree needs no discovery because every tarball carries its lockfile integrity hash. The mismatch scraper accepts both stock Nix (`got: sha256-...`) and Determinate Nix (`To correct the hash mismatch for ..., use "sha256-..."`) wordings, since CI runners use the latter. comment-checker is the other exception: its four release archives are plain `fetchurl` inputs, so `nix-prefetch-url` is authoritative and no discovery build exists for them. The verification at the end of the script builds both `.#omo-senpi` and `.#omo-cli`.
 
 For CI to run automatically on those PRs (via the `pull_request` trigger in `ci.yml`), a **GitHub Personal Access Token (PAT)** must be configured:
 

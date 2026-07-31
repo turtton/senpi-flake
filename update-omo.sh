@@ -4,9 +4,12 @@
 # Strategy:
 # 1. Resolve the default branch HEAD of code-yeongyu/oh-my-openagent.
 # 2. Prefetch the source with submodules (packages/shared-skills/upstreams/*).
-# 3. Stamp the two dependency hashes with placeholders and let `nix build`
-#    report the real values, one FOD at a time.
-# 4. Rewrite omo-hashes.json atomically and verify with a real build.
+# 3. Regenerate omo-npm-packages.json from the new bun.lock
+#    (generate-npm-packages.py).  Every npm tarball is fetched with its
+#    lockfile integrity hash, so the dependency tree needs no hash discovery.
+# 4. Stamp the lsp-daemon npm deps hash with a placeholder and let
+#    `nix build` report the real value (the only remaining discovery FOD).
+# 5. Rewrite omo-hashes.json atomically and verify with a real build.
 #
 # The comment-checker binary (omo-cli/comment-checker.nix) is versioned
 # independently of the monorepo, so its update is tracked separately: query
@@ -55,7 +58,7 @@ require_cmd() {
   done
 }
 
-require_cmd curl jq nix nix-prefetch-url
+require_cmd curl jq nix nix-prefetch-url python3
 
 nix_build() {
   nix build .#omo-senpi --impure "$@"
@@ -78,13 +81,7 @@ set_hash() {
   local key="$1" value="$2" tmp
   tmp=$(mktemp)
   register_temp "$tmp"
-  if [ "$key" = "bunDepsHash" ]; then
-    local system
-    system=$(nix eval --impure --raw --expr 'builtins.currentSystem')
-    jq --arg v "$value" --arg s "$system" '.bunDepsHash[$s] = $v' "$HASHES_JSON" > "$tmp"
-  else
-    jq --arg v "$value" ".${key} = \$v" "$HASHES_JSON" > "$tmp"
-  fi
+  jq --arg v "$value" ".${key} = \$v" "$HASHES_JSON" > "$tmp"
   mv "$tmp" "$HASHES_JSON"
 }
 
@@ -104,6 +101,17 @@ discover_hash() {
       | head -n1 \
       | sed -E 's/.*got:[[:space:]]+(sha256-[A-Za-z0-9+/=]+).*/\1/'
   )
+
+  # Determinate Nix (what nix-installer-action puts on CI runners) reports
+  # fixed-output mismatches in a different wording than stock Nix:
+  #   error: To correct the hash mismatch for <name>, use "sha256-..."
+  if [ -z "$new" ]; then
+    new=$(
+      grep -oE 'To correct the hash mismatch for [^,]+, use "sha256-[A-Za-z0-9+/=]+"' "$log" \
+        | head -n1 \
+        | sed -E 's/.*use "(sha256-[A-Za-z0-9+/=]+)".*/\1/'
+    )
+  fi
 
   if [ -z "$new" ]; then
     echo "Failed to discover $key. Build log tail:" >&2
@@ -216,13 +224,19 @@ if [ "$omo_changed" -eq 1 ]; then
      "$HASHES_JSON" > "$tmp_hashes"
   mv "$tmp_hashes" "$HASHES_JSON"
 
-  # The lsp-daemon npm deps FOD is evaluated before the bun deps FOD, so
-  # discover it first; otherwise its mismatch masks the bun hash.
+  # bun.lock moved with the rev: regenerate the per-tarball package data.
+  # When the lockfile is unchanged the generator output is byte-identical,
+  # so this costs nothing in the no-op case.
+  echo "Regenerating omo-npm-packages.json from bun.lock at $latest_rev..."
+  bun_lock=$(mktemp)
+  register_temp "$bun_lock"
+  curl -fsSL "https://raw.githubusercontent.com/${REPO}/${latest_rev}/bun.lock" > "$bun_lock"
+  python3 generate-npm-packages.py "$bun_lock" omo-npm-packages.json
+
+  # packages/lsp-daemon keeps its own npm lockfile consumed via fetchNpmDeps;
+  # that hash still needs placeholder discovery.
   echo "Discovering lspDaemonNpmDepsHash..."
   discover_hash lspDaemonNpmDepsHash
-
-  echo "Discovering bunDepsHash..."
-  discover_hash bunDepsHash
 fi
 
 # omo-cli embeds the comment-checker binary and shares the monorepo pin, so

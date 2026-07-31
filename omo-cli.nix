@@ -171,11 +171,10 @@ stdenvNoCC.mkDerivation {
       redistributable = false;
     };
     sourceProvenance = with lib.sourceTypes; [ fromSource ];
-    # bunDepsHash is pinned only for these two systems (the update workflow
-    # discovers x86_64-linux on ubuntu and aarch64-darwin on macOS), so the
-    # shared FOD — and therefore this package — only evaluates there.
     platforms = [
       "x86_64-linux"
+      "aarch64-linux"
+      "x86_64-darwin"
       "aarch64-darwin"
     ];
     mainProgram = "omo";

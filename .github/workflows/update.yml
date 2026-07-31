@@ -121,64 +121,8 @@ jobs:
           branch: auto-update
           delete-branch: true
 
-  # bunDepsHash differs per platform (bun install produces platform-specific
-  # node_modules).  The ubuntu job above discovers the x86_64-linux hash; this
-  # macOS job discovers the aarch64-darwin hash and pushes it to the same PR.
-  # The same FOD feeds omo-cli via omo-common.nix, so this one discovery
-  # covers both packages.
-  discover-macos-hash:
-    needs: update
-    if: needs.update.outputs.updated == 'true'
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a # v4
-        with:
-          ref: auto-update
-          # The final step pushes the discovered hash back to the auto-update
-          # branch, so this checkout must keep credentials — the same token
-          # selection as create-pull-request above.
-          token: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
-
-      - uses: DeterminateSystems/nix-installer-action@33c9ab3ef95cd57c164d9d6eb1f9a46338538d41 # main
-
-      - name: Discover aarch64-darwin bunDepsHash
-        env:
-          NIXPKGS_ALLOW_UNFREE: "1"
-        run: |
-          set -euo pipefail
-          if nix build .#omo-senpi --impure --no-link 2>/dev/null; then
-            echo "omo-senpi already builds on macOS — hash up to date"
-            # A comment-checker-only update never changes bunDepsHash, so the
-            # mismatch path below would not run; verify the new darwin
-            # comment-checker pin here instead (build + run), otherwise a bad
-            # prefetch would first surface on the PR's CI.
-            nix build .#omo-cli --impure --out-link result-omo-cli
-            ./result-omo-cli/bin/comment-checker --help > /dev/null
-            exit 0
-          fi
-
-          echo "omo-senpi hash mismatch on macOS — discovering correct hash..."
-          log=$(mktemp)
-          nix build .#omo-senpi --impure --no-link 2> "$log" || true
-          # BSD grep/sed on macOS have no \s; use the portable [[:space:]]
-          # class (same pattern as discover_hash in update-omo.sh).
-          new_hash=$(
-            grep -E '^[[:space:]]*got:[[:space:]]+sha256-' "$log" \
-              | head -n1 \
-              | sed -E 's/.*got:[[:space:]]+(sha256-[A-Za-z0-9+/=]+).*/\1/'
-          )
-          if [ -z "$new_hash" ]; then
-            echo "Failed to discover aarch64-darwin bunDepsHash" >&2
-            tail -n 30 "$log" >&2
-            exit 1
-          fi
-          echo "Discovered aarch64-darwin bunDepsHash: $new_hash"
-
-          jq --arg v "$new_hash" '.bunDepsHash["aarch64-darwin"] = $v' omo-hashes.json > omo-hashes.json.tmp
-          mv omo-hashes.json.tmp omo-hashes.json
-
-          git config user.name "turtton[bot]"
-          git config user.email "turtton[bot]@users.noreply.github.com"
-          git add omo-hashes.json
-          git commit -m "fix: update aarch64-darwin bunDepsHash for omo-senpi ${{ needs.update.outputs.omo_version }}"
-          git push
+  # No per-system hash discovery job exists anymore: the bun dependency tree
+  # is fetched per-tarball with lockfile integrity hashes (see omo-common.nix
+  # and generate-npm-packages.py), which are platform-independent.  The only
+  # remaining discovery FOD (lsp-daemon npm deps) is resolved inside
+  # update-omo.sh on the ubuntu runner above.
