@@ -55,26 +55,73 @@ jobs:
           test -d "$plugin/skills/ast-grep"
           jq -e '.pi.extensions[0] == "./extensions/omo.js"' "$plugin/package.json" > /dev/null
 
+      - name: nix build .#omo-cli
+        run: nix build .#omo-cli --print-build-logs --impure --out-link result-omo-cli
+        env:
+          NIXPKGS_ALLOW_UNFREE: "1"
+
+      - name: Verify omo-cli binaries
+        run: |
+          set -euo pipefail
+          test -x ./result-omo-cli/bin/omo
+          test -x ./result-omo-cli/bin/omo-ulw-loop
+          test -x ./result-omo-cli/bin/comment-checker
+
+          expected="$(jq -r '.version' omo-hashes.json)"
+          actual="$(./result-omo-cli/bin/omo --version 2>&1)"
+          if [ "$actual" != "$expected" ]; then
+            echo "Version mismatch: expected '$expected', got '$actual'" >&2
+            exit 1
+          fi
+
+          # `omo ulw-loop` must delegate to the bundled component CLI through
+          # the wrapper's CODEX_LOCAL_BIN_DIR default.  In an empty directory
+          # the correct idle answer is the ULW_LOOP_PLAN_MISSING JSON error
+          # with exit status 1 — anything else means the delegation broke.
+          tmp="$(mktemp -d)"
+          set +e
+          output="$(cd "$tmp" && env -u CODEX_LOCAL_BIN_DIR "$OLDPWD/result-omo-cli/bin/omo" ulw-loop status --json 2>&1)"
+          rc=$?
+          set -e
+          rm -rf "$tmp"
+          if [ "$rc" -ne 1 ]; then
+            echo "omo ulw-loop status exited $rc, expected 1 (ULW_LOOP_PLAN_MISSING)" >&2
+            echo "$output" >&2
+            exit 1
+          fi
+          echo "$output" | jq -e . > /dev/null
+          echo "$output" | grep -q 'ULW_LOOP_PLAN_MISSING'
+
+          # No --version flag upstream; --help proves the patched binary runs.
+          ./result-omo-cli/bin/comment-checker --help > /dev/null
+
       # A path-only check would still pass if the extension bundle could not be
       # loaded from a read-only store path, so drive a real senpi startup and
       # require omo's own component log lines. No API key needed: extensions
-      # initialize before the first model call.
+      # initialize before the first model call. result-omo-cli/bin is on PATH
+      # so the ulw-loop component must also find the bundled omo binary.
       - name: Verify senpi loads the store-path plugin
         run: |
           set -euo pipefail
           agentDir="$RUNNER_TEMP/senpi-agent"
           mkdir -p "$agentDir"
           plugin="$(realpath ./result-omo)/lib/omo-senpi"
+          omoBin="$(realpath ./result-omo-cli)/bin"
           jq -n --arg p "$plugin" '{packages: [$p]}' > "$agentDir/settings.json"
 
-          SENPI_CODING_AGENT_DIR="$agentDir" ./result/bin/senpi list --no-approve \
+          PATH="$omoBin:$PATH" SENPI_CODING_AGENT_DIR="$agentDir" ./result/bin/senpi list --no-approve \
             | grep -qF "$plugin"
 
           log="$RUNNER_TEMP/omo-load.log"
-          SENPI_CODING_AGENT_DIR="$agentDir" \
+          PATH="$omoBin:$PATH" SENPI_CODING_AGENT_DIR="$agentDir" \
             ./result/bin/senpi -p --no-session 'hi' > "$log" 2>&1 || true
           if ! grep -q '^omo-senpi ' "$log"; then
             echo "omo-senpi extension did not initialize from $plugin" >&2
+            cat "$log" >&2
+            exit 1
+          fi
+          if grep -qF 'omo binary not found' "$log"; then
+            echo "ulw-loop component skipped despite the bundled omo CLI on PATH" >&2
             cat "$log" >&2
             exit 1
           fi

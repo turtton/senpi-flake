@@ -6,5 +6,14 @@
     "x86_64-linux": "sha256-siN+OAeD3khFeNtUbkDY6jJowRP4i62dowlDG/sRPbk=",
     "aarch64-darwin": "sha256-1yRyPNuaIr48h3XLNf57epFtMRTENz/hBNBgrQ6J7BM="
   },
-  "lspDaemonNpmDepsHash": "sha256-dLsA61D2vzqOQMbVpGZlkPFpPNVcv6hRcgRrhij8Dqc="
+  "lspDaemonNpmDepsHash": "sha256-dLsA61D2vzqOQMbVpGZlkPFpPNVcv6hRcgRrhij8Dqc=",
+  "commentChecker": {
+    "version": "0.8.0",
+    "hashes": {
+      "x86_64-linux": "sha256-D/Am/iRKoK+VZ9U7BGHJer9aUPhs4c61Ux/VQZSX3U8=",
+      "aarch64-linux": "sha256-IT5tBsPZPAYUzIH/UtVCrQ+1m8Zq+dk8UymB4JjxiuY=",
+      "x86_64-darwin": "sha256-dAjwJuzln8yQ+35Zg2TjyUfhyrJ35Zxjm/WQloIu5Nw=",
+      "aarch64-darwin": "sha256-rHO3bx7PlhXoWaCnoA528lMFVj+Hp+4WjN0udsjjhVo="
+    }
+  }
 }
