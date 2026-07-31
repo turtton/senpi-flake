@@ -2,13 +2,14 @@
   lib,
   stdenvNoCC,
   fetchgit,
+  fetchurl,
   fetchNpmDeps,
+  writeText,
   bun,
   nodejs_24,
   npmHooks,
   cacert,
   git,
-  system,
 }:
 
 let
@@ -19,20 +20,36 @@ let
     url = "https://github.com/code-yeongyu/oh-my-openagent";
     rev = hashesData.rev;
     hash = hashesData.srcHash;
-    # packages/shared-skills/upstreams/* are git submodules; the frontend skill
-    # references are materialized from them at build time.
     fetchSubmodules = true;
   };
 
-  # Root package.json + bun.lock + every package.json referenced by the bun
-  # workspace.  Bun only needs the manifests to resolve the dependency tree, so
-  # the FOD input stays tiny and only changes when a manifest or the lockfile
-  # changes.
-  #
-  # packages/lsp-daemon is NOT in the root `workspaces` array but is pulled in
-  # through `"@code-yeongyu/lsp-daemon": "file:../lsp-daemon"` from
-  # packages/omo-senpi; omitting its manifest makes `bun install` fail with
-  # ENOENT while linking.
+  # ----------------------------------------------------------------
+  # npm package data — generated from bun.lock via generate-npm-packages.py
+  # Structure: { "pkg-key": { "url": "...", "hash": "sha512-..." }, ... }
+  # ----------------------------------------------------------------
+  npmPkgsData = builtins.fromJSON (builtins.readFile ./omo-npm-packages.json);
+
+  # ----------------------------------------------------------------
+  # Fetch every npm tarball with individual fetchurl calls.
+  # Each value is a store path to the downloaded .tgz.
+  # ----------------------------------------------------------------
+  fetchedPkgs = lib.mapAttrs (_: info: fetchurl {
+    url = info.url;
+    hash = info.hash;
+  }) npmPkgsData;
+
+  # ----------------------------------------------------------------
+  # Create a JSON mapping file: { "pkg-key": "/nix/store/...-name", ... }
+  # The builder reads this at build time to know where each tarball is.
+  # ----------------------------------------------------------------
+  pkgMappingFile = writeText "npm-pkg-mapping.json" (builtins.toJSON (
+    lib.mapAttrs (_: pkg: "${pkg}") fetchedPkgs
+  ));
+
+  # ----------------------------------------------------------------
+  # Root package.json + bun.lock + every workspace manifest.
+  # Kept for bunManifests-based workspace handling.
+  # ----------------------------------------------------------------
   bunManifests = stdenvNoCC.mkDerivation {
     pname = "omo-senpi-bun-manifests";
     inherit version src;
@@ -57,88 +74,124 @@ let
     '';
   };
 
-  # `bun install` output is byte-identical across runs (verified with
-  # `diff -r` over two installs with independent HOMEs), so a fixed-output
-  # derivation is safe here.  nixpkgs has no bun lockfile fetcher, hence the FOD.
+  # ----------------------------------------------------------------
+  # Build node_modules from individual fetchurl tarballs.
+  # Reads omo-npm-packages.json and the pkg-mapping.json at build time.
+  # ----------------------------------------------------------------
   bunDeps = stdenvNoCC.mkDerivation {
     pname = "omo-senpi-bun-deps";
     inherit version;
 
-    src = bunManifests;
-
-    nativeBuildInputs = [ bun ];
+    nativeBuildInputs = [ nodejs_24 ];
 
     dontConfigure = true;
 
     buildPhase = ''
       runHook preBuild
 
-      export HOME=$TMPDIR/home
-      mkdir -p "$HOME"
+      # Read the npm packages data and the fetchurl mapping
+      PKG_DATA=${./omo-npm-packages.json}
+      PKG_MAP=${pkgMappingFile}
 
-      # Isolate bun's global cache completely to make install output
-      # deterministic across builds.  bun's default --backend=hardlink
-      # references inodes from the cache, and the cache state (hit/miss)
-      # varies between sandbox sessions, causing the FOD hash to flip
-      # between two values.  --backend=copyfile and an isolated cache dir
-      # eliminate this source of non-determinism.
-      export BUN_INSTALL_CACHE_DIR=$TMPDIR/bun-cache
-      mkdir -p "$BUN_INSTALL_CACHE_DIR"
+      # Node script that assembles node_modules from individual tarballs
+      node -e "
+        const fs = require('fs');
+        const { execSync } = require('child_process');
 
-      bun install \
-        --frozen-lockfile \
-        --ignore-scripts \
-        --no-progress \
-        --backend=copyfile
+        const pkgData = JSON.parse(fs.readFileSync('$PKG_DATA', 'utf8'));
+        const pkgMap = JSON.parse(fs.readFileSync('$PKG_MAP', 'utf8'));
+
+        const npmPkgs = pkgData.npmPackages || {};
+        const wsSymlinks = pkgData.workspaceSymlinks || {};
+        const filePkgs = pkgData.filePackages || {};
+
+        let unpacked = 0;
+        let symlinked = 0;
+
+        // ── Unpack each npm tarball into its node_modules path ──
+        for (const [key, info] of Object.entries(npmPkgs)) {
+          const storePath = pkgMap[key];
+          if (!storePath) {
+            console.error('WARNING: no mapping for ' + key);
+            continue;
+          }
+
+          const installPath = info.installPath;
+          fs.mkdirSync(installPath, { recursive: true });
+
+          // npm tarballs have a 'package/' prefix; strip it
+          execSync('tar xzf ' + JSON.stringify(storePath) +
+                   ' --strip-components=1 -C ' + JSON.stringify(installPath),
+                   { stdio: 'inherit' });
+          unpacked++;
+        }
+
+        // ── Create workspace symlinks ────────────────────────────
+        // workspace: deps → symlink to source tree
+        for (const [key, info] of Object.entries(wsSymlinks)) {
+          const installPath = info.installPath;
+          const sourcePath = info.sourcePath;
+
+          fs.mkdirSync(installPath, { recursive: true, recursive: true });
+
+          // Calculate relative path from installPath to sourcePath
+          const installDir = require('path').dirname(installPath);
+          const relPath = require('path').relative(installDir, sourcePath);
+
+          try { fs.unlinkSync(installPath); } catch {}
+          fs.symlinkSync(relPath, installPath);
+          symlinked++;
+        }
+
+        // ── Create file: symlinks ────────────────────────────────
+        // file: deps → symlink to source tree
+        for (const [key, info] of Object.entries(filePkgs)) {
+          const installPath = info.installPath;
+          const sourcePath = info.sourcePath;
+
+          fs.mkdirSync(installPath, { recursive: true });
+
+          const installDir = require('path').dirname(installPath);
+          const relPath = require('path').relative(installDir, sourcePath);
+
+          try { fs.unlinkSync(installPath); } catch {}
+          fs.symlinkSync(relPath, installPath);
+          symlinked++;
+        }
+
+        console.log('Unpacked ' + unpacked + ' npm packages, created ' + symlinked + ' symlinks');
+      "
 
       runHook postBuild
     '';
 
-    # bun creates a node_modules/ inside every workspace package too (24 of
-    # them), and some links only exist there -- e.g.
-    # packages/omo-senpi/node_modules/@oh-my-opencode/omo-opencode.  Keeping
-    # only the root tree makes `bun build` fail to resolve
-    # "@oh-my-opencode/omo-opencode/config-migration".
     installPhase = ''
       runHook preInstall
 
       mkdir -p $out
       cp -R node_modules $out/
 
+      # Also copy workspace-level node_modules (bun creates these in workspaces)
       for wsModules in packages/*/node_modules; do
         [ -d "$wsModules" ] || continue
         mkdir -p "$out/$(dirname "$wsModules")"
         cp -R "$wsModules" "$out/$wsModules"
       done
 
-      # Remove non-deterministic bun temp/artifact files recursively
-      find $out -name '.bun-tag*' -delete 2>/dev/null || true
-      find $out -name 'bun.lock' -delete 2>/dev/null || true
-
       runHook postInstall
     '';
 
-    # Skip fixup phase (patchelf / strip) to avoid ELF-binary
-    # transformations.  The node_modules tree is consumed as-is.
-    dontFixup = true;
+    # bun stores absolute paths in binary lockfiles; strip generated artifacts
+    postFixup = ''
+      rm -f $out/node_modules/.bun-tag* $out/bun.lock
+    '';
+
     dontPatchShebangs = true;
-
-    # node_modules/@oh-my-opencode/* are relative symlinks into ../packages/*,
-    # which only resolve once the tree is copied back next to the checkout in
-    # configurePhase.  Inside this FOD they are expected to dangle.
+    # node_modules/@oh-my-opencode/* are relative symlinks into ../packages/*
     dontCheckForBrokenSymlinks = true;
-
-    outputHashMode = "recursive";
-    outputHashAlgo = "sha256";
-    outputHash = hashesData.bunDepsHash.${system} or (throw "omo-senpi: no bunDepsHash for system \"${system}\"");
-
-    impureEnvVars = lib.fetchers.proxyImpureEnvVars;
-    SSL_CERT_FILE = "${cacert}/etc/ssl/certs/ca-bundle.crt";
-    GIT_SSL_CAINFO = "${cacert}/etc/ssl/certs/ca-bundle.crt";
   };
 
-  # packages/lsp-daemon carries its own npm lockfile (`npm ci` in the upstream
-  # build script), independent of the bun workspace.
+  # packages/lsp-daemon npm deps (its own lockfile)
   lspDaemonNpmDeps = fetchNpmDeps {
     name = "omo-senpi-lsp-daemon-npm-deps";
     src = "${src}/packages/lsp-daemon";
@@ -156,22 +209,19 @@ stdenvNoCC.mkDerivation {
     git
   ];
 
-  # npmConfigHook operates on packages/lsp-daemon's lockfile, not the repo root.
+  # npmConfigHook operates on packages/lsp-daemon's lockfile
   npmDeps = lspDaemonNpmDeps;
   npmRoot = "packages/lsp-daemon";
 
   postPatch = ''
-    # materialize-shared-upstreams.mjs runs `git submodule update --init`, which
-    # cannot work inside the sandbox (no .git, no network).  fetchSubmodules
-    # already placed the upstream trees, so drop --strict to take the script's
-    # documented "continuing without submodule refresh" path.
+    # materialize-shared-upstreams.mjs runs `git submodule update --init`,
+    # impossible inside the sandbox
     substituteInPlace package.json \
       --replace-fail \
         'node packages/omo-codex/plugin/scripts/materialize-shared-upstreams.mjs --strict' \
         'node packages/omo-codex/plugin/scripts/materialize-shared-upstreams.mjs'
 
-    # The upstream build runs `npm ci` itself; npmConfigHook has already
-    # populated packages/lsp-daemon/node_modules from the pinned lockfile.
+    # npmConfigHook already populated packages/lsp-daemon/node_modules
     substituteInPlace package.json \
       --replace-fail \
         'npm --prefix packages/lsp-daemon ci && npm --prefix packages/lsp-daemon run build' \
@@ -191,9 +241,7 @@ stdenvNoCC.mkDerivation {
       chmod -R u+w "$target"
     done
 
-    # The deps FOD keeps upstream shebangs (`#!/usr/bin/env node`) so its hash
-    # does not depend on store paths; fix them up now that the tree is local,
-    # otherwise `node_modules/.bin/tsc` fails with "bad interpreter".
+    # Fix shebangs that the deps FOD kept upstream
     patchShebangs ./node_modules/.bin
     for pkgBin in ./node_modules/*/bin ./node_modules/@*/*/bin; do
       [ -d "$pkgBin" ] && patchShebangs "$pkgBin"
@@ -213,18 +261,13 @@ stdenvNoCC.mkDerivation {
     runHook postBuild
   '';
 
-  # Senpi loads local-path packages straight from the given directory without
-  # copying, so the plugin tree can live read-only in the store.  Verified:
-  # extensions/omo.js loads from a read-only path and registers the task/team
-  # tools, and a child agent runs to completion.
   installPhase = ''
     runHook preInstall
 
     mkdir -p $out/lib/omo-senpi
     cp -R packages/omo-senpi/plugin/. $out/lib/omo-senpi/
 
-    # Guard against upstream build-chain drift: these are the artifacts
-    # scripts/install.mjs validates before registering the package.
+    # Guard against upstream build-chain drift
     for artifact in \
       extensions/omo.js \
       skills/ast-grep/SKILL.md \
@@ -241,11 +284,6 @@ stdenvNoCC.mkDerivation {
   '';
 
   dontStrip = true;
-
-  # skills/ ships portable helper scripts (e.g. skills/ast-grep/install.sh) that
-  # the agent runs on the user's machine; rewriting their `#!/usr/bin/env bash`
-  # to a nix bash would pin them to this closure.  Nothing in the plugin is
-  # executed as a nix-provided entrypoint, so no shebang needs patching.
   dontPatchShebangs = true;
 
   passthru.pluginPath = "/lib/omo-senpi";
@@ -261,8 +299,6 @@ stdenvNoCC.mkDerivation {
         senpi install "$(nix build --no-link --print-out-paths .#omo-senpi)/lib/omo-senpi"
     '';
     homepage = "https://github.com/code-yeongyu/oh-my-openagent";
-    # Sustainable Use License: free to use and to distribute at no charge for
-    # non-commercial purposes only.  Not an OSI-approved license.
     license = {
       shortName = "sustainable-use-1.0";
       fullName = "Sustainable Use License v1.0";

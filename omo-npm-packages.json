@@ -1,0 +1,3251 @@
+{
+  "filePackages": {
+    "@oh-my-opencode/omo-senpi/@code-yeongyu/lsp-daemon": {
+      "installPath": "packages/omo-senpi/node_modules/@code-yeongyu/lsp-daemon",
+      "name": "@code-yeongyu/lsp-daemon",
+      "sourcePath": "packages/lsp-daemon"
+    },
+    "@oh-my-opencode/omo-senpi/@code-yeongyu/lsp-daemon/@oh-my-opencode/lsp-core": {
+      "installPath": "packages/omo-senpi/node_modules/@code-yeongyu/lsp-daemon/@oh-my-opencode/lsp-core",
+      "name": "@oh-my-opencode/lsp-core",
+      "sourcePath": "packages/lsp-core"
+    },
+    "@oh-my-opencode/omo-senpi/@code-yeongyu/lsp-daemon/@oh-my-opencode/mcp-stdio-core": {
+      "installPath": "packages/omo-senpi/node_modules/@code-yeongyu/lsp-daemon/@oh-my-opencode/mcp-stdio-core",
+      "name": "@oh-my-opencode/mcp-stdio-core",
+      "sourcePath": "packages/mcp-stdio-core"
+    }
+  },
+  "npmPackages": {
+    "@ampproject/remapping": {
+      "hash": "sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==",
+      "installPath": "node_modules/@ampproject/remapping",
+      "url": "https://registry.npmjs.org/@ampproject/remapping/-/remapping-2.3.0.tgz"
+    },
+    "@anthropic-ai/sdk": {
+      "bin": {
+        "anthropic-ai-sdk": "bin/cli"
+      },
+      "hash": "sha512-LAmu761tSN9r66ixvmciswUj/ZC+1Q4iAfpedTfSVLeswRwnY3n2Nb6Tsk+cLPP28aLOPWeMgIuTuCcMC6W/iw==",
+      "installPath": "node_modules/@anthropic-ai/sdk",
+      "url": "https://registry.npmjs.org/@anthropic-ai/sdk/-/sdk-0.91.1.tgz"
+    },
+    "@asamuzakjp/css-color": {
+      "hash": "sha512-KVw6qIiCTUQhByfTd78h2yD1/00waTmm9uy/R7Ck/ctUyAPj+AEDLkQIdJW0T8+qGgj3j5bpNKK7Q3G+LedJWg==",
+      "installPath": "node_modules/@asamuzakjp/css-color",
+      "url": "https://registry.npmjs.org/@asamuzakjp/css-color/-/css-color-5.1.11.tgz"
+    },
+    "@asamuzakjp/dom-selector": {
+      "hash": "sha512-67RZDnYRc8H/8MLDgQCDE//zoqVFwajkepHZgmXrbwybzXOEwOWGPYGmALYl9J2DOLfFPPs6kKCqmbzV895hTQ==",
+      "installPath": "node_modules/@asamuzakjp/dom-selector",
+      "url": "https://registry.npmjs.org/@asamuzakjp/dom-selector/-/dom-selector-7.1.1.tgz"
+    },
+    "@asamuzakjp/generational-cache": {
+      "hash": "sha512-wajfB8KqzMCN2KGNFdLkReeHncd0AslUSrvHVvvYWuU8ghncRJoA50kT3zP9MVL0+9g4/67H+cdvBskj9THPzg==",
+      "installPath": "node_modules/@asamuzakjp/generational-cache",
+      "url": "https://registry.npmjs.org/@asamuzakjp/generational-cache/-/generational-cache-1.0.1.tgz"
+    },
+    "@asamuzakjp/nwsapi": {
+      "hash": "sha512-n8GuYSrI9bF7FFZ/SjhwevlHc8xaVlb/7HmHelnc/PZXBD2ZR49NnN9sMMuDdEGPeeRQ5d0hqlSlEpgCX3Wl0Q==",
+      "installPath": "node_modules/@asamuzakjp/nwsapi",
+      "url": "https://registry.npmjs.org/@asamuzakjp/nwsapi/-/nwsapi-2.3.9.tgz"
+    },
+    "@aws-crypto/crc32": {
+      "hash": "sha512-nLbCWqQNgUiwwtFsen1AdzAtvuLRsQS8rYgMuxCrdKf9kOssamGLuPwyTY9wyYblNr9+1XM8v6zoDTPPSIeANg==",
+      "installPath": "node_modules/@aws-crypto/crc32",
+      "url": "https://registry.npmjs.org/@aws-crypto/crc32/-/crc32-5.2.0.tgz"
+    },
+    "@aws-crypto/sha256-browser": {
+      "hash": "sha512-AXfN/lGotSQwu6HNcEsIASo7kWXZ5HYWvfOmSNKDsEqC4OashTp8alTmaz+F7TC2L083SFv5RdB+qU3Vs1kZqw==",
+      "installPath": "node_modules/@aws-crypto/sha256-browser",
+      "url": "https://registry.npmjs.org/@aws-crypto/sha256-browser/-/sha256-browser-5.2.0.tgz"
+    },
+    "@aws-crypto/sha256-js": {
+      "hash": "sha512-FFQQyu7edu4ufvIZ+OadFpHHOt+eSTBaYaki44c+akjg7qZg9oOQeLlk77F6tSYqjDAFClrHJk9tMf0HdVyOvA==",
+      "installPath": "node_modules/@aws-crypto/sha256-js",
+      "url": "https://registry.npmjs.org/@aws-crypto/sha256-js/-/sha256-js-5.2.0.tgz"
+    },
+    "@aws-crypto/supports-web-crypto": {
+      "hash": "sha512-iAvUotm021kM33eCdNfwIN//F77/IADDSs58i+MDaOqFrVjZo9bAal0NK7HurRuWLLpF1iLX7gbWrjHjeo+YFg==",
+      "installPath": "node_modules/@aws-crypto/supports-web-crypto",
+      "url": "https://registry.npmjs.org/@aws-crypto/supports-web-crypto/-/supports-web-crypto-5.2.0.tgz"
+    },
+    "@aws-crypto/util": {
+      "hash": "sha512-4RkU9EsI6ZpBve5fseQlGNUWKMa1RLPQ1dnjnQoe07ldfIzcsGb5hC5W0Dm7u423KWzawlrpbjXBrXCEv9zazQ==",
+      "installPath": "node_modules/@aws-crypto/util",
+      "url": "https://registry.npmjs.org/@aws-crypto/util/-/util-5.2.0.tgz"
+    },
+    "@aws-sdk/client-bedrock-runtime": {
+      "hash": "sha512-u+NT61JZEkRFtpL0CAw1N1dwxnaLgwVXQl/zjJxTGgLyS/jTIdg2SdoEoCTHxgDyCnqa1HEi9QOoE9/pYRNpOQ==",
+      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime",
+      "url": "https://registry.npmjs.org/@aws-sdk/client-bedrock-runtime/-/client-bedrock-runtime-3.1048.0.tgz"
+    },
+    "@aws-sdk/client-bedrock-runtime/@aws-sdk/token-providers": {
+      "hash": "sha512-k0y/GcuesuSfWyUM0WamrGyeZmltRYaPbHO82UDA6mZ/doB+FOHKutikPAtSXMn/hDz970cF+iRuuiYO9VEbAA==",
+      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/token-providers",
+      "url": "https://registry.npmjs.org/@aws-sdk/token-providers/-/token-providers-3.1048.0.tgz"
+    },
+    "@aws-sdk/client-bedrock-runtime/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/core": {
+      "hash": "sha512-WRWEgIq6vx+NU6ot3VrRu4Jovj9MIObitSi6of/GV5THDDPccBhivCRNkWJutMM+m3GvdeI3l/UbGNcoOobxOA==",
+      "installPath": "node_modules/@aws-sdk/core",
+      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.974.27.tgz"
+    },
+    "@aws-sdk/core/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/core/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/credential-provider-env": {
+      "hash": "sha512-+KDA3uc/HZ1vIneGu5QMQb0gAXDYrm2vOE60+BJ7lS0YinMQ5i2oV4PR1A16XkF6K1IbSwjEHd1hQIIgMsK48w==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-env",
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-env/-/credential-provider-env-3.972.53.tgz"
+    },
+    "@aws-sdk/credential-provider-env/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-env/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/credential-provider-http": {
+      "hash": "sha512-1gBfkWY3RWeBlCoB9lIJjXMx45/54wxcgfzv6BY9otTmMrZPcNPi1v+MwZxxaCUg441NV3jsr1efnFNCXiW70g==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-http",
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-http/-/credential-provider-http-3.972.55.tgz"
+    },
+    "@aws-sdk/credential-provider-http/@smithy/node-http-handler": {
+      "hash": "sha512-qZTa4gQFUo8RM02rk6q5UVTDLNrQ1oS20LsepBzqq1QBVc/EHJ03OOUADcqMZiXHArW+Y7+OGY0BpdTwZRq/Yg==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-http/@smithy/node-http-handler",
+      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.3.tgz"
+    },
+    "@aws-sdk/credential-provider-http/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-http/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/credential-provider-ini": {
+      "hash": "sha512-CV2md+PXvABwRjApWGhQ0wACy9WSFIhnUGrovLcjnjBCd/46TbuivLADtkF8IWNjtCQmQ+2IagSaxqBYqXBNAQ==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-ini",
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-ini/-/credential-provider-ini-3.972.60.tgz"
+    },
+    "@aws-sdk/credential-provider-ini/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/credential-provider-login": {
+      "hash": "sha512-JG4S9yyA1GFzJdJXqLKrUzZbyK+VDp2QIsJD7YOicJHAhqymfHpDJIok2dLnhOdVB0I37RjdC53uOwCMVS00gw==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-login",
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-login/-/credential-provider-login-3.972.59.tgz"
+    },
+    "@aws-sdk/credential-provider-login/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-login/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/credential-provider-node": {
+      "hash": "sha512-S6Slq3Tx7bvFk5yc34XNADyZYTX2HUXvaFAnowGRQnhjBO8J/mP62Fn7lxvJwjaDyYm/7gh9h6HEHaltRyMFXw==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-node",
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-node/-/credential-provider-node-3.972.62.tgz"
+    },
+    "@aws-sdk/credential-provider-node/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-node/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/credential-provider-process": {
+      "hash": "sha512-EhfH+MQlqOMCkXIVa8MMObPzAQqwTTtxA7KhEJiyPeuNVA8PLOOUpgK7nBrgaDaGiIDLN/9LpGdaHuDjomeRTw==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-process",
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-process/-/credential-provider-process-3.972.53.tgz"
+    },
+    "@aws-sdk/credential-provider-process/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-process/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/credential-provider-sso": {
+      "hash": "sha512-h8793pOjcImx0SB+VcLONcaQQ57VAvKVuqyewQMRKqqH+CSXsG2dwOeLMUJPMxLdNvL7dXOM0ueTukyNUnu5mA==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-sso",
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-sso/-/credential-provider-sso-3.972.59.tgz"
+    },
+    "@aws-sdk/credential-provider-sso/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-sso/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/credential-provider-web-identity": {
+      "hash": "sha512-VoyO9+vl3XVmpZwn4obskrWIkrA/Jf3lSe1E3ZERlaN9u0D4YZ6+HywC3+L98QOXqZesEfedk67gRER8tK8+8w==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-web-identity",
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-web-identity/-/credential-provider-web-identity-3.972.59.tgz"
+    },
+    "@aws-sdk/credential-provider-web-identity/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-web-identity/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/eventstream-handler-node": {
+      "hash": "sha512-df7HN1ozwMrB9+59re9PM7tSLxLAcheMWc5u/KyfCPCAWtN/vP7y7RTUZOy48uT1K9MESisVeOPPzF3O1AW01A==",
+      "installPath": "node_modules/@aws-sdk/eventstream-handler-node",
+      "url": "https://registry.npmjs.org/@aws-sdk/eventstream-handler-node/-/eventstream-handler-node-3.972.25.tgz"
+    },
+    "@aws-sdk/eventstream-handler-node/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/eventstream-handler-node/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/middleware-eventstream": {
+      "hash": "sha512-HvLgDnxBLaHi9E5K++6Vuk+1+qqn7Pmn8zrlzd+NXH3jBzwujnuzZtAR9WHPkbUGPO92FkoQWj/M1IsdxTlBmQ==",
+      "installPath": "node_modules/@aws-sdk/middleware-eventstream",
+      "url": "https://registry.npmjs.org/@aws-sdk/middleware-eventstream/-/middleware-eventstream-3.972.21.tgz"
+    },
+    "@aws-sdk/middleware-eventstream/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/middleware-eventstream/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/middleware-websocket": {
+      "hash": "sha512-7/ZAlq5o5A9FnRsQEftZvcct9LVZf1YaYmWR3eOzyJAdKU66YpOKy5ahUVvyBvCTLyO4Ej4yWIk8dllWNXPBsw==",
+      "installPath": "node_modules/@aws-sdk/middleware-websocket",
+      "url": "https://registry.npmjs.org/@aws-sdk/middleware-websocket/-/middleware-websocket-3.972.35.tgz"
+    },
+    "@aws-sdk/middleware-websocket/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/middleware-websocket/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/nested-clients": {
+      "hash": "sha512-A8PIePF9NIIOJ/4Lg1rl9xm/+QaKkHGetq+Z9wb5B+3Da31YYXRo8n7IDMh5C+HQI5eyEmjrwkGWVdYtnLtbXQ==",
+      "installPath": "node_modules/@aws-sdk/nested-clients",
+      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.27.tgz"
+    },
+    "@aws-sdk/nested-clients/@smithy/node-http-handler": {
+      "hash": "sha512-qZTa4gQFUo8RM02rk6q5UVTDLNrQ1oS20LsepBzqq1QBVc/EHJ03OOUADcqMZiXHArW+Y7+OGY0BpdTwZRq/Yg==",
+      "installPath": "node_modules/@aws-sdk/nested-clients/@smithy/node-http-handler",
+      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.3.tgz"
+    },
+    "@aws-sdk/nested-clients/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/nested-clients/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/signature-v4-multi-region": {
+      "hash": "sha512-C379Sk+MiFZCfWZphKlMyLHKxV22OjoGM5KJjj5IJNJcOCWL4IGIpnEGzv1FQiRwhYXfq55SJMfxlqPE08JJ9g==",
+      "installPath": "node_modules/@aws-sdk/signature-v4-multi-region",
+      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.38.tgz"
+    },
+    "@aws-sdk/signature-v4-multi-region/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/signature-v4-multi-region/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/token-providers": {
+      "hash": "sha512-cbietrLlHPhhmbnMPTuDS4Zj/KNGhY+3vVhn6dwjO6Dqzrwothzg2srtcY34T9mlICsTXn34avDoWLHSntP54A==",
+      "installPath": "node_modules/@aws-sdk/token-providers",
+      "url": "https://registry.npmjs.org/@aws-sdk/token-providers/-/token-providers-3.1079.0.tgz"
+    },
+    "@aws-sdk/token-providers/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/token-providers/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/types": {
+      "hash": "sha512-IULn8uBV/SMtmOIANsm4WHXIOtVPBWfOWs3WGL0j/sI+KhaYehvOw0ET+9urnn8MBpiijuU/0JOpuwKOE451PQ==",
+      "installPath": "node_modules/@aws-sdk/types",
+      "url": "https://registry.npmjs.org/@aws-sdk/types/-/types-3.973.15.tgz"
+    },
+    "@aws-sdk/types/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/types/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws-sdk/util-locate-window": {
+      "hash": "sha512-uUbMs1cBZPafD0ohUj6EwNf0fPZ534NvBxHox4hjX+0Rxq5paSYUem7+hi833pYrzrcnBATKIYpR02MDXT5M9g==",
+      "installPath": "node_modules/@aws-sdk/util-locate-window",
+      "url": "https://registry.npmjs.org/@aws-sdk/util-locate-window/-/util-locate-window-3.965.8.tgz"
+    },
+    "@aws-sdk/xml-builder": {
+      "hash": "sha512-ezbwz9WpuLctm6o7P2t2naDhVVPI5jFGrVefVybhcKGjU57VIyT46pQVO0RI2RYkUdhdj2Z9uSIlAzGZE9NW9A==",
+      "installPath": "node_modules/@aws-sdk/xml-builder",
+      "url": "https://registry.npmjs.org/@aws-sdk/xml-builder/-/xml-builder-3.972.33.tgz"
+    },
+    "@aws-sdk/xml-builder/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@aws-sdk/xml-builder/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@aws/lambda-invoke-store": {
+      "hash": "sha512-sl4Bm6yiMNYrZKkqqDFWN0UfnWhlS8ivKxrYl+6t0gCLrqr8y3B2IqZZbFRkfaVVp7C/baApyh71P+LeE1A2sQ==",
+      "installPath": "node_modules/@aws/lambda-invoke-store",
+      "url": "https://registry.npmjs.org/@aws/lambda-invoke-store/-/lambda-invoke-store-0.3.0.tgz"
+    },
+    "@babel/code-frame": {
+      "hash": "sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw==",
+      "installPath": "node_modules/@babel/code-frame",
+      "url": "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.29.7.tgz"
+    },
+    "@babel/compat-data": {
+      "hash": "sha512-locTkQyKvwIEgBzVrn8693ebc97F2U8ZHjbXwDXJ5Fn2TCpNwTlKcaKLkdHop5c/icOFE7qt7Q9JC5hnKNa6Gg==",
+      "installPath": "node_modules/@babel/compat-data",
+      "url": "https://registry.npmjs.org/@babel/compat-data/-/compat-data-7.29.7.tgz"
+    },
+    "@babel/core": {
+      "hash": "sha512-UlLAnTPrFdNGoFtbSXwcGFQBtQZJCNjaN6hQNP3UPvuNXT1i82N26KL3dZeIpNalWywr9IuQuncaAfUaS1g6sQ==",
+      "installPath": "node_modules/@babel/core",
+      "url": "https://registry.npmjs.org/@babel/core/-/core-7.28.0.tgz"
+    },
+    "@babel/core/semver": {
+      "bin": {
+        "semver": "bin/semver.js"
+      },
+      "hash": "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==",
+      "installPath": "node_modules/@babel/core/semver",
+      "url": "https://registry.npmjs.org/semver/-/semver-6.3.1.tgz"
+    },
+    "@babel/generator": {
+      "hash": "sha512-DkXD5OJQaAQIdZ1bt3UZdEnHAn9Imd3IVBdX03UFe+ony9Ojw5pzr9YVKGDY1jt+Gcn/FnGkNf8r+Vj5NOJWtQ==",
+      "installPath": "node_modules/@babel/generator",
+      "url": "https://registry.npmjs.org/@babel/generator/-/generator-7.29.7.tgz"
+    },
+    "@babel/helper-annotate-as-pure": {
+      "hash": "sha512-OoK6239jHPuSQOoS0kfTVKn0b/rVTk0seKq4Gd2UMLtmOVLjDC0ki3e+c90Trqv2gMfvJFqkiljrr568+qddiw==",
+      "installPath": "node_modules/@babel/helper-annotate-as-pure",
+      "url": "https://registry.npmjs.org/@babel/helper-annotate-as-pure/-/helper-annotate-as-pure-7.29.7.tgz"
+    },
+    "@babel/helper-compilation-targets": {
+      "hash": "sha512-wem6WaBj4NaVYVdNhLPPVacES6ZJ+KBBfSkTMD3YZxbP3rm3Di85tJU5ljaUNhaOynt+Aj0xruhYuzQBt8n71g==",
+      "installPath": "node_modules/@babel/helper-compilation-targets",
+      "url": "https://registry.npmjs.org/@babel/helper-compilation-targets/-/helper-compilation-targets-7.29.7.tgz"
+    },
+    "@babel/helper-compilation-targets/lru-cache": {
+      "hash": "sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==",
+      "installPath": "node_modules/@babel/helper-compilation-targets/lru-cache",
+      "url": "https://registry.npmjs.org/lru-cache/-/lru-cache-5.1.1.tgz"
+    },
+    "@babel/helper-compilation-targets/semver": {
+      "bin": {
+        "semver": "bin/semver.js"
+      },
+      "hash": "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==",
+      "installPath": "node_modules/@babel/helper-compilation-targets/semver",
+      "url": "https://registry.npmjs.org/semver/-/semver-6.3.1.tgz"
+    },
+    "@babel/helper-create-class-features-plugin": {
+      "hash": "sha512-IY3ZD9Tmooqr3TUhc3DUWxiuo8xx1DWLhd5M7hQ+ZWJamqM2BbalrBJb2MisSLoYorOj75U03qULCxQTY9r3hg==",
+      "installPath": "node_modules/@babel/helper-create-class-features-plugin",
+      "url": "https://registry.npmjs.org/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.29.7.tgz"
+    },
+    "@babel/helper-create-class-features-plugin/semver": {
+      "bin": {
+        "semver": "bin/semver.js"
+      },
+      "hash": "sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==",
+      "installPath": "node_modules/@babel/helper-create-class-features-plugin/semver",
+      "url": "https://registry.npmjs.org/semver/-/semver-6.3.1.tgz"
+    },
+    "@babel/helper-globals": {
+      "hash": "sha512-3nQVUAtvkKH9zahfWgw96Jc/uFOmjACE1kQz82E2lqWmHBgjzbNlsC22nuQTfahmWeQtTq5nQ/4Nnd2A1wj4zA==",
+      "installPath": "node_modules/@babel/helper-globals",
+      "url": "https://registry.npmjs.org/@babel/helper-globals/-/helper-globals-7.29.7.tgz"
+    },
+    "@babel/helper-member-expression-to-functions": {
+      "hash": "sha512-j+7JYmk1JYDtACIGj0QJqqWZjoUpMoEikQGADMaHgCMCSDqd2+P32rfcibUNrGOMWrlzK1WJBdxrB3JJQZwWtg==",
+      "installPath": "node_modules/@babel/helper-member-expression-to-functions",
+      "url": "https://registry.npmjs.org/@babel/helper-member-expression-to-functions/-/helper-member-expression-to-functions-7.29.7.tgz"
+    },
+    "@babel/helper-module-imports": {
+      "hash": "sha512-ejHwrQQYcm9xnTivShn2IDOlIzInN34AXskvq9QicvCtEzq1Vzclu/tKF8Jq1Cg8JG2GL6/EmjgsCT7lXepE3g==",
+      "installPath": "node_modules/@babel/helper-module-imports",
+      "url": "https://registry.npmjs.org/@babel/helper-module-imports/-/helper-module-imports-7.29.7.tgz"
+    },
+    "@babel/helper-module-transforms": {
+      "hash": "sha512-UPUVSyXbOh627KiCIGQSgwWzGeBKLkaJ9PJEdrngIwMSzxLR4jS4+f1f1jb7VzBbg8nFLaYotvVPFCTqdrmTAg==",
+      "installPath": "node_modules/@babel/helper-module-transforms",
+      "url": "https://registry.npmjs.org/@babel/helper-module-transforms/-/helper-module-transforms-7.29.7.tgz"
+    },
+    "@babel/helper-optimise-call-expression": {
+      "hash": "sha512-+kmGVjcT9RGYzoDwdwEqEvGgKe3BYq+O1iGzjFubaNgZHwYHP6lsF2Yghf4kEuv9BV7tYDZ913aBW9am6YKong==",
+      "installPath": "node_modules/@babel/helper-optimise-call-expression",
+      "url": "https://registry.npmjs.org/@babel/helper-optimise-call-expression/-/helper-optimise-call-expression-7.29.7.tgz"
+    },
+    "@babel/helper-plugin-utils": {
+      "hash": "sha512-G7sHYigPY17oO5SYWnfD/0MTBwVR781S/JI643e/JhUYgVgWE/61SoW3NH9KWUKyKq5LVh3npif99Wkt6j86Jw==",
+      "installPath": "node_modules/@babel/helper-plugin-utils",
+      "url": "https://registry.npmjs.org/@babel/helper-plugin-utils/-/helper-plugin-utils-7.29.7.tgz"
+    },
+    "@babel/helper-replace-supers": {
+      "hash": "sha512-atfGXWSeCiF4DnKZIfmJfQRkSw9b9gNNXR1kqKjbhG4pGYCOnkp8OcTB8E3NXjBu8NpheSnOeNKz8KT7UNFTmQ==",
+      "installPath": "node_modules/@babel/helper-replace-supers",
+      "url": "https://registry.npmjs.org/@babel/helper-replace-supers/-/helper-replace-supers-7.29.7.tgz"
+    },
+    "@babel/helper-skip-transparent-expression-wrappers": {
+      "hash": "sha512-brcMGQaVzIeUb+6/bs1Av0f8YuNNjKY2JyvfRCsFuFsdKccEQ5Ges2y74D74NZ1Rz8lKJ9ksJkfqwQFJ/iNEyQ==",
+      "installPath": "node_modules/@babel/helper-skip-transparent-expression-wrappers",
+      "url": "https://registry.npmjs.org/@babel/helper-skip-transparent-expression-wrappers/-/helper-skip-transparent-expression-wrappers-7.29.7.tgz"
+    },
+    "@babel/helper-string-parser": {
+      "hash": "sha512-Pb5ijPrZ89GDH8223L4UP8i6QApWxs04RbPQJTeWDV0/keR2E36MeKnyr6LYmUUvqRRI+Iv87SuF1W6ErINzYw==",
+      "installPath": "node_modules/@babel/helper-string-parser",
+      "url": "https://registry.npmjs.org/@babel/helper-string-parser/-/helper-string-parser-7.29.7.tgz"
+    },
+    "@babel/helper-validator-identifier": {
+      "hash": "sha512-qehxGkRj55h/ff8EMaJ+cYhyaKlHIxqYDn682wQD7RNp9UujOQsHog2uS0r2vzr4pW+sXf90NeeayjcNaX3fFg==",
+      "installPath": "node_modules/@babel/helper-validator-identifier",
+      "url": "https://registry.npmjs.org/@babel/helper-validator-identifier/-/helper-validator-identifier-7.29.7.tgz"
+    },
+    "@babel/helper-validator-option": {
+      "hash": "sha512-N9ZErrD+yW5geCDtBqnOoxmR8+tNKiGuxKlDpuJxfsqpa2dFcexaziGAE/qoHLiDDreVNMupxGmSoNlyvsA3gw==",
+      "installPath": "node_modules/@babel/helper-validator-option",
+      "url": "https://registry.npmjs.org/@babel/helper-validator-option/-/helper-validator-option-7.29.7.tgz"
+    },
+    "@babel/helpers": {
+      "hash": "sha512-1k2lAGRMfHTcwuNYcCNUmaUffmQv8KWMfh2iJUUeRlwlwH4FdNG7mfPI10NPfLHJFThE4Tyr4mv7kTNZOiPuBg==",
+      "installPath": "node_modules/@babel/helpers",
+      "url": "https://registry.npmjs.org/@babel/helpers/-/helpers-7.29.7.tgz"
+    },
+    "@babel/parser": {
+      "bin": "./bin/babel-parser.js",
+      "hash": "sha512-hnORnjP/1P/zFEndoeX+n+t1RwWRJiJpM/jO7FW32Kn9r5+sJB2JWOdYo4L6k78j15eCwY3Gm/7364B1EMwtNg==",
+      "installPath": "node_modules/@babel/parser",
+      "url": "https://registry.npmjs.org/@babel/parser/-/parser-7.29.7.tgz"
+    },
+    "@babel/plugin-syntax-jsx": {
+      "hash": "sha512-TSu8+mHCoEaaCDEZ0I3+6mvTBYR4PCxQwf2z9/r5Tbztv6NaLR3B9thGTTxX2WGuGHJqRiAbKPeGTJ5XWXVg6A==",
+      "installPath": "node_modules/@babel/plugin-syntax-jsx",
+      "url": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.29.7.tgz"
+    },
+    "@babel/plugin-syntax-typescript": {
+      "hash": "sha512-ngr+82Sh0xMz25TPCZi+nC2iTzjfCdWS2ONXTp/PtSCHCgaCNBpdMqgvJ2ccdLlClVZ7sisIgB914j/JFe+RZA==",
+      "installPath": "node_modules/@babel/plugin-syntax-typescript",
+      "url": "https://registry.npmjs.org/@babel/plugin-syntax-typescript/-/plugin-syntax-typescript-7.29.7.tgz"
+    },
+    "@babel/plugin-transform-modules-commonjs": {
+      "hash": "sha512-j0vCldybPC5b5dwCQOJ21uKtHzt7hxLygJTg9eF1ScfaikEDNfzn94XoW5Fi+seBR0nCyL23xaBFFkq7dTM8XQ==",
+      "installPath": "node_modules/@babel/plugin-transform-modules-commonjs",
+      "url": "https://registry.npmjs.org/@babel/plugin-transform-modules-commonjs/-/plugin-transform-modules-commonjs-7.29.7.tgz"
+    },
+    "@babel/plugin-transform-typescript": {
+      "hash": "sha512-jK52h8LaLc7JarhQV2ofeFMts4H7vnOXnqZNA6fYglBTZewRBE51KWt3BUltW1P+KoPsYkHoJeXePuz4zo2LMw==",
+      "installPath": "node_modules/@babel/plugin-transform-typescript",
+      "url": "https://registry.npmjs.org/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.29.7.tgz"
+    },
+    "@babel/preset-typescript": {
+      "hash": "sha512-l7WfQfX0WK4M0v2RudjuQK4u99BS6yLHYEmdtVPP7lKV013zr9DygFuWNlnbvQ9LR+LS0Egz/XAvGx5U9MX0fQ==",
+      "installPath": "node_modules/@babel/preset-typescript",
+      "url": "https://registry.npmjs.org/@babel/preset-typescript/-/preset-typescript-7.27.1.tgz"
+    },
+    "@babel/runtime": {
+      "hash": "sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw==",
+      "installPath": "node_modules/@babel/runtime",
+      "url": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.29.7.tgz"
+    },
+    "@babel/template": {
+      "hash": "sha512-puq+Gf35oI24FeN11LkoUQFqv9uwNeWpxXZi/Ji3rRIoKAzKnxRaZ+Gkj0vKS9ZCiTESfng1N9LyOyXvo+m+Gg==",
+      "installPath": "node_modules/@babel/template",
+      "url": "https://registry.npmjs.org/@babel/template/-/template-7.29.7.tgz"
+    },
+    "@babel/traverse": {
+      "hash": "sha512-EhlfNQtZ+NK22w5BM61ciuiq1m58ed33Wr1Xan//ZRTy6hgjnwyCffRYwzsGXdASJSUJ1guZILsErh1eQcl+zw==",
+      "installPath": "node_modules/@babel/traverse",
+      "url": "https://registry.npmjs.org/@babel/traverse/-/traverse-7.29.7.tgz"
+    },
+    "@babel/types": {
+      "hash": "sha512-4zBIxpPzowiZpusoFkyGVwakdRJUyuH5PxQ/PrqghfdFWWasvnCdPfQXHrenDai+gyLARulZjZowCOj6fjT4pA==",
+      "installPath": "node_modules/@babel/types",
+      "url": "https://registry.npmjs.org/@babel/types/-/types-7.29.7.tgz"
+    },
+    "@biomejs/biome": {
+      "bin": {
+        "biome": "bin/biome"
+      },
+      "hash": "sha512-x9ajFh1zChVybCiM3TN6OD4phAqLgtPZjFrZF+aTMYCPjwBO+k529TX7PPsAqtGNLeV4UgzwQnowEgS7bGmzcA==",
+      "installPath": "node_modules/@biomejs/biome",
+      "url": "https://registry.npmjs.org/@biomejs/biome/-/biome-2.4.16.tgz"
+    },
+    "@biomejs/cli-linux-x64": {
+      "hash": "sha512-NbcBbi/nJqn5baae6wqRXdS7Gadf2uRpehSh6vMSYpG8OhkXl/Xg8aorWrJ+9VWqAT5ml90alLvorkpMW0nBwQ==",
+      "installPath": "node_modules/@biomejs/cli-linux-x64",
+      "url": "https://registry.npmjs.org/@biomejs/cli-linux-x64/-/cli-linux-x64-2.4.16.tgz"
+    },
+    "@biomejs/cli-linux-x64-musl": {
+      "hash": "sha512-iHDS+MCM65DPqWGu+ECC3uoALyj2H7F4nVUPxIPjz/PIl94EUu+EDfGZDzFP+NY1EOPVt9NQvwFqq7HdMmowdg==",
+      "installPath": "node_modules/@biomejs/cli-linux-x64-musl",
+      "url": "https://registry.npmjs.org/@biomejs/cli-linux-x64-musl/-/cli-linux-x64-musl-2.4.16.tgz"
+    },
+    "@borewit/text-codec": {
+      "hash": "sha512-DDaRehssg1aNrH4+2hnj1B7vnUGEjU6OIlyRdkMd0aUdIUvKXrJfXsy8LVtXAy7DRvYVluWbMspsRhz2lcW0mQ==",
+      "installPath": "node_modules/@borewit/text-codec",
+      "url": "https://registry.npmjs.org/@borewit/text-codec/-/text-codec-0.2.2.tgz"
+    },
+    "@bramus/specificity": {
+      "bin": {
+        "specificity": "bin/cli.js"
+      },
+      "hash": "sha512-ctxtJ/eA+t+6q2++vj5j7FYX3nRu311q1wfYH3xjlLOsczhlhxAg2FWNUXhpGvAw3BWo1xBcvOV6/YLc2r5FJw==",
+      "installPath": "node_modules/@bramus/specificity",
+      "url": "https://registry.npmjs.org/@bramus/specificity/-/specificity-2.4.2.tgz"
+    },
+    "@clack/core": {
+      "hash": "sha512-7Wctjq6f7c1CPz8sPpkwUnz8yRgVANkpNupb81q432FjcJg4l+Sw7XANdNSdWfAKq0IHI0JTcUeK5dxs/HrGPw==",
+      "installPath": "node_modules/@clack/core",
+      "url": "https://registry.npmjs.org/@clack/core/-/core-1.4.0.tgz"
+    },
+    "@clack/prompts": {
+      "hash": "sha512-wKh+wTjmrUoUdkZg8KpJO5X+p9PWV+KE9mePseq9UYWkukgTKsGS47RRL2HstwVcvDQH+PenrPJWII8+MfiiyA==",
+      "installPath": "node_modules/@clack/prompts",
+      "url": "https://registry.npmjs.org/@clack/prompts/-/prompts-1.5.0.tgz"
+    },
+    "@code-yeongyu/comment-checker": {
+      "bin": {
+        "comment-checker": "cli.js"
+      },
+      "hash": "sha512-Ret0qHtgDhEemQYNduqSyaihFWJSOKae4YW3sUHS680G8K57CsRUkK6Gs4kbzDuWqiNUYs254+qu5hZZZSEKUA==",
+      "installPath": "node_modules/@code-yeongyu/comment-checker",
+      "url": "https://registry.npmjs.org/@code-yeongyu/comment-checker/-/comment-checker-0.8.0.tgz"
+    },
+    "@code-yeongyu/senpi": {
+      "bin": {
+        "senpi": "dist/cli.js"
+      },
+      "hash": "sha512-/LWQ+e1Y4S15s2alTxSlwTUbLqRuaBK81PgXI2RwPDJZUkhSs5CZu9OPy8YNDUVRkc6FkvyBA6IbY0oQx6vg1Q==",
+      "installPath": "node_modules/@code-yeongyu/senpi",
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi/-/senpi-2026.7.26.tgz"
+    },
+    "@code-yeongyu/senpi-codemode": {
+      "hash": "sha512-EmdoKaya58F4rLj7F4NhDcOFdf+AQ6lXfRgnt6hW7UmQhaoJneOBpzyviP6T/vBnMUJy2ifkm9YOHTgifxM7nw==",
+      "installPath": "node_modules/@code-yeongyu/senpi-codemode",
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-codemode/-/senpi-codemode-2026.7.26.tgz"
+    },
+    "@code-yeongyu/senpi/@earendil-works/pi-tui": {
+      "hash": "sha512-x09Cpws5xideq/BHeJuRZONVfH+vmhsetg2kzVx0lBDAthb5TdGKKV8UnZEMGnl0rbj5o2xxIb+9ePXnoTUM6Q==",
+      "installPath": "node_modules/@code-yeongyu/senpi/@earendil-works/pi-tui",
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-tui/-/senpi-tui-2026.7.26.tgz"
+    },
+    "@code-yeongyu/senpi/@types/node": {
+      "hash": "sha512-OScDchr2fwuUmWdf4kZ9h7PcJiYDVInhJizG/biAq3cAvqwYktuy/TYGGdZNMtNTFUP7rnb0NU4TUdm82kt4Rg==",
+      "installPath": "node_modules/@code-yeongyu/senpi/@types/node",
+      "url": "https://registry.npmjs.org/@types/node/-/node-25.9.5.tgz"
+    },
+    "@code-yeongyu/senpi/content-type": {
+      "hash": "sha512-j/O/d7GcZCyNl7/hwZAb606rzqkyvaDctLmckbxLzHvFBzTJHuGEdodATcP3yIRoDrLHkIATJuvzbFlp/ki2cQ==",
+      "installPath": "node_modules/@code-yeongyu/senpi/content-type",
+      "url": "https://registry.npmjs.org/content-type/-/content-type-2.0.0.tgz"
+    },
+    "@code-yeongyu/senpi/diff": {
+      "hash": "sha512-DPi0FmjiSU5EvQV0++GFDOJ9ASQUVFh5kD+OzOnYdi7n3Wpm9hWWGfB/O2blfHcMVTL5WkQXSnRiK9makhrcnw==",
+      "installPath": "node_modules/@code-yeongyu/senpi/diff",
+      "url": "https://registry.npmjs.org/diff/-/diff-8.0.4.tgz"
+    },
+    "@code-yeongyu/senpi/entities": {
+      "hash": "sha512-zwfzJecQ/Uej6tusMqwAqU/6KL2XaB2VZ2Jg54Je6ahNBGNH6Ek6g3jjNCF0fG9EWQKGZNddNjU5F1ZQn/sBnA==",
+      "installPath": "node_modules/@code-yeongyu/senpi/entities",
+      "url": "https://registry.npmjs.org/entities/-/entities-8.0.0.tgz"
+    },
+    "@code-yeongyu/senpi/marked": {
+      "bin": {
+        "marked": "bin/marked.js"
+      },
+      "hash": "sha512-S6GcvALHg6K4ohtu4E7x0a1AqhAjp6cV8KhLSyN9qVapnzJkusVBxZRcIU9AeYsbe6P1hKDusSbEOzGyyuce6w==",
+      "installPath": "node_modules/@code-yeongyu/senpi/marked",
+      "url": "https://registry.npmjs.org/marked/-/marked-18.0.5.tgz"
+    },
+    "@csstools/color-helpers": {
+      "hash": "sha512-064IFJdjTfUqnjpCVpMOdbr8FLQBhinbZj6yRv2An2E41O/pLEXqfFRWqGq/SxlE5PEUYTlvWsG2r8MswAVvkg==",
+      "installPath": "node_modules/@csstools/color-helpers",
+      "url": "https://registry.npmjs.org/@csstools/color-helpers/-/color-helpers-6.1.0.tgz"
+    },
+    "@csstools/css-calc": {
+      "hash": "sha512-DtdHlgXh5ZkA43cwBcAm+huzgJiwx3ZTWVjBs94kwz2xKqSimDA3lBgCjphYgwgVUMWatSM0pDd8TILB1yrVVg==",
+      "installPath": "node_modules/@csstools/css-calc",
+      "url": "https://registry.npmjs.org/@csstools/css-calc/-/css-calc-3.2.1.tgz"
+    },
+    "@csstools/css-color-parser": {
+      "hash": "sha512-paQcIaOO53Rk5+YrBaBjm/SgrV4INImjo2BT1DtQRYr+XeTRbeAYlS+jxXp9drqvKmtFnWRJKIalDLhZZDu42A==",
+      "installPath": "node_modules/@csstools/css-color-parser",
+      "url": "https://registry.npmjs.org/@csstools/css-color-parser/-/css-color-parser-4.1.9.tgz"
+    },
+    "@csstools/css-parser-algorithms": {
+      "hash": "sha512-+B87qS7fIG3L5h3qwJ/IFbjoVoOe/bpOdh9hAjXbvx0o8ImEmUsGXN0inFOnk2ChCFgqkkGFQ+TpM5rbhkKe4w==",
+      "installPath": "node_modules/@csstools/css-parser-algorithms",
+      "url": "https://registry.npmjs.org/@csstools/css-parser-algorithms/-/css-parser-algorithms-4.0.0.tgz"
+    },
+    "@csstools/css-syntax-patches-for-csstree": {
+      "hash": "sha512-TcJCWFbXLPpJYq6z7bfOyjWYJDiDg2/I4gyUC9pqPNqHFRIey0EB0q0L5cSnQDfWJg8Jd6VadakxdIez/3zkqQ==",
+      "installPath": "node_modules/@csstools/css-syntax-patches-for-csstree",
+      "url": "https://registry.npmjs.org/@csstools/css-syntax-patches-for-csstree/-/css-syntax-patches-for-csstree-1.1.6.tgz"
+    },
+    "@csstools/css-tokenizer": {
+      "hash": "sha512-QxULHAm7cNu72w97JUNCBFODFaXpbDg+dP8b/oWFAZ2MTRppA3U00Y2L1HqaS4J6yBqxwa/Y3nMBaxVKbB/NsA==",
+      "installPath": "node_modules/@csstools/css-tokenizer",
+      "url": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz"
+    },
+    "@earendil-works/pi-agent-core": {
+      "hash": "sha512-mVKydZXPRdBLU/+1XHVDd05hbnq3Gp3h59GTNQQUSvdhu0Ri4GSDJ7bipx9y6NibjZ23EQ3D0RsQruozqhIUIw==",
+      "installPath": "node_modules/@earendil-works/pi-agent-core",
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-agent-core/-/senpi-agent-core-2026.7.26.tgz"
+    },
+    "@earendil-works/pi-agent-core/diff": {
+      "hash": "sha512-DPi0FmjiSU5EvQV0++GFDOJ9ASQUVFh5kD+OzOnYdi7n3Wpm9hWWGfB/O2blfHcMVTL5WkQXSnRiK9makhrcnw==",
+      "installPath": "node_modules/@earendil-works/pi-agent-core/diff",
+      "url": "https://registry.npmjs.org/diff/-/diff-8.0.4.tgz"
+    },
+    "@earendil-works/pi-ai": {
+      "bin": {
+        "pi-ai": "dist/cli.js"
+      },
+      "hash": "sha512-+OgiAYOVhyGS4j1y2Z6kiclNmuDYysV61zqaD8KwwmkVZXrVnLi2+wmzrP4e9cbhzrLohiBhZ297IMXHMqLuHQ==",
+      "installPath": "node_modules/@earendil-works/pi-ai",
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-ai/-/senpi-ai-2026.7.26.tgz"
+    },
+    "@earendil-works/pi-pty": {
+      "hash": "sha512-cl2W8jJxFc5D38PzDjOxAjp05eRcqtvQ9CiZUMrf5v9cZxuYx32rrqvB6aN56RpNJ/ZyKy83Jy0BO4C4qU7Wjg==",
+      "installPath": "node_modules/@earendil-works/pi-pty",
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-pty/-/senpi-pty-2026.7.26.tgz"
+    },
+    "@earendil-works/pi-pty/@xterm/headless": {
+      "hash": "sha512-5xXB7kdQlFBP82ViMJTwwEc3gKCLGKR/eoxQm4zge7GPBl86tCdI0IdPJjoKd8mUSFXz5V7i/25sfsEkP4j46g==",
+      "installPath": "node_modules/@earendil-works/pi-pty/@xterm/headless",
+      "url": "https://registry.npmjs.org/@xterm/headless/-/headless-5.5.0.tgz"
+    },
+    "@earendil-works/pi-tui": {
+      "hash": "sha512-2BJI6qwRQfnM0Q7seL1+SbacU/jRRjBnN7Hu3n9BjAn7/s5FaBNnvdD1qBQYRsFTHfjqMaDsjYqanPyqwXj99w==",
+      "installPath": "node_modules/@earendil-works/pi-tui",
+      "url": "https://registry.npmjs.org/@earendil-works/pi-tui/-/pi-tui-0.80.3.tgz"
+    },
+    "@earendil-works/pi-tui/marked": {
+      "bin": {
+        "marked": "bin/marked.js"
+      },
+      "hash": "sha512-S6GcvALHg6K4ohtu4E7x0a1AqhAjp6cV8KhLSyN9qVapnzJkusVBxZRcIU9AeYsbe6P1hKDusSbEOzGyyuce6w==",
+      "installPath": "node_modules/@earendil-works/pi-tui/marked",
+      "url": "https://registry.npmjs.org/marked/-/marked-18.0.5.tgz"
+    },
+    "@emnapi/core": {
+      "hash": "sha512-RSvbQmHzdKzNsLYa/wHrbc3KN4sYLKAdPZxqiM2HATqv/SBk2/ENSHpvXGaLOMcsAyz0poEGqkmmKYG3OWiJEQ==",
+      "installPath": "node_modules/@emnapi/core",
+      "url": "https://registry.npmjs.org/@emnapi/core/-/core-1.11.1.tgz"
+    },
+    "@emnapi/runtime": {
+      "hash": "sha512-vgj7R3y3Wgx24IQaGPA/R6YFXLHVMOZ0uVEyIQPaWs+rd1AzfEMXlAC22FYwO1XkKR6NPsq7mUandH8oIRdZFw==",
+      "installPath": "node_modules/@emnapi/runtime",
+      "url": "https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.11.1.tgz"
+    },
+    "@emnapi/wasi-threads": {
+      "hash": "sha512-c95qOXkHdydNKhscBTebqEC1CVAZpyqOfVfBzQ1qgzyl3gfeldUjIggDbIZgDKsHLgnsM+igH7TJ/eAasaVuMA==",
+      "installPath": "node_modules/@emnapi/wasi-threads",
+      "url": "https://registry.npmjs.org/@emnapi/wasi-threads/-/wasi-threads-1.2.2.tgz"
+    },
+    "@exodus/bytes": {
+      "hash": "sha512-S6mL0yNB/Abt9Ei4tq8gDhcczc4S3+vQ4ra7vxnAf+YHC02srtqxKKZghx2Dq6p0e66THKwR6r8N6P95wEty7Q==",
+      "installPath": "node_modules/@exodus/bytes",
+      "url": "https://registry.npmjs.org/@exodus/bytes/-/bytes-1.15.1.tgz"
+    },
+    "@google/genai": {
+      "hash": "sha512-gwSvbpiN/17O9TbsqSsE/OzZcpv5Fo4RQjdngGgogtuB9RsyJ8ZHhX5KjHj1bp5N9snN2eK8LDGXSaWW2hof8Q==",
+      "installPath": "node_modules/@google/genai",
+      "url": "https://registry.npmjs.org/@google/genai/-/genai-1.52.0.tgz"
+    },
+    "@hono/node-server": {
+      "hash": "sha512-GwtvgtXxnWsucXvbQXkRgqksiH2Qed37H9xHZocE5sA3N8O8O8/8FA3uclQXxXVzc9XBZuEOMK7+r02FmSpHtw==",
+      "installPath": "node_modules/@hono/node-server",
+      "url": "https://registry.npmjs.org/@hono/node-server/-/node-server-1.19.14.tgz"
+    },
+    "@jridgewell/gen-mapping": {
+      "hash": "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==",
+      "installPath": "node_modules/@jridgewell/gen-mapping",
+      "url": "https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.13.tgz"
+    },
+    "@jridgewell/resolve-uri": {
+      "hash": "sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==",
+      "installPath": "node_modules/@jridgewell/resolve-uri",
+      "url": "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz"
+    },
+    "@jridgewell/sourcemap-codec": {
+      "hash": "sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==",
+      "installPath": "node_modules/@jridgewell/sourcemap-codec",
+      "url": "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz"
+    },
+    "@jridgewell/trace-mapping": {
+      "hash": "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==",
+      "installPath": "node_modules/@jridgewell/trace-mapping",
+      "url": "https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.31.tgz"
+    },
+    "@mariozechner/clipboard": {
+      "hash": "sha512-ABnA53mdfkGZwOFUdZNv2S0CWGO/EIuPj8Vv9xmBFmSYg/qFc7ihO6q5FcQjvoE67kZpWkEc4AhD6B/os04yuA==",
+      "installPath": "node_modules/@mariozechner/clipboard",
+      "url": "https://registry.npmjs.org/@mariozechner/clipboard/-/clipboard-0.3.9.tgz"
+    },
+    "@mariozechner/clipboard-linux-x64-gnu": {
+      "hash": "sha512-WORrMLd6EpElEME7JRKfSaY34nW1P5LbdgK5YNCS1ncG2LqmITsSMEJ8nh2mpvxb3TxqbOOKgY7k9eMJYlW9Mw==",
+      "installPath": "node_modules/@mariozechner/clipboard-linux-x64-gnu",
+      "url": "https://registry.npmjs.org/@mariozechner/clipboard-linux-x64-gnu/-/clipboard-linux-x64-gnu-0.3.9.tgz"
+    },
+    "@mariozechner/clipboard-linux-x64-musl": {
+      "hash": "sha512-/DHn+1DrfL6oRaPPWXaOKvonFFrni666fxd+zFqiQEfvBH0tsHVWjq9iqBk0oDp0qaPA72lIMy5BptxISBEhZQ==",
+      "installPath": "node_modules/@mariozechner/clipboard-linux-x64-musl",
+      "url": "https://registry.npmjs.org/@mariozechner/clipboard-linux-x64-musl/-/clipboard-linux-x64-musl-0.3.9.tgz"
+    },
+    "@mariozechner/jiti": {
+      "bin": {
+        "jiti": "lib/jiti-cli.mjs"
+      },
+      "hash": "sha512-faGUlTcXka5l7rv0lP3K3vGW/ejRuOS24RR2aSFWREUQqzjgdsuWNo/IiPqL3kWRGt6Ahl2+qcDAwtdeWeuGUw==",
+      "installPath": "node_modules/@mariozechner/jiti",
+      "url": "https://registry.npmjs.org/@mariozechner/jiti/-/jiti-2.6.5.tgz"
+    },
+    "@mariozechner/jiti/std-env": {
+      "hash": "sha512-5GS12FdOZNliM5mAOxFRg7Ir0pWz8MdpYm6AY6VPkGpbA7ZzmbzNcBJQ0GPvvyWgcY7QAhCgf9Uy89I03faLkg==",
+      "installPath": "node_modules/@mariozechner/jiti/std-env",
+      "url": "https://registry.npmjs.org/std-env/-/std-env-3.10.0.tgz"
+    },
+    "@mariozechner/pi-agent-core": {
+      "hash": "sha512-Y/KVOhuKSgRQgYBlwmRtO2gPkUcoavOSqGF9bpQIINvNZvc19k6Z1H3bFDTce3Vp5ApMmTsfLH3+tNvOg75fAQ==",
+      "installPath": "node_modules/@mariozechner/pi-agent-core",
+      "url": "https://registry.npmjs.org/@mariozechner/pi-agent-core/-/pi-agent-core-0.73.1.tgz"
+    },
+    "@mariozechner/pi-agent-core/@mariozechner/pi-ai": {
+      "bin": {
+        "pi-ai": "dist/cli.js"
+      },
+      "hash": "sha512-Jh4lXawZYuC83HzSIYuVum9NBqJD49i4JOt3H96cGW/924cwJMOyUs1Mv/e4QPzTXnzrqMoGviNQnvGgSu1LSg==",
+      "installPath": "node_modules/@mariozechner/pi-agent-core/@mariozechner/pi-ai",
+      "url": "https://registry.npmjs.org/@mariozechner/pi-ai/-/pi-ai-0.73.1.tgz"
+    },
+    "@mariozechner/pi-agent-core/@mariozechner/pi-ai/undici": {
+      "hash": "sha512-cRZYrTDwWznlnRiPjggAGxZXanty6M8RV1ff8Wm4LWXBp7/IG8v5DnOm74DtUBp9OONpK75YlPnIjQqX0dBDtA==",
+      "installPath": "node_modules/@mariozechner/pi-agent-core/@mariozechner/pi-ai/undici",
+      "url": "https://registry.npmjs.org/undici/-/undici-7.28.0.tgz"
+    },
+    "@mariozechner/pi-ai": {
+      "bin": {
+        "pi-ai": "dist/cli.js"
+      },
+      "hash": "sha512-phKOpcde/ssz6UYszkmaGJ9LF9mgt/AP8LrtSwsfap+kMSeFfSQ2/mCSBT1mLJ2BqVuff9uXs1/+op1aQeaafQ==",
+      "installPath": "node_modules/@mariozechner/pi-ai",
+      "url": "https://registry.npmjs.org/@mariozechner/pi-ai/-/pi-ai-0.73.0.tgz"
+    },
+    "@mariozechner/pi-ai/undici": {
+      "hash": "sha512-cRZYrTDwWznlnRiPjggAGxZXanty6M8RV1ff8Wm4LWXBp7/IG8v5DnOm74DtUBp9OONpK75YlPnIjQqX0dBDtA==",
+      "installPath": "node_modules/@mariozechner/pi-ai/undici",
+      "url": "https://registry.npmjs.org/undici/-/undici-7.28.0.tgz"
+    },
+    "@mariozechner/pi-coding-agent": {
+      "bin": {
+        "pi": "dist/cli.js"
+      },
+      "hash": "sha512-Fs2dRIgtjDT8X5VDGNGzxj251B0FvkRsgX03YJv1FK4wg5Maj+jkf8/5A6tbPnPcXsCgs41xxJRf3tF5vJRccA==",
+      "installPath": "node_modules/@mariozechner/pi-coding-agent",
+      "url": "https://registry.npmjs.org/@mariozechner/pi-coding-agent/-/pi-coding-agent-0.73.0.tgz"
+    },
+    "@mariozechner/pi-coding-agent/diff": {
+      "hash": "sha512-DPi0FmjiSU5EvQV0++GFDOJ9ASQUVFh5kD+OzOnYdi7n3Wpm9hWWGfB/O2blfHcMVTL5WkQXSnRiK9makhrcnw==",
+      "installPath": "node_modules/@mariozechner/pi-coding-agent/diff",
+      "url": "https://registry.npmjs.org/diff/-/diff-8.0.4.tgz"
+    },
+    "@mariozechner/pi-coding-agent/marked": {
+      "bin": {
+        "marked": "bin/marked.js"
+      },
+      "hash": "sha512-8dD6FusOQSrpv9Z1rdNMdlSgQOIP880DHqnohobOmYLElGEqAL/JvxvuxZO16r4HtjTlfPRDC1hbvxC9dPN2nA==",
+      "installPath": "node_modules/@mariozechner/pi-coding-agent/marked",
+      "url": "https://registry.npmjs.org/marked/-/marked-15.0.12.tgz"
+    },
+    "@mariozechner/pi-coding-agent/undici": {
+      "hash": "sha512-cRZYrTDwWznlnRiPjggAGxZXanty6M8RV1ff8Wm4LWXBp7/IG8v5DnOm74DtUBp9OONpK75YlPnIjQqX0dBDtA==",
+      "installPath": "node_modules/@mariozechner/pi-coding-agent/undici",
+      "url": "https://registry.npmjs.org/undici/-/undici-7.28.0.tgz"
+    },
+    "@mariozechner/pi-tui": {
+      "hash": "sha512-St1W+tMPKHatfK+lblsKfL+SsFyFVMK2tW6xHpBfCiMuevbOCRo/CMatso7mu1642UO04ncmfCrrpUK5L9aoog==",
+      "installPath": "node_modules/@mariozechner/pi-tui",
+      "url": "https://registry.npmjs.org/@mariozechner/pi-tui/-/pi-tui-0.73.0.tgz"
+    },
+    "@mariozechner/pi-tui/marked": {
+      "bin": {
+        "marked": "bin/marked.js"
+      },
+      "hash": "sha512-8dD6FusOQSrpv9Z1rdNMdlSgQOIP880DHqnohobOmYLElGEqAL/JvxvuxZO16r4HtjTlfPRDC1hbvxC9dPN2nA==",
+      "installPath": "node_modules/@mariozechner/pi-tui/marked",
+      "url": "https://registry.npmjs.org/marked/-/marked-15.0.12.tgz"
+    },
+    "@mistralai/mistralai": {
+      "hash": "sha512-W8pX7zHxjJvMIpw8JMxeJEleapXX0Q9NPszdNzqkM3MIEoIGPObdodujj+WHteXEvGfaP/AMwlNyRfEzSY6dQQ==",
+      "installPath": "node_modules/@mistralai/mistralai",
+      "url": "https://registry.npmjs.org/@mistralai/mistralai/-/mistralai-2.2.6.tgz"
+    },
+    "@mixmark-io/domino": {
+      "hash": "sha512-Y28PR25bHXUg88kCV7nivXrP2Nj2RueZ3/l/jdx6J9f8J4nsEGcgX0Qe6lt7Pa+J79+kPiJU3LguR6O/6zrLOw==",
+      "installPath": "node_modules/@mixmark-io/domino",
+      "url": "https://registry.npmjs.org/@mixmark-io/domino/-/domino-2.2.0.tgz"
+    },
+    "@modelcontextprotocol/sdk": {
+      "hash": "sha512-zo37mZA9hJWpULgkRpowewez1y6ML5GsXJPY8FI0tBBCd77HEvza4jDqRKOXgHNn867PVGCyTdzqpz0izu5ZjQ==",
+      "installPath": "node_modules/@modelcontextprotocol/sdk",
+      "url": "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.29.0.tgz"
+    },
+    "@mozilla/readability": {
+      "hash": "sha512-juG5VWh4qAivzTAeMzvY9xs9HY5rAcr2E4I7tiSSCokRFi7XIZCAu92ZkSTsIj1OPceCifL3cpfteP3pDT9/QQ==",
+      "installPath": "node_modules/@mozilla/readability",
+      "url": "https://registry.npmjs.org/@mozilla/readability/-/readability-0.6.0.tgz"
+    },
+    "@msgpackr-extract/msgpackr-extract-linux-x64": {
+      "hash": "sha512-8TNXMEjJc3QEy7R/x1INhgiU+XakDAFUzBhaz7+Rbrs8NH5UQeHQxxmzsSBJGyV6I1jW79undiQm8tOI+D+8FQ==",
+      "installPath": "node_modules/@msgpackr-extract/msgpackr-extract-linux-x64",
+      "url": "https://registry.npmjs.org/@msgpackr-extract/msgpackr-extract-linux-x64/-/msgpackr-extract-linux-x64-3.0.4.tgz"
+    },
+    "@napi-rs/wasm-runtime": {
+      "hash": "sha512-ZLv/JdUfkvOy9eCnnBaGfiO+XimbjebAeO+MRQqD/B+FR1tnRN0tpKSJHRbE8sFfS6aqsXZ67TQjfwfsxULVbg==",
+      "installPath": "node_modules/@napi-rs/wasm-runtime",
+      "url": "https://registry.npmjs.org/@napi-rs/wasm-runtime/-/wasm-runtime-1.1.6.tgz"
+    },
+    "@nodable/entities": {
+      "hash": "sha512-8L9xFeTYKhm49xfIypoe2W5wV1m/3Z58kT+7kR9A8OyFxcPduI4VmxaUMQyKYrRjUoLLSXv6EKKID5Tvj9cUVw==",
+      "installPath": "node_modules/@nodable/entities",
+      "url": "https://registry.npmjs.org/@nodable/entities/-/entities-3.0.0.tgz"
+    },
+    "@oh-my-opencode/git-bash-mcp/bun-types": {
+      "hash": "sha512-HqOLj5PoFajAQciOMRiIZGNoKxDJSr6qigAttOX40vJuSp6DN/CxWp9s3C1Xwm4oH7ybueITwiaOcWXoYVoRkA==",
+      "installPath": "packages/git-bash-mcp/node_modules/bun-types",
+      "url": "https://registry.npmjs.org/bun-types/-/bun-types-1.3.12.tgz"
+    },
+    "@oh-my-opencode/mcp-stdio-core/bun-types": {
+      "hash": "sha512-HqOLj5PoFajAQciOMRiIZGNoKxDJSr6qigAttOX40vJuSp6DN/CxWp9s3C1Xwm4oH7ybueITwiaOcWXoYVoRkA==",
+      "installPath": "packages/mcp-stdio-core/node_modules/bun-types",
+      "url": "https://registry.npmjs.org/bun-types/-/bun-types-1.3.12.tgz"
+    },
+    "@oh-my-opencode/omo-opencode/picomatch": {
+      "hash": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
+      "installPath": "packages/omo-opencode/node_modules/picomatch",
+      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz"
+    },
+    "@oh-my-opencode/omo-senpi/@code-yeongyu/lsp-daemon/@types/node": {
+      "hash": "sha512-OScDchr2fwuUmWdf4kZ9h7PcJiYDVInhJizG/biAq3cAvqwYktuy/TYGGdZNMtNTFUP7rnb0NU4TUdm82kt4Rg==",
+      "installPath": "packages/omo-senpi/node_modules/@code-yeongyu/lsp-daemon/@types/node",
+      "url": "https://registry.npmjs.org/@types/node/-/node-25.9.5.tgz"
+    },
+    "@oh-my-opencode/omo-senpi/@code-yeongyu/lsp-daemon/typescript": {
+      "bin": {
+        "tsc": "bin/tsc",
+        "tsserver": "bin/tsserver"
+      },
+      "hash": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
+      "installPath": "packages/omo-senpi/node_modules/@code-yeongyu/lsp-daemon/typescript",
+      "url": "https://registry.npmjs.org/typescript/-/typescript-6.0.3.tgz"
+    },
+    "@oh-my-opencode/rules-engine/picomatch": {
+      "hash": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
+      "installPath": "packages/rules-engine/node_modules/picomatch",
+      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz"
+    },
+    "@oh-my-opencode/skills-loader-core/picomatch": {
+      "hash": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
+      "installPath": "packages/skills-loader-core/node_modules/picomatch",
+      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz"
+    },
+    "@opencode-ai/plugin": {
+      "hash": "sha512-NFwZGhmxIPijtfz9swPJXDmhOpq4UWP8WjEE7GEMr7FwtJrK/hv6v36nFimed5+OKk+pQCrTJn/vhRW7Io72IA==",
+      "installPath": "node_modules/@opencode-ai/plugin",
+      "url": "https://registry.npmjs.org/@opencode-ai/plugin/-/plugin-1.15.13.tgz"
+    },
+    "@opencode-ai/plugin/zod": {
+      "hash": "sha512-5R1P+WwQqmmMIEACyzSvo4JXHY5WiAFHRMg+zBZKgKS+Q1viRa0C1hmUKtHltoIFKtIdki3pRxkmpP74jnNYHQ==",
+      "installPath": "node_modules/@opencode-ai/plugin/zod",
+      "url": "https://registry.npmjs.org/zod/-/zod-4.1.8.tgz"
+    },
+    "@opencode-ai/sdk": {
+      "hash": "sha512-4TwojIoQ8EG6/mVBuUVYZXiFcwNmiiytEnjnvyuvSJjGwFIlw2YIBFxtSVC3FbwwbwHT63teh1RHiQUUC4U5xw==",
+      "installPath": "node_modules/@opencode-ai/sdk",
+      "url": "https://registry.npmjs.org/@opencode-ai/sdk/-/sdk-1.15.13.tgz"
+    },
+    "@opentelemetry/api": {
+      "hash": "sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg==",
+      "installPath": "node_modules/@opentelemetry/api",
+      "url": "https://registry.npmjs.org/@opentelemetry/api/-/api-1.9.0.tgz"
+    },
+    "@opentelemetry/semantic-conventions": {
+      "hash": "sha512-/UhIkaZgPutTFmQ7RnIJGgDXZmtEJ7Dvi86xNTFWcnRxVRNk/aotsqDJYeEvDP+FSMB2SdW+pQzNMcWP0rwuNA==",
+      "installPath": "node_modules/@opentelemetry/semantic-conventions",
+      "url": "https://registry.npmjs.org/@opentelemetry/semantic-conventions/-/semantic-conventions-1.41.1.tgz"
+    },
+    "@opentui/core": {
+      "hash": "sha512-4vWN15Zc3nsXJlOiHhhpqkBXD+wrNFKxCPtiTiillZYDRre+XsZogVTOOGUDwaBIC23OSxq7imezLmmtShVBEA==",
+      "installPath": "node_modules/@opentui/core",
+      "url": "https://registry.npmjs.org/@opentui/core/-/core-0.2.16.tgz"
+    },
+    "@opentui/core-linux-x64": {
+      "hash": "sha512-KgQBGjiucw4e7gM+R8qOzHWBFhjCY1IfCrGjW3Wzxv2hKUlL+mPhelaeJwnEqtNxMUdVTYjlwlu3IHxslXMJWQ==",
+      "installPath": "node_modules/@opentui/core-linux-x64",
+      "url": "https://registry.npmjs.org/@opentui/core-linux-x64/-/core-linux-x64-0.2.16.tgz"
+    },
+    "@opentui/keymap": {
+      "hash": "sha512-YBLQfNLbU2kx49bjEY9rrFoNlvIoi5qNJfRcOt6frvnR3C6MLl0/8hZY+vMQ2PEQWeEiNejFnl1lQw+z4Nk2FQ==",
+      "installPath": "node_modules/@opentui/keymap",
+      "url": "https://registry.npmjs.org/@opentui/keymap/-/keymap-0.2.16.tgz"
+    },
+    "@opentui/solid": {
+      "hash": "sha512-2Q+v1PPpXXr+sALi9Aj6I5Jvo7xDfbmstYjRLL7lW3Hghh9i7ONQKpt/gyDDRbhSsYrhxKYTNenF9OxgoXkTHg==",
+      "installPath": "node_modules/@opentui/solid",
+      "url": "https://registry.npmjs.org/@opentui/solid/-/solid-0.2.16.tgz"
+    },
+    "@oxc-project/types": {
+      "hash": "sha512-r9gHphtCs+1M7J0pw6Sn/hh/Wpa/iQrOOkrNAlVLF/gHq+/CJmHIWKKUUhdWjcD6CIa8idarspCsASiXCXvFUw==",
+      "installPath": "node_modules/@oxc-project/types",
+      "url": "https://registry.npmjs.org/@oxc-project/types/-/types-0.139.0.tgz"
+    },
+    "@posthog/core": {
+      "hash": "sha512-mGIN4Du1a8fKxV5WfnEtogq3VOQLa4PfWMUg5uMIMDD+fp5bhTA4QG4oYAea4vBTZ1ZOanQbjXcX4b5k2X93Qw==",
+      "installPath": "node_modules/@posthog/core",
+      "url": "https://registry.npmjs.org/@posthog/core/-/core-1.30.3.tgz"
+    },
+    "@posthog/types": {
+      "hash": "sha512-QJLzyV22iZKy5eEXKn9IB1swSVo2JigIawebBha+BmsePsY3XA0HAcq2B+D8Km5BHnbE+SGm5aHxFG3DlVE1yg==",
+      "installPath": "node_modules/@posthog/types",
+      "url": "https://registry.npmjs.org/@posthog/types/-/types-1.379.0.tgz"
+    },
+    "@protobufjs/aspromise": {
+      "hash": "sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==",
+      "installPath": "node_modules/@protobufjs/aspromise",
+      "url": "https://registry.npmjs.org/@protobufjs/aspromise/-/aspromise-1.1.2.tgz"
+    },
+    "@protobufjs/base64": {
+      "hash": "sha512-AZkcAA5vnN/v4PDqKyMR5lx7hZttPDgClv83E//FMNhR2TMcLUhfRUBHCmSl0oi9zMgDDqRUJkSxO3wm85+XLg==",
+      "installPath": "node_modules/@protobufjs/base64",
+      "url": "https://registry.npmjs.org/@protobufjs/base64/-/base64-1.1.2.tgz"
+    },
+    "@protobufjs/codegen": {
+      "hash": "sha512-zgXFLzW3Ap33e6d0Wlj4MGIm6Ce8O89n/apUaGNB/jx+hw+ruWEp7EwGUshdLKVRCxZW12fp9r40E1mQrf/34g==",
+      "installPath": "node_modules/@protobufjs/codegen",
+      "url": "https://registry.npmjs.org/@protobufjs/codegen/-/codegen-2.0.5.tgz"
+    },
+    "@protobufjs/eventemitter": {
+      "hash": "sha512-vW1GmwMZNnL+gMRaovlh9yZX74kc+TTU3FObkkurpMaRtBfLP3ldjS9KQWlwZgraRE0+dheEEoAxdzcJQ8eXZg==",
+      "installPath": "node_modules/@protobufjs/eventemitter",
+      "url": "https://registry.npmjs.org/@protobufjs/eventemitter/-/eventemitter-1.1.1.tgz"
+    },
+    "@protobufjs/fetch": {
+      "hash": "sha512-GpptLrs57adMSuHi3VNj0mAF8dwh36LMaYF6XyJ6JMWlVsc+t42tm1HSEDmOs3A8fC9yyeisgLhsTVQokOZ0zw==",
+      "installPath": "node_modules/@protobufjs/fetch",
+      "url": "https://registry.npmjs.org/@protobufjs/fetch/-/fetch-1.1.1.tgz"
+    },
+    "@protobufjs/float": {
+      "hash": "sha512-Ddb+kVXlXst9d+R9PfTIxh1EdNkgoRe5tOX6t01f1lYWOvJnSPDBlG241QLzcyPdoNTsblLUdujGSE4RzrTZGQ==",
+      "installPath": "node_modules/@protobufjs/float",
+      "url": "https://registry.npmjs.org/@protobufjs/float/-/float-1.0.2.tgz"
+    },
+    "@protobufjs/path": {
+      "hash": "sha512-6JOcJ5Tm08dOHAbdR3GrvP+yUUfkjG5ePsHYczMFLq3ZmMkAD98cDgcT2iA1lJ9NVwFd4tH/iSSoe44YWkltEA==",
+      "installPath": "node_modules/@protobufjs/path",
+      "url": "https://registry.npmjs.org/@protobufjs/path/-/path-1.1.2.tgz"
+    },
+    "@protobufjs/pool": {
+      "hash": "sha512-0kELaGSIDBKvcgS4zkjz1PeddatrjYcmMWOlAuAPwAeccUrPHdUqo/J6LiymHHEiJT5NrF1UVwxY14f+fy4WQw==",
+      "installPath": "node_modules/@protobufjs/pool",
+      "url": "https://registry.npmjs.org/@protobufjs/pool/-/pool-1.1.0.tgz"
+    },
+    "@protobufjs/utf8": {
+      "hash": "sha512-oOAWABowe8EAbMyWKM0tYDKi8Yaox52D+HWZhAIJqQXbqe0xI/GV7FhLWqlEKreMkfDjshR5FKgi3mnle0h6Eg==",
+      "installPath": "node_modules/@protobufjs/utf8",
+      "url": "https://registry.npmjs.org/@protobufjs/utf8/-/utf8-1.1.1.tgz"
+    },
+    "@puppeteer/browsers": {
+      "bin": {
+        "browsers": "lib/main-cli.js"
+      },
+      "hash": "sha512-B/gKoqlFkzhvzsI6jo9K1cZz9o5ypviVv/xu8CwA4grZzyVwN+XfkT+tu8T1zrauuEXv6VhS2oGX+6NL95WcKA==",
+      "installPath": "node_modules/@puppeteer/browsers",
+      "url": "https://registry.npmjs.org/@puppeteer/browsers/-/browsers-3.0.6.tgz"
+    },
+    "@rolldown/binding-linux-x64-gnu": {
+      "hash": "sha512-FjcpEKUyJygHgs1o50VYNvkt5+7Le/VEdYt0AkRpkL33MnyQfwr8l5mXwMmfmTbyMPr5vJLC+8/Gd9gXnwU1QQ==",
+      "installPath": "node_modules/@rolldown/binding-linux-x64-gnu",
+      "url": "https://registry.npmjs.org/@rolldown/binding-linux-x64-gnu/-/binding-linux-x64-gnu-1.1.5.tgz"
+    },
+    "@rolldown/binding-linux-x64-musl": {
+      "hash": "sha512-Me+PfPI2TMeOQk0gYWfLQZtTktrmzbr8cDboqX83XKc7UrgAi55gF+2dUkWdxd19n55Essp2yeca+O9N5rBxHg==",
+      "installPath": "node_modules/@rolldown/binding-linux-x64-musl",
+      "url": "https://registry.npmjs.org/@rolldown/binding-linux-x64-musl/-/binding-linux-x64-musl-1.1.5.tgz"
+    },
+    "@rolldown/pluginutils": {
+      "hash": "sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==",
+      "installPath": "node_modules/@rolldown/pluginutils",
+      "url": "https://registry.npmjs.org/@rolldown/pluginutils/-/pluginutils-1.0.1.tgz"
+    },
+    "@silvia-odwyer/photon-node": {
+      "hash": "sha512-bnly4BKB3KDTFxrUIcgCLbaeVVS8lrAkri1pEzskpmxu9MdfGQTy8b8EgcD83ywD3RPMsIulY8xJH5Awa+t9fA==",
+      "installPath": "node_modules/@silvia-odwyer/photon-node",
+      "url": "https://registry.npmjs.org/@silvia-odwyer/photon-node/-/photon-node-0.3.4.tgz"
+    },
+    "@smithy/core": {
+      "hash": "sha512-qoiY4nrk5OCu1+eIR1VB8l5DmON/oKiqrd5zZFAhXJXjJlLWQusKEW/SkBDAtGDcPaz86m9kfcE1lngU0GlM6A==",
+      "installPath": "node_modules/@smithy/core",
+      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.29.1.tgz"
+    },
+    "@smithy/core/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@smithy/core/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@smithy/credential-provider-imds": {
+      "hash": "sha512-B2WQ/PV/H6Jeg3lrIq6bKUfa6Hy01mtK7CGs6lhjzHA6k4aagldH6T6eEjnzKl4HI0cJnAsxfJ19pgb5PV+CVQ==",
+      "installPath": "node_modules/@smithy/credential-provider-imds",
+      "url": "https://registry.npmjs.org/@smithy/credential-provider-imds/-/credential-provider-imds-4.4.6.tgz"
+    },
+    "@smithy/credential-provider-imds/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@smithy/credential-provider-imds/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@smithy/fetch-http-handler": {
+      "hash": "sha512-CwCc/7SMTj45y97MUnDTbTaxvtAsiNNRm81z3abROIuMbMsC2Iy5EKfkkVdsKrz8WExQAAMx1EJapq+9j4fFTQ==",
+      "installPath": "node_modules/@smithy/fetch-http-handler",
+      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.3.tgz"
+    },
+    "@smithy/fetch-http-handler/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@smithy/fetch-http-handler/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@smithy/is-array-buffer": {
+      "hash": "sha512-GGP3O9QFD24uGeAXYUjwSTXARoqpZykHadOmA8G5vfJPK0/DC67qa//0qvqrJzL1xc8WQWX7/yc7fwudjPHPhA==",
+      "installPath": "node_modules/@smithy/is-array-buffer",
+      "url": "https://registry.npmjs.org/@smithy/is-array-buffer/-/is-array-buffer-2.2.0.tgz"
+    },
+    "@smithy/node-http-handler": {
+      "hash": "sha512-/jPhevcTFPMVl6KNjbaI47iOg1zxC7IsnX4PQDGVZKMFceOXtB8IEYaB7a9VvkP/3oC60WzTeKocvSI7vLT0vA==",
+      "installPath": "node_modules/@smithy/node-http-handler",
+      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.7.3.tgz"
+    },
+    "@smithy/node-http-handler/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@smithy/node-http-handler/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@smithy/signature-v4": {
+      "hash": "sha512-QgHflghMoPxCJ9axiCVh8KZfbC9fuP6vkXXyK//E3cq7nLaSSyyLj0GAoqVWezYeDQmXIZhmlRvLE16jsqDK6g==",
+      "installPath": "node_modules/@smithy/signature-v4",
+      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.2.tgz"
+    },
+    "@smithy/signature-v4/@smithy/types": {
+      "hash": "sha512-x3L0XSACF6UYzKpa9biqiRMgvH5+wnFFew9Tm/grFYqgaupPwx/+ojDPpPJM8dZON3S9tjz5U+PQYsCBd1Mw5Q==",
+      "installPath": "node_modules/@smithy/signature-v4/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
+    },
+    "@smithy/types": {
+      "hash": "sha512-QpELEHLO8SsQVtqP+MkEgCYTFW0pleGozfs3cZ183ZBj9z3VC1CX1/wtFMK64p+5bhtZo41SeLK1rBRtd25nHQ==",
+      "installPath": "node_modules/@smithy/types",
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.8.0.tgz"
+    },
+    "@smithy/util-buffer-from": {
+      "hash": "sha512-IJdWBbTcMQ6DA0gdNhh/BwrLkDR+ADW5Kr1aZmd4k3DIF6ezMV4R2NIAmT08wQJ3yUK82thHWmC/TnK/wpMMIA==",
+      "installPath": "node_modules/@smithy/util-buffer-from",
+      "url": "https://registry.npmjs.org/@smithy/util-buffer-from/-/util-buffer-from-2.2.0.tgz"
+    },
+    "@smithy/util-utf8": {
+      "hash": "sha512-R8Rdn8Hy72KKcebgLiv8jQcQkXoLMOGGv5uI1/k0l+snqkOzQ1R0ChUBCxWMlBsFMekWjq0wRudIweFs7sKT5A==",
+      "installPath": "node_modules/@smithy/util-utf8",
+      "url": "https://registry.npmjs.org/@smithy/util-utf8/-/util-utf8-2.3.0.tgz"
+    },
+    "@standard-schema/spec": {
+      "hash": "sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==",
+      "installPath": "node_modules/@standard-schema/spec",
+      "url": "https://registry.npmjs.org/@standard-schema/spec/-/spec-1.1.0.tgz"
+    },
+    "@tokenizer/inflate": {
+      "hash": "sha512-2mAv+8pkG6GIZiF1kNg1jAjh27IDxEPKwdGul3snfztFerfPGI1LjDezZp3i7BElXompqEtPmoPx6c2wgtWsOA==",
+      "installPath": "node_modules/@tokenizer/inflate",
+      "url": "https://registry.npmjs.org/@tokenizer/inflate/-/inflate-0.4.1.tgz"
+    },
+    "@tokenizer/token": {
+      "hash": "sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==",
+      "installPath": "node_modules/@tokenizer/token",
+      "url": "https://registry.npmjs.org/@tokenizer/token/-/token-0.3.0.tgz"
+    },
+    "@tootallnate/quickjs-emscripten": {
+      "hash": "sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==",
+      "installPath": "node_modules/@tootallnate/quickjs-emscripten",
+      "url": "https://registry.npmjs.org/@tootallnate/quickjs-emscripten/-/quickjs-emscripten-0.23.0.tgz"
+    },
+    "@tybys/wasm-util": {
+      "hash": "sha512-F3fo1MYrRJYL3zER0OUOmkutjr1Vp23m7OsSgp7nq4SP6OqX6C/56XFIPAl5bt3zaBRjmW7SGz3u/6LwFpYcOg==",
+      "installPath": "node_modules/@tybys/wasm-util",
+      "url": "https://registry.npmjs.org/@tybys/wasm-util/-/wasm-util-0.10.3.tgz"
+    },
+    "@types/chai": {
+      "hash": "sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==",
+      "installPath": "node_modules/@types/chai",
+      "url": "https://registry.npmjs.org/@types/chai/-/chai-5.2.3.tgz"
+    },
+    "@types/deep-eql": {
+      "hash": "sha512-c9h9dVVMigMPc4bwTvC5dxqtqJZwQPePsWjPlpSOnojbor6pGqdk541lfA7AqFQr5pB1BRdq0juY9db81BwyFw==",
+      "installPath": "node_modules/@types/deep-eql",
+      "url": "https://registry.npmjs.org/@types/deep-eql/-/deep-eql-4.0.2.tgz"
+    },
+    "@types/estree": {
+      "hash": "sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==",
+      "installPath": "node_modules/@types/estree",
+      "url": "https://registry.npmjs.org/@types/estree/-/estree-1.0.9.tgz"
+    },
+    "@types/js-yaml": {
+      "hash": "sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==",
+      "installPath": "node_modules/@types/js-yaml",
+      "url": "https://registry.npmjs.org/@types/js-yaml/-/js-yaml-4.0.9.tgz"
+    },
+    "@types/mime-types": {
+      "hash": "sha512-lfU4b34HOri+kAY5UheuFMWPDOI+OPceBSHZKp69gEyTL/mmJ4cnU6Y/rlme3UL3GyOn6Y42hyIEw0/q8sWx5w==",
+      "installPath": "node_modules/@types/mime-types",
+      "url": "https://registry.npmjs.org/@types/mime-types/-/mime-types-2.1.4.tgz"
+    },
+    "@types/node": {
+      "hash": "sha512-xfrlY7UD5rMJk3ZVJP8BNzS28J36YJg+xp+LPXV1TdWxr8uMH5A860QNxYDGQe/ylDSgjxE52Q9VnO7p75tJxg==",
+      "installPath": "node_modules/@types/node",
+      "url": "https://registry.npmjs.org/@types/node/-/node-25.9.1.tgz"
+    },
+    "@types/picomatch": {
+      "hash": "sha512-iG0T6+nYJ9FAPmx9SsUlnwcq1ZVRuCXcVEvWnntoPlrOpwtSTKNDC9uVAxTsC3PUvJ+99n4RpAcNgBbHX3JSnQ==",
+      "installPath": "node_modules/@types/picomatch",
+      "url": "https://registry.npmjs.org/@types/picomatch/-/picomatch-4.0.3.tgz"
+    },
+    "@types/retry": {
+      "hash": "sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==",
+      "installPath": "node_modules/@types/retry",
+      "url": "https://registry.npmjs.org/@types/retry/-/retry-0.12.0.tgz"
+    },
+    "@types/turndown": {
+      "hash": "sha512-ru00MoyeeouE5BX4gRL+6m/BsDfbRayOskWqUvh7CLGW+UXxHQItqALa38kKnOiZPqJrtzJUgAC2+F0rL1S4Pg==",
+      "installPath": "node_modules/@types/turndown",
+      "url": "https://registry.npmjs.org/@types/turndown/-/turndown-5.0.6.tgz"
+    },
+    "@types/yauzl": {
+      "hash": "sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==",
+      "installPath": "node_modules/@types/yauzl",
+      "url": "https://registry.npmjs.org/@types/yauzl/-/yauzl-2.10.3.tgz"
+    },
+    "@typescript/native-preview": {
+      "bin": {
+        "tsgo": "bin/tsgo.js"
+      },
+      "hash": "sha512-aJq3XQBPkL91U0YWPQ4WUzFpfzLmfwWt5tmtzdXaIiPZisqFVeG/uw+2b4e/uL/YhPAQt9OHG0UEIGLNfoiFwA==",
+      "installPath": "node_modules/@typescript/native-preview",
+      "url": "https://registry.npmjs.org/@typescript/native-preview/-/native-preview-7.0.0-dev.20260518.1.tgz"
+    },
+    "@typescript/native-preview-linux-x64": {
+      "hash": "sha512-NpG2X1kViy7YRpw54GTanHuoH/hwLywuVvFDnoAitR7zDCGJ7OP2YMyCLMrVJX+aCjz4NPrYqROf9OfdwRyNIw==",
+      "installPath": "node_modules/@typescript/native-preview-linux-x64",
+      "url": "https://registry.npmjs.org/@typescript/native-preview-linux-x64/-/native-preview-linux-x64-7.0.0-dev.20260518.1.tgz"
+    },
+    "@typescript/typescript-linux-x64": {
+      "hash": "sha512-EYdf2cNg7rgCWJnxCdJ+F3V39O8ihb37eHAu1LK8oAFizgTQbPOK7zHHXbPt8rX24COqODXeI3sIf0fCXG7H/A==",
+      "installPath": "node_modules/@typescript/typescript-linux-x64",
+      "url": "https://registry.npmjs.org/@typescript/typescript-linux-x64/-/typescript-linux-x64-7.0.2.tgz"
+    },
+    "@vitest/expect": {
+      "hash": "sha512-YsCn+qAk1GWjQOWFEsEcL2gNQ0zmVmQu3T03qP6UyjhtmdtwtbuI+DASn/7iQB3HGTXkdBwGddzxPlmiql5vlA==",
+      "installPath": "node_modules/@vitest/expect",
+      "url": "https://registry.npmjs.org/@vitest/expect/-/expect-4.1.10.tgz"
+    },
+    "@vitest/mocker": {
+      "hash": "sha512-v0xaezt+DKEmKfaxg133ldzADrwLGd7Ze1MfQQTYfvs8OqZIwbxyxaYURivwV7sWy5fqn3rH5uOrSp07bp44Ow==",
+      "installPath": "node_modules/@vitest/mocker",
+      "url": "https://registry.npmjs.org/@vitest/mocker/-/mocker-4.1.10.tgz"
+    },
+    "@vitest/pretty-format": {
+      "hash": "sha512-W1HsjSH4MXQ9YfmmhLAoIYf1HRfekQCGngeIgcei6MP5QQGWUe0gkopdZQaVCFO+JDJMrAJGwa5pRpNpvy4P8Q==",
+      "installPath": "node_modules/@vitest/pretty-format",
+      "url": "https://registry.npmjs.org/@vitest/pretty-format/-/pretty-format-4.1.10.tgz"
+    },
+    "@vitest/runner": {
+      "hash": "sha512-IKI6kpIH+LmpROplyLwBBaCfMgOZOMsygVa6BARD6ahA04VRuJSa6OaVG7kRvSEMD870Vd91rSSw0eegtWyLGg==",
+      "installPath": "node_modules/@vitest/runner",
+      "url": "https://registry.npmjs.org/@vitest/runner/-/runner-4.1.10.tgz"
+    },
+    "@vitest/snapshot": {
+      "hash": "sha512-xRkfOT1qpTAi/Ti4Y1LtfRc3kEuqxGw59eN2jN9pRWMtS/XDevekhcFSqvQqjUNGksfjMJu3Y+oJ+4Ypn2OaJw==",
+      "installPath": "node_modules/@vitest/snapshot",
+      "url": "https://registry.npmjs.org/@vitest/snapshot/-/snapshot-4.1.10.tgz"
+    },
+    "@vitest/spy": {
+      "hash": "sha512-PLf/Ugvoq5wO/b4rwYCR1h2PSIdXz7wnkQFMiUpLdtM7l6pqVFcQIBEHyT1+l+cj7mNwAfZHzqXqDyjvOuwbDw==",
+      "installPath": "node_modules/@vitest/spy",
+      "url": "https://registry.npmjs.org/@vitest/spy/-/spy-4.1.10.tgz"
+    },
+    "@vitest/utils": {
+      "hash": "sha512-fy9am/HWxbaGt/Sawrp90vt6Y6jQwf1RX77cz3uwoJwJVMli/e1IEwRPnMNJ7vKfPTwo0diXifkpPvwH9v7nGA==",
+      "installPath": "node_modules/@vitest/utils",
+      "url": "https://registry.npmjs.org/@vitest/utils/-/utils-4.1.10.tgz"
+    },
+    "@xterm/addon-unicode11": {
+      "hash": "sha512-FxDnYcyuXhNl+XSqGZL/t0U9eiNb/q3EWT5rYkQT/zuig8Gz/VagnQANKHdDWFM2lTMk9ly0EFQxxxtZUoRetw==",
+      "installPath": "node_modules/@xterm/addon-unicode11",
+      "url": "https://registry.npmjs.org/@xterm/addon-unicode11/-/addon-unicode11-0.9.0.tgz"
+    },
+    "@xterm/headless": {
+      "hash": "sha512-5Yj1QINYCyzrZtf8OFIHi47iQtI+0qYFPHmouEfG8dHNxbZ9Tb9YGSuLcsEwj9Z+OL75GJqPyJbyoFer80a2Hw==",
+      "installPath": "node_modules/@xterm/headless",
+      "url": "https://registry.npmjs.org/@xterm/headless/-/headless-6.0.0.tgz"
+    },
+    "@xterm/xterm": {
+      "hash": "sha512-TQwDdQGtwwDt+2cgKDLn0IRaSxYu1tSUjgKarSDkUM0ZNiSRXFpjxEsvc/Zgc5kq5omJ+V0a8/kIM2WD3sMOYg==",
+      "installPath": "node_modules/@xterm/xterm",
+      "url": "https://registry.npmjs.org/@xterm/xterm/-/xterm-6.0.0.tgz"
+    },
+    "accepts": {
+      "hash": "sha512-5cvg6CtKwfgdmVqY1WIiXKc3Q1bkRqGLi+2W/6ao+6Y7gu/RCwRuAhGEzh5B4KlszSuTLgZYuqFqo5bImjNKng==",
+      "installPath": "node_modules/accepts",
+      "url": "https://registry.npmjs.org/accepts/-/accepts-2.0.0.tgz"
+    },
+    "agent-base": {
+      "hash": "sha512-MnA+YT8fwfJPgBx3m60MNqakm30XOkyIoH1y6huTQvC0PwZG7ki8NacLBcrPbNoo8vEZy7Jpuk7+jMO+CUovTQ==",
+      "installPath": "node_modules/agent-base",
+      "url": "https://registry.npmjs.org/agent-base/-/agent-base-7.1.4.tgz"
+    },
+    "ajv": {
+      "hash": "sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==",
+      "installPath": "node_modules/ajv",
+      "url": "https://registry.npmjs.org/ajv/-/ajv-8.20.0.tgz"
+    },
+    "ajv-formats": {
+      "hash": "sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ==",
+      "installPath": "node_modules/ajv-formats",
+      "url": "https://registry.npmjs.org/ajv-formats/-/ajv-formats-3.0.1.tgz"
+    },
+    "ansi-regex": {
+      "hash": "sha512-Bq3SmSpyFHaWjPk8If9yc6svM8c56dB5BAtW4Qbw5jHTwwXXcTLoRMkpDJp6VL0XzlWaCHTXrkFURMYmD0sLqg==",
+      "installPath": "node_modules/ansi-regex",
+      "url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.2.2.tgz"
+    },
+    "ansi-styles": {
+      "hash": "sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==",
+      "installPath": "node_modules/ansi-styles",
+      "url": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz"
+    },
+    "any-promise": {
+      "hash": "sha512-7UvmKalWRt1wgjL1RrGxoSJW/0QZFIegpeGvZG9kjp8vrRu55XTHbwnqq2GpXm9uLbcuhxm3IqX9OB4MZR1b2A==",
+      "installPath": "node_modules/any-promise",
+      "url": "https://registry.npmjs.org/any-promise/-/any-promise-1.3.0.tgz"
+    },
+    "anynum": {
+      "hash": "sha512-N6//FLET/tXYNM/F6ABca1oH6fWB+KlTt909Le28WMDBk8oaT4vY17DCrwg2MvmuqUKt3Ni4N5dGJ/EoBgcO6A==",
+      "installPath": "node_modules/anynum",
+      "url": "https://registry.npmjs.org/anynum/-/anynum-1.0.1.tgz"
+    },
+    "argparse": {
+      "hash": "sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==",
+      "installPath": "node_modules/argparse",
+      "url": "https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz"
+    },
+    "assertion-error": {
+      "hash": "sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==",
+      "installPath": "node_modules/assertion-error",
+      "url": "https://registry.npmjs.org/assertion-error/-/assertion-error-2.0.1.tgz"
+    },
+    "ast-types": {
+      "hash": "sha512-x1FCFnFifvYDDzTaLII71vG5uvDwgtmDTEVWAxrgeiR8VjMONcCXJx7E+USjDtHlwFmt9MysbqgF9b9Vjr6w+w==",
+      "installPath": "node_modules/ast-types",
+      "url": "https://registry.npmjs.org/ast-types/-/ast-types-0.13.4.tgz"
+    },
+    "babel-plugin-jsx-dom-expressions": {
+      "hash": "sha512-/O6JWUmjv03OI9lL2ry9bUjpD5S3PclM55RRJEyCdcFZ5W2SEA/59d+l2hNsk3gI6kiWRdRPdOtqZmsQzFN1pQ==",
+      "installPath": "node_modules/babel-plugin-jsx-dom-expressions",
+      "url": "https://registry.npmjs.org/babel-plugin-jsx-dom-expressions/-/babel-plugin-jsx-dom-expressions-0.40.7.tgz"
+    },
+    "babel-plugin-jsx-dom-expressions/@babel/helper-module-imports": {
+      "hash": "sha512-0NFvs3VkuSYbFi1x2Vd6tKrywq+z/cLeYC/RJNFrIX/30Bf5aiGYbtvGXolEktzJH8o5E5KJ3tT+nkxuuZFVlA==",
+      "installPath": "node_modules/babel-plugin-jsx-dom-expressions/@babel/helper-module-imports",
+      "url": "https://registry.npmjs.org/@babel/helper-module-imports/-/helper-module-imports-7.18.6.tgz"
+    },
+    "babel-plugin-jsx-dom-expressions/parse5": {
+      "hash": "sha512-IInvU7fabl34qmi9gY8XOVxhYyMyuH2xUNpb2q8/Y+7552KlejkRvqvD19nMoUW/uQGGbqNpA6Tufu5FL5BZgw==",
+      "installPath": "node_modules/babel-plugin-jsx-dom-expressions/parse5",
+      "url": "https://registry.npmjs.org/parse5/-/parse5-7.3.0.tgz"
+    },
+    "babel-plugin-jsx-dom-expressions/parse5/entities": {
+      "hash": "sha512-aN97NXWF6AWBTahfVOIrB/NShkzi5H7F9r1s9mD3cDj4Ko5f2qhhVoYMibXF7GlLveb/D2ioWay8lxI97Ven3g==",
+      "installPath": "node_modules/babel-plugin-jsx-dom-expressions/parse5/entities",
+      "url": "https://registry.npmjs.org/entities/-/entities-6.0.1.tgz"
+    },
+    "babel-plugin-module-resolver": {
+      "hash": "sha512-9KtaCazHee2xc0ibfqsDeamwDps6FZNo5S0Q81dUqEuFzVwPhcT4J5jOqIVvgCA3Q/wO9hKYxN/Ds3tIsp5ygg==",
+      "installPath": "node_modules/babel-plugin-module-resolver",
+      "url": "https://registry.npmjs.org/babel-plugin-module-resolver/-/babel-plugin-module-resolver-5.0.2.tgz"
+    },
+    "babel-plugin-module-resolver/glob": {
+      "hash": "sha512-e1LleDykUz2Iu+MTYdkSsuWX8lvAjAcs0Xef0lNIu0S2wOAzuTxCJtcd9S3cijlwYF18EsU3rzb8jPVobxDh9Q==",
+      "installPath": "node_modules/babel-plugin-module-resolver/glob",
+      "url": "https://registry.npmjs.org/glob/-/glob-9.3.5.tgz"
+    },
+    "babel-plugin-module-resolver/glob/minimatch": {
+      "hash": "sha512-V+1uQNdzybxa14e/p00HZnQNNcTjnRJjDxg2V8wtkjFctq4M7hXFws4oekyTP0Jebeq7QYtpFyOeBAjc88zvYg==",
+      "installPath": "node_modules/babel-plugin-module-resolver/glob/minimatch",
+      "url": "https://registry.npmjs.org/minimatch/-/minimatch-8.0.7.tgz"
+    },
+    "babel-plugin-module-resolver/glob/minimatch/brace-expansion": {
+      "hash": "sha512-WR1cURNjuvBLMZBMbqM0UoE+WAfdUcEV1ccD8PVBVOI+Z3ND4+SZbN8RsfT2bMuG1qwz5RFvPukSZm5fF2D5eA==",
+      "installPath": "node_modules/babel-plugin-module-resolver/glob/minimatch/brace-expansion",
+      "url": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.1.1.tgz"
+    },
+    "babel-plugin-module-resolver/glob/minimatch/brace-expansion/balanced-match": {
+      "hash": "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==",
+      "installPath": "node_modules/babel-plugin-module-resolver/glob/minimatch/brace-expansion/balanced-match",
+      "url": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
+    },
+    "babel-plugin-module-resolver/glob/minipass": {
+      "hash": "sha512-fNzuVyifolSLFL4NzpF+wEF4qrgqaaKX0haXPQEdQ7NKAN+WecoKMHV09YcuL/DHxrUsYQOK3MiuDf7Ip2OXfQ==",
+      "installPath": "node_modules/babel-plugin-module-resolver/glob/minipass",
+      "url": "https://registry.npmjs.org/minipass/-/minipass-4.2.8.tgz"
+    },
+    "babel-plugin-module-resolver/glob/path-scurry": {
+      "hash": "sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==",
+      "installPath": "node_modules/babel-plugin-module-resolver/glob/path-scurry",
+      "url": "https://registry.npmjs.org/path-scurry/-/path-scurry-1.11.1.tgz"
+    },
+    "babel-plugin-module-resolver/glob/path-scurry/lru-cache": {
+      "hash": "sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==",
+      "installPath": "node_modules/babel-plugin-module-resolver/glob/path-scurry/lru-cache",
+      "url": "https://registry.npmjs.org/lru-cache/-/lru-cache-10.4.3.tgz"
+    },
+    "babel-plugin-module-resolver/glob/path-scurry/minipass": {
+      "hash": "sha512-tEBHqDnIoM/1rXME1zgka9g6Q2lcoCkxHLuc7ODJ5BxbP5d4c2Z5cGgtXAku59200Cx7diuHTOYfSBD8n6mm8A==",
+      "installPath": "node_modules/babel-plugin-module-resolver/glob/path-scurry/minipass",
+      "url": "https://registry.npmjs.org/minipass/-/minipass-7.1.3.tgz"
+    },
+    "babel-preset-solid": {
+      "hash": "sha512-LLqnuKVDlKpyBlMPcH6qEvs/wmS9a+NczppxJ3ryS/c0O5IiSFOIBQi9GzyiGDSbcJpx4Gr87jyFTos1MyEuWg==",
+      "installPath": "node_modules/babel-preset-solid",
+      "url": "https://registry.npmjs.org/babel-preset-solid/-/babel-preset-solid-1.9.12.tgz"
+    },
+    "balanced-match": {
+      "hash": "sha512-BLrgEcRTwX2o6gGxGOCNyMvGSp35YofuYzw9h1IMTRmKqttAZZVU67bdb9Pr2vUHA8+j3i2tJfjO6C6+4myGTA==",
+      "installPath": "node_modules/balanced-match",
+      "url": "https://registry.npmjs.org/balanced-match/-/balanced-match-4.0.4.tgz"
+    },
+    "base64-js": {
+      "hash": "sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==",
+      "installPath": "node_modules/base64-js",
+      "url": "https://registry.npmjs.org/base64-js/-/base64-js-1.5.1.tgz"
+    },
+    "baseline-browser-mapping": {
+      "bin": {
+        "baseline-browser-mapping": "dist/cli.cjs"
+      },
+      "hash": "sha512-girxaJ7WZssDOFhzCGZTDKoTa1gk6A1TbflaYTpykLJ4UU9Fz9kx1aREM8JCuoVHbL8X8T/mJg7w2oYSq72Oig==",
+      "installPath": "node_modules/baseline-browser-mapping",
+      "url": "https://registry.npmjs.org/baseline-browser-mapping/-/baseline-browser-mapping-2.10.37.tgz"
+    },
+    "basic-ftp": {
+      "hash": "sha512-bopVNp6ugyA150DDuZfPFdt1KZ5a94ZDiwX4hMgZDzF+GttD80lEy8kj98kbyhLXnPvhtIo93mdnLIjpCAeeOw==",
+      "installPath": "node_modules/basic-ftp",
+      "url": "https://registry.npmjs.org/basic-ftp/-/basic-ftp-5.3.1.tgz"
+    },
+    "bidi-js": {
+      "hash": "sha512-RKshQI1R3YQ+n9YJz2QQ147P66ELpa1FQEg20Dk8oW9t2KgLbpDLLp9aGZ7y8WHSshDknG0bknqGw5/tyCs5tw==",
+      "installPath": "node_modules/bidi-js",
+      "url": "https://registry.npmjs.org/bidi-js/-/bidi-js-1.0.3.tgz"
+    },
+    "bignumber.js": {
+      "hash": "sha512-Ko0uX15oIUS7wJ3Rb30Fs6SkVbLmPBAKdlm7q9+ak9bbIeFf0MwuBsQV6z7+X768/cHsfg+WlysDWJcmthjsjQ==",
+      "installPath": "node_modules/bignumber.js",
+      "url": "https://registry.npmjs.org/bignumber.js/-/bignumber.js-9.3.1.tgz"
+    },
+    "body-parser": {
+      "hash": "sha512-oP5VkATKlNwcgvxi0vM0p/D3n2C3EReYVX+DNYs5TjZFn/oQt2j+4sVJtSMr18pdRr8wjTcBl6LoV+FUwzPmNA==",
+      "installPath": "node_modules/body-parser",
+      "url": "https://registry.npmjs.org/body-parser/-/body-parser-2.2.2.tgz"
+    },
+    "bowser": {
+      "hash": "sha512-tzPjzCxygAKWFOJP011oxFHs57HzIhOEracIgAePE4pqB3LikALKnSzUyU4MGs9/iCEUuHlAJTjTc5M+u7YEGg==",
+      "installPath": "node_modules/bowser",
+      "url": "https://registry.npmjs.org/bowser/-/bowser-2.14.1.tgz"
+    },
+    "brace-expansion": {
+      "hash": "sha512-7oFy703dxfY3/NLxC1fh2SUCQ0H9rmAY+5EpDVfXjUTTs+HEwR2nYaqLv+GWcTsumwxPfiz6CzCNkwXwBUwqCA==",
+      "installPath": "node_modules/brace-expansion",
+      "url": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-5.0.7.tgz"
+    },
+    "browserslist": {
+      "bin": {
+        "browserslist": "cli.js"
+      },
+      "hash": "sha512-48xSriZYYg+8qXna9kwqjIVzuQxi+KYWp2+5nCYnYKPTr0LvD89Jqk2Or5ogxz0NUMfIjhh2lIUX/LyX9B4oIg==",
+      "installPath": "node_modules/browserslist",
+      "url": "https://registry.npmjs.org/browserslist/-/browserslist-4.28.2.tgz"
+    },
+    "buffer-crc32": {
+      "hash": "sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==",
+      "installPath": "node_modules/buffer-crc32",
+      "url": "https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.13.tgz"
+    },
+    "buffer-equal-constant-time": {
+      "hash": "sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA==",
+      "installPath": "node_modules/buffer-equal-constant-time",
+      "url": "https://registry.npmjs.org/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz"
+    },
+    "bun-ffi-structs": {
+      "hash": "sha512-N/ZWtyN0piZlrXQT7TO0V+q952orYqkfhXRXM1Hcbb+R3QSiBH4vLnib187Mrs1H7pWIYECAmPeapGYDOMCl+w==",
+      "installPath": "node_modules/bun-ffi-structs",
+      "url": "https://registry.npmjs.org/bun-ffi-structs/-/bun-ffi-structs-0.2.2.tgz"
+    },
+    "bun-types": {
+      "hash": "sha512-4N0ig0fEomHt5R0KCFWjovxow98rIoRwKolrYdCcknNwMekCXRnWEUvgu5soYV8QXtVsrUD8B95MBOZGPvr6KQ==",
+      "installPath": "node_modules/bun-types",
+      "url": "https://registry.npmjs.org/bun-types/-/bun-types-1.3.14.tgz"
+    },
+    "bytes": {
+      "hash": "sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==",
+      "installPath": "node_modules/bytes",
+      "url": "https://registry.npmjs.org/bytes/-/bytes-3.1.2.tgz"
+    },
+    "call-bind-apply-helpers": {
+      "hash": "sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==",
+      "installPath": "node_modules/call-bind-apply-helpers",
+      "url": "https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz"
+    },
+    "call-bound": {
+      "hash": "sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==",
+      "installPath": "node_modules/call-bound",
+      "url": "https://registry.npmjs.org/call-bound/-/call-bound-1.0.4.tgz"
+    },
+    "caniuse-lite": {
+      "hash": "sha512-hG1bReV+OUU+MOqK4t/ZWI0tZOyz3rqS9XuhOUz1cIcbwBKjOyJEJuw9ER5JuNyqxNk8u/JUVbGibBOL1yrjFw==",
+      "installPath": "node_modules/caniuse-lite",
+      "url": "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001799.tgz"
+    },
+    "chai": {
+      "hash": "sha512-NUPRluOfOiTKBKvWPtSD4PhFvWCqOi0BGStNWs57X9js7XGTprSmFoz5F0tWhR4WPjNeR9jXqdC7/UpSJTnlRg==",
+      "installPath": "node_modules/chai",
+      "url": "https://registry.npmjs.org/chai/-/chai-6.2.2.tgz"
+    },
+    "chalk": {
+      "hash": "sha512-7NzBL0rN6fMUW+f7A6Io4h40qQlG+xGmtMxfbnH/K7TAtt8JQWVQK+6g0UXKMeVJoyV5EkkNsErQ8pVD3bLHbA==",
+      "installPath": "node_modules/chalk",
+      "url": "https://registry.npmjs.org/chalk/-/chalk-5.6.2.tgz"
+    },
+    "chromium-bidi": {
+      "hash": "sha512-J63PGu/9PpeCwLIcKYyzWP6yaVL5pxuBc0shlYCYM8BaAkmlwiQboXO1iNbOgSDbVklEyYFfNEcHD8oOAWacUA==",
+      "installPath": "node_modules/chromium-bidi",
+      "url": "https://registry.npmjs.org/chromium-bidi/-/chromium-bidi-16.0.1.tgz"
+    },
+    "chromium-bidi/zod": {
+      "hash": "sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==",
+      "installPath": "node_modules/chromium-bidi/zod",
+      "url": "https://registry.npmjs.org/zod/-/zod-3.25.76.tgz"
+    },
+    "cli-highlight": {
+      "bin": {
+        "highlight": "bin/highlight"
+      },
+      "hash": "sha512-9KDcoEVwyUXrjcJNvHD0NFc/hiwe/WPVYIleQh2O1N2Zro5gWJZ/K+3DGn8w8P/F6FxOgzyC5bxDyHIgCSPhGg==",
+      "installPath": "node_modules/cli-highlight",
+      "url": "https://registry.npmjs.org/cli-highlight/-/cli-highlight-2.1.11.tgz"
+    },
+    "cli-highlight/chalk": {
+      "hash": "sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==",
+      "installPath": "node_modules/cli-highlight/chalk",
+      "url": "https://registry.npmjs.org/chalk/-/chalk-4.1.2.tgz"
+    },
+    "cli-highlight/parse5": {
+      "hash": "sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==",
+      "installPath": "node_modules/cli-highlight/parse5",
+      "url": "https://registry.npmjs.org/parse5/-/parse5-5.1.1.tgz"
+    },
+    "cli-highlight/yargs": {
+      "hash": "sha512-Nt9ZJjXTv5R8MHbqby/wXQ6Gi0Bb3TcYZkR1bzuL4yB2OxWPkXknz513gEF0GoA6tn00UpbPvERW8rzCuWCA6w==",
+      "installPath": "node_modules/cli-highlight/yargs",
+      "url": "https://registry.npmjs.org/yargs/-/yargs-16.2.2.tgz"
+    },
+    "cli-highlight/yargs/cliui": {
+      "hash": "sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==",
+      "installPath": "node_modules/cli-highlight/yargs/cliui",
+      "url": "https://registry.npmjs.org/cliui/-/cliui-7.0.4.tgz"
+    },
+    "cli-highlight/yargs/cliui/strip-ansi": {
+      "hash": "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==",
+      "installPath": "node_modules/cli-highlight/yargs/cliui/strip-ansi",
+      "url": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
+    },
+    "cli-highlight/yargs/cliui/strip-ansi/ansi-regex": {
+      "hash": "sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==",
+      "installPath": "node_modules/cli-highlight/yargs/cliui/strip-ansi/ansi-regex",
+      "url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz"
+    },
+    "cli-highlight/yargs/cliui/wrap-ansi": {
+      "hash": "sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==",
+      "installPath": "node_modules/cli-highlight/yargs/cliui/wrap-ansi",
+      "url": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz"
+    },
+    "cli-highlight/yargs/string-width": {
+      "hash": "sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==",
+      "installPath": "node_modules/cli-highlight/yargs/string-width",
+      "url": "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
+    },
+    "cli-highlight/yargs/string-width/emoji-regex": {
+      "hash": "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==",
+      "installPath": "node_modules/cli-highlight/yargs/string-width/emoji-regex",
+      "url": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz"
+    },
+    "cli-highlight/yargs/string-width/strip-ansi": {
+      "hash": "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==",
+      "installPath": "node_modules/cli-highlight/yargs/string-width/strip-ansi",
+      "url": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz"
+    },
+    "cli-highlight/yargs/string-width/strip-ansi/ansi-regex": {
+      "hash": "sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==",
+      "installPath": "node_modules/cli-highlight/yargs/string-width/strip-ansi/ansi-regex",
+      "url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz"
+    },
+    "cli-highlight/yargs/yargs-parser": {
+      "hash": "sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w==",
+      "installPath": "node_modules/cli-highlight/yargs/yargs-parser",
+      "url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-20.2.9.tgz"
+    },
+    "cliui": {
+      "hash": "sha512-k7ndgKhwoQveBL+/1tqGJYNz097I7WOvwbmmU2AR5+magtbjPWQTS1C5vzGkBC8Ym8UWRzfKUzUUqFLypY4Q+w==",
+      "installPath": "node_modules/cliui",
+      "url": "https://registry.npmjs.org/cliui/-/cliui-9.0.1.tgz"
+    },
+    "color-convert": {
+      "hash": "sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==",
+      "installPath": "node_modules/color-convert",
+      "url": "https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz"
+    },
+    "color-name": {
+      "hash": "sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==",
+      "installPath": "node_modules/color-name",
+      "url": "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz"
+    },
+    "commander": {
+      "hash": "sha512-H+y0Jo/T1RZ9qPP4Eh1pkcQcLRglraJaSLoyOtHxu6AapkjWVCy2Sit1QQ4x3Dng8qDlSsZEet7g5Pq06MvTgw==",
+      "installPath": "node_modules/commander",
+      "url": "https://registry.npmjs.org/commander/-/commander-14.0.3.tgz"
+    },
+    "content-disposition": {
+      "hash": "sha512-5jRCH9Z/+DRP7rkvY83B+yGIGX96OYdJmzngqnw2SBSxqCFPd0w2km3s5iawpGX8krnwSGmF0FW5Nhr0Hfai3g==",
+      "installPath": "node_modules/content-disposition",
+      "url": "https://registry.npmjs.org/content-disposition/-/content-disposition-1.1.0.tgz"
+    },
+    "content-type": {
+      "hash": "sha512-nTjqfcBFEipKdXCv4YDQWCfmcLZKm81ldF0pAopTvyrFGVbcR6P/VAAd5G7N+0tTr8QqiU0tFadD6FK4NtJwOA==",
+      "installPath": "node_modules/content-type",
+      "url": "https://registry.npmjs.org/content-type/-/content-type-1.0.5.tgz"
+    },
+    "convert-source-map": {
+      "hash": "sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==",
+      "installPath": "node_modules/convert-source-map",
+      "url": "https://registry.npmjs.org/convert-source-map/-/convert-source-map-2.0.0.tgz"
+    },
+    "cookie": {
+      "hash": "sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==",
+      "installPath": "node_modules/cookie",
+      "url": "https://registry.npmjs.org/cookie/-/cookie-0.7.2.tgz"
+    },
+    "cookie-signature": {
+      "hash": "sha512-D76uU73ulSXrD1UXF4KE2TMxVVwhsnCgfAyTg9k8P6KGZjlXKrOLe4dJQKI3Bxi5wjesZoFXJWElNWBjPZMbhg==",
+      "installPath": "node_modules/cookie-signature",
+      "url": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.2.2.tgz"
+    },
+    "cors": {
+      "hash": "sha512-tJtZBBHA6vjIAaF6EnIaq6laBBP9aq/Y3ouVJjEfoHbRBcHBAHYcMh/w8LDrk2PvIMMq8gmopa5D4V8RmbrxGw==",
+      "installPath": "node_modules/cors",
+      "url": "https://registry.npmjs.org/cors/-/cors-2.8.6.tgz"
+    },
+    "cross-spawn": {
+      "hash": "sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==",
+      "installPath": "node_modules/cross-spawn",
+      "url": "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.6.tgz"
+    },
+    "css-tree": {
+      "hash": "sha512-X7sjQzceUhu1u7Y/ylrRZFU2FS6LRiFVp6rKLPg23y3x3c3DOKAwuXGDp+PAGjh6CSnCjYeAul8pcT8bAl+lSA==",
+      "installPath": "node_modules/css-tree",
+      "url": "https://registry.npmjs.org/css-tree/-/css-tree-3.2.1.tgz"
+    },
+    "csstype": {
+      "hash": "sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==",
+      "installPath": "node_modules/csstype",
+      "url": "https://registry.npmjs.org/csstype/-/csstype-3.2.3.tgz"
+    },
+    "data-uri-to-buffer": {
+      "hash": "sha512-7hvf7/GW8e86rW0ptuwS3OcBGDjIi6SZva7hCyWC0yYry2cOPmLIjXAUHI6DK2HsnwJd9ifmt57i8eV2n4YNpw==",
+      "installPath": "node_modules/data-uri-to-buffer",
+      "url": "https://registry.npmjs.org/data-uri-to-buffer/-/data-uri-to-buffer-6.0.2.tgz"
+    },
+    "data-urls": {
+      "hash": "sha512-23XHcCF+coGYevirZceTVD7NdJOqVn+49IHyxgszm+JIiHLoB2TkmPtsYkNWT1pvRSGkc35L6NHs0yHkN2SumA==",
+      "installPath": "node_modules/data-urls",
+      "url": "https://registry.npmjs.org/data-urls/-/data-urls-7.0.0.tgz"
+    },
+    "debug": {
+      "hash": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==",
+      "installPath": "node_modules/debug",
+      "url": "https://registry.npmjs.org/debug/-/debug-4.4.3.tgz"
+    },
+    "decimal.js": {
+      "hash": "sha512-YpgQiITW3JXGntzdUmyUR1V812Hn8T1YVXhCu+wO3OpS4eU9l4YdD3qjyiKdV6mvV29zapkMeD390UVEf2lkUg==",
+      "installPath": "node_modules/decimal.js",
+      "url": "https://registry.npmjs.org/decimal.js/-/decimal.js-10.6.0.tgz"
+    },
+    "degenerator": {
+      "hash": "sha512-TllpMR/t0M5sqCXfj85i4XaAzxmS5tVA16dqvdkMwGmzI+dXLXnw3J+3Vdv7VKw+ThlTMboK6i9rnZ6Nntj5CQ==",
+      "installPath": "node_modules/degenerator",
+      "url": "https://registry.npmjs.org/degenerator/-/degenerator-5.0.1.tgz"
+    },
+    "depd": {
+      "hash": "sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==",
+      "installPath": "node_modules/depd",
+      "url": "https://registry.npmjs.org/depd/-/depd-2.0.0.tgz"
+    },
+    "detect-libc": {
+      "hash": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ==",
+      "installPath": "node_modules/detect-libc",
+      "url": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz"
+    },
+    "devtools-protocol": {
+      "hash": "sha512-mXwg4Fqnv0WR4iuAT/gYUmctNkjILwXFHyZ+m7Ty1dfr0ezZt2U3gnrrJTfRobJTHoXf+IbuFvFITzLrLFjwJA==",
+      "installPath": "node_modules/devtools-protocol",
+      "url": "https://registry.npmjs.org/devtools-protocol/-/devtools-protocol-0.0.1638949.tgz"
+    },
+    "diff": {
+      "hash": "sha512-svtcdpS8CgJyqAjEQIXdb3OjhFVVYjzGAPO8WGCmRbrml64SPw/jJD4GoE98aR7r25A0XcgrK3F02yw9R/vhQw==",
+      "installPath": "node_modules/diff",
+      "url": "https://registry.npmjs.org/diff/-/diff-9.0.0.tgz"
+    },
+    "dunder-proto": {
+      "hash": "sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==",
+      "installPath": "node_modules/dunder-proto",
+      "url": "https://registry.npmjs.org/dunder-proto/-/dunder-proto-1.0.1.tgz"
+    },
+    "ecdsa-sig-formatter": {
+      "hash": "sha512-nagl3RYrbNv6kQkeJIpt6NJZy8twLB/2vtz6yN9Z4vRKHN4/QZJIEbqohALSgwKdnksuY3k5Addp5lg8sVoVcQ==",
+      "installPath": "node_modules/ecdsa-sig-formatter",
+      "url": "https://registry.npmjs.org/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.11.tgz"
+    },
+    "ee-first": {
+      "hash": "sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==",
+      "installPath": "node_modules/ee-first",
+      "url": "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
+    },
+    "effect": {
+      "hash": "sha512-4arEr62cziFa8BBVDUwJCJJmaVepXf/kRg7KtC0h8+bufngscrHbwWFhr9c+HonwOF+31U3iD3xUJmw9KzX7Dw==",
+      "installPath": "node_modules/effect",
+      "url": "https://registry.npmjs.org/effect/-/effect-4.0.0-beta.66.tgz"
+    },
+    "effect/uuid": {
+      "bin": {
+        "uuid": "dist-node/bin/uuid"
+      },
+      "hash": "sha512-vzi9uRZ926x4XV73S/4qQaTwPXM2JBj6/6lI/byHH1jOpCzb0zDbfytgA9LcN/hzb2l7WQSQnxITOVx5un/wGw==",
+      "installPath": "node_modules/effect/uuid",
+      "url": "https://registry.npmjs.org/uuid/-/uuid-13.0.2.tgz"
+    },
+    "electron-to-chromium": {
+      "hash": "sha512-M3yhbAlilnwqC8D21t28UCDGHyitShTmmLRU/H+b74P6Ski16Nb9HONYEaVpMj/pwC7BEo5B95FpjODLCWbtfA==",
+      "installPath": "node_modules/electron-to-chromium",
+      "url": "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.372.tgz"
+    },
+    "emoji-regex": {
+      "hash": "sha512-toUI84YS5YmxW219erniWD0CIVOo46xGKColeNQRgOzDorgBi1v4D71/OFzgD9GO2UGKIv1C3Sp8DAn0+j5w7A==",
+      "installPath": "node_modules/emoji-regex",
+      "url": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-10.6.0.tgz"
+    },
+    "encodeurl": {
+      "hash": "sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg==",
+      "installPath": "node_modules/encodeurl",
+      "url": "https://registry.npmjs.org/encodeurl/-/encodeurl-2.0.0.tgz"
+    },
+    "end-of-stream": {
+      "hash": "sha512-ooEGc6HP26xXq/N+GCGOT0JKCLDGrq2bQUZrQ7gyrJiZANJ/8YDTxTpQBXGMn+WbIQXNVpyWymm7KYVICQnyOg==",
+      "installPath": "node_modules/end-of-stream",
+      "url": "https://registry.npmjs.org/end-of-stream/-/end-of-stream-1.4.5.tgz"
+    },
+    "entities": {
+      "hash": "sha512-TWrgLOFUQTH994YUyl1yT4uyavY5nNB5muff+RtWaqNVCAK408b5ZnnbNAUEWLTCpum9w6arT70i1XdQ4UeOPA==",
+      "installPath": "node_modules/entities",
+      "url": "https://registry.npmjs.org/entities/-/entities-7.0.1.tgz"
+    },
+    "es-define-property": {
+      "hash": "sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g==",
+      "installPath": "node_modules/es-define-property",
+      "url": "https://registry.npmjs.org/es-define-property/-/es-define-property-1.0.1.tgz"
+    },
+    "es-errors": {
+      "hash": "sha512-Zf5H2Kxt2xjTvbJvP2ZWLEICxA6j+hAmMzIlypy4xcBg1vKVnx89Wy0GbS+kf5cwCVFFzdCFh2XSCFNULS6csw==",
+      "installPath": "node_modules/es-errors",
+      "url": "https://registry.npmjs.org/es-errors/-/es-errors-1.3.0.tgz"
+    },
+    "es-module-lexer": {
+      "hash": "sha512-shc1dbU90Yl/xq1QrC7QRtfcwURZuVRfPhZbDoldJ1cn1gzDvBaBWlv0eFolj5+0znnPJz5TXLxsN77X/12KTA==",
+      "installPath": "node_modules/es-module-lexer",
+      "url": "https://registry.npmjs.org/es-module-lexer/-/es-module-lexer-2.3.1.tgz"
+    },
+    "es-object-atoms": {
+      "hash": "sha512-HWcBoN6NileqtSydK2FqHbS/LoDd2pqrnQHLyJzBj4kOp/ky2MWMN694xOfkK8/SnUsW2DH7EfyVlydKCsm1Zw==",
+      "installPath": "node_modules/es-object-atoms",
+      "url": "https://registry.npmjs.org/es-object-atoms/-/es-object-atoms-1.1.2.tgz"
+    },
+    "escalade": {
+      "hash": "sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA==",
+      "installPath": "node_modules/escalade",
+      "url": "https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz"
+    },
+    "escape-html": {
+      "hash": "sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==",
+      "installPath": "node_modules/escape-html",
+      "url": "https://registry.npmjs.org/escape-html/-/escape-html-1.0.3.tgz"
+    },
+    "escodegen": {
+      "bin": {
+        "escodegen": "bin/escodegen.js",
+        "esgenerate": "bin/esgenerate.js"
+      },
+      "hash": "sha512-2NlIDTwUWJN0mRPQOdtQBzbUHvdGY2P1VXSyU83Q3xKxM7WHX2Ql8dKq782Q9TgQUNOLEzEYu9bzLNj1q88I5w==",
+      "installPath": "node_modules/escodegen",
+      "url": "https://registry.npmjs.org/escodegen/-/escodegen-2.1.0.tgz"
+    },
+    "esprima": {
+      "bin": {
+        "esparse": "./bin/esparse.js",
+        "esvalidate": "./bin/esvalidate.js"
+      },
+      "hash": "sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==",
+      "installPath": "node_modules/esprima",
+      "url": "https://registry.npmjs.org/esprima/-/esprima-4.0.1.tgz"
+    },
+    "estraverse": {
+      "hash": "sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==",
+      "installPath": "node_modules/estraverse",
+      "url": "https://registry.npmjs.org/estraverse/-/estraverse-5.3.0.tgz"
+    },
+    "estree-walker": {
+      "hash": "sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==",
+      "installPath": "node_modules/estree-walker",
+      "url": "https://registry.npmjs.org/estree-walker/-/estree-walker-3.0.3.tgz"
+    },
+    "esutils": {
+      "hash": "sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==",
+      "installPath": "node_modules/esutils",
+      "url": "https://registry.npmjs.org/esutils/-/esutils-2.0.3.tgz"
+    },
+    "etag": {
+      "hash": "sha512-aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==",
+      "installPath": "node_modules/etag",
+      "url": "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz"
+    },
+    "eventsource": {
+      "hash": "sha512-CRT1WTyuQoD771GW56XEZFQ/ZoSfWid1alKGDYMmkt2yl8UXrVR4pspqWNEcqKvVIzg6PAltWjxcSSPrboA4iA==",
+      "installPath": "node_modules/eventsource",
+      "url": "https://registry.npmjs.org/eventsource/-/eventsource-3.0.7.tgz"
+    },
+    "eventsource-parser": {
+      "hash": "sha512-kJezFj9YFAMLeORyi7aCLxLbD5/qWMQnoMVlVPyHIll7lgRJCc3JVln9Vgl9nwQi0YkMnhdGTMNn7CkRRAptMg==",
+      "installPath": "node_modules/eventsource-parser",
+      "url": "https://registry.npmjs.org/eventsource-parser/-/eventsource-parser-3.1.0.tgz"
+    },
+    "expect-type": {
+      "hash": "sha512-KfYbmpRm0VbLjEvVa9yGwCi9GI34xvi7A/HXYWQO65CSD2u3MczUJSuwXKFIxlGsgBQizV9q5J9NHj4VG0n+pA==",
+      "installPath": "node_modules/expect-type",
+      "url": "https://registry.npmjs.org/expect-type/-/expect-type-1.4.0.tgz"
+    },
+    "express": {
+      "hash": "sha512-hIS4idWWai69NezIdRt2xFVofaF4j+6INOpJlVOLDO8zXGpUVEVzIYk12UUi2JzjEzWL3IOAxcTubgz9Po0yXw==",
+      "installPath": "node_modules/express",
+      "url": "https://registry.npmjs.org/express/-/express-5.2.1.tgz"
+    },
+    "express-rate-limit": {
+      "hash": "sha512-5Kb34ipNX694DH48vN9irak1Qx30nb0PLYHXfJgw4YEjiC3ZEmZJhwOp+VfiCYwFzvFTdB9QkArYS5kXa2cx2A==",
+      "installPath": "node_modules/express-rate-limit",
+      "url": "https://registry.npmjs.org/express-rate-limit/-/express-rate-limit-8.5.2.tgz"
+    },
+    "extend": {
+      "hash": "sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==",
+      "installPath": "node_modules/extend",
+      "url": "https://registry.npmjs.org/extend/-/extend-3.0.2.tgz"
+    },
+    "extract-zip": {
+      "bin": {
+        "extract-zip": "cli.js"
+      },
+      "hash": "sha512-GDhU9ntwuKyGXdZBUgTIe+vXnWj0fppUEtMDL0+idd5Sta8TGpHssn/eusA9mrPr9qNDym6SxAYZjNvCn/9RBg==",
+      "installPath": "node_modules/extract-zip",
+      "url": "https://registry.npmjs.org/extract-zip/-/extract-zip-2.0.1.tgz"
+    },
+    "fast-check": {
+      "hash": "sha512-GOJ158CUMnN6cSahsv4+ExARvIDuzzinFjkp0E9WtiBa5zcVeLozVkWaE4IzFcc+Y48Wp1EDlUZsXRyAztQcSg==",
+      "installPath": "node_modules/fast-check",
+      "url": "https://registry.npmjs.org/fast-check/-/fast-check-4.8.0.tgz"
+    },
+    "fast-deep-equal": {
+      "hash": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==",
+      "installPath": "node_modules/fast-deep-equal",
+      "url": "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
+    },
+    "fast-string-truncated-width": {
+      "hash": "sha512-0jjjIEL6+0jag3l2XWWizO64/aZVtpiGE3t0Zgqxv0DPuxiMjvB3M24fCyhZUO4KomJQPj3LTSUnDP3GpdwC0g==",
+      "installPath": "node_modules/fast-string-truncated-width",
+      "url": "https://registry.npmjs.org/fast-string-truncated-width/-/fast-string-truncated-width-3.0.3.tgz"
+    },
+    "fast-string-width": {
+      "hash": "sha512-gX8LrtNEI5hq8DVUfRQMbr5lpaS4nMIWV+7XEbXk2b8kiQIizgnlr12B4dA3ZEx3308ze0O4Q1R+cHts8kyUJg==",
+      "installPath": "node_modules/fast-string-width",
+      "url": "https://registry.npmjs.org/fast-string-width/-/fast-string-width-3.0.2.tgz"
+    },
+    "fast-uri": {
+      "hash": "sha512-rVjf7ArG3LTk+FS6Yw81V1DLuZl1bRbNrev6Tmd/9RaroeeRRJhAt7jg/6YFxbvAQXUCavSoZhPPj6oOx+5KjQ==",
+      "installPath": "node_modules/fast-uri",
+      "url": "https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.2.tgz"
+    },
+    "fast-wrap-ansi": {
+      "hash": "sha512-7F2Fl+TjRSenLqlU3UjSH0iyqopqoZIu7eZVpEirP2g1GtWa2G/ecEmBdgz31+Mxr+ELclgg6sokpSFIQiZ02Q==",
+      "installPath": "node_modules/fast-wrap-ansi",
+      "url": "https://registry.npmjs.org/fast-wrap-ansi/-/fast-wrap-ansi-0.2.2.tgz"
+    },
+    "fast-xml-builder": {
+      "hash": "sha512-F74cZEdCvuw9P41GAC3rod4X04jjWGM1JPEv/GWSqFTWLsdyMSBMBMlm9Hk3GLBgLBbdBNY8yee0pQh2RBVESQ==",
+      "installPath": "node_modules/fast-xml-builder",
+      "url": "https://registry.npmjs.org/fast-xml-builder/-/fast-xml-builder-1.3.0.tgz"
+    },
+    "fast-xml-parser": {
+      "bin": {
+        "fxparser": "src/cli/cli.js"
+      },
+      "hash": "sha512-IEMIf7298kXuZSRFoGfMYrl7is8LpavODgbNz1cwIudv7KwVFnuU+UsMporfq6PD6aXSlawZlARiA3UywCTfMw==",
+      "installPath": "node_modules/fast-xml-parser",
+      "url": "https://registry.npmjs.org/fast-xml-parser/-/fast-xml-parser-5.10.1.tgz"
+    },
+    "fd-slicer": {
+      "hash": "sha512-cE1qsB/VwyQozZ+q1dGxR8LBYNZeofhEdUNGSMbQD3Gw2lAzX9Zb3uIU6Ebc/Fmyjo9AWWfnn0AUCHqtevs/8g==",
+      "installPath": "node_modules/fd-slicer",
+      "url": "https://registry.npmjs.org/fd-slicer/-/fd-slicer-1.1.0.tgz"
+    },
+    "fdir": {
+      "hash": "sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==",
+      "installPath": "node_modules/fdir",
+      "url": "https://registry.npmjs.org/fdir/-/fdir-6.5.0.tgz"
+    },
+    "fetch-blob": {
+      "hash": "sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==",
+      "installPath": "node_modules/fetch-blob",
+      "url": "https://registry.npmjs.org/fetch-blob/-/fetch-blob-3.2.0.tgz"
+    },
+    "file-type": {
+      "hash": "sha512-Ievi/yy8DS3ygGvT47PjSfdFoX+2isQueoYP1cntFW1JLYAuS4GD7NUPGg4zv2iZfV52uDyk5w5Z0TdpRS6Q1g==",
+      "installPath": "node_modules/file-type",
+      "url": "https://registry.npmjs.org/file-type/-/file-type-21.3.4.tgz"
+    },
+    "finalhandler": {
+      "hash": "sha512-S8KoZgRZN+a5rNwqTxlZZePjT/4cnm0ROV70LedRHZ0p8u9fRID0hJUZQpkKLzro8LfmC8sx23bY6tVNxv8pQA==",
+      "installPath": "node_modules/finalhandler",
+      "url": "https://registry.npmjs.org/finalhandler/-/finalhandler-2.1.1.tgz"
+    },
+    "find-babel-config": {
+      "hash": "sha512-ZfZp1rQyp4gyuxqt1ZqjFGVeVBvmpURMqdIWXbPRfB97Bf6BzdK/xSIbylEINzQ0kB5tlDQfn9HkNXXWsqTqLg==",
+      "installPath": "node_modules/find-babel-config",
+      "url": "https://registry.npmjs.org/find-babel-config/-/find-babel-config-2.1.2.tgz"
+    },
+    "find-my-way-ts": {
+      "hash": "sha512-a85L9ZoXtNAey3Y6Z+eBWW658kO/MwR7zIafkIUPUMf3isZG0NCs2pjW2wtjxAKuJPxMAsHUIP4ZPGv0o5gyTA==",
+      "installPath": "node_modules/find-my-way-ts",
+      "url": "https://registry.npmjs.org/find-my-way-ts/-/find-my-way-ts-0.1.6.tgz"
+    },
+    "find-up": {
+      "hash": "sha512-1yD6RmLI1XBfxugvORwlck6f75tYL+iR0jqwsOrOxMZyGYqUuDhJ0l4AXdO1iX/FTs9cBAMEk1gWSEx1kSbylg==",
+      "installPath": "node_modules/find-up",
+      "url": "https://registry.npmjs.org/find-up/-/find-up-3.0.0.tgz"
+    },
+    "formdata-polyfill": {
+      "hash": "sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==",
+      "installPath": "node_modules/formdata-polyfill",
+      "url": "https://registry.npmjs.org/formdata-polyfill/-/formdata-polyfill-4.0.10.tgz"
+    },
+    "forwarded": {
+      "hash": "sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==",
+      "installPath": "node_modules/forwarded",
+      "url": "https://registry.npmjs.org/forwarded/-/forwarded-0.2.0.tgz"
+    },
+    "fresh": {
+      "hash": "sha512-Rx/WycZ60HOaqLKAi6cHRKKI7zxWbJ31MhntmtwMoaTeF7XFH9hhBp8vITaMidfljRQ6eYWCKkaTK+ykVJHP2A==",
+      "installPath": "node_modules/fresh",
+      "url": "https://registry.npmjs.org/fresh/-/fresh-2.0.0.tgz"
+    },
+    "fs.realpath": {
+      "hash": "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==",
+      "installPath": "node_modules/fs.realpath",
+      "url": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
+    },
+    "function-bind": {
+      "hash": "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==",
+      "installPath": "node_modules/function-bind",
+      "url": "https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz"
+    },
+    "gaxios": {
+      "hash": "sha512-5FZy72Rh8LhtjmvDrKkI+lVhrsQrVKVsItxMoDm5mNQE+xR0WVIIs+jzPSJgBvKVsLi24fZhXJIsNI0bihDzFg==",
+      "installPath": "node_modules/gaxios",
+      "url": "https://registry.npmjs.org/gaxios/-/gaxios-7.1.5.tgz"
+    },
+    "gcp-metadata": {
+      "hash": "sha512-zV/5HKTfCeKWnxG0Dmrw51hEWFGfcF2xiXqcA3+J90WDuP0SvoiSO5ORvcBsifmx/FoIjgQN3oNOGaQ5PhLFkg==",
+      "installPath": "node_modules/gcp-metadata",
+      "url": "https://registry.npmjs.org/gcp-metadata/-/gcp-metadata-8.1.2.tgz"
+    },
+    "gensync": {
+      "hash": "sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==",
+      "installPath": "node_modules/gensync",
+      "url": "https://registry.npmjs.org/gensync/-/gensync-1.0.0-beta.2.tgz"
+    },
+    "get-caller-file": {
+      "hash": "sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==",
+      "installPath": "node_modules/get-caller-file",
+      "url": "https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz"
+    },
+    "get-east-asian-width": {
+      "hash": "sha512-QRbvDIbx6YklUe6RxeTeleMR0yv3cYH6PsPZHcnVn7xv7zO1BHN8r0XETu8n6Ye3Q+ahtSarc3WgtNWmehIBfA==",
+      "installPath": "node_modules/get-east-asian-width",
+      "url": "https://registry.npmjs.org/get-east-asian-width/-/get-east-asian-width-1.6.0.tgz"
+    },
+    "get-intrinsic": {
+      "hash": "sha512-9fSjSaos/fRIVIp+xSJlE6lfwhES7LNtKaCBIamHsjr2na1BiABJPo0mOjjz8GJDURarmCPGqaiVg5mfjb98CQ==",
+      "installPath": "node_modules/get-intrinsic",
+      "url": "https://registry.npmjs.org/get-intrinsic/-/get-intrinsic-1.3.0.tgz"
+    },
+    "get-proto": {
+      "hash": "sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==",
+      "installPath": "node_modules/get-proto",
+      "url": "https://registry.npmjs.org/get-proto/-/get-proto-1.0.1.tgz"
+    },
+    "get-stream": {
+      "hash": "sha512-nBF+F1rAZVCu/p7rjzgA+Yb4lfYXrpl7a6VmJrU8wF9I1CKvP/QwPNZHnOlwbTkY6dvtFIzFMSyQXbLoTQPRpA==",
+      "installPath": "node_modules/get-stream",
+      "url": "https://registry.npmjs.org/get-stream/-/get-stream-5.2.0.tgz"
+    },
+    "get-uri": {
+      "hash": "sha512-b1O07XYq8eRuVzBNgJLstU6FYc1tS6wnMtF1I1D9lE8LxZSOGZ7LhxN54yPP6mGw5f2CkXY2BQUL9Fx41qvcIg==",
+      "installPath": "node_modules/get-uri",
+      "url": "https://registry.npmjs.org/get-uri/-/get-uri-6.0.5.tgz"
+    },
+    "glob": {
+      "hash": "sha512-Wjlyrolmm8uDpm/ogGyXZXb1Z+Ca2B8NbJwqBVg0axK9GbBeoS7yGV6vjXnYdGm6X53iehEuxxbyiKp8QmN4Vw==",
+      "installPath": "node_modules/glob",
+      "url": "https://registry.npmjs.org/glob/-/glob-13.0.6.tgz"
+    },
+    "google-auth-library": {
+      "hash": "sha512-xtvUqvINPhTaBm7nXqlYPcrMHJPm1lCNdSovxnKKhTm+4JsvQ+KGVYJViLoH9Yxu8w+T0Qv5HubzYT9BLrppJg==",
+      "installPath": "node_modules/google-auth-library",
+      "url": "https://registry.npmjs.org/google-auth-library/-/google-auth-library-10.9.0.tgz"
+    },
+    "google-logging-utils": {
+      "hash": "sha512-eAmLkjDjAFCVXg7A1unxHsLf961m6y17QFqXqAXGj/gVkKFrEICfStRfwUlGNfeCEjNRa32JEWOUTlYXPyyKvA==",
+      "installPath": "node_modules/google-logging-utils",
+      "url": "https://registry.npmjs.org/google-logging-utils/-/google-logging-utils-1.1.3.tgz"
+    },
+    "gopd": {
+      "hash": "sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==",
+      "installPath": "node_modules/gopd",
+      "url": "https://registry.npmjs.org/gopd/-/gopd-1.2.0.tgz"
+    },
+    "graceful-fs": {
+      "hash": "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==",
+      "installPath": "node_modules/graceful-fs",
+      "url": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.11.tgz"
+    },
+    "has-flag": {
+      "hash": "sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==",
+      "installPath": "node_modules/has-flag",
+      "url": "https://registry.npmjs.org/has-flag/-/has-flag-4.0.0.tgz"
+    },
+    "has-symbols": {
+      "hash": "sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==",
+      "installPath": "node_modules/has-symbols",
+      "url": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.1.0.tgz"
+    },
+    "hasown": {
+      "hash": "sha512-T2UbfbBEF32wiepXIsMlTW9+dDYC6wMh/t/vYA4tuOMKqWz/n3vr1NFSxQiyP+zk2mXsoMA/i/7qV6LKut1t1A==",
+      "installPath": "node_modules/hasown",
+      "url": "https://registry.npmjs.org/hasown/-/hasown-2.0.4.tgz"
+    },
+    "highlight.js": {
+      "hash": "sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==",
+      "installPath": "node_modules/highlight.js",
+      "url": "https://registry.npmjs.org/highlight.js/-/highlight.js-10.7.3.tgz"
+    },
+    "hono": {
+      "hash": "sha512-eIaZ9qDgu7XV0pxOCrg7/WhnQ6Ivm22UcxhXx/A3dcbqbbYgBEkc6e/J/s7j2tS96zoB0S9VBdLwQNCWwUo4LA==",
+      "installPath": "node_modules/hono",
+      "url": "https://registry.npmjs.org/hono/-/hono-4.12.23.tgz"
+    },
+    "hosted-git-info": {
+      "hash": "sha512-Hc+ghLoSt6QaYZUv0WBiIvmMDZuZZ7oaDvdH8MbfOO4lOsxdXLEvuC6ePoGs9H1X9oCLyq6+NVN0MKqD+ydxyg==",
+      "installPath": "node_modules/hosted-git-info",
+      "url": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-9.0.3.tgz"
+    },
+    "html-encoding-sniffer": {
+      "hash": "sha512-CV9TW3Y3f8/wT0BRFc1/KAVQ3TUHiXmaAb6VW9vtiMFf7SLoMd1PdAc4W3KFOFETBJUb90KatHqlsZMWV+R9Gg==",
+      "installPath": "node_modules/html-encoding-sniffer",
+      "url": "https://registry.npmjs.org/html-encoding-sniffer/-/html-encoding-sniffer-6.0.0.tgz"
+    },
+    "html-entities": {
+      "hash": "sha512-DV5Ln36z34NNTDgnz0EWGBLZENelNAtkiFA4kyNOG2tDI6Mz1uSWiq1wAKdyjnJwyDiDO7Fa2SO1CTxPXL8VxA==",
+      "installPath": "node_modules/html-entities",
+      "url": "https://registry.npmjs.org/html-entities/-/html-entities-2.3.3.tgz"
+    },
+    "http-errors": {
+      "hash": "sha512-4FbRdAX+bSdmo4AUFuS0WNiPz8NgFt+r8ThgNWmlrjQjt1Q7ZR9+zTlce2859x4KSXrwIsaeTqDoKQmtP8pLmQ==",
+      "installPath": "node_modules/http-errors",
+      "url": "https://registry.npmjs.org/http-errors/-/http-errors-2.0.1.tgz"
+    },
+    "http-proxy-agent": {
+      "hash": "sha512-T1gkAiYYDWYx3V5Bmyu7HcfcvL7mUrTWiM6yOfa3PIphViJ/gFPbvidQ+veqSOHci/PxBcDabeUNCzpOODJZig==",
+      "installPath": "node_modules/http-proxy-agent",
+      "url": "https://registry.npmjs.org/http-proxy-agent/-/http-proxy-agent-7.0.2.tgz"
+    },
+    "https-proxy-agent": {
+      "hash": "sha512-vK9P5/iUfdl95AI+JVyUuIcVtd4ofvtrOr3HNtM2yxC9bnMbEdp3x01OhQNnjb8IJYi38VlTE3mBXwcfvywuSw==",
+      "installPath": "node_modules/https-proxy-agent",
+      "url": "https://registry.npmjs.org/https-proxy-agent/-/https-proxy-agent-7.0.6.tgz"
+    },
+    "iconv-lite": {
+      "hash": "sha512-im9DjEDQ55s9fL4EYzOAv0yMqmMBSZp6G0VvFyTMPKWxiSBHUj9NW/qqLmXUwXrrM7AvqSlTCfvqRb0cM8yYqw==",
+      "installPath": "node_modules/iconv-lite",
+      "url": "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.7.2.tgz"
+    },
+    "ieee754": {
+      "hash": "sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==",
+      "installPath": "node_modules/ieee754",
+      "url": "https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz"
+    },
+    "ignore": {
+      "hash": "sha512-Hs59xBNfUIunMFgWAbGX5cq6893IbWg4KnrjbYwX3tx0ztorVgTDA6B2sxf8ejHJ4wz8BqGUMYlnzNBer5NvGg==",
+      "installPath": "node_modules/ignore",
+      "url": "https://registry.npmjs.org/ignore/-/ignore-7.0.5.tgz"
+    },
+    "inherits": {
+      "hash": "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==",
+      "installPath": "node_modules/inherits",
+      "url": "https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz"
+    },
+    "ini": {
+      "hash": "sha512-IBTdIkzZNOpqm7q3dRqJvMaldXjDHWkEDfrwGEQTs5eaQMWV+djAhR+wahyNNMAa+qpbDUhBMVt4ZKNwpPm7xQ==",
+      "installPath": "node_modules/ini",
+      "url": "https://registry.npmjs.org/ini/-/ini-6.0.0.tgz"
+    },
+    "ip-address": {
+      "hash": "sha512-/+S6j4E9AHvW9SWMSEY9Xfy66O5PWvVEJ08O0y5JGyEKQpojb0K0GKpz/v5HJ/G0vi3D2sjGK78119oXZeE0qA==",
+      "installPath": "node_modules/ip-address",
+      "url": "https://registry.npmjs.org/ip-address/-/ip-address-10.2.0.tgz"
+    },
+    "ipaddr.js": {
+      "hash": "sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==",
+      "installPath": "node_modules/ipaddr.js",
+      "url": "https://registry.npmjs.org/ipaddr.js/-/ipaddr.js-1.9.1.tgz"
+    },
+    "is-core-module": {
+      "hash": "sha512-evOr8xfXKxE6qSR0hSXL2r3sd7ALj8+7jQEUvPYcm5sgZFdJ+AYzT6yNmJenvIYQBgIGwfwz08sL8zoL7yq2BA==",
+      "installPath": "node_modules/is-core-module",
+      "url": "https://registry.npmjs.org/is-core-module/-/is-core-module-2.16.2.tgz"
+    },
+    "is-fullwidth-code-point": {
+      "hash": "sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==",
+      "installPath": "node_modules/is-fullwidth-code-point",
+      "url": "https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz"
+    },
+    "is-potential-custom-element-name": {
+      "hash": "sha512-bCYeRA2rVibKZd+s2625gGnGF/t7DSqDs4dP7CrLA1m7jKWz6pps0LpYLJN8Q64HtmPKJ1hrN3nzPNKFEKOUiQ==",
+      "installPath": "node_modules/is-potential-custom-element-name",
+      "url": "https://registry.npmjs.org/is-potential-custom-element-name/-/is-potential-custom-element-name-1.0.1.tgz"
+    },
+    "is-promise": {
+      "hash": "sha512-hvpoI6korhJMnej285dSg6nu1+e6uxs7zG3BYAm5byqDsgJNWwxzM6z6iZiAgQR4TJ30JmBTOwqZUw3WlyH3AQ==",
+      "installPath": "node_modules/is-promise",
+      "url": "https://registry.npmjs.org/is-promise/-/is-promise-4.0.0.tgz"
+    },
+    "is-unsafe": {
+      "hash": "sha512-2LdV822R+wmI86unXA93WCFpL6g+av8ynWk0nrHyJqGop5VoocYsSLFgN8jrfalT6iGeLNM4KXuVSsULP53kEA==",
+      "installPath": "node_modules/is-unsafe",
+      "url": "https://registry.npmjs.org/is-unsafe/-/is-unsafe-2.0.0.tgz"
+    },
+    "isexe": {
+      "hash": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==",
+      "installPath": "node_modules/isexe",
+      "url": "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz"
+    },
+    "jiti": {
+      "bin": {
+        "jiti": "lib/jiti-cli.mjs"
+      },
+      "hash": "sha512-AC/7JofJvZGrrneWNaEnJeOLUx+JlGt7tNa0wZiRPT4MY1wmfKjt2+6O2p2uz2+skll8OZZmJMNqeke7kKbNgQ==",
+      "installPath": "node_modules/jiti",
+      "url": "https://registry.npmjs.org/jiti/-/jiti-2.7.0.tgz"
+    },
+    "jose": {
+      "hash": "sha512-YYVDInQKFJfR/xa3ojUTl8c2KoTwiL1R5Wg9YCydwH0x0B9grbzlg5HC7mMjCtUJjbQ/YnGEZIhI5tCgfTb4Hw==",
+      "installPath": "node_modules/jose",
+      "url": "https://registry.npmjs.org/jose/-/jose-6.2.3.tgz"
+    },
+    "js-tokens": {
+      "hash": "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==",
+      "installPath": "node_modules/js-tokens",
+      "url": "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
+    },
+    "js-yaml": {
+      "bin": {
+        "js-yaml": "bin/js-yaml.js"
+      },
+      "hash": "sha512-ePWsvanv0DWuDRsW8dnt+R4jQ31SCRCQ7hhNcPXZPsoBZiemuZNYGf7adZdqX2D86j6rvKp3RpCxVTSb8WQlOw==",
+      "installPath": "node_modules/js-yaml",
+      "url": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.2.0.tgz"
+    },
+    "jsdom": {
+      "hash": "sha512-ECi4Fi2f7BdJtUKTflYRTiaMxIB0O6zfR1fX0GXpUrf6flp8QIYn1UT20YQqdSOfk2dfkCwS8LAFoJDEppNK5Q==",
+      "installPath": "node_modules/jsdom",
+      "url": "https://registry.npmjs.org/jsdom/-/jsdom-29.1.1.tgz"
+    },
+    "jsdom/undici": {
+      "hash": "sha512-cRZYrTDwWznlnRiPjggAGxZXanty6M8RV1ff8Wm4LWXBp7/IG8v5DnOm74DtUBp9OONpK75YlPnIjQqX0dBDtA==",
+      "installPath": "node_modules/jsdom/undici",
+      "url": "https://registry.npmjs.org/undici/-/undici-7.28.0.tgz"
+    },
+    "jsesc": {
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "hash": "sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==",
+      "installPath": "node_modules/jsesc",
+      "url": "https://registry.npmjs.org/jsesc/-/jsesc-3.1.0.tgz"
+    },
+    "json-bigint": {
+      "hash": "sha512-SiPv/8VpZuWbvLSMtTDU8hEfrZWg/mH/nV/b4o0CYbSxu1UIQPLdwKOCIyLQX+VIPO5vrLX3i8qtqFyhdPSUSQ==",
+      "installPath": "node_modules/json-bigint",
+      "url": "https://registry.npmjs.org/json-bigint/-/json-bigint-1.0.0.tgz"
+    },
+    "json-schema-to-ts": {
+      "hash": "sha512-+DWg8jCJG2TEnpy7kOm/7/AxaYoaRbjVB4LFZLySZlWn8exGs3A4OLJR966cVvU26N7X9TWxl+Jsw7dzAqKT6g==",
+      "installPath": "node_modules/json-schema-to-ts",
+      "url": "https://registry.npmjs.org/json-schema-to-ts/-/json-schema-to-ts-3.1.1.tgz"
+    },
+    "json-schema-traverse": {
+      "hash": "sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==",
+      "installPath": "node_modules/json-schema-traverse",
+      "url": "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-1.0.0.tgz"
+    },
+    "json-schema-typed": {
+      "hash": "sha512-fQhoXdcvc3V28x7C7BMs4P5+kNlgUURe2jmUT1T//oBRMDrqy1QPelJimwZGo7Hg9VPV3EQV5Bnq4hbFy2vetA==",
+      "installPath": "node_modules/json-schema-typed",
+      "url": "https://registry.npmjs.org/json-schema-typed/-/json-schema-typed-8.0.2.tgz"
+    },
+    "json5": {
+      "bin": {
+        "json5": "lib/cli.js"
+      },
+      "hash": "sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==",
+      "installPath": "node_modules/json5",
+      "url": "https://registry.npmjs.org/json5/-/json5-2.2.3.tgz"
+    },
+    "jsonc-parser": {
+      "hash": "sha512-HUgH65KyejrUFPvHFPbqOY0rsFip3Bo5wb4ngvdi1EpCYWUQDC5V+Y7mZws+DLkr4M//zQJoanu1SP+87Dv1oQ==",
+      "installPath": "node_modules/jsonc-parser",
+      "url": "https://registry.npmjs.org/jsonc-parser/-/jsonc-parser-3.3.1.tgz"
+    },
+    "jwa": {
+      "hash": "sha512-hRF04fqJIP8Abbkq5NKGN0Bbr3JxlQ+qhZufXVr0DvujKy93ZCbXZMHDL4EOtodSbCWxOqR8MS1tXA5hwqCXDg==",
+      "installPath": "node_modules/jwa",
+      "url": "https://registry.npmjs.org/jwa/-/jwa-2.0.1.tgz"
+    },
+    "jws": {
+      "hash": "sha512-EKI/M/yqPncGUUh44xz0PxSidXFr/+r0pA70+gIYhjv+et7yxM+s29Y+VGDkovRofQem0fs7Uvf4+YmAdyRduA==",
+      "installPath": "node_modules/jws",
+      "url": "https://registry.npmjs.org/jws/-/jws-4.0.1.tgz"
+    },
+    "koffi": {
+      "hash": "sha512-owU0MRwv6xkrVqCd+33uw6BaYppkTRXbO/rVdJNI2dvZG0gzyRhYwW25eWtc5pauwK8TGh3AbkFONSezdykfSA==",
+      "installPath": "node_modules/koffi",
+      "url": "https://registry.npmjs.org/koffi/-/koffi-2.16.2.tgz"
+    },
+    "kubernetes-types": {
+      "hash": "sha512-Dew1okvhM/SQcIa2rcgujNndZwU8VnSapDgdxlYoB84ZlpAD43U6KLAFqYo17ykSFGHNPrg0qry0bP+GJd9v7Q==",
+      "installPath": "node_modules/kubernetes-types",
+      "url": "https://registry.npmjs.org/kubernetes-types/-/kubernetes-types-1.30.0.tgz"
+    },
+    "lightningcss": {
+      "hash": "sha512-NXYBzinNrblfraPGyrbPoD19C1h9lfI/1mzgWYvXUTe414Gz/X1FD2XBZSZM7rRTrMA8JL3OtAaGifrIKhQ5yQ==",
+      "installPath": "node_modules/lightningcss",
+      "url": "https://registry.npmjs.org/lightningcss/-/lightningcss-1.32.0.tgz"
+    },
+    "lightningcss-linux-x64-gnu": {
+      "hash": "sha512-V7Qr52IhZmdKPVr+Vtw8o+WLsQJYCTd8loIfpDaMRWGUZfBOYEJeyJIkqGIDMZPwPx24pUMfwSxxI8phr/MbOA==",
+      "installPath": "node_modules/lightningcss-linux-x64-gnu",
+      "url": "https://registry.npmjs.org/lightningcss-linux-x64-gnu/-/lightningcss-linux-x64-gnu-1.32.0.tgz"
+    },
+    "lightningcss-linux-x64-musl": {
+      "hash": "sha512-bYcLp+Vb0awsiXg/80uCRezCYHNg1/l3mt0gzHnWV9XP1W5sKa5/TCdGWaR/zBM2PeF/HbsQv/j2URNOiVuxWg==",
+      "installPath": "node_modules/lightningcss-linux-x64-musl",
+      "url": "https://registry.npmjs.org/lightningcss-linux-x64-musl/-/lightningcss-linux-x64-musl-1.32.0.tgz"
+    },
+    "locate-path": {
+      "hash": "sha512-7AO748wWnIhNqAuaty2ZWHkQHRSNfPVIsPIfwEOWO22AmaoVrWavlOcMR5nzTLNYvp36X220/maaRsrec1G65A==",
+      "installPath": "node_modules/locate-path",
+      "url": "https://registry.npmjs.org/locate-path/-/locate-path-3.0.0.tgz"
+    },
+    "long": {
+      "hash": "sha512-mNAgZ1GmyNhD7AuqnTG3/VQ26o760+ZYBPKjPvugO8+nLbYfX6TVpJPseBvopbdY+qpZ/lKUnmEc1LeZYS3QAA==",
+      "installPath": "node_modules/long",
+      "url": "https://registry.npmjs.org/long/-/long-5.3.2.tgz"
+    },
+    "lru-cache": {
+      "hash": "sha512-RPimw/7aMdv2oqRrxKwvZXcPfwBrn/JZ2xYcY9Hus/6LaS3VOAKVWKWgNLCFSiOm1ESXinjsDlidVU7JlnCN2A==",
+      "installPath": "node_modules/lru-cache",
+      "url": "https://registry.npmjs.org/lru-cache/-/lru-cache-11.5.1.tgz"
+    },
+    "magic-string": {
+      "hash": "sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==",
+      "installPath": "node_modules/magic-string",
+      "url": "https://registry.npmjs.org/magic-string/-/magic-string-0.30.21.tgz"
+    },
+    "marked": {
+      "bin": {
+        "marked": "bin/marked.js"
+      },
+      "hash": "sha512-boeBdiS0ghpWcSwoNm/jJBwdpFaMnZWRzjA6SkUMYb40SVaN1x7mmfGKp0jvexGcx+7y2La5zRZsYFZI6Qpypg==",
+      "installPath": "node_modules/marked",
+      "url": "https://registry.npmjs.org/marked/-/marked-17.0.1.tgz"
+    },
+    "math-intrinsics": {
+      "hash": "sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==",
+      "installPath": "node_modules/math-intrinsics",
+      "url": "https://registry.npmjs.org/math-intrinsics/-/math-intrinsics-1.1.0.tgz"
+    },
+    "mdn-data": {
+      "hash": "sha512-9Yubnt3e8A0OKwxYSXyhLymGW4sCufcLG6VdiDdUGVkPhpqLxlvP5vl1983gQjJl3tqbrM731mjaZaP68AgosQ==",
+      "installPath": "node_modules/mdn-data",
+      "url": "https://registry.npmjs.org/mdn-data/-/mdn-data-2.27.1.tgz"
+    },
+    "media-typer": {
+      "hash": "sha512-aisnrDP4GNe06UcKFnV5bfMNPBUw4jsLGaWwWfnH3v02GnBuXX2MCVn5RbrWo0j3pczUilYblq7fQ7Nw2t5XKw==",
+      "installPath": "node_modules/media-typer",
+      "url": "https://registry.npmjs.org/media-typer/-/media-typer-1.1.0.tgz"
+    },
+    "merge-descriptors": {
+      "hash": "sha512-Snk314V5ayFLhp3fkUREub6WtjBfPdCPY1Ln8/8munuLuiYhsABgBVWsozAG+MWMbVEvcdcpbi9R7ww22l9Q3g==",
+      "installPath": "node_modules/merge-descriptors",
+      "url": "https://registry.npmjs.org/merge-descriptors/-/merge-descriptors-2.0.0.tgz"
+    },
+    "mime-db": {
+      "hash": "sha512-aU5EJuIN2WDemCcAp2vFBfp/m4EAhWJnUNSSw0ixs7/kXbd6Pg64EmwJkNdFhB8aWt1sH2CTXrLxo/iAGV3oPQ==",
+      "installPath": "node_modules/mime-db",
+      "url": "https://registry.npmjs.org/mime-db/-/mime-db-1.54.0.tgz"
+    },
+    "mime-types": {
+      "hash": "sha512-Lbgzdk0h4juoQ9fCKXW4by0UJqj+nOOrI9MJ1sSj4nI8aI2eo1qmvQEie4VD1glsS250n15LsWsYtCugiStS5A==",
+      "installPath": "node_modules/mime-types",
+      "url": "https://registry.npmjs.org/mime-types/-/mime-types-3.0.2.tgz"
+    },
+    "minimatch": {
+      "hash": "sha512-MULkVLfKGYDFYejP07QOurDLLQpcjk7Fw+7jXS2R2czRQzR56yHRveU5NDJEOviH+hETZKSkIk5c+T23GjFUMg==",
+      "installPath": "node_modules/minimatch",
+      "url": "https://registry.npmjs.org/minimatch/-/minimatch-10.2.5.tgz"
+    },
+    "minipass": {
+      "hash": "sha512-tEBHqDnIoM/1rXME1zgka9g6Q2lcoCkxHLuc7ODJ5BxbP5d4c2Z5cGgtXAku59200Cx7diuHTOYfSBD8n6mm8A==",
+      "installPath": "node_modules/minipass",
+      "url": "https://registry.npmjs.org/minipass/-/minipass-7.1.3.tgz"
+    },
+    "mitt": {
+      "hash": "sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==",
+      "installPath": "node_modules/mitt",
+      "url": "https://registry.npmjs.org/mitt/-/mitt-3.0.1.tgz"
+    },
+    "modern-tar": {
+      "hash": "sha512-sweCIVXzx1aIGTCdzcMlSZt1h8k5Tmk08VNAuRk3IU28XamGiOH5ypi11g6De2CH7PhYqSSnGy2A/EFhbWnVKg==",
+      "installPath": "node_modules/modern-tar",
+      "url": "https://registry.npmjs.org/modern-tar/-/modern-tar-0.7.6.tgz"
+    },
+    "ms": {
+      "hash": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
+      "installPath": "node_modules/ms",
+      "url": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz"
+    },
+    "msgpackr": {
+      "hash": "sha512-RBdJ1Un7yGlXWajrkxcSa93nvQ0w4zBf60c0yYv7YtBelP8H2FA7XsfBbMHtXKXUMUxH7zV3Zuozh+kUQWhHvg==",
+      "installPath": "node_modules/msgpackr",
+      "url": "https://registry.npmjs.org/msgpackr/-/msgpackr-1.11.12.tgz"
+    },
+    "msgpackr-extract": {
+      "bin": {
+        "download-msgpackr-prebuilds": "bin/download-prebuilds.js"
+      },
+      "hash": "sha512-4kmO/MdyUIkLIvTPr8VHLil4AtoKIoniWPIEk5+CDy0xnWC84azhSFmuJ7PxZdsYtiP5kEeQsORAVIeMgxT+Hw==",
+      "installPath": "node_modules/msgpackr-extract",
+      "url": "https://registry.npmjs.org/msgpackr-extract/-/msgpackr-extract-3.0.4.tgz"
+    },
+    "multipasta": {
+      "hash": "sha512-KPA58d68KgGil15oDqXjkUBEBYc00XvbPj5/X+dyzeo/lWm9Nc25pQRlf1D+gv4OpK7NM0J1odrbu9JNNGvynA==",
+      "installPath": "node_modules/multipasta",
+      "url": "https://registry.npmjs.org/multipasta/-/multipasta-0.2.7.tgz"
+    },
+    "mz": {
+      "hash": "sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==",
+      "installPath": "node_modules/mz",
+      "url": "https://registry.npmjs.org/mz/-/mz-2.7.0.tgz"
+    },
+    "nanoid": {
+      "bin": {
+        "nanoid": "bin/nanoid.cjs"
+      },
+      "hash": "sha512-bzlKTyNJ7+LdGIIwy8ijFpIqEQIvafahV7eYykJ8Cvh42EdJeODoJ6gUJXpQJvej1BddH8OqTXZNE/KfbWAu8Q==",
+      "installPath": "node_modules/nanoid",
+      "url": "https://registry.npmjs.org/nanoid/-/nanoid-3.3.16.tgz"
+    },
+    "negotiator": {
+      "hash": "sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==",
+      "installPath": "node_modules/negotiator",
+      "url": "https://registry.npmjs.org/negotiator/-/negotiator-1.0.0.tgz"
+    },
+    "netmask": {
+      "hash": "sha512-eonl3sLUha+S1GzTPxychyhnUzKyeQkZ7jLjKrBagJgPla13F+uQ71HgpFefyHgqrjEbCPkDArxYsjY8/+gLKA==",
+      "installPath": "node_modules/netmask",
+      "url": "https://registry.npmjs.org/netmask/-/netmask-2.1.1.tgz"
+    },
+    "node-addon-api": {
+      "hash": "sha512-5m3bsyrjFWE1xf7nz7YXdN4udnVtXK6/Yfgn5qnahL6bCkf2yKt4k3nuTKAtT4r3IG8JNR2ncsIMdZuAzJjHQQ==",
+      "installPath": "node_modules/node-addon-api",
+      "url": "https://registry.npmjs.org/node-addon-api/-/node-addon-api-7.1.1.tgz"
+    },
+    "node-domexception": {
+      "hash": "sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==",
+      "installPath": "node_modules/node-domexception",
+      "url": "https://registry.npmjs.org/node-domexception/-/node-domexception-1.0.0.tgz"
+    },
+    "node-fetch": {
+      "hash": "sha512-dRB78srN/l6gqWulah9SrxeYnxeddIG30+GOqK/9OlLVyLg3HPnr6SqOWTWOXKRwC2eGYCkZ59NNuSgvSrpgOA==",
+      "installPath": "node_modules/node-fetch",
+      "url": "https://registry.npmjs.org/node-fetch/-/node-fetch-3.3.2.tgz"
+    },
+    "node-fetch/data-uri-to-buffer": {
+      "hash": "sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==",
+      "installPath": "node_modules/node-fetch/data-uri-to-buffer",
+      "url": "https://registry.npmjs.org/data-uri-to-buffer/-/data-uri-to-buffer-4.0.1.tgz"
+    },
+    "node-gyp-build-optional-packages": {
+      "bin": {
+        "node-gyp-build-optional-packages": "bin.js",
+        "node-gyp-build-optional-packages-optional": "optional.js",
+        "node-gyp-build-optional-packages-test": "build-test.js"
+      },
+      "hash": "sha512-s+w+rBWnpTMwSFbaE0UXsRlg7hU4FjekKU4eyAih5T8nJuNZT1nNsskXpxmeqSK9UzkBl6UgRlnKc8hz8IEqOw==",
+      "installPath": "node_modules/node-gyp-build-optional-packages",
+      "url": "https://registry.npmjs.org/node-gyp-build-optional-packages/-/node-gyp-build-optional-packages-5.2.2.tgz"
+    },
+    "node-pty": {
+      "hash": "sha512-20JqtutY6JPXTUnL0ij1uad7Qe1baT46lyolh2sSENDd4sTzKZ4nmAFkeAARDKwmlLjPx6XKRlwRUxwjOy+lUg==",
+      "installPath": "node_modules/node-pty",
+      "url": "https://registry.npmjs.org/node-pty/-/node-pty-1.1.0.tgz"
+    },
+    "node-releases": {
+      "hash": "sha512-Uzmd6LXpouKo8EUK68IjH4+E01w/hXyV3R3g/geCJo+rXLNfh1xucB+LOzYEOQPSiUK3h/xZf0cQGcSsmyL2Og==",
+      "installPath": "node_modules/node-releases",
+      "url": "https://registry.npmjs.org/node-releases/-/node-releases-2.0.47.tgz"
+    },
+    "object-assign": {
+      "hash": "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==",
+      "installPath": "node_modules/object-assign",
+      "url": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz"
+    },
+    "object-inspect": {
+      "hash": "sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==",
+      "installPath": "node_modules/object-inspect",
+      "url": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.13.4.tgz"
+    },
+    "obug": {
+      "hash": "sha512-9miFgM2OFba7hB+pRgvtV84pYTBaoTHohvmIgiRt6dRIzbwEOIaNaP+dIlGs2fNFoB0SeISs0Jz5WFVRid6Xyg==",
+      "installPath": "node_modules/obug",
+      "url": "https://registry.npmjs.org/obug/-/obug-2.1.3.tgz"
+    },
+    "on-finished": {
+      "hash": "sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==",
+      "installPath": "node_modules/on-finished",
+      "url": "https://registry.npmjs.org/on-finished/-/on-finished-2.4.1.tgz"
+    },
+    "once": {
+      "hash": "sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==",
+      "installPath": "node_modules/once",
+      "url": "https://registry.npmjs.org/once/-/once-1.4.0.tgz"
+    },
+    "openai": {
+      "bin": {
+        "openai": "bin/cli"
+      },
+      "hash": "sha512-zd23dbWTjiJ6sSAX6s0HrCZi41JwTA1bQVs0wLQPZ2/5o2gxOJA5wh7yOAUgwYybfhDXyhwlpeQf7Mlgx8EOCA==",
+      "installPath": "node_modules/openai",
+      "url": "https://registry.npmjs.org/openai/-/openai-6.26.0.tgz"
+    },
+    "p-limit": {
+      "hash": "sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w==",
+      "installPath": "node_modules/p-limit",
+      "url": "https://registry.npmjs.org/p-limit/-/p-limit-2.3.0.tgz"
+    },
+    "p-locate": {
+      "hash": "sha512-x+12w/To+4GFfgJhBEpiDcLozRJGegY+Ei7/z0tSLkMmxGZNybVMSfWj9aJn8Z5Fc7dBUNJOOVgPv2H7IwulSQ==",
+      "installPath": "node_modules/p-locate",
+      "url": "https://registry.npmjs.org/p-locate/-/p-locate-3.0.0.tgz"
+    },
+    "p-retry": {
+      "hash": "sha512-312Id396EbJdvRONlngUx0NydfrIQ5lsYu0znKVUzVvArzEIt08V1qhtyESbGVd1FGX7UKtiFp5uwKZdM8wIuQ==",
+      "installPath": "node_modules/p-retry",
+      "url": "https://registry.npmjs.org/p-retry/-/p-retry-4.6.2.tgz"
+    },
+    "p-try": {
+      "hash": "sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==",
+      "installPath": "node_modules/p-try",
+      "url": "https://registry.npmjs.org/p-try/-/p-try-2.2.0.tgz"
+    },
+    "pac-proxy-agent": {
+      "hash": "sha512-TEB8ESquiLMc0lV8vcd5Ql/JAKAoyzHFXaStwjkzpOpC5Yv+pIzLfHvjTSdf3vpa2bMiUQrg9i6276yn8666aA==",
+      "installPath": "node_modules/pac-proxy-agent",
+      "url": "https://registry.npmjs.org/pac-proxy-agent/-/pac-proxy-agent-7.2.0.tgz"
+    },
+    "pac-resolver": {
+      "hash": "sha512-5NPgf87AT2STgwa2ntRMr45jTKrYBGkVU36yT0ig/n/GMAa3oPqhZfIQ2kMEimReg0+t9kZViDVZ83qfVUlckg==",
+      "installPath": "node_modules/pac-resolver",
+      "url": "https://registry.npmjs.org/pac-resolver/-/pac-resolver-7.0.1.tgz"
+    },
+    "parse5": {
+      "hash": "sha512-z1e/HMG90obSGeidlli3hj7cbocou0/wa5HacvI3ASx34PecNjNQeaHNo5WIZpWofN9kgkqV1q5YvXe3F0FoPw==",
+      "installPath": "node_modules/parse5",
+      "url": "https://registry.npmjs.org/parse5/-/parse5-8.0.1.tgz"
+    },
+    "parse5-htmlparser2-tree-adapter": {
+      "hash": "sha512-qPuWvbLgvDGilKc5BoicRovlT4MtYT6JfJyBOMDsKoiT+GiuP5qyrPCnR9HcPECIJJmZh5jRndyNThnhhb/vlA==",
+      "installPath": "node_modules/parse5-htmlparser2-tree-adapter",
+      "url": "https://registry.npmjs.org/parse5-htmlparser2-tree-adapter/-/parse5-htmlparser2-tree-adapter-6.0.1.tgz"
+    },
+    "parse5-htmlparser2-tree-adapter/parse5": {
+      "hash": "sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==",
+      "installPath": "node_modules/parse5-htmlparser2-tree-adapter/parse5",
+      "url": "https://registry.npmjs.org/parse5/-/parse5-6.0.1.tgz"
+    },
+    "parse5/entities": {
+      "hash": "sha512-zwfzJecQ/Uej6tusMqwAqU/6KL2XaB2VZ2Jg54Je6ahNBGNH6Ek6g3jjNCF0fG9EWQKGZNddNjU5F1ZQn/sBnA==",
+      "installPath": "node_modules/parse5/entities",
+      "url": "https://registry.npmjs.org/entities/-/entities-8.0.0.tgz"
+    },
+    "parseurl": {
+      "hash": "sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==",
+      "installPath": "node_modules/parseurl",
+      "url": "https://registry.npmjs.org/parseurl/-/parseurl-1.3.3.tgz"
+    },
+    "partial-json": {
+      "hash": "sha512-Njv/59hHaokb/hRUjce3Hdv12wd60MtM9Z5Olmn+nehe0QDAsRtRbJPvJ0Z91TusF0SuZRIvnM+S4l6EIP8leA==",
+      "installPath": "node_modules/partial-json",
+      "url": "https://registry.npmjs.org/partial-json/-/partial-json-0.1.7.tgz"
+    },
+    "path-exists": {
+      "hash": "sha512-bpC7GYwiDYQ4wYLe+FA8lhRjhQCMcQGuSgGGqDkg/QerRWw9CmGRT0iSOVRSZJ29NMLZgIzqaljJ63oaL4NIJQ==",
+      "installPath": "node_modules/path-exists",
+      "url": "https://registry.npmjs.org/path-exists/-/path-exists-3.0.0.tgz"
+    },
+    "path-expression-matcher": {
+      "hash": "sha512-enSlaiat05iasnzmgNxRj8reFdj3puY2QpNgP1aPIaVfT6nn9ICuPoFlKHk8EN22HcwewshO+mN2DGbkCEOtqQ==",
+      "installPath": "node_modules/path-expression-matcher",
+      "url": "https://registry.npmjs.org/path-expression-matcher/-/path-expression-matcher-1.6.2.tgz"
+    },
+    "path-key": {
+      "hash": "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q==",
+      "installPath": "node_modules/path-key",
+      "url": "https://registry.npmjs.org/path-key/-/path-key-3.1.1.tgz"
+    },
+    "path-parse": {
+      "hash": "sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==",
+      "installPath": "node_modules/path-parse",
+      "url": "https://registry.npmjs.org/path-parse/-/path-parse-1.0.7.tgz"
+    },
+    "path-scurry": {
+      "hash": "sha512-3O/iVVsJAPsOnpwWIeD+d6z/7PmqApyQePUtCndjatj/9I5LylHvt5qluFaBT3I5h3r1ejfR056c+FCv+NnNXg==",
+      "installPath": "node_modules/path-scurry",
+      "url": "https://registry.npmjs.org/path-scurry/-/path-scurry-2.0.2.tgz"
+    },
+    "path-to-regexp": {
+      "hash": "sha512-qRcuIdP69NPm4qbACK+aDogI5CBDMi1jKe0ry5rSQJz8JVLsC7jV8XpiJjGRLLol3N+R5ihGYcrPLTno6pAdBA==",
+      "installPath": "node_modules/path-to-regexp",
+      "url": "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-8.4.2.tgz"
+    },
+    "pathe": {
+      "hash": "sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==",
+      "installPath": "node_modules/pathe",
+      "url": "https://registry.npmjs.org/pathe/-/pathe-2.0.3.tgz"
+    },
+    "pend": {
+      "hash": "sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==",
+      "installPath": "node_modules/pend",
+      "url": "https://registry.npmjs.org/pend/-/pend-1.2.0.tgz"
+    },
+    "picocolors": {
+      "hash": "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==",
+      "installPath": "node_modules/picocolors",
+      "url": "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz"
+    },
+    "picomatch": {
+      "hash": "sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==",
+      "installPath": "node_modules/picomatch",
+      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.4.tgz"
+    },
+    "pkce-challenge": {
+      "hash": "sha512-wQ0b/W4Fr01qtpHlqSqspcj3EhBvimsdh0KlHhH8HRZnMsEa0ea2fTULOXOS9ccQr3om+GcGRk4e+isrZWV8qQ==",
+      "installPath": "node_modules/pkce-challenge",
+      "url": "https://registry.npmjs.org/pkce-challenge/-/pkce-challenge-5.0.1.tgz"
+    },
+    "pkg-up": {
+      "hash": "sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==",
+      "installPath": "node_modules/pkg-up",
+      "url": "https://registry.npmjs.org/pkg-up/-/pkg-up-3.1.0.tgz"
+    },
+    "postcss": {
+      "hash": "sha512-Mz8SaolMd8nB+G13WkORcxQKHZ/NE4xXevtkJHVuG+guo9/wYKlIMTKAqGdEmYOXR2ijPjTYNHssizdaVSUNdQ==",
+      "installPath": "node_modules/postcss",
+      "url": "https://registry.npmjs.org/postcss/-/postcss-8.5.19.tgz"
+    },
+    "posthog-node": {
+      "hash": "sha512-WLbeUdSDpERDENBgaDahMo9sqwjo8Gc1f1dnM01HciwdP8OnGlbcVs8zrqjz6Z9GvBnTnRTa0Q2bBQeXrBIeHg==",
+      "installPath": "node_modules/posthog-node",
+      "url": "https://registry.npmjs.org/posthog-node/-/posthog-node-5.35.12.tgz"
+    },
+    "proper-lockfile": {
+      "hash": "sha512-TjNPblN4BwAWMXU8s9AEz4JmQxnD1NNL7bNOY/AKUzyamc379FWASUhc/K1pL2noVb+XmZKLL68cjzLsiOAMaA==",
+      "installPath": "node_modules/proper-lockfile",
+      "url": "https://registry.npmjs.org/proper-lockfile/-/proper-lockfile-4.1.2.tgz"
+    },
+    "proper-lockfile/retry": {
+      "hash": "sha512-9LkiTwjUh6rT555DtE9rTX+BKByPfrMzEAtnlEtdEwr3Nkffwiihqe2bWADg+OQRjt9gl6ICdmB/ZFDCGAtSow==",
+      "installPath": "node_modules/proper-lockfile/retry",
+      "url": "https://registry.npmjs.org/retry/-/retry-0.12.0.tgz"
+    },
+    "protobufjs": {
+      "hash": "sha512-RJJPTTpvFfHcWLkIa2JFWK4XvtSzS0yEWDmunqHXli1h3JlkbcQZXDZdcWxv+JK3Xsl5/UFDPZ0iGm7DAengYw==",
+      "installPath": "node_modules/protobufjs",
+      "url": "https://registry.npmjs.org/protobufjs/-/protobufjs-7.6.4.tgz"
+    },
+    "proxy-addr": {
+      "hash": "sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==",
+      "installPath": "node_modules/proxy-addr",
+      "url": "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.7.tgz"
+    },
+    "proxy-agent": {
+      "hash": "sha512-TmatMXdr2KlRiA2CyDu8GqR8EjahTG3aY3nXjdzFyoZbmB8hrBsTyMezhULIXKnC0jpfjlmiZ3+EaCzoInSu/A==",
+      "installPath": "node_modules/proxy-agent",
+      "url": "https://registry.npmjs.org/proxy-agent/-/proxy-agent-6.5.0.tgz"
+    },
+    "proxy-agent/lru-cache": {
+      "hash": "sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==",
+      "installPath": "node_modules/proxy-agent/lru-cache",
+      "url": "https://registry.npmjs.org/lru-cache/-/lru-cache-7.18.3.tgz"
+    },
+    "proxy-from-env": {
+      "hash": "sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==",
+      "installPath": "node_modules/proxy-from-env",
+      "url": "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz"
+    },
+    "pump": {
+      "hash": "sha512-VS7sjc6KR7e1ukRFhQSY5LM2uBWAUPiOPa/A3mkKmiMwSmRFUITt0xuj+/lesgnCv+dPIEYlkzrcyXgquIHMcA==",
+      "installPath": "node_modules/pump",
+      "url": "https://registry.npmjs.org/pump/-/pump-3.0.4.tgz"
+    },
+    "punycode": {
+      "hash": "sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==",
+      "installPath": "node_modules/punycode",
+      "url": "https://registry.npmjs.org/punycode/-/punycode-2.3.1.tgz"
+    },
+    "puppeteer-core": {
+      "hash": "sha512-fm+wpUr2oigH1PXZvwgATrM2tYWHMDG8ASzTEe9uukCye4X5Ldx1K5BTHPFKITrIWvQQAQ256d1NpbEveBcKjA==",
+      "installPath": "node_modules/puppeteer-core",
+      "url": "https://registry.npmjs.org/puppeteer-core/-/puppeteer-core-25.3.0.tgz"
+    },
+    "pure-rand": {
+      "hash": "sha512-IoM8YF/jY0hiugFo/wOWqfmarlE6J0wc6fDK1PhftMk7MGhVZl88sZimmqBBFomLOCSmcCCpsfj7wXASCpvK9A==",
+      "installPath": "node_modules/pure-rand",
+      "url": "https://registry.npmjs.org/pure-rand/-/pure-rand-8.4.0.tgz"
+    },
+    "qs": {
+      "hash": "sha512-Rzq0KEyX/w/tEybncDgdkZrJgVUsUMk3xjh3t5bv3S1HTAtg+uOYt72+ZfwiQwKdysThkTBdL/rTi6HDmX9Ddw==",
+      "installPath": "node_modules/qs",
+      "url": "https://registry.npmjs.org/qs/-/qs-6.15.2.tgz"
+    },
+    "range-parser": {
+      "hash": "sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==",
+      "installPath": "node_modules/range-parser",
+      "url": "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz"
+    },
+    "raw-body": {
+      "hash": "sha512-K5zQjDllxWkf7Z5xJdV0/B0WTNqx6vxG70zJE4N0kBs4LovmEYWJzQGxC9bS9RAKu3bgM40lrd5zoLJ12MQ5BA==",
+      "installPath": "node_modules/raw-body",
+      "url": "https://registry.npmjs.org/raw-body/-/raw-body-3.0.2.tgz"
+    },
+    "require-directory": {
+      "hash": "sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==",
+      "installPath": "node_modules/require-directory",
+      "url": "https://registry.npmjs.org/require-directory/-/require-directory-2.1.1.tgz"
+    },
+    "require-from-string": {
+      "hash": "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==",
+      "installPath": "node_modules/require-from-string",
+      "url": "https://registry.npmjs.org/require-from-string/-/require-from-string-2.0.2.tgz"
+    },
+    "reselect": {
+      "hash": "sha512-ab9EmR80F/zQTMNeneUr4cv+jSwPJgIlvEmVwLerwrWVbpLlBuls9XHzIeTFy4cegU2NHBp3va0LKOzU5qFEYQ==",
+      "installPath": "node_modules/reselect",
+      "url": "https://registry.npmjs.org/reselect/-/reselect-4.1.8.tgz"
+    },
+    "resolve": {
+      "bin": {
+        "resolve": "bin/resolve"
+      },
+      "hash": "sha512-TyeJ1zif53BPfHootBGwPRYT1RUt6oGWsaQr8UyZW/eAm9bKoijtvruSDEmZHm92CwS9nj7/fWttqPCgzep8CA==",
+      "installPath": "node_modules/resolve",
+      "url": "https://registry.npmjs.org/resolve/-/resolve-1.22.12.tgz"
+    },
+    "retry": {
+      "hash": "sha512-XQBQ3I8W1Cge0Seh+6gjj03LbmRFWuoszgK9ooCpwYIrhhoO80pfq4cUkU5DkknwfOfFteRwlZ56PYOGYyFWdg==",
+      "installPath": "node_modules/retry",
+      "url": "https://registry.npmjs.org/retry/-/retry-0.13.1.tgz"
+    },
+    "rolldown": {
+      "bin": {
+        "rolldown": "./bin/cli.mjs"
+      },
+      "hash": "sha512-t9z29cJjXf/vxQ8dyhCSpt6H6aSwHTk8cT5I3iy6SMXuFpk5mB6PL6XfC8PCwrPTx93udwKUm9HRteAlTGBLiA==",
+      "installPath": "node_modules/rolldown",
+      "url": "https://registry.npmjs.org/rolldown/-/rolldown-1.1.5.tgz"
+    },
+    "router": {
+      "hash": "sha512-nLTrUKm2UyiL7rlhapu/Zl45FwNgkZGaCpZbIHajDYgwlJCOzLSk+cIPAnsEqV955GjILJnKbdQC1nVPz+gAYQ==",
+      "installPath": "node_modules/router",
+      "url": "https://registry.npmjs.org/router/-/router-2.2.0.tgz"
+    },
+    "s-js": {
+      "hash": "sha512-RtpOm+cM6O0sHg6IA70wH+UC3FZcND+rccBZpBAHzlUgNO2Bm5BN+FnM8+OBxzXdwpKWFwX11JGF0MFRkhSoIQ==",
+      "installPath": "node_modules/s-js",
+      "url": "https://registry.npmjs.org/s-js/-/s-js-0.4.9.tgz"
+    },
+    "safe-buffer": {
+      "hash": "sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==",
+      "installPath": "node_modules/safe-buffer",
+      "url": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz"
+    },
+    "safer-buffer": {
+      "hash": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==",
+      "installPath": "node_modules/safer-buffer",
+      "url": "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
+    },
+    "saxes": {
+      "hash": "sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==",
+      "installPath": "node_modules/saxes",
+      "url": "https://registry.npmjs.org/saxes/-/saxes-6.0.0.tgz"
+    },
+    "semver": {
+      "bin": {
+        "semver": "bin/semver.js"
+      },
+      "hash": "sha512-AcM7dV/5ul4EekoQ29Agm5vri8JNqRyj39o0qpX6vDF2GZrtutZl5RwgD1XnZjiTAfncsJhMI48QQH3sN87YNA==",
+      "installPath": "node_modules/semver",
+      "url": "https://registry.npmjs.org/semver/-/semver-7.8.0.tgz"
+    },
+    "send": {
+      "hash": "sha512-1gnZf7DFcoIcajTjTwjwuDjzuz4PPcY2StKPlsGAQ1+YH20IRVrBaXSWmdjowTJ6u8Rc01PoYOGHXfP1mYcZNQ==",
+      "installPath": "node_modules/send",
+      "url": "https://registry.npmjs.org/send/-/send-1.2.1.tgz"
+    },
+    "seroval": {
+      "hash": "sha512-46uFvgrXTVxZcUorgSSRZ4y+ieqLLQRMlG4bnCZKW3qI6BZm7Rg4ntMW4p1mILEEBZWrFlcpp0AyIIlM6jD9iw==",
+      "installPath": "node_modules/seroval",
+      "url": "https://registry.npmjs.org/seroval/-/seroval-1.5.4.tgz"
+    },
+    "seroval-plugins": {
+      "hash": "sha512-S0xQPhUTefAhNvNWFg0c1J8qJArHt5KdtJ/cFAofo06KD1MVSeFWyl4iiu+ApDIuw0WhjpOfCdgConOfAnLgkw==",
+      "installPath": "node_modules/seroval-plugins",
+      "url": "https://registry.npmjs.org/seroval-plugins/-/seroval-plugins-1.5.4.tgz"
+    },
+    "serve-static": {
+      "hash": "sha512-xRXBn0pPqQTVQiC8wyQrKs2MOlX24zQ0POGaj0kultvoOCstBQM5yvOhAVSUwOMjQtTvsPWoNCHfPGwaaQJhTw==",
+      "installPath": "node_modules/serve-static",
+      "url": "https://registry.npmjs.org/serve-static/-/serve-static-2.2.1.tgz"
+    },
+    "setprototypeof": {
+      "hash": "sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==",
+      "installPath": "node_modules/setprototypeof",
+      "url": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz"
+    },
+    "shebang-command": {
+      "hash": "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA==",
+      "installPath": "node_modules/shebang-command",
+      "url": "https://registry.npmjs.org/shebang-command/-/shebang-command-2.0.0.tgz"
+    },
+    "shebang-regex": {
+      "hash": "sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==",
+      "installPath": "node_modules/shebang-regex",
+      "url": "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz"
+    },
+    "side-channel": {
+      "hash": "sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==",
+      "installPath": "node_modules/side-channel",
+      "url": "https://registry.npmjs.org/side-channel/-/side-channel-1.1.0.tgz"
+    },
+    "side-channel-list": {
+      "hash": "sha512-mjn/0bi/oUURjc5Xl7IaWi/OJJJumuoJFQJfDDyO46+hBWsfaVM65TBHq2eoZBhzl9EchxOijpkbRC8SVBQU0w==",
+      "installPath": "node_modules/side-channel-list",
+      "url": "https://registry.npmjs.org/side-channel-list/-/side-channel-list-1.0.1.tgz"
+    },
+    "side-channel-map": {
+      "hash": "sha512-VCjCNfgMsby3tTdo02nbjtM/ewra6jPHmpThenkTYh8pG9ucZ/1P8So4u4FGBek/BjpOVsDCMoLA/iuBKIFXRA==",
+      "installPath": "node_modules/side-channel-map",
+      "url": "https://registry.npmjs.org/side-channel-map/-/side-channel-map-1.0.1.tgz"
+    },
+    "side-channel-weakmap": {
+      "hash": "sha512-WPS/HvHQTYnHisLo9McqBHOJk2FkHO/tlpvldyrnem4aeQp4hai3gythswg6p01oSoTl58rcpiFAjF2br2Ak2A==",
+      "installPath": "node_modules/side-channel-weakmap",
+      "url": "https://registry.npmjs.org/side-channel-weakmap/-/side-channel-weakmap-1.0.2.tgz"
+    },
+    "siginfo": {
+      "hash": "sha512-ybx0WO1/8bSBLEWXZvEd7gMW3Sn3JFlW3TvX1nREbDLRNQNaeNN8WK0meBwPdAaOI7TtRRRJn/Es1zhrrCHu7g==",
+      "installPath": "node_modules/siginfo",
+      "url": "https://registry.npmjs.org/siginfo/-/siginfo-2.0.0.tgz"
+    },
+    "signal-exit": {
+      "hash": "sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==",
+      "installPath": "node_modules/signal-exit",
+      "url": "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz"
+    },
+    "sisteransi": {
+      "hash": "sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==",
+      "installPath": "node_modules/sisteransi",
+      "url": "https://registry.npmjs.org/sisteransi/-/sisteransi-1.0.5.tgz"
+    },
+    "smart-buffer": {
+      "hash": "sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==",
+      "installPath": "node_modules/smart-buffer",
+      "url": "https://registry.npmjs.org/smart-buffer/-/smart-buffer-4.2.0.tgz"
+    },
+    "socks": {
+      "hash": "sha512-LJhUYUvItdQ0LkJTmPeaEObWXAqFyfmP85x0tch/ez9cahmhlBBLbIqDFnvBnUJGagb0JbIQrkBs1wJ+yRYpEw==",
+      "installPath": "node_modules/socks",
+      "url": "https://registry.npmjs.org/socks/-/socks-2.8.9.tgz"
+    },
+    "socks-proxy-agent": {
+      "hash": "sha512-HehCEsotFqbPW9sJ8WVYB6UbmIMv7kUUORIF2Nncq4VQvBfNBLibW9YZR5dlYCSUhwcD628pRllm7n+E+YTzJw==",
+      "installPath": "node_modules/socks-proxy-agent",
+      "url": "https://registry.npmjs.org/socks-proxy-agent/-/socks-proxy-agent-8.0.5.tgz"
+    },
+    "solid-js": {
+      "hash": "sha512-QzKaSJq2/iDrWR1As6MHZQ8fQkdOBf8GReYb7L5iKwMGceg7HxDcaOHk0at66tNgn9U2U7dXo8ZZpLIAmGMzgw==",
+      "installPath": "node_modules/solid-js",
+      "url": "https://registry.npmjs.org/solid-js/-/solid-js-1.9.12.tgz"
+    },
+    "source-map": {
+      "hash": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==",
+      "installPath": "node_modules/source-map",
+      "url": "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz"
+    },
+    "source-map-js": {
+      "hash": "sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==",
+      "installPath": "node_modules/source-map-js",
+      "url": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz"
+    },
+    "stackback": {
+      "hash": "sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==",
+      "installPath": "node_modules/stackback",
+      "url": "https://registry.npmjs.org/stackback/-/stackback-0.0.2.tgz"
+    },
+    "statuses": {
+      "hash": "sha512-DvEy55V3DB7uknRo+4iOGT5fP1slR8wQohVdknigZPMpMstaKJQWhwiYBACJE3Ul2pTnATihhBYnRhZQHGBiRw==",
+      "installPath": "node_modules/statuses",
+      "url": "https://registry.npmjs.org/statuses/-/statuses-2.0.2.tgz"
+    },
+    "std-env": {
+      "hash": "sha512-oCUKSupKTHX53EyjDtuZQ64pjLJ6yYCtpmEw0goYxtjG9KpbRe8KAsl2tBUGU9DyMcJ0RwJ8GqJAFzMXcXW1Rw==",
+      "installPath": "node_modules/std-env",
+      "url": "https://registry.npmjs.org/std-env/-/std-env-4.2.0.tgz"
+    },
+    "string-width": {
+      "hash": "sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ==",
+      "installPath": "node_modules/string-width",
+      "url": "https://registry.npmjs.org/string-width/-/string-width-7.2.0.tgz"
+    },
+    "strip-ansi": {
+      "hash": "sha512-gmBGslpoQJtgnMAvOVqGZpEz9dyoKTCzy2nfz/n8aIFhN/jCE/rCmcxabB6jOOHV+0WNnylOxaxBQPSvcWklhA==",
+      "installPath": "node_modules/strip-ansi",
+      "url": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.1.2.tgz"
+    },
+    "strnum": {
+      "hash": "sha512-M9eUSMT2dCB2cTNPG7UYj6KuK7RJR2SN2+yCV/fTW3xzTCS6EaGZ5pSMgDIjB7r8zSfTGk+dvvn9rTjpVS9Mwg==",
+      "installPath": "node_modules/strnum",
+      "url": "https://registry.npmjs.org/strnum/-/strnum-2.4.1.tgz"
+    },
+    "strtok3": {
+      "hash": "sha512-ki4hZQfh5rX0QDLLkOCj+h+CVNkqmp/CMf8v8kZpkNVK6jGQooMytqzLZYUVYIZcFZ6yDB70EfD8POcFXiF5oA==",
+      "installPath": "node_modules/strtok3",
+      "url": "https://registry.npmjs.org/strtok3/-/strtok3-10.3.5.tgz"
+    },
+    "supports-color": {
+      "hash": "sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==",
+      "installPath": "node_modules/supports-color",
+      "url": "https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz"
+    },
+    "supports-preserve-symlinks-flag": {
+      "hash": "sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==",
+      "installPath": "node_modules/supports-preserve-symlinks-flag",
+      "url": "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
+    },
+    "symbol-tree": {
+      "hash": "sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==",
+      "installPath": "node_modules/symbol-tree",
+      "url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.4.tgz"
+    },
+    "thenify": {
+      "hash": "sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==",
+      "installPath": "node_modules/thenify",
+      "url": "https://registry.npmjs.org/thenify/-/thenify-3.3.1.tgz"
+    },
+    "thenify-all": {
+      "hash": "sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA==",
+      "installPath": "node_modules/thenify-all",
+      "url": "https://registry.npmjs.org/thenify-all/-/thenify-all-1.6.0.tgz"
+    },
+    "tinybench": {
+      "hash": "sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==",
+      "installPath": "node_modules/tinybench",
+      "url": "https://registry.npmjs.org/tinybench/-/tinybench-2.9.0.tgz"
+    },
+    "tinyexec": {
+      "hash": "sha512-SHf/r48b7vOrjve9PxJo3MN5v5yuyjHvdUcrQffT3WXMUfnGmHDVbC4k3sHJaJTgZCwpUplIaAo5ANtMyp3YHg==",
+      "installPath": "node_modules/tinyexec",
+      "url": "https://registry.npmjs.org/tinyexec/-/tinyexec-1.2.4.tgz"
+    },
+    "tinyglobby": {
+      "hash": "sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==",
+      "installPath": "node_modules/tinyglobby",
+      "url": "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.17.tgz"
+    },
+    "tinyglobby/picomatch": {
+      "hash": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
+      "installPath": "node_modules/tinyglobby/picomatch",
+      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz"
+    },
+    "tinyrainbow": {
+      "hash": "sha512-Bf+ILmBgretUrdJxzXM0SgXLZ3XfiaUuOj/IKQHuTXip+05Xn+uyEYdVg0kYDipTBcLrCVyUzAPz7QmArb0mmw==",
+      "installPath": "node_modules/tinyrainbow",
+      "url": "https://registry.npmjs.org/tinyrainbow/-/tinyrainbow-3.1.0.tgz"
+    },
+    "tldts": {
+      "bin": {
+        "tldts": "bin/cli.js"
+      },
+      "hash": "sha512-rbP0Gyx8b3Ae9yO//CU2wbSnQNoQ66m1nJdSbSHmnwKwzkkz/u8mERYU8T2rmlmy+bJvRNn84yNCW8gYqox44Q==",
+      "installPath": "node_modules/tldts",
+      "url": "https://registry.npmjs.org/tldts/-/tldts-7.4.6.tgz"
+    },
+    "tldts-core": {
+      "hash": "sha512-TkQNGJIhlEphpHCjKodMTSe23egUZr/g+flI2qkLgiJ/maAzSgXypSLRTNH3nCmqgayEmtcJBiLcfODSAr1xoA==",
+      "installPath": "node_modules/tldts-core",
+      "url": "https://registry.npmjs.org/tldts-core/-/tldts-core-7.4.6.tgz"
+    },
+    "toidentifier": {
+      "hash": "sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==",
+      "installPath": "node_modules/toidentifier",
+      "url": "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz"
+    },
+    "token-types": {
+      "hash": "sha512-dRXchy+C0IgK8WPC6xvCHFRIWYUbqqdEIKPaKo/AcTUNzwLTK6AH7RjdLWsEZcAN/TBdtfUw3PYEgPr5VPr6ww==",
+      "installPath": "node_modules/token-types",
+      "url": "https://registry.npmjs.org/token-types/-/token-types-6.1.2.tgz"
+    },
+    "toml": {
+      "hash": "sha512-EBJnVBr3dTXdA89WVFoAIPUqkBjxPMwRqsfuo1r240tKFHXv3zgca4+NJib/h6TyvGF7vOawz0jGuryJCdNHrw==",
+      "installPath": "node_modules/toml",
+      "url": "https://registry.npmjs.org/toml/-/toml-4.1.1.tgz"
+    },
+    "tough-cookie": {
+      "hash": "sha512-LktZQb3IeoUWB9lqR5EWTHgW/VTITCXg4D21M+lvybRVdylLrRMnqaIONLVb5mav8vM19m44HIcGq4qASeu2Qw==",
+      "installPath": "node_modules/tough-cookie",
+      "url": "https://registry.npmjs.org/tough-cookie/-/tough-cookie-6.0.1.tgz"
+    },
+    "tr46": {
+      "hash": "sha512-bLVMLPtstlZ4iMQHpFHTR7GAGj2jxi8Dg0s2h2MafAE4uSWF98FC/3MomU51iQAMf8/qDUbKWf5GxuvvVcXEhw==",
+      "installPath": "node_modules/tr46",
+      "url": "https://registry.npmjs.org/tr46/-/tr46-6.0.0.tgz"
+    },
+    "ts-algebra": {
+      "hash": "sha512-FPAhNPFMrkwz76P7cdjdmiShwMynZYN6SgOujD1urY4oNm80Ou9oMdmbR45LotcKOXoy7wSmHkRFE6Mxbrhefw==",
+      "installPath": "node_modules/ts-algebra",
+      "url": "https://registry.npmjs.org/ts-algebra/-/ts-algebra-2.0.0.tgz"
+    },
+    "tslib": {
+      "hash": "sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==",
+      "installPath": "node_modules/tslib",
+      "url": "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz"
+    },
+    "turndown": {
+      "hash": "sha512-I8yFsfRzmzK0WV1pNNOA4A7y4RDfFxPRxb3t+e3ui14qSGOxGtiSP6GjeX+Y6CHb7HYaFj7ECUD7VE5kQMZWGQ==",
+      "installPath": "node_modules/turndown",
+      "url": "https://registry.npmjs.org/turndown/-/turndown-7.2.4.tgz"
+    },
+    "type-is": {
+      "hash": "sha512-faYHw0anBbc/kWF3zFTEnxSFOAGUX9GFbOBthvDdLsIlEoWOFOtS0zgCiQYwIskL9iGXZL3kAXD8OoZ4GmMATA==",
+      "installPath": "node_modules/type-is",
+      "url": "https://registry.npmjs.org/type-is/-/type-is-2.1.0.tgz"
+    },
+    "type-is/content-type": {
+      "hash": "sha512-j/O/d7GcZCyNl7/hwZAb606rzqkyvaDctLmckbxLzHvFBzTJHuGEdodATcP3yIRoDrLHkIATJuvzbFlp/ki2cQ==",
+      "installPath": "node_modules/type-is/content-type",
+      "url": "https://registry.npmjs.org/content-type/-/content-type-2.0.0.tgz"
+    },
+    "typebox": {
+      "hash": "sha512-pZ0aQPmMmXoUvSbeuWf/Hzsc+avNw/Zd6VeE8CFgkVGWyuHPJvqeJJDeJqLve+K70LvjYIoleGcoJHPT17cWoA==",
+      "installPath": "node_modules/typebox",
+      "url": "https://registry.npmjs.org/typebox/-/typebox-1.1.38.tgz"
+    },
+    "typed-query-selector": {
+      "hash": "sha512-EOPFbyIub4ngnEdqi2yOcNeDLaX/0jcE1JoAXQDDMIthap7FoN795lc/SHfIq2d416VufXpM8z/lD+WRm2gfOQ==",
+      "installPath": "node_modules/typed-query-selector",
+      "url": "https://registry.npmjs.org/typed-query-selector/-/typed-query-selector-2.12.2.tgz"
+    },
+    "typescript": {
+      "bin": {
+        "tsc": "bin/tsc"
+      },
+      "hash": "sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==",
+      "installPath": "node_modules/typescript",
+      "url": "https://registry.npmjs.org/typescript/-/typescript-7.0.2.tgz"
+    },
+    "uint8array-extras": {
+      "hash": "sha512-rvKSBiC5zqCCiDZ9kAOszZcDvdAHwwIKJG33Ykj43OKcWsnmcBRL09YTU4nOeHZ8Y2a7l1MgTd08SBe9A8Qj6A==",
+      "installPath": "node_modules/uint8array-extras",
+      "url": "https://registry.npmjs.org/uint8array-extras/-/uint8array-extras-1.5.0.tgz"
+    },
+    "undici": {
+      "hash": "sha512-xamtWoB1EshgjpmlXd7GGm2VfdDtw1+rD8uhry8pSNW3If6S8E0m2T2+orSKeZXEn/aPJMviCpDBA65WJt8zhg==",
+      "installPath": "node_modules/undici",
+      "url": "https://registry.npmjs.org/undici/-/undici-8.5.0.tgz"
+    },
+    "undici-types": {
+      "hash": "sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==",
+      "installPath": "node_modules/undici-types",
+      "url": "https://registry.npmjs.org/undici-types/-/undici-types-7.24.6.tgz"
+    },
+    "unpipe": {
+      "hash": "sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==",
+      "installPath": "node_modules/unpipe",
+      "url": "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz"
+    },
+    "update-browserslist-db": {
+      "bin": {
+        "update-browserslist-db": "cli.js"
+      },
+      "hash": "sha512-Js0m9cx+qOgDxo0eMiFGEueWztz+d4+M3rGlmKPT+T4IS/jP4ylw3Nwpu6cpTTP8R1MAC1kF4VbdLt3ARf209w==",
+      "installPath": "node_modules/update-browserslist-db",
+      "url": "https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.2.3.tgz"
+    },
+    "uuid": {
+      "bin": {
+        "uuid": "dist-node/bin/uuid"
+      },
+      "hash": "sha512-6ZxzVpzDXDa3bJWaHilVayA+BH/1zmxCJoVgvmqJnid/gPoKHxUrS/aC/T6LGQtNHT+XHG9fXPJB4d+IrU30Ew==",
+      "installPath": "node_modules/uuid",
+      "url": "https://registry.npmjs.org/uuid/-/uuid-14.0.1.tgz"
+    },
+    "vary": {
+      "hash": "sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==",
+      "installPath": "node_modules/vary",
+      "url": "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
+    },
+    "vite": {
+      "bin": {
+        "vite": "bin/vite.js"
+      },
+      "hash": "sha512-bTT9PsdWO+MQMNG9ZXIP/qM9wGh37DFxTV/sPq9cFpHr3w4jkgef032PkAL9jAqhk3Nz8NQw3O8n6/xFkqO4QQ==",
+      "installPath": "node_modules/vite",
+      "url": "https://registry.npmjs.org/vite/-/vite-8.1.4.tgz"
+    },
+    "vite/picomatch": {
+      "hash": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
+      "installPath": "node_modules/vite/picomatch",
+      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz"
+    },
+    "vitest": {
+      "bin": {
+        "vitest": "./vitest.mjs"
+      },
+      "hash": "sha512-R9jUTe5S4Qb0HCd4TNqpC7oGcrMssMRGXLW80ubjWsW9VH5GF8y1Y0SFLY9AbqSk6nt0PnOx4H4WNJYZ13GUPw==",
+      "installPath": "node_modules/vitest",
+      "url": "https://registry.npmjs.org/vitest/-/vitest-4.1.10.tgz"
+    },
+    "w3c-xmlserializer": {
+      "hash": "sha512-o8qghlI8NZHU1lLPrpi2+Uq7abh4GGPpYANlalzWxyWteJOCsr/P+oPBA49TOLu5FTZO4d3F9MnWJfiMo4BkmA==",
+      "installPath": "node_modules/w3c-xmlserializer",
+      "url": "https://registry.npmjs.org/w3c-xmlserializer/-/w3c-xmlserializer-5.0.0.tgz"
+    },
+    "web-streams-polyfill": {
+      "hash": "sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw==",
+      "installPath": "node_modules/web-streams-polyfill",
+      "url": "https://registry.npmjs.org/web-streams-polyfill/-/web-streams-polyfill-3.3.3.tgz"
+    },
+    "web-tree-sitter": {
+      "hash": "sha512-Y09sF44/13XvgVKgO2cNDw5rGk6s26MgoZPXLESvMXeefBf7i6/73eFurre0IsTW6E14Y0ArIzhUMmjoc7xyzA==",
+      "installPath": "node_modules/web-tree-sitter",
+      "url": "https://registry.npmjs.org/web-tree-sitter/-/web-tree-sitter-0.25.10.tgz"
+    },
+    "webdriver-bidi-protocol": {
+      "hash": "sha512-VSV+fzfChirL3e7jay2yUC7B4HQCGtEWEg/MSSQbK+qWbqeGlRLlXTzPpYr3XGUvbpDHumWZBJxgesg4N7dbtA==",
+      "installPath": "node_modules/webdriver-bidi-protocol",
+      "url": "https://registry.npmjs.org/webdriver-bidi-protocol/-/webdriver-bidi-protocol-0.4.2.tgz"
+    },
+    "webidl-conversions": {
+      "hash": "sha512-BMhLD/Sw+GbJC21C/UgyaZX41nPt8bUTg+jWyDeg7e7YN4xOM05YPSIXceACnXVtqyEw/LMClUQMtMZ+PGGpqQ==",
+      "installPath": "node_modules/webidl-conversions",
+      "url": "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-8.0.1.tgz"
+    },
+    "whatwg-mimetype": {
+      "hash": "sha512-sXcNcHOC51uPGF0P/D4NVtrkjSU2fNsm9iog4ZvZJsL3rjoDAzXZhkm2MWt1y+PUdggKAYVoMAIYcs78wJ51Cw==",
+      "installPath": "node_modules/whatwg-mimetype",
+      "url": "https://registry.npmjs.org/whatwg-mimetype/-/whatwg-mimetype-5.0.0.tgz"
+    },
+    "whatwg-url": {
+      "hash": "sha512-1to4zXBxmXHV3IiSSEInrreIlu02vUOvrhxJJH5vcxYTBDAx51cqZiKdyTxlecdKNSjj8EcxGBxNf6Vg+945gw==",
+      "installPath": "node_modules/whatwg-url",
+      "url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-16.0.1.tgz"
+    },
+    "which": {
+      "bin": {
+        "node-which": "./bin/node-which"
+      },
+      "hash": "sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==",
+      "installPath": "node_modules/which",
+      "url": "https://registry.npmjs.org/which/-/which-2.0.2.tgz"
+    },
+    "why-is-node-running": {
+      "bin": {
+        "why-is-node-running": "cli.js"
+      },
+      "hash": "sha512-hUrmaWBdVDcxvYqnyh09zunKzROWjbZTiNy8dBEjkS7ehEDQibXJ7XvlmtbwuTclUiIyN+CyXQD4Vmko8fNm8w==",
+      "installPath": "node_modules/why-is-node-running",
+      "url": "https://registry.npmjs.org/why-is-node-running/-/why-is-node-running-2.3.0.tgz"
+    },
+    "wrap-ansi": {
+      "hash": "sha512-42AtmgqjV+X1VpdOfyTGOYRi0/zsoLqtXQckTmqTeybT+BDIbM/Guxo7x3pE2vtpr1ok6xRqM9OpBe+Jyoqyww==",
+      "installPath": "node_modules/wrap-ansi",
+      "url": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-9.0.2.tgz"
+    },
+    "wrap-ansi/ansi-styles": {
+      "hash": "sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg==",
+      "installPath": "node_modules/wrap-ansi/ansi-styles",
+      "url": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.3.tgz"
+    },
+    "wrappy": {
+      "hash": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==",
+      "installPath": "node_modules/wrappy",
+      "url": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz"
+    },
+    "ws": {
+      "hash": "sha512-Vsp28b7DRcimFQvrqu2Wek3z1iYxDCWqHYB8Qsnk/S4RfaCQzPGPyBNuVjJV3cd6UiKtUtp6sNM77gWvzcCH+g==",
+      "installPath": "node_modules/ws",
+      "url": "https://registry.npmjs.org/ws/-/ws-8.21.0.tgz"
+    },
+    "xml-name-validator": {
+      "hash": "sha512-EvGK8EJ3DhaHfbRlETOWAS5pO9MZITeauHKJyb8wyajUfQUenkIg2MvLDTZ4T/TgIcm3HU0TFBgWWboAZ30UHg==",
+      "installPath": "node_modules/xml-name-validator",
+      "url": "https://registry.npmjs.org/xml-name-validator/-/xml-name-validator-5.0.0.tgz"
+    },
+    "xml-naming": {
+      "hash": "sha512-ghig2TBE/H11aOVgmahA3MhimvkBr6JIYknH/Dhdk10nXwdbIqBJsbfMxpvFPG8bAw77gN29aQWvKpmVoPlvPQ==",
+      "installPath": "node_modules/xml-naming",
+      "url": "https://registry.npmjs.org/xml-naming/-/xml-naming-0.3.0.tgz"
+    },
+    "xmlchars": {
+      "hash": "sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==",
+      "installPath": "node_modules/xmlchars",
+      "url": "https://registry.npmjs.org/xmlchars/-/xmlchars-2.2.0.tgz"
+    },
+    "y18n": {
+      "hash": "sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==",
+      "installPath": "node_modules/y18n",
+      "url": "https://registry.npmjs.org/y18n/-/y18n-5.0.8.tgz"
+    },
+    "yallist": {
+      "hash": "sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==",
+      "installPath": "node_modules/yallist",
+      "url": "https://registry.npmjs.org/yallist/-/yallist-3.1.1.tgz"
+    },
+    "yaml": {
+      "bin": {
+        "yaml": "bin.mjs"
+      },
+      "hash": "sha512-2AvhNX3mb8zd6Zy7INTtSpl1F15HW6Wnqj0srWlkKLcpYl/gMIMJiyuGq2KeI2YFxUPjdlB+3Lc10seMLtL4cA==",
+      "installPath": "node_modules/yaml",
+      "url": "https://registry.npmjs.org/yaml/-/yaml-2.9.0.tgz"
+    },
+    "yargs": {
+      "hash": "sha512-4UEqdc2RYGHZc7Doyqkrqiln3p9X2DZVxaGbwhn2pi7MrRagKaOcIKe8L3OxYcbhXLgLFUS3zAYuQjKBQgmuNg==",
+      "installPath": "node_modules/yargs",
+      "url": "https://registry.npmjs.org/yargs/-/yargs-18.0.0.tgz"
+    },
+    "yargs-parser": {
+      "hash": "sha512-rwu/ClNdSMpkSrUb+d6BRsSkLUq1fmfsY6TOpYzTwvwkg1/NRG85KBy3kq++A8LKQwX6lsu+aWad+2khvuXrqw==",
+      "installPath": "node_modules/yargs-parser",
+      "url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-22.0.0.tgz"
+    },
+    "yauzl": {
+      "hash": "sha512-p4a9I6X6nu6IhoGmBqAcbJy1mlC4j27vEPZX9F4L4/vZT3Lyq1VkFHw/V/PUcB9Buo+DG3iHkT0x3Qya58zc3g==",
+      "installPath": "node_modules/yauzl",
+      "url": "https://registry.npmjs.org/yauzl/-/yauzl-2.10.0.tgz"
+    },
+    "yoctocolors": {
+      "hash": "sha512-CzhO+pFNo8ajLM2d2IW/R93ipy99LWjtwblvC1RsoSUMZgyLbYFr221TnSNT7GjGdYui6P459mw9JH/g/zW2ug==",
+      "installPath": "node_modules/yoctocolors",
+      "url": "https://registry.npmjs.org/yoctocolors/-/yoctocolors-2.1.2.tgz"
+    },
+    "yoga-layout": {
+      "hash": "sha512-0LPOt3AxKqMdFBZA3HBAt/t/8vIKq7VaQYbuA8WxCgung+p9TVyKRYdpvCb80HcdTN2NkbIKbhNwKUfm3tQywQ==",
+      "installPath": "node_modules/yoga-layout",
+      "url": "https://registry.npmjs.org/yoga-layout/-/yoga-layout-3.2.1.tgz"
+    },
+    "zod": {
+      "hash": "sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==",
+      "installPath": "node_modules/zod",
+      "url": "https://registry.npmjs.org/zod/-/zod-4.4.3.tgz"
+    },
+    "zod-to-json-schema": {
+      "hash": "sha512-O/PgfnpT1xKSDeQYSCfRI5Gy3hPf91mKVDuYLUHZJMiDFptvP41MSnWofm8dnCm0256ZNfZIM7DSzuSMAFnjHA==",
+      "installPath": "node_modules/zod-to-json-schema",
+      "url": "https://registry.npmjs.org/zod-to-json-schema/-/zod-to-json-schema-3.25.2.tgz"
+    }
+  },
+  "workspaceSymlinks": {
+    "@oh-my-opencode/agents-md-core": {
+      "installPath": "node_modules/@oh-my-opencode/agents-md-core",
+      "name": "@oh-my-opencode/agents-md-core",
+      "sourcePath": "packages/agents-md-core"
+    },
+    "@oh-my-opencode/boulder-state": {
+      "installPath": "node_modules/@oh-my-opencode/boulder-state",
+      "name": "@oh-my-opencode/boulder-state",
+      "sourcePath": "packages/boulder-state"
+    },
+    "@oh-my-opencode/claude-code-compat-core": {
+      "installPath": "node_modules/@oh-my-opencode/claude-code-compat-core",
+      "name": "@oh-my-opencode/claude-code-compat-core",
+      "sourcePath": "packages/claude-code-compat-core"
+    },
+    "@oh-my-opencode/comment-checker-core": {
+      "installPath": "node_modules/@oh-my-opencode/comment-checker-core",
+      "name": "@oh-my-opencode/comment-checker-core",
+      "sourcePath": "packages/comment-checker-core"
+    },
+    "@oh-my-opencode/delegate-core": {
+      "installPath": "node_modules/@oh-my-opencode/delegate-core",
+      "name": "@oh-my-opencode/delegate-core",
+      "sourcePath": "packages/delegate-core"
+    },
+    "@oh-my-opencode/git-bash-mcp": {
+      "installPath": "node_modules/@oh-my-opencode/git-bash-mcp",
+      "name": "@oh-my-opencode/git-bash-mcp",
+      "sourcePath": "packages/git-bash-mcp"
+    },
+    "@oh-my-opencode/hashline-core": {
+      "installPath": "node_modules/@oh-my-opencode/hashline-core",
+      "name": "@oh-my-opencode/hashline-core",
+      "sourcePath": "packages/hashline-core"
+    },
+    "@oh-my-opencode/lsp-core": {
+      "installPath": "node_modules/@oh-my-opencode/lsp-core",
+      "name": "@oh-my-opencode/lsp-core",
+      "sourcePath": "packages/lsp-core"
+    },
+    "@oh-my-opencode/mcp-client-core": {
+      "installPath": "node_modules/@oh-my-opencode/mcp-client-core",
+      "name": "@oh-my-opencode/mcp-client-core",
+      "sourcePath": "packages/mcp-client-core"
+    },
+    "@oh-my-opencode/mcp-stdio-core": {
+      "installPath": "node_modules/@oh-my-opencode/mcp-stdio-core",
+      "name": "@oh-my-opencode/mcp-stdio-core",
+      "sourcePath": "packages/mcp-stdio-core"
+    },
+    "@oh-my-opencode/model-core": {
+      "installPath": "node_modules/@oh-my-opencode/model-core",
+      "name": "@oh-my-opencode/model-core",
+      "sourcePath": "packages/model-core"
+    },
+    "@oh-my-opencode/omo-codex": {
+      "installPath": "node_modules/@oh-my-opencode/omo-codex",
+      "name": "@oh-my-opencode/omo-codex",
+      "sourcePath": "packages/omo-codex"
+    },
+    "@oh-my-opencode/omo-config-core": {
+      "installPath": "node_modules/@oh-my-opencode/omo-config-core",
+      "name": "@oh-my-opencode/omo-config-core",
+      "sourcePath": "packages/omo-config-core"
+    },
+    "@oh-my-opencode/omo-opencode": {
+      "installPath": "node_modules/@oh-my-opencode/omo-opencode",
+      "name": "@oh-my-opencode/omo-opencode",
+      "sourcePath": "packages/omo-opencode"
+    },
+    "@oh-my-opencode/omo-senpi": {
+      "installPath": "node_modules/@oh-my-opencode/omo-senpi",
+      "name": "@oh-my-opencode/omo-senpi",
+      "sourcePath": "packages/omo-senpi"
+    },
+    "@oh-my-opencode/openclaw-core": {
+      "installPath": "node_modules/@oh-my-opencode/openclaw-core",
+      "name": "@oh-my-opencode/openclaw-core",
+      "sourcePath": "packages/openclaw-core"
+    },
+    "@oh-my-opencode/pi-goal": {
+      "installPath": "node_modules/@oh-my-opencode/pi-goal",
+      "name": "@oh-my-opencode/pi-goal",
+      "sourcePath": "packages/pi-goal"
+    },
+    "@oh-my-opencode/pi-webfetch": {
+      "installPath": "node_modules/@oh-my-opencode/pi-webfetch",
+      "name": "@oh-my-opencode/pi-webfetch",
+      "sourcePath": "packages/pi-webfetch"
+    },
+    "@oh-my-opencode/prompts-core": {
+      "installPath": "node_modules/@oh-my-opencode/prompts-core",
+      "name": "@oh-my-opencode/prompts-core",
+      "sourcePath": "packages/prompts-core"
+    },
+    "@oh-my-opencode/rules-engine": {
+      "installPath": "node_modules/@oh-my-opencode/rules-engine",
+      "name": "@oh-my-opencode/rules-engine",
+      "sourcePath": "packages/rules-engine"
+    },
+    "@oh-my-opencode/senpi-task": {
+      "installPath": "node_modules/@oh-my-opencode/senpi-task",
+      "name": "@oh-my-opencode/senpi-task",
+      "sourcePath": "packages/senpi-task"
+    },
+    "@oh-my-opencode/shared-skills": {
+      "installPath": "node_modules/@oh-my-opencode/shared-skills",
+      "name": "@oh-my-opencode/shared-skills",
+      "sourcePath": "packages/shared-skills"
+    },
+    "@oh-my-opencode/skills-loader-core": {
+      "installPath": "node_modules/@oh-my-opencode/skills-loader-core",
+      "name": "@oh-my-opencode/skills-loader-core",
+      "sourcePath": "packages/skills-loader-core"
+    },
+    "@oh-my-opencode/team-core": {
+      "installPath": "node_modules/@oh-my-opencode/team-core",
+      "name": "@oh-my-opencode/team-core",
+      "sourcePath": "packages/team-core"
+    },
+    "@oh-my-opencode/telemetry-core": {
+      "installPath": "node_modules/@oh-my-opencode/telemetry-core",
+      "name": "@oh-my-opencode/telemetry-core",
+      "sourcePath": "packages/telemetry-core"
+    },
+    "@oh-my-opencode/tmux-core": {
+      "installPath": "node_modules/@oh-my-opencode/tmux-core",
+      "name": "@oh-my-opencode/tmux-core",
+      "sourcePath": "packages/tmux-core"
+    },
+    "@oh-my-opencode/utils": {
+      "installPath": "node_modules/@oh-my-opencode/utils",
+      "name": "@oh-my-opencode/utils",
+      "sourcePath": "packages/utils"
+    }
+  }
+}
