@@ -134,7 +134,7 @@ Upstream states the install surface is local-path only: `extensions/` and `skill
 - **Submodule script**: `materialize-shared-upstreams.mjs --strict` runs `git submodule update --init`, impossible in the sandbox. `fetchSubmodules` already supplies the trees, so `postPatch` drops `--strict` to take the script's documented "continuing without submodule refresh" path.
 - **Unfree**: Sustainable Use License (non-commercial, free-of-charge distribution only). Every `nix` invocation needs `NIXPKGS_ALLOW_UNFREE=1` and `--impure`.
 - **Shebangs in `skills/`**: top-level `dontPatchShebangs = true`. `skills/` ships portable helper scripts (`skills/ast-grep/install.sh`, the `programming` scripts) that the agent runs on the user's machine, so their `#!/usr/bin/env bash` must survive. The `patchShebangs` call inside `configurePhase` is explicit and still runs.
-- **Not bit-reproducible**: `nix build --rebuild` reports a mismatch in `extensions/omo.js`. `bun build --minify` picks different mangled identifier names between runs (same length, ~1963 bytes differ, e.g. `class v0` vs `class p0`), which also flips the body digest in omo's own `// omo-senpi-build:<sourceDigest>:<bodyDigest>` marker. Reproduced outside Nix with two plain `node scripts/build-extension.mjs` runs in a normal checkout, so it is upstream toolchain behaviour, not a packaging defect. The source digest stays stable, and functionality is unaffected.
+- **Reproducible since rev `bc92958`**: the extension bundle used to be non-deterministic (`bun build --minify` picked different mangled identifier names between runs, flipping the body digest in omo's own `// omo-senpi-build:<sourceDigest>:<bodyDigest>` marker). Current upstream builds bit-reproducibly — verified with two consecutive `nix build .#omo-senpi --rebuild` passes (and one for `.#omo-cli`) at rev `bc92958`. If a future update reintroduces a mismatch, treat it as an upstream regression, not a packaging defect.
 
 ### Runtime facts (verified, not assumed)
 
@@ -197,7 +197,7 @@ The CI workflow verifies the build on every PR and push to `main`:
   - `comment-checker --help` runs (no `--version` flag upstream)
 - Real senpi startup with the store path registered must emit omo's `omo-senpi ` component log lines (a path-only check would pass even if the bundle could not load), and with `result-omo-cli/bin` on PATH the log must **not** contain `omo binary not found`
 
-Do not add a `--rebuild` reproducibility gate for `omo-senpi`: `bun build --minify` is not deterministic upstream (see Packaging quirks).
+`nix build --rebuild` passes for both `omo-senpi` and `omo-cli` at the current pin (see Packaging quirks). CI does not gate on it — a full second build would double CI time — but run it locally after any `update-omo.sh` bump; a mismatch means upstream regressed bundle determinism.
 
 ## Auto-update PR and CI
 
