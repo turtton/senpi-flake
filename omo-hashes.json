@@ -1,7 +1,7 @@
 {
-  "rev": "9c30f2e2011ab52443859bd3cada95ae3ccf978d",
-  "version": "4.19.3",
-  "srcHash": "sha256-AavmJLDMgwRHoQek8CDuiCMgeOOjc3xjA0gK4OjCYgo=",
+  "rev": "b072d279110bdda2c6ac2525d0d24dc54d16148a",
+  "version": "4.19.4",
+  "srcHash": "sha256-yTu+/CKBuULqiFTLeT53Picb0eaa0i8sj2afklEEmpc=",
   "lspDaemonNpmDepsHash": "sha256-dLsA61D2vzqOQMbVpGZlkPFpPNVcv6hRcgRrhij8Dqc=",
   "commentChecker": {
     "version": "0.8.0",

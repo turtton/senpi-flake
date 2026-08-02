@@ -1,8 +1,8 @@
 {
-  "version": "2026.7.31-2",
-  "sourceHash": "sha256-P68MWz22PvNwLTxSgCyy9BItAkeAO7lQpyG1seQtewE=",
-  "npmDepsHash": "sha256-ETAkNFL4KlNZ7xnxqr/YXfj8ZEEJkAOHlADkvvMtGKo=",
-  "assetsSourceHash": "sha256-gTGa6iHYJl03U9p6YHIGxLNk7OngG0+zwyurtzMVu5c=",
+  "version": "2026.8.1",
+  "sourceHash": "sha256-HJ+qndT6fAClqre/9wHmRTO7jg9r4JRstP6phIMjyVA=",
+  "npmDepsHash": "sha256-X1hCV5PGCl1TMpkxDta5omzP4iKU2nwvg16eWmg6Nhs=",
+  "assetsSourceHash": "sha256-b9+gozW1bFktmDlWAfu4TCeVNGcZPY9pjaeFoZQGuAc=",
   "bundledDependencies": [
     "@anthropic-ai/claude-agent-sdk",
     "@anthropic-ai/sdk",
