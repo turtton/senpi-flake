@@ -899,6 +899,11 @@
       "installPath": "node_modules/@nodable/entities",
       "url": "https://registry.npmjs.org/@nodable/entities/-/entities-3.0.0.tgz"
     },
+    "@oh-my-opencode/ast-grep-mcp/bun-types": {
+      "hash": "sha512-HqOLj5PoFajAQciOMRiIZGNoKxDJSr6qigAttOX40vJuSp6DN/CxWp9s3C1Xwm4oH7ybueITwiaOcWXoYVoRkA==",
+      "installPath": "packages/ast-grep-mcp/node_modules/bun-types",
+      "url": "https://registry.npmjs.org/bun-types/-/bun-types-1.3.12.tgz"
+    },
     "@oh-my-opencode/git-bash-mcp/bun-types": {
       "hash": "sha512-HqOLj5PoFajAQciOMRiIZGNoKxDJSr6qigAttOX40vJuSp6DN/CxWp9s3C1Xwm4oH7ybueITwiaOcWXoYVoRkA==",
       "installPath": "packages/git-bash-mcp/node_modules/bun-types",
@@ -3476,6 +3481,11 @@
       "installPath": "node_modules/@oh-my-opencode/agents-md-core",
       "name": "@oh-my-opencode/agents-md-core",
       "sourcePath": "packages/agents-md-core"
+    },
+    "@oh-my-opencode/ast-grep-mcp": {
+      "installPath": "node_modules/@oh-my-opencode/ast-grep-mcp",
+      "name": "@oh-my-opencode/ast-grep-mcp",
+      "sourcePath": "packages/ast-grep-mcp"
     },
     "@oh-my-opencode/boulder-state": {
       "installPath": "node_modules/@oh-my-opencode/boulder-state",
