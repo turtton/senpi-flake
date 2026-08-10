@@ -77,15 +77,17 @@ stdenvNoCC.mkDerivation {
         'npm --prefix packages/lsp-daemon ci && npm --prefix packages/lsp-daemon run build' \
         'npm --prefix packages/lsp-daemon run build'
 
-    # 5.0.0-beta.2+: stage-agent-toolkit.mjs runs `npm ci` in
-    # packages/omo-codex/plugin to build the ulw-loop component.  Its deps are
-    # provided by the codexPluginNpmDeps FOD (see configurePhase), so strip
-    # the network-bound install.  Guarded: older pins predate the script.
+    # 5.0.0-beta.2+: stage-agent-toolkit.mjs runs `npm ci` (and, from
+    # beta.5, an `rm` of the plugin node_modules) in packages/omo-codex/plugin
+    # to build the ulw-loop component.  Its deps are provided by the
+    # codexPluginNpmDeps FOD (see configurePhase), so force needsInstall off —
+    # replacing only the npm ci line would still let the beta.5 `rm` wipe the
+    # assembled node_modules.  Guarded: older pins predate the script.
     if [ -f packages/omo-senpi/plugin/scripts/stage-agent-toolkit.mjs ]; then
       substituteInPlace packages/omo-senpi/plugin/scripts/stage-agent-toolkit.mjs \
         --replace-fail \
-          '    run("npm", ["--prefix", "packages/omo-codex/plugin", "ci"])' \
-          '    // senpi-flake: node_modules assembled from codexPluginNpmDeps in configurePhase'
+          '  const needsInstall = !(await filesEqual(packageLock, installedPackageLock)) || !(await fileExists(compiler))' \
+          '  const needsInstall = false // senpi-flake: node_modules assembled from codexPluginNpmDeps in configurePhase'
     fi
   '';
 
