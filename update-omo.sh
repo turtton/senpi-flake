@@ -86,7 +86,7 @@ set_hash() {
 }
 
 discover_hash() {
-  local key="$1" log new
+  local key="$1" fod_name="$2" log new
   set_hash "$key" "$DUMMY_HASH"
   log=$(mktemp)
   register_temp "$log"
@@ -96,18 +96,25 @@ discover_hash() {
     exit 1
   fi
 
+  # Stock Nix reports fixed-output mismatches per-derivation:
+  #   error: hash mismatch in fixed-output derivation '...<fod_name>.drv':
+  #     specified: sha256-...
+  #     got:       sha256-...
+  # Match on the derivation name (2 lines after the error) so multiple
+  # discovery FODs don't interfere.
   new=$(
-    grep -E '^[[:space:]]*got:[[:space:]]+sha256-' "$log" \
+    grep -A2 "hash mismatch in fixed-output derivation.*${fod_name}\.drv" "$log" \
+      | grep -oE 'got:[[:space:]]+sha256-[A-Za-z0-9+/=]+' \
       | head -n1 \
-      | sed -E 's/.*got:[[:space:]]+(sha256-[A-Za-z0-9+/=]+).*/\1/'
+      | sed -E 's/.*(sha256-[A-Za-z0-9+/=]+).*/\1/'
   )
 
   # Determinate Nix (what nix-installer-action puts on CI runners) reports
   # fixed-output mismatches in a different wording than stock Nix:
-  #   error: To correct the hash mismatch for <name>, use "sha256-..."
+  #   error: To correct the hash mismatch for <fod_name>, use "sha256-..."
   if [ -z "$new" ]; then
     new=$(
-      grep -oE 'To correct the hash mismatch for [^,]+, use "sha256-[A-Za-z0-9+/=]+"' "$log" \
+      grep -oE "To correct the hash mismatch for ${fod_name}, use \"sha256-[A-Za-z0-9+/=]+\"" "$log" \
         | head -n1 \
         | sed -E 's/.*use "(sha256-[A-Za-z0-9+/=]+)".*/\1/'
     )
@@ -233,10 +240,14 @@ if [ "$omo_changed" -eq 1 ]; then
   curl -fsSL "https://raw.githubusercontent.com/${REPO}/${latest_rev}/bun.lock" > "$bun_lock"
   python3 generate-npm-packages.py "$bun_lock" omo-npm-packages.json
 
-  # packages/lsp-daemon keeps its own npm lockfile consumed via fetchNpmDeps;
-  # that hash still needs placeholder discovery.
+  # packages/lsp-daemon and packages/omo-codex/plugin each keep their own npm
+  # lockfile consumed via fetchNpmDeps; those hashes still need placeholder
+  # discovery.  Discover lsp-daemon first (it exists on every rev); the codex
+  # plugin hash is only added from 5.0.0-beta.2 on.
   echo "Discovering lspDaemonNpmDepsHash..."
-  discover_hash lspDaemonNpmDepsHash
+  discover_hash lspDaemonNpmDepsHash omo-senpi-lsp-daemon-npm-deps
+  echo "Discovering codexPluginNpmDepsHash..."
+  discover_hash codexPluginNpmDepsHash omo-senpi-codex-plugin-npm-deps
 fi
 
 # omo-cli embeds the comment-checker binary and shares the monorepo pin, so

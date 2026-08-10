@@ -120,7 +120,8 @@ Upstream states the install surface is local-path only: `extensions/` and `skill
 | `rev` | Pinned oh-my-openagent commit |
 | `version` | Monorepo root `package.json` version at that commit |
 | `srcHash` | `fetchgit` hash **with submodules** (`packages/shared-skills/upstreams/*` feed the frontend skill references) |
-| `lspDaemonNpmDepsHash` | `fetchNpmDeps` hash for `packages/lsp-daemon` (its own npm lockfile); the only remaining discovery FOD |
+| `lspDaemonNpmDepsHash` | `fetchNpmDeps` hash for `packages/lsp-daemon` (its own npm lockfile); discovery FOD |
+| `codexPluginNpmDepsHash` | `fetchNpmDeps` (fetcherVersion 2) hash for `packages/omo-codex/plugin` (its own npm workspace lockfile, used by `stage-agent-toolkit.mjs` from 5.0.0-beta.2); absent on older pins, discovery FOD |
 | `commentChecker.version` | comment-checker release version (independent of the monorepo pin) |
 | `commentChecker.hashes` | Per-system SRI hashes of the four upstream release archives (`x86_64-linux` / `aarch64-linux` / `x86_64-darwin` / `aarch64-darwin`) |
 
@@ -207,7 +208,7 @@ The CI workflow verifies the build on every PR and push to `main`:
 
 The auto-update workflow (`.github/workflows/update.yml`) runs daily at 00:00 UTC and can be triggered manually via `workflow_dispatch`. It runs `update.sh` and `update-omo.sh`, verifies both builds, and opens a PR on the `auto-update` branch.
 
-`update-omo.sh` regenerates `omo-npm-packages.json` from the new rev's bun.lock on every bump (byte-identical output when the lockfile is unchanged), and discovers only `lspDaemonNpmDepsHash` via the placeholder build — the bun dependency tree needs no discovery because every tarball carries its lockfile integrity hash. The mismatch scraper accepts both stock Nix (`got: sha256-...`) and Determinate Nix (`To correct the hash mismatch for ..., use "sha256-..."`) wordings, since CI runners use the latter. comment-checker is the other exception: its four release archives are plain `fetchurl` inputs, so `nix-prefetch-url` is authoritative and no discovery build exists for them. The verification at the end of the script builds both `.#omo-senpi` and `.#omo-cli`.
+`update-omo.sh` regenerates `omo-npm-packages.json` from the new rev's bun.lock on every bump (byte-identical output when the lockfile is unchanged), and discovers `lspDaemonNpmDepsHash` and `codexPluginNpmDepsHash` via placeholder builds — the bun dependency tree needs no discovery because every tarball carries its lockfile integrity hash. The mismatch scraper matches each FOD by derivation name, accepting both stock Nix (`got: sha256-...`) and Determinate Nix (`To correct the hash mismatch for ..., use "sha256-..."`) wordings, since CI runners use the latter. comment-checker is the other exception: its four release archives are plain `fetchurl` inputs, so `nix-prefetch-url` is authoritative and no discovery build exists for them. The verification at the end of the script builds both `.#omo-senpi` and `.#omo-cli`.
 
 For CI to run automatically on those PRs (via the `pull_request` trigger in `ci.yml`), a **GitHub Personal Access Token (PAT)** must be configured:
 
