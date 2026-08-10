@@ -87,7 +87,7 @@ stdenvNoCC.mkDerivation {
       substituteInPlace packages/omo-senpi/plugin/scripts/stage-agent-toolkit.mjs \
         --replace-fail \
           '  const needsInstall = !(await filesEqual(packageLock, installedPackageLock)) || !(await fileExists(compiler))' \
-          '  // senpi-flake: node_modules assembled from codexPluginNpmDeps in configurePhase; skip the upstream npm ci (and its node_modules rm) entirely.\n  const needsInstall = false'
+          '  const needsInstall = false // senpi-flake: node_modules assembled from codexPluginNpmDeps in configurePhase'
     fi
   '';
 
