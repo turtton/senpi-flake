@@ -123,6 +123,7 @@ jobs:
 
   # No per-system hash discovery job exists anymore: the bun dependency tree
   # is fetched per-tarball with lockfile integrity hashes (see omo-common.nix
-  # and generate-npm-packages.py), which are platform-independent.  The only
-  # remaining discovery FOD (lsp-daemon npm deps) is resolved inside
-  # update-omo.sh on the ubuntu runner above.
+  # and generate-npm-packages.py), which are platform-independent.  The
+  # remaining discovery FODs (lsp-daemon npm deps and the omo-codex plugin npm
+  # workspace deps, from 5.0.0-beta.2) are resolved inside update-omo.sh on
+  # the ubuntu runner above.
