@@ -1292,14 +1292,14 @@
       "bin": {
         "senpi": "dist/cli.js"
       },
-      "hash": "sha512-XhkkPrk3MoHm3YRg8yiSp5TMOrljuhzn1wSIp/oiC2UEnlaZFXNJUra2EYuU/f/NQIk2xW7Ifr7B45WJdh1JaA==",
+      "hash": "sha512-hlAWe0Cl3l+fMXW5jTumVb3tGhUSAChuzpgZbGGnwC+7jIaXdFJT0hJpNloO90LYB/xpwY4J/viVX//kWbbgzg==",
       "installPath": "node_modules/@code-yeongyu/senpi",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi/-/senpi-2026.8.14.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi/-/senpi-2026.8.16.tgz"
     },
     "@code-yeongyu/senpi-codemode": {
-      "hash": "sha512-zF8j/Mn1VCdYvbWXQVS4ZRSVaXniqe49q9LlH8HbggHX8GHA6gVn0v3nnzbmHOpKdKYe+lmL/qDsQI4nQKKfYg==",
+      "hash": "sha512-Ie+IWRe/0hbZY1pkg+rPkToydUpMp6yLaMrI0ozFxLaBO60e9azyyFZMcuqr5t9tAfNYufzgpD3iCgz9MXkKnQ==",
       "installPath": "node_modules/@code-yeongyu/senpi-codemode",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-codemode/-/senpi-codemode-2026.8.14.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-codemode/-/senpi-codemode-2026.8.16.tgz"
     },
     "@code-yeongyu/senpi-codemode/typebox": {
       "hash": "sha512-xYaJgF0KMvBViKWRaKTAtfR6sDt/yH6xAjGAHXYJxKxUF4pVyPXZZhIlwOg6cDIE81N7L0pyIHs136RHBm6rLQ==",
@@ -1307,9 +1307,9 @@
       "url": "https://registry.npmjs.org/typebox/-/typebox-1.3.8.tgz"
     },
     "@code-yeongyu/senpi/@earendil-works/pi-tui": {
-      "hash": "sha512-SjVIPQshnopHOv3FPFNWu12WcBMWa+n+1Ddxh+rZ+A2HEOeF5p8T5R90CgrFthgHGOIaNwY+qCFoR7z0ASx2Vg==",
+      "hash": "sha512-mV6p6HDO480qQl4S6E2MSv8AvCVM/zoF092ArG1/aL2L0LFE6EUwRz0WGmuLvTKbA3BxFVpIP8IrXt46PCU7xw==",
       "installPath": "node_modules/@code-yeongyu/senpi/@earendil-works/pi-tui",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-tui/-/senpi-tui-2026.8.14.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-tui/-/senpi-tui-2026.8.16.tgz"
     },
     "@code-yeongyu/senpi/@modelcontextprotocol/sdk": {
       "hash": "sha512-xKd8OIzlqNzcqcNumGAa6g+PW2kjD5vrpcKOnfldAUPP3j7lnqMPwlTXQm8gF+UwH72z0lqaRbjr9hqGz0eITA==",
@@ -1362,9 +1362,9 @@
       "url": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz"
     },
     "@earendil-works/pi-agent-core": {
-      "hash": "sha512-gKH6AARa64HcZru5Z0Go+M0TFDZb9+thXG50Us+LPUUwejXpoYFAP6Dn0l4Of7jBoOLObiADUB1m5Zu6k1oaqA==",
+      "hash": "sha512-LT06Vvu+RVFNxDaH3VluwNoQv3SkYOM2hfy0N/v2D4hlM8Qm8o+ik/XcQMQ+K2rTtx7y/c57FSkknoRurZxygg==",
       "installPath": "node_modules/@earendil-works/pi-agent-core",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-agent-core/-/senpi-agent-core-2026.8.14.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-agent-core/-/senpi-agent-core-2026.8.16.tgz"
     },
     "@earendil-works/pi-agent-core/typebox": {
       "hash": "sha512-xYaJgF0KMvBViKWRaKTAtfR6sDt/yH6xAjGAHXYJxKxUF4pVyPXZZhIlwOg6cDIE81N7L0pyIHs136RHBm6rLQ==",
@@ -1375,9 +1375,9 @@
       "bin": {
         "pi-ai": "dist/cli.js"
       },
-      "hash": "sha512-NDOkYjmJQJ1KOU/dJqukvaMQ4vTejwMcWNklSP+/2oeVu1d05Cixx6B2+dsr9mRTl95EgO+A4rkW7IULyPDlAA==",
+      "hash": "sha512-lrePevMwEhRWreGo2JFT0S2ageH6l61HKQUU+xy69mAo2ip3XaRBcNnWe1e3I2dHWLGC8fWtRqPqf0qLVl2oQg==",
       "installPath": "node_modules/@earendil-works/pi-ai",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-ai/-/senpi-ai-2026.8.14.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-ai/-/senpi-ai-2026.8.16.tgz"
     },
     "@earendil-works/pi-ai/@google/genai": {
       "hash": "sha512-GM7C8Kaomvjz05x5JEO6+l3d/pciL9LxAG9dUjJLD7nTPZ9X0Cfsf2Z7eET6UjgWyUmxXCHtYnQoQ77F9+ZIOQ==",
@@ -1420,19 +1420,19 @@
       "url": "https://registry.npmjs.org/typebox/-/typebox-1.3.8.tgz"
     },
     "@earendil-works/pi-pty": {
-      "hash": "sha512-EGLxayRgsUlQRtFV0zISaTKzaWl7gVawDzKVov9s9dY3sZdyeTHaDsF7M5nsDtXAvSxV36LcpEKppgqEBPx43w==",
+      "hash": "sha512-VmJNlX/odtV8QCTwGuiwtwOj2WpEU1wPRQmNOdNwa1SIHyTtQ+VAY0s93yfg9SogWlFsGz/OtEr7fRnq+nypzA==",
       "installPath": "node_modules/@earendil-works/pi-pty",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-pty/-/senpi-pty-2026.8.14.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-pty/-/senpi-pty-2026.8.16.tgz"
     },
     "@earendil-works/pi-telemetry": {
-      "hash": "sha512-phcLMJrGM6N3OYAXn9AN3JUKi7UNU8dEJwtWf9+jLHYVi/RLyvAfNB4ZDgtgIWjRc7wIpuskurA4C4sLQ+1LTg==",
+      "hash": "sha512-1lWYSgtgZRf+2+Ao//mNMZiwxSFa0bzam6oQqFBGB05puG+K6sxzCsCgJIddIjqIAHuAP0X+fhZrpIAT9dDZ4Q==",
       "installPath": "node_modules/@earendil-works/pi-telemetry",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-telemetry/-/senpi-telemetry-2026.8.14.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-telemetry/-/senpi-telemetry-2026.8.16.tgz"
     },
     "@earendil-works/pi-tui": {
-      "hash": "sha512-udeXFbgEhJ6JiB0uguwNVNkDy2FENfmtQwPcY+/iJ8GWeq18wkal1tKqa5YyeH0IqtX1vG0cGh8zfSYzyzVuLA==",
+      "hash": "sha512-ds2TLihOnM5sLJB3VpXV6y0uR5efVuHf4MN7yDpsty6hA2DUO/EDVzjp/0od0G2JslzVLMjT8T8zavtxVb+qbg==",
       "installPath": "node_modules/@earendil-works/pi-tui",
-      "url": "https://registry.npmjs.org/@earendil-works/pi-tui/-/pi-tui-0.84.1.tgz"
+      "url": "https://registry.npmjs.org/@earendil-works/pi-tui/-/pi-tui-0.84.2.tgz"
     },
     "@earendil-works/pi-tui/marked": {
       "bin": {
@@ -1516,6 +1516,11 @@
       "hash": "sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==",
       "installPath": "node_modules/@jridgewell/resolve-uri",
       "url": "https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz"
+    },
+    "@jridgewell/source-map": {
+      "hash": "sha512-ZMp1V8ZFcPG5dIWnQLr3NSI1MiCU7UETdS/A0G8V/XWHvJv3ZsFqutJn1Y5RPmAPX6F3BiE397OqveU/9NCuIA==",
+      "installPath": "node_modules/@jridgewell/source-map",
+      "url": "https://registry.npmjs.org/@jridgewell/source-map/-/source-map-0.3.11.tgz"
     },
     "@jridgewell/sourcemap-codec": {
       "hash": "sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==",
@@ -2858,6 +2863,14 @@
       "installPath": "node_modules/accepts",
       "url": "https://registry.npmjs.org/accepts/-/accepts-2.0.0.tgz"
     },
+    "acorn": {
+      "bin": {
+        "acorn": "bin/acorn"
+      },
+      "hash": "sha512-lGq+9yr1/GuAWaVYIHRjvvySG5/4VfKIvC8EWxStPdcDh/Ka7FG3twP6v4d5BkravUilhIAsG4Qj83t02LWUPQ==",
+      "installPath": "node_modules/acorn",
+      "url": "https://registry.npmjs.org/acorn/-/acorn-8.18.0.tgz"
+    },
     "agent-base": {
       "hash": "sha512-MnA+YT8fwfJPgBx3m60MNqakm30XOkyIoH1y6huTQvC0PwZG7ki8NacLBcrPbNoo8vEZy7Jpuk7+jMO+CUovTQ==",
       "installPath": "node_modules/agent-base",
@@ -3043,6 +3056,11 @@
       "hash": "sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA==",
       "installPath": "node_modules/buffer-equal-constant-time",
       "url": "https://registry.npmjs.org/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz"
+    },
+    "buffer-from": {
+      "hash": "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==",
+      "installPath": "node_modules/buffer-from",
+      "url": "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz"
     },
     "bun-ffi-structs": {
       "hash": "sha512-N/ZWtyN0piZlrXQT7TO0V+q952orYqkfhXRXM1Hcbb+R3QSiBH4vLnib187Mrs1H7pWIYECAmPeapGYDOMCl+w==",
@@ -4594,6 +4612,11 @@
       "installPath": "node_modules/source-map-js",
       "url": "https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz"
     },
+    "source-map-support": {
+      "hash": "sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==",
+      "installPath": "node_modules/source-map-support",
+      "url": "https://registry.npmjs.org/source-map-support/-/source-map-support-0.5.21.tgz"
+    },
     "stackback": {
       "hash": "sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==",
       "installPath": "node_modules/stackback",
@@ -4638,6 +4661,19 @@
       "hash": "sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==",
       "installPath": "node_modules/symbol-tree",
       "url": "https://registry.npmjs.org/symbol-tree/-/symbol-tree-3.2.4.tgz"
+    },
+    "terser": {
+      "bin": {
+        "terser": "bin/terser"
+      },
+      "hash": "sha512-nIVck8DK+GM/0Frwd+nIhZ84pR/BX7rmXMfYwyg+Sri5oGVE99/E3KvXqpC2xHFxyqXyGHTKBSioxxplrO4I4w==",
+      "installPath": "node_modules/terser",
+      "url": "https://registry.npmjs.org/terser/-/terser-5.44.0.tgz"
+    },
+    "terser/commander": {
+      "hash": "sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==",
+      "installPath": "node_modules/terser/commander",
+      "url": "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz"
     },
     "thenify": {
       "hash": "sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==",
