@@ -1,8 +1,8 @@
 {
-  "version": "2026.8.16",
-  "sourceHash": "sha256-qux2FcguiUxxtS43YsxXtyuES6+y2d9RmowG1jkw3sU=",
-  "npmDepsHash": "sha256-I0ghAUO0KbxfPqB2D6Cc380XG+ERjA1UowA8qWT2N7k=",
-  "assetsSourceHash": "sha256-IXVvuOoZZNuFScmLyDDVuovutfKQ8f/n2uFMV5p3hHU=",
+  "version": "2026.8.17",
+  "sourceHash": "sha256-d+tx542L4OkF1sXqag+L8Sm2rTU38Si5DpiUJkmuAjY=",
+  "npmDepsHash": "sha256-p27P24lQCIC4uX2vQ5DMMA/I0RMUFh6CoTWCIbaFilE=",
+  "assetsSourceHash": "sha256-pBvy79YXAg0Uin2tYytkHpBmjgGGdjoxByxjgIeCZr4=",
   "bundledDependencies": [
     "@anthropic-ai/claude-agent-sdk",
     "@anthropic-ai/sdk",
@@ -31,6 +31,7 @@
     "@aws/lambda-invoke-store",
     "@babel/runtime",
     "@bramus/specificity",
+    "@bufbuild/protobuf",
     "@code-yeongyu/senpi-codemode",
     "@csstools/color-helpers",
     "@csstools/css-calc",
