@@ -1,7 +1,7 @@
 {
-  "rev": "3a3fc577b0ac855bbcf7feff69cf8d2a8c3c0353",
-  "version": "5.0.0-beta.9",
-  "srcHash": "sha256-aO75IX9WDNq//XkfEjVwtcwYNYjVRyJI7IkZTb8sfU0=",
+  "rev": "e199029e1be0bc10bd10c5fbae8e60e3523c967d",
+  "version": "5.0.0-beta.10",
+  "srcHash": "sha256-l6pREoa5GRrRKAMxjZgujAfnWl7rEVUpI6D8e9lOWCI=",
   "lspDaemonNpmDepsHash": "sha256-Fw5IZx3Pd0Hq3ts+ZXCFMbiLXXOP0p8LHKYi587CUmE=",
   "commentChecker": {
     "version": "0.8.0",
@@ -12,5 +12,5 @@
       "aarch64-darwin": "sha256-rHO3bx7PlhXoWaCnoA528lMFVj+Hp+4WjN0udsjjhVo="
     }
   },
-  "codexPluginNpmDepsHash": "sha256-aCCkmhFU90NmMti4pjrLcOJdXdlJh/uwrSBguq1xh7k="
+  "codexPluginNpmDepsHash": "sha256-vkJ3guQE2DSZJ9Al1k4gRqHebLI5onME+IsG7B23uHY="
 }
