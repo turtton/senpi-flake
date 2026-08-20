@@ -1442,14 +1442,14 @@
       "bin": {
         "senpi": "dist/cli.js"
       },
-      "hash": "sha512-qzrSwkOuJmsTo2OwyO0ytmc3lAmYtFQurz+yZb+GbFgRKjffW5UrAkp84AEpdampi0RpNv/ANoO8TWuqN+bdEw==",
+      "hash": "sha512-Uo+oI3DeYNn43ehmaLBFn9zDB+TojNtOecrTTrjE9iouxhIvMgee6yiMPveVIU5e5rk6sX3T96POOSTR/9eODQ==",
       "installPath": "node_modules/@code-yeongyu/senpi",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi/-/senpi-2026.8.18-3.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi/-/senpi-2026.8.19.tgz"
     },
     "@code-yeongyu/senpi-codemode": {
-      "hash": "sha512-YpV7NhoHxeOQ7eEF/TE1F0NJi10iD4oUS9G+kOHHRCN2EWcVe/mwOhsvkdbSBrAv0QuaArX8WNH8Z3EkqjKeow==",
+      "hash": "sha512-YfoOBQvkPr4Vufnr2QsolG/EQ5u2V7nPC0UgPDU+cRUY039BeS8xZmar25QiF8C/efVjjtrnMeFGfdA0PBjb4w==",
       "installPath": "node_modules/@code-yeongyu/senpi-codemode",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-codemode/-/senpi-codemode-2026.8.18-3.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-codemode/-/senpi-codemode-2026.8.19.tgz"
     },
     "@code-yeongyu/senpi-codemode/typebox": {
       "hash": "sha512-xYaJgF0KMvBViKWRaKTAtfR6sDt/yH6xAjGAHXYJxKxUF4pVyPXZZhIlwOg6cDIE81N7L0pyIHs136RHBm6rLQ==",
@@ -1457,9 +1457,9 @@
       "url": "https://registry.npmjs.org/typebox/-/typebox-1.3.8.tgz"
     },
     "@code-yeongyu/senpi/@earendil-works/pi-tui": {
-      "hash": "sha512-NRep2r4Vbtd6Be49W9e2e1zCnOliomyZFDj8EPngPFFsix47Q1cqazFFHHNGg4PZxv9X+Gm9tXkQRQ8oHWhniA==",
+      "hash": "sha512-SuXWhNzlo22JPHTWDpn104IO5Q/zd5wy4+ktN9d0tpfiY3F2paUsnpeCmtImIkSjIq7bEJyA5mVKpkhAnxJJXg==",
       "installPath": "node_modules/@code-yeongyu/senpi/@earendil-works/pi-tui",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-tui/-/senpi-tui-2026.8.18-3.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-tui/-/senpi-tui-2026.8.19.tgz"
     },
     "@code-yeongyu/senpi/@modelcontextprotocol/sdk": {
       "hash": "sha512-xKd8OIzlqNzcqcNumGAa6g+PW2kjD5vrpcKOnfldAUPP3j7lnqMPwlTXQm8gF+UwH72z0lqaRbjr9hqGz0eITA==",
@@ -1512,9 +1512,9 @@
       "url": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz"
     },
     "@earendil-works/pi-agent-core": {
-      "hash": "sha512-gDaPBR0P4rQOG1+PsF/rXNtWs8wLWXZ6x7zJPcIV/68v5xGxKkkVHzG8jaW1ok1Ny21FT78lQZs+5uFPiL7/GA==",
+      "hash": "sha512-uuFN09aOOT/o5OpRjkvJhMjifVtsq9ZPRQpYs/HHrQz1iECAfOduhplas3s2EXmz7dAyXN7bCNc/gkYzLpQpaA==",
       "installPath": "node_modules/@earendil-works/pi-agent-core",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-agent-core/-/senpi-agent-core-2026.8.18-3.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-agent-core/-/senpi-agent-core-2026.8.19.tgz"
     },
     "@earendil-works/pi-agent-core/typebox": {
       "hash": "sha512-xYaJgF0KMvBViKWRaKTAtfR6sDt/yH6xAjGAHXYJxKxUF4pVyPXZZhIlwOg6cDIE81N7L0pyIHs136RHBm6rLQ==",
@@ -1525,9 +1525,9 @@
       "bin": {
         "pi-ai": "dist/cli.js"
       },
-      "hash": "sha512-CsT47040uk07v0Gx97E+wfIwW0PmZKjUq4BLNlqoCD3dGbYH3qUUM4TZ+VmueHlf7EcW6lB3U1v0j07DpHA1TQ==",
+      "hash": "sha512-Dk+wyY/hbpxmPtMMC1PgUu8KJn3a/W3JX/p64dBEnBgXkuDg7o4gjIMWvDFxTJCqmkCkzjgvjhdxYKcgLdeboA==",
       "installPath": "node_modules/@earendil-works/pi-ai",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-ai/-/senpi-ai-2026.8.18-3.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-ai/-/senpi-ai-2026.8.19.tgz"
     },
     "@earendil-works/pi-ai/@google/genai": {
       "hash": "sha512-GM7C8Kaomvjz05x5JEO6+l3d/pciL9LxAG9dUjJLD7nTPZ9X0Cfsf2Z7eET6UjgWyUmxXCHtYnQoQ77F9+ZIOQ==",
@@ -1570,14 +1570,14 @@
       "url": "https://registry.npmjs.org/typebox/-/typebox-1.3.8.tgz"
     },
     "@earendil-works/pi-pty": {
-      "hash": "sha512-aozL0+ANT7snVDcte1zS+4RT1cCSK0Gz0vkNctKwmBlCeRrxkqyMjOQ5f5g0ve1x4hW93NxQZFZnQcOq7E6qnQ==",
+      "hash": "sha512-XQAPQewfmXdOhbWbbqO4IHf5NxQqTxt2PoA6Dtn7r91WMv5tbHxNaZED5RdsC+eG8mlrEJ95ObfjC713esQF6Q==",
       "installPath": "node_modules/@earendil-works/pi-pty",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-pty/-/senpi-pty-2026.8.18-3.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-pty/-/senpi-pty-2026.8.19.tgz"
     },
     "@earendil-works/pi-telemetry": {
-      "hash": "sha512-+DniOg+wyhokLjIqg4lh+lltMtuf+KM1X68zl7mr1nAXWUtfAFatJDD/wAnkJDwUtn2rmTbdYnDwQWZAcy4Pgg==",
+      "hash": "sha512-AUf0pwQk7dHmc74IPJhGtQ9bqQbjUCcimV98HzxwOH+LYh3xgZVFYpVxxy2uOcFrWPOGCmnXseQ1SMgYQ7esmg==",
       "installPath": "node_modules/@earendil-works/pi-telemetry",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-telemetry/-/senpi-telemetry-2026.8.18-3.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-telemetry/-/senpi-telemetry-2026.8.19.tgz"
     },
     "@earendil-works/pi-tui": {
       "hash": "sha512-ds2TLihOnM5sLJB3VpXV6y0uR5efVuHf4MN7yDpsty6hA2DUO/EDVzjp/0od0G2JslzVLMjT8T8zavtxVb+qbg==",
@@ -4349,6 +4349,66 @@
       "hash": "sha512-9miFgM2OFba7hB+pRgvtV84pYTBaoTHohvmIgiRt6dRIzbwEOIaNaP+dIlGs2fNFoB0SeISs0Jz5WFVRid6Xyg==",
       "installPath": "node_modules/obug",
       "url": "https://registry.npmjs.org/obug/-/obug-2.1.3.tgz"
+    },
+    "oh-my-opencode-darwin-arm64": {
+      "hash": "sha512-W8YmTXR/FuTSVxEqxZ5vDi5G5GT9kYzKbxHjxF/1rUPSWqO4vDzZlh52LiZKfuFamipChefiXw5hDLIvWqD15g==",
+      "installPath": "node_modules/oh-my-opencode-darwin-arm64",
+      "url": "https://registry.npmjs.org/oh-my-opencode-darwin-arm64/-/oh-my-opencode-darwin-arm64-5.0.0-beta.12.tgz"
+    },
+    "oh-my-opencode-darwin-x64": {
+      "hash": "sha512-92mFYJi/0d3n4lxDwX3MG0X491JnTopARVJ968aQ9667nzZXjNX2iWzdbleSHyiODi7PiCBez0egH/+vBQe7EA==",
+      "installPath": "node_modules/oh-my-opencode-darwin-x64",
+      "url": "https://registry.npmjs.org/oh-my-opencode-darwin-x64/-/oh-my-opencode-darwin-x64-5.0.0-beta.12.tgz"
+    },
+    "oh-my-opencode-darwin-x64-baseline": {
+      "hash": "sha512-JJSXtY4fsnEWrbM8phLJe/jDETOI6ai8WVEYTUpFsRZnan6zcJZOYV6bvc7n7FkeDGDrmoQEWfU6BVr/a11KWA==",
+      "installPath": "node_modules/oh-my-opencode-darwin-x64-baseline",
+      "url": "https://registry.npmjs.org/oh-my-opencode-darwin-x64-baseline/-/oh-my-opencode-darwin-x64-baseline-5.0.0-beta.12.tgz"
+    },
+    "oh-my-opencode-linux-arm64": {
+      "hash": "sha512-OZmGWddm/0/9rUPb6pOmcihWxbOki3GnsJ+/CFFhN2ximjSrvQMOcWF3hjbCfJZ6bCEujUwgIA9CYPctxJ+44A==",
+      "installPath": "node_modules/oh-my-opencode-linux-arm64",
+      "url": "https://registry.npmjs.org/oh-my-opencode-linux-arm64/-/oh-my-opencode-linux-arm64-5.0.0-beta.12.tgz"
+    },
+    "oh-my-opencode-linux-arm64-musl": {
+      "hash": "sha512-8cWW61AaGmSCVdRCAx/ms4w1MGFNrbmL9HokFY0e5TE8PaBQSfv0iR4E1sDk+OvoMKc8FZRoRVknWzJXQXToig==",
+      "installPath": "node_modules/oh-my-opencode-linux-arm64-musl",
+      "url": "https://registry.npmjs.org/oh-my-opencode-linux-arm64-musl/-/oh-my-opencode-linux-arm64-musl-5.0.0-beta.12.tgz"
+    },
+    "oh-my-opencode-linux-x64": {
+      "hash": "sha512-MbujmQNzgJK4OemP2y/Iny2X8EDbBDlKNmvxrcpY27At8rXi5hR6AfFEqTPnmbAjQJNEB0j7CtQLMcn1LHgWjA==",
+      "installPath": "node_modules/oh-my-opencode-linux-x64",
+      "url": "https://registry.npmjs.org/oh-my-opencode-linux-x64/-/oh-my-opencode-linux-x64-5.0.0-beta.12.tgz"
+    },
+    "oh-my-opencode-linux-x64-baseline": {
+      "hash": "sha512-NkjeiZUm4lUrh9jByts8ganARBb4xlbIN8TvQveeA49AcZ4D4pmWkoDltZPeo2uIpdhKkKb3LXkQ3sfCoO8tZg==",
+      "installPath": "node_modules/oh-my-opencode-linux-x64-baseline",
+      "url": "https://registry.npmjs.org/oh-my-opencode-linux-x64-baseline/-/oh-my-opencode-linux-x64-baseline-5.0.0-beta.12.tgz"
+    },
+    "oh-my-opencode-linux-x64-musl": {
+      "hash": "sha512-t5fzlBtTnNt9JzaqSfJpGHJ3pavVZw5TBz5gpxoxcKgXSAhHGH1a9Uw2Do+r7OR2UBM5DT6Rofvzmo5qzV1ehg==",
+      "installPath": "node_modules/oh-my-opencode-linux-x64-musl",
+      "url": "https://registry.npmjs.org/oh-my-opencode-linux-x64-musl/-/oh-my-opencode-linux-x64-musl-5.0.0-beta.12.tgz"
+    },
+    "oh-my-opencode-linux-x64-musl-baseline": {
+      "hash": "sha512-bdodJbFEAz87hCuTAOgsN2HfpTzbHOqtDT36yyzVoK61RsNwQPIzDp/+j6jaBAvZpEnEeGq8IaPW+tVCuixP/Q==",
+      "installPath": "node_modules/oh-my-opencode-linux-x64-musl-baseline",
+      "url": "https://registry.npmjs.org/oh-my-opencode-linux-x64-musl-baseline/-/oh-my-opencode-linux-x64-musl-baseline-5.0.0-beta.12.tgz"
+    },
+    "oh-my-opencode-windows-arm64": {
+      "hash": "sha512-OkaF/kFmL6VKfIalBM2UThn6GVpRypn0CkIf+YZN1u2rEYMTfpqWK1JlFJGiEM4O4QOLESE1GFk5WEIUhYG6DQ==",
+      "installPath": "node_modules/oh-my-opencode-windows-arm64",
+      "url": "https://registry.npmjs.org/oh-my-opencode-windows-arm64/-/oh-my-opencode-windows-arm64-5.0.0-beta.12.tgz"
+    },
+    "oh-my-opencode-windows-x64": {
+      "hash": "sha512-jzIEvG1cYEomWeK4bDg5VToUwCrB6sp+HnNoU/gSX8AzVDvK9nWWi7BrVGOEdwGr8kv9Wz8yujqBYBV7yZ+7vA==",
+      "installPath": "node_modules/oh-my-opencode-windows-x64",
+      "url": "https://registry.npmjs.org/oh-my-opencode-windows-x64/-/oh-my-opencode-windows-x64-5.0.0-beta.12.tgz"
+    },
+    "oh-my-opencode-windows-x64-baseline": {
+      "hash": "sha512-aLOWmc+f62Jiqd1QXy7JZlvsriOz6azK+VyZK2Vsej5YaopRO6ltxh7++Sm3irhNIDaQAVflhsFwIthrdx4PXQ==",
+      "installPath": "node_modules/oh-my-opencode-windows-x64-baseline",
+      "url": "https://registry.npmjs.org/oh-my-opencode-windows-x64-baseline/-/oh-my-opencode-windows-x64-baseline-5.0.0-beta.12.tgz"
     },
     "on-finished": {
       "hash": "sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==",
