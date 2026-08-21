@@ -156,829 +156,94 @@
       "url": "https://registry.npmjs.org/@smithy/types/-/types-4.15.1.tgz"
     },
     "@aws-sdk/client-bedrock-runtime": {
-      "hash": "sha512-DWcwoQdQPrQJxnG3hz1sG88EjfzGv3SReRy4mtAO+pZXtLX+trriTa20o+qcTmVzwqS43JXtX26ythOzErev9A==",
+      "hash": "sha512-XHcpR1Z0j2oQrk7/U+YHgKqy9aV73CsTU7VwZ09jlrgK8eiX/34DbiRZN6VSaHFqgxti008MpxeQCVi52o9u1g==",
       "installPath": "node_modules/@aws-sdk/client-bedrock-runtime",
-      "url": "https://registry.npmjs.org/@aws-sdk/client-bedrock-runtime/-/client-bedrock-runtime-3.1095.0.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node": {
-      "hash": "sha512-OgPAnfvbGAMWac6yvxJ1ihslrvDpPVwR68D2csospdNCCyPvHk9JLzYKwz48SNiS1T2znDwHauywRKRFfpyYng==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-node/-/credential-provider-node-3.972.78.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-env": {
-      "hash": "sha512-rcIpk5kxUqDaaNa6Xk23pQ6ViY7jlqzmfFWCahQcBT97ddXaXYYwzCen9Tz1Jvo6aJft6wDl5bN44/Jw5B4oLA==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-env",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-env/-/credential-provider-env-3.972.67.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http": {
-      "hash": "sha512-nggwJtZ4eeNsUw5IeWBMXsi1ryct5idi0K+/SCRF3kybLubOMaNTb3XCihXpWMiVpyzyPeIrl0zTkzhBH9porA==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-http/-/credential-provider-http-3.972.69.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini": {
-      "hash": "sha512-pNEf/OeyN5X3VmLKlgSO6TqaWmW10CvI3TfwL1XhsuhYjSLT2VDaxFnCPHnOeQXSaFisMX4jNhpETriqN8DOmg==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-ini/-/credential-provider-ini-3.973.12.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-login": {
-      "hash": "sha512-0AQfDcf99TNmqVKv0owHrw/TQs6i4ZE5t9qmz6NvO53bE/sA/tpXhXL9AAcEP1qHc6Zzjd1UMb69+/9zdhvY3g==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-login",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-login/-/credential-provider-login-3.972.74.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients": {
-      "hash": "sha512-RDHqPGQWlF6tatA/Tp3rg6oIwtgN9IVderxE+9av2Y93Dfyu+mO1hZ5Bu2jpfZg2rwdNbsssnwM+sLafIczMlQ==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients",
-      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.41.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region": {
-      "hash": "sha512-lKekx8bLBXSv4O+cslk9Zfnw2XKSkWBs3uWL5QGhH2ZAQfNS7FE0vcSSN2vD/AhxX54ZTywWxR4STThoeOXlBA==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region",
-      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.43.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-process": {
-      "hash": "sha512-IlUEejorGTWKb4/Dm7K5Yw4QxUmXLThLhrvBmzVBqZFTbW72cv9LTcITmo1dsnYriALE4h68mOq4LB99x6sQ7Q==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-process",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-process/-/credential-provider-process-3.972.67.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso": {
-      "hash": "sha512-gAQBkBZxUB84d71+pPcI9L+jh2ujhuAVxc/4FgGiWFDjkPBlMKxzd5XDtkSXTFX8Ro7ansnT88+XadasxMeCRw==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-sso/-/credential-provider-sso-3.973.11.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients": {
-      "hash": "sha512-RDHqPGQWlF6tatA/Tp3rg6oIwtgN9IVderxE+9av2Y93Dfyu+mO1hZ5Bu2jpfZg2rwdNbsssnwM+sLafIczMlQ==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients",
-      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.41.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region": {
-      "hash": "sha512-lKekx8bLBXSv4O+cslk9Zfnw2XKSkWBs3uWL5QGhH2ZAQfNS7FE0vcSSN2vD/AhxX54ZTywWxR4STThoeOXlBA==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region",
-      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.43.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/token-providers": {
-      "hash": "sha512-N4wy26MNn31ItGVHYHPrEuCIFY4MBBjC+C5v1lJKqIUSA7OZBdhleCY53zCCrXn27hsk7YNOaTuhQu807S4AfQ==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/token-providers",
-      "url": "https://registry.npmjs.org/@aws-sdk/token-providers/-/token-providers-3.1103.0.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity": {
-      "hash": "sha512-SnlEmQa6SjOgs6iOPLUQl1Eyq4AKiAdPQlkOhFhqNfDtDCwibMGvL6QlkSmf3o6vAUSImzdPCxowT5dfQUZP1A==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-web-identity/-/credential-provider-web-identity-3.972.73.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients": {
-      "hash": "sha512-RDHqPGQWlF6tatA/Tp3rg6oIwtgN9IVderxE+9av2Y93Dfyu+mO1hZ5Bu2jpfZg2rwdNbsssnwM+sLafIczMlQ==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients",
-      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.41.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region": {
-      "hash": "sha512-lKekx8bLBXSv4O+cslk9Zfnw2XKSkWBs3uWL5QGhH2ZAQfNS7FE0vcSSN2vD/AhxX54ZTywWxR4STThoeOXlBA==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region",
-      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.43.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@smithy/credential-provider-imds": {
-      "hash": "sha512-QfuLWAkLzptffFW980AFeHZFdqds2B64rpEd3uJ6lgs3xVn9QegGMUgUcj+4d7dRrAsya3r58ZKpku97WcFb4w==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/credential-provider-node/@smithy/credential-provider-imds",
-      "url": "https://registry.npmjs.org/@smithy/credential-provider-imds/-/credential-provider-imds-4.4.16.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/eventstream-handler-node": {
-      "hash": "sha512-/BRzvkp46mF6eXBL/l9WKPQQfifLlUPaWli6n9/T/WDLUg8he7TCyuNFnk6RvHP5j5W/kMj5Gxw7W778LJaXDA==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/eventstream-handler-node",
-      "url": "https://registry.npmjs.org/@aws-sdk/eventstream-handler-node/-/eventstream-handler-node-3.972.31.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/middleware-eventstream": {
-      "hash": "sha512-2eIvouTZoxPu5ClHY6ij13De1yhY8Rmllt0dlGeBNXX3wmR7fU1pvMCGb50fKm1GxcuntWK0t1T0cMjTyDoUQA==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/middleware-eventstream",
-      "url": "https://registry.npmjs.org/@aws-sdk/middleware-eventstream/-/middleware-eventstream-3.972.26.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/middleware-websocket": {
-      "hash": "sha512-wGYJvu1/stdWuzGcNyh44u8aY7ArU8XFrMesBlzIYn70HWVCRBNEngQexDuPIMu0NEgsKGKmTc0uvnS/bF7KWw==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/middleware-websocket",
-      "url": "https://registry.npmjs.org/@aws-sdk/middleware-websocket/-/middleware-websocket-3.972.49.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@aws-sdk/middleware-websocket/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@aws-sdk/middleware-websocket/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
-    },
-    "@aws-sdk/client-bedrock-runtime/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/client-bedrock-runtime/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/client-bedrock-runtime/-/client-bedrock-runtime-3.1112.0.tgz"
     },
     "@aws-sdk/core": {
-      "hash": "sha512-KVtQRtc00ES/y+Sc3vYXeP6pCIcNlBJCZOwvqSy8ZpVGmbM5+IG+AfhuTKQ2oXmIVqZJewaGMMpzPkywC6xg0w==",
+      "hash": "sha512-7+Kcrkvrk9lM/m7jRhHpT4jCdvzGHsuaSRbF8TdzzkY1mRzp/Ogwf9c7H29k4gGhey0BBWhCWr16+t0J61gwmg==",
       "installPath": "node_modules/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.1.tgz"
-    },
-    "@aws-sdk/core/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/core/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
-    },
-    "@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.8.tgz"
     },
     "@aws-sdk/credential-provider-env": {
-      "hash": "sha512-qihs2ekMb89Nxd2JenCgVFhjbkb3EIo7HEBCBzyZACKVJdrLUZBLOmAE3xr0Sayml8n/jZSzwO/IufIiIzO7PQ==",
+      "hash": "sha512-AreCFzcB4kH2HF9031Ot0jSJr3KXvRg6e8uDeub20JEVdZU3Bv0sTq1plc7VsT3KiqutlzH7l0j50UcCWHUioA==",
       "installPath": "node_modules/@aws-sdk/credential-provider-env",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-env/-/credential-provider-env-3.972.61.tgz"
-    },
-    "@aws-sdk/credential-provider-env/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-env/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/credential-provider-env/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-env/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-env/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-env/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-env/-/credential-provider-env-3.972.69.tgz"
     },
     "@aws-sdk/credential-provider-http": {
-      "hash": "sha512-yfozsS8wkWZEi/n6IsrodcFKBWZ0iNAezhJbTReMNc0z1Px17qdeAeuL1/wziCAmCZyXiW7QzP75ggJkBQv8jQ==",
+      "hash": "sha512-A8ObcqVmDMnk4F9NozZ7JwmUu9Q4xyBJkmyq1C5U+wNM9ht9J7+EuuyabsLWXZnOoTqFaJuYBYTKf5CTipkEjA==",
       "installPath": "node_modules/@aws-sdk/credential-provider-http",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-http/-/credential-provider-http-3.972.63.tgz"
-    },
-    "@aws-sdk/credential-provider-http/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-http/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/credential-provider-http/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-http/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-http/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-http/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
-    },
-    "@aws-sdk/credential-provider-http/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-http/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
-    },
-    "@aws-sdk/credential-provider-http/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-http/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-http/-/credential-provider-http-3.972.71.tgz"
     },
     "@aws-sdk/credential-provider-ini": {
-      "hash": "sha512-jGLTW1bj148GL/6/IMlfY2fMYS9FtHOG+NahkFD4y0qkzYudNUahelxryY68/HGMslYuHClk1XaS/3b3eJzEkg==",
+      "hash": "sha512-7c+Wti2LsERNWMfm7ySz3/6RPopFW3Nmn7s63Xpcq6R/tRuY5hpvkHA2xVgi5ukJbvok9l0IDtVEvqTtg+X7dw==",
       "installPath": "node_modules/@aws-sdk/credential-provider-ini",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-ini/-/credential-provider-ini-3.973.6.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-env": {
-      "hash": "sha512-rcIpk5kxUqDaaNa6Xk23pQ6ViY7jlqzmfFWCahQcBT97ddXaXYYwzCen9Tz1Jvo6aJft6wDl5bN44/Jw5B4oLA==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-env",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-env/-/credential-provider-env-3.972.67.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-http": {
-      "hash": "sha512-nggwJtZ4eeNsUw5IeWBMXsi1ryct5idi0K+/SCRF3kybLubOMaNTb3XCihXpWMiVpyzyPeIrl0zTkzhBH9porA==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-http",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-http/-/credential-provider-http-3.972.69.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-http/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-http/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-http/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-http/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-login": {
-      "hash": "sha512-0AQfDcf99TNmqVKv0owHrw/TQs6i4ZE5t9qmz6NvO53bE/sA/tpXhXL9AAcEP1qHc6Zzjd1UMb69+/9zdhvY3g==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-login",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-login/-/credential-provider-login-3.972.74.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-process": {
-      "hash": "sha512-IlUEejorGTWKb4/Dm7K5Yw4QxUmXLThLhrvBmzVBqZFTbW72cv9LTcITmo1dsnYriALE4h68mOq4LB99x6sQ7Q==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-process",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-process/-/credential-provider-process-3.972.67.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-sso": {
-      "hash": "sha512-gAQBkBZxUB84d71+pPcI9L+jh2ujhuAVxc/4FgGiWFDjkPBlMKxzd5XDtkSXTFX8Ro7ansnT88+XadasxMeCRw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-sso",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-sso/-/credential-provider-sso-3.973.11.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-sso/@aws-sdk/token-providers": {
-      "hash": "sha512-N4wy26MNn31ItGVHYHPrEuCIFY4MBBjC+C5v1lJKqIUSA7OZBdhleCY53zCCrXn27hsk7YNOaTuhQu807S4AfQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-sso/@aws-sdk/token-providers",
-      "url": "https://registry.npmjs.org/@aws-sdk/token-providers/-/token-providers-3.1103.0.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-web-identity": {
-      "hash": "sha512-SnlEmQa6SjOgs6iOPLUQl1Eyq4AKiAdPQlkOhFhqNfDtDCwibMGvL6QlkSmf3o6vAUSImzdPCxowT5dfQUZP1A==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-web-identity",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-web-identity/-/credential-provider-web-identity-3.972.73.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients": {
-      "hash": "sha512-RDHqPGQWlF6tatA/Tp3rg6oIwtgN9IVderxE+9av2Y93Dfyu+mO1hZ5Bu2jpfZg2rwdNbsssnwM+sLafIczMlQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients",
-      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.41.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region": {
-      "hash": "sha512-lKekx8bLBXSv4O+cslk9Zfnw2XKSkWBs3uWL5QGhH2ZAQfNS7FE0vcSSN2vD/AhxX54ZTywWxR4STThoeOXlBA==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region",
-      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.43.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
-    },
-    "@aws-sdk/credential-provider-ini/@smithy/credential-provider-imds": {
-      "hash": "sha512-QfuLWAkLzptffFW980AFeHZFdqds2B64rpEd3uJ6lgs3xVn9QegGMUgUcj+4d7dRrAsya3r58ZKpku97WcFb4w==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-ini/@smithy/credential-provider-imds",
-      "url": "https://registry.npmjs.org/@smithy/credential-provider-imds/-/credential-provider-imds-4.4.16.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-ini/-/credential-provider-ini-3.973.14.tgz"
     },
     "@aws-sdk/credential-provider-login": {
-      "hash": "sha512-w6tNci6g7RqFpLhj1f5xseBvaNojb4Pkgp5Jp5apl9hrJtaf2AA+rX9+qlhlWUK6kcyAFYPA7emO+55zj+S98Q==",
+      "hash": "sha512-LVixwOnEJfrrfKHeZjBA8pIMTZjNDq8ak8VpcoWUuCJDrSnBNU8POJksULMgvN089P0MXtQYH2Zs627/MK1K0g==",
       "installPath": "node_modules/@aws-sdk/credential-provider-login",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-login/-/credential-provider-login-3.972.68.tgz"
-    },
-    "@aws-sdk/credential-provider-login/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-login/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/credential-provider-login/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-login/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-login/@aws-sdk/nested-clients": {
-      "hash": "sha512-RDHqPGQWlF6tatA/Tp3rg6oIwtgN9IVderxE+9av2Y93Dfyu+mO1hZ5Bu2jpfZg2rwdNbsssnwM+sLafIczMlQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-login/@aws-sdk/nested-clients",
-      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.41.tgz"
-    },
-    "@aws-sdk/credential-provider-login/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region": {
-      "hash": "sha512-lKekx8bLBXSv4O+cslk9Zfnw2XKSkWBs3uWL5QGhH2ZAQfNS7FE0vcSSN2vD/AhxX54ZTywWxR4STThoeOXlBA==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-login/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region",
-      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.43.tgz"
-    },
-    "@aws-sdk/credential-provider-login/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-login/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-login/@aws-sdk/nested-clients/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-login/@aws-sdk/nested-clients/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
-    },
-    "@aws-sdk/credential-provider-login/@aws-sdk/nested-clients/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-login/@aws-sdk/nested-clients/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/credential-provider-login/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-login/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-login/-/credential-provider-login-3.972.76.tgz"
     },
     "@aws-sdk/credential-provider-node": {
-      "hash": "sha512-blQ7F5QGzylnzeh5549zQLoCAiMHkXFLjFovEMaVy4b2X8JhUu+u9NXro1hyK95YHdVFNmBHKs2hIHtZchxKlQ==",
+      "hash": "sha512-bE2qh8ww4iClO1jHsBXdOE8FUgzDbdxbyorNjSCoPSkQd51k3jODItuPZfuwcLHZqDXsH+bI4AMHhqtuyR7mSg==",
       "installPath": "node_modules/@aws-sdk/credential-provider-node",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-node/-/credential-provider-node-3.972.72.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-env": {
-      "hash": "sha512-rcIpk5kxUqDaaNa6Xk23pQ6ViY7jlqzmfFWCahQcBT97ddXaXYYwzCen9Tz1Jvo6aJft6wDl5bN44/Jw5B4oLA==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-env",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-env/-/credential-provider-env-3.972.67.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-env/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-env/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-env/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-env/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http": {
-      "hash": "sha512-nggwJtZ4eeNsUw5IeWBMXsi1ryct5idi0K+/SCRF3kybLubOMaNTb3XCihXpWMiVpyzyPeIrl0zTkzhBH9porA==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-http/-/credential-provider-http-3.972.69.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-http/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini": {
-      "hash": "sha512-pNEf/OeyN5X3VmLKlgSO6TqaWmW10CvI3TfwL1XhsuhYjSLT2VDaxFnCPHnOeQXSaFisMX4jNhpETriqN8DOmg==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-ini/-/credential-provider-ini-3.973.12.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-login": {
-      "hash": "sha512-0AQfDcf99TNmqVKv0owHrw/TQs6i4ZE5t9qmz6NvO53bE/sA/tpXhXL9AAcEP1qHc6Zzjd1UMb69+/9zdhvY3g==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/credential-provider-login",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-login/-/credential-provider-login-3.972.74.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients": {
-      "hash": "sha512-RDHqPGQWlF6tatA/Tp3rg6oIwtgN9IVderxE+9av2Y93Dfyu+mO1hZ5Bu2jpfZg2rwdNbsssnwM+sLafIczMlQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients",
-      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.41.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region": {
-      "hash": "sha512-lKekx8bLBXSv4O+cslk9Zfnw2XKSkWBs3uWL5QGhH2ZAQfNS7FE0vcSSN2vD/AhxX54ZTywWxR4STThoeOXlBA==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region",
-      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.43.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-ini/@aws-sdk/nested-clients/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-process": {
-      "hash": "sha512-IlUEejorGTWKb4/Dm7K5Yw4QxUmXLThLhrvBmzVBqZFTbW72cv9LTcITmo1dsnYriALE4h68mOq4LB99x6sQ7Q==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-process",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-process/-/credential-provider-process-3.972.67.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-process/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-process/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-process/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-process/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso": {
-      "hash": "sha512-gAQBkBZxUB84d71+pPcI9L+jh2ujhuAVxc/4FgGiWFDjkPBlMKxzd5XDtkSXTFX8Ro7ansnT88+XadasxMeCRw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-sso/-/credential-provider-sso-3.973.11.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients": {
-      "hash": "sha512-RDHqPGQWlF6tatA/Tp3rg6oIwtgN9IVderxE+9av2Y93Dfyu+mO1hZ5Bu2jpfZg2rwdNbsssnwM+sLafIczMlQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients",
-      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.41.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region": {
-      "hash": "sha512-lKekx8bLBXSv4O+cslk9Zfnw2XKSkWBs3uWL5QGhH2ZAQfNS7FE0vcSSN2vD/AhxX54ZTywWxR4STThoeOXlBA==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region",
-      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.43.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/token-providers": {
-      "hash": "sha512-N4wy26MNn31ItGVHYHPrEuCIFY4MBBjC+C5v1lJKqIUSA7OZBdhleCY53zCCrXn27hsk7YNOaTuhQu807S4AfQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-sso/@aws-sdk/token-providers",
-      "url": "https://registry.npmjs.org/@aws-sdk/token-providers/-/token-providers-3.1103.0.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity": {
-      "hash": "sha512-SnlEmQa6SjOgs6iOPLUQl1Eyq4AKiAdPQlkOhFhqNfDtDCwibMGvL6QlkSmf3o6vAUSImzdPCxowT5dfQUZP1A==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-web-identity/-/credential-provider-web-identity-3.972.73.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients": {
-      "hash": "sha512-RDHqPGQWlF6tatA/Tp3rg6oIwtgN9IVderxE+9av2Y93Dfyu+mO1hZ5Bu2jpfZg2rwdNbsssnwM+sLafIczMlQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients",
-      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.41.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region": {
-      "hash": "sha512-lKekx8bLBXSv4O+cslk9Zfnw2XKSkWBs3uWL5QGhH2ZAQfNS7FE0vcSSN2vD/AhxX54ZTywWxR4STThoeOXlBA==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region",
-      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.43.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
-    },
-    "@aws-sdk/credential-provider-node/@smithy/credential-provider-imds": {
-      "hash": "sha512-QfuLWAkLzptffFW980AFeHZFdqds2B64rpEd3uJ6lgs3xVn9QegGMUgUcj+4d7dRrAsya3r58ZKpku97WcFb4w==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-node/@smithy/credential-provider-imds",
-      "url": "https://registry.npmjs.org/@smithy/credential-provider-imds/-/credential-provider-imds-4.4.16.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-node/-/credential-provider-node-3.972.80.tgz"
     },
     "@aws-sdk/credential-provider-process": {
-      "hash": "sha512-xzRuj+fUVO4nkafKQJVKAF97kGpeQbfjuwmRrtGZNf42/1dkmcz6o7dswBy7alY0htQn5sCL1GWQYEykviWZkA==",
+      "hash": "sha512-9kpTNdZTrcqXTfhxM7fgl9Z68ek3Fu5oe3Yf+A/pJGibEqpgZxz2tSY7SinmyCIU2PJ+ygY4FPoBBnLpocMtrQ==",
       "installPath": "node_modules/@aws-sdk/credential-provider-process",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-process/-/credential-provider-process-3.972.61.tgz"
-    },
-    "@aws-sdk/credential-provider-process/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-process/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/credential-provider-process/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-process/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-process/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-process/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-process/-/credential-provider-process-3.972.69.tgz"
     },
     "@aws-sdk/credential-provider-sso": {
-      "hash": "sha512-fZRjjWhLFelsDoOYjqShQTrIGYC3Pf9Mx9Czf+1ikfQDgktxjze33dVo1q1/ZQ+T0qbtejVoHNHrfD5aJVpv/w==",
+      "hash": "sha512-Oc81qauMPzUoTnAS2YKpNwY6sY/LUyQTEeaf6yP197WMxkEBQfcKLR1MFpD7+pNTubXnfkH6gwpji+Gc7iyD2Q==",
       "installPath": "node_modules/@aws-sdk/credential-provider-sso",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-sso/-/credential-provider-sso-3.973.5.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-sso/-/credential-provider-sso-3.973.13.tgz"
     },
-    "@aws-sdk/credential-provider-sso/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-sso/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/credential-provider-sso/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-sso/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients": {
-      "hash": "sha512-RDHqPGQWlF6tatA/Tp3rg6oIwtgN9IVderxE+9av2Y93Dfyu+mO1hZ5Bu2jpfZg2rwdNbsssnwM+sLafIczMlQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients",
-      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.41.tgz"
-    },
-    "@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region": {
-      "hash": "sha512-lKekx8bLBXSv4O+cslk9Zfnw2XKSkWBs3uWL5QGhH2ZAQfNS7FE0vcSSN2vD/AhxX54ZTywWxR4STThoeOXlBA==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region",
-      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.43.tgz"
-    },
-    "@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
-    },
-    "@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-sso/@aws-sdk/nested-clients/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/credential-provider-sso/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-sso/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
+    "@aws-sdk/credential-provider-sso/@aws-sdk/token-providers": {
+      "hash": "sha512-JfljgoVtl+s3Qy21n9a7Z48uCQaOXcN74KJ3TEQfPoB293GrXFSt6HSQJF1sTZ8c/5QedEvd3NjJQMO4u9qa5A==",
+      "installPath": "node_modules/@aws-sdk/credential-provider-sso/@aws-sdk/token-providers",
+      "url": "https://registry.npmjs.org/@aws-sdk/token-providers/-/token-providers-3.1111.0.tgz"
     },
     "@aws-sdk/credential-provider-web-identity": {
-      "hash": "sha512-FTNZ05gkPBA6CKbU3N4zPgybV+stdazwMOya75CmGdcJL7p8Fw/BdHP8WVxJd0mvzyPK2cg/C3gli58Ir4HgCw==",
+      "hash": "sha512-YPN6uoGDgjjjeVFZrcOeCJqmB6zpXoeeNgIjqe+DexJaWqdjVfCCe+VAZwli9Z2h8KhFW8oxkO39emQ1tyz/Mw==",
       "installPath": "node_modules/@aws-sdk/credential-provider-web-identity",
-      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-web-identity/-/credential-provider-web-identity-3.972.67.tgz"
-    },
-    "@aws-sdk/credential-provider-web-identity/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-web-identity/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/credential-provider-web-identity/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-web-identity/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients": {
-      "hash": "sha512-RDHqPGQWlF6tatA/Tp3rg6oIwtgN9IVderxE+9av2Y93Dfyu+mO1hZ5Bu2jpfZg2rwdNbsssnwM+sLafIczMlQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients",
-      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.41.tgz"
-    },
-    "@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region": {
-      "hash": "sha512-lKekx8bLBXSv4O+cslk9Zfnw2XKSkWBs3uWL5QGhH2ZAQfNS7FE0vcSSN2vD/AhxX54ZTywWxR4STThoeOXlBA==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region",
-      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.43.tgz"
-    },
-    "@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
-    },
-    "@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-web-identity/@aws-sdk/nested-clients/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/credential-provider-web-identity/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/credential-provider-web-identity/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/credential-provider-web-identity/-/credential-provider-web-identity-3.972.75.tgz"
     },
     "@aws-sdk/eventstream-handler-node": {
-      "hash": "sha512-hJboPgIpq5+ADc++/B9TBqn65CXV21cZLGB8V5RBQbxkZ/rQ6qMfcxTnW/SvQlasX4jhaSG8B1wsVjhQyDrsnQ==",
+      "hash": "sha512-1Dd5WyEE2Kb3HvY44u7Ob16ST2W6iutOqsQ8Y2hUmsL2mAH/STlGS1dS9h3IOE6L7Ld3AR2HzKJ6XeCMOw8Peg==",
       "installPath": "node_modules/@aws-sdk/eventstream-handler-node",
-      "url": "https://registry.npmjs.org/@aws-sdk/eventstream-handler-node/-/eventstream-handler-node-3.972.30.tgz"
-    },
-    "@aws-sdk/eventstream-handler-node/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/eventstream-handler-node/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/eventstream-handler-node/-/eventstream-handler-node-3.972.33.tgz"
     },
     "@aws-sdk/middleware-eventstream": {
-      "hash": "sha512-9SFbPzJDHHR5k6Q6KvXVas/veUm/TzNcNTFM2UhdXHZHpyIvI2lS+s4cxljw1BihGpVhsAkQDo/2nW7dHxpf4Q==",
+      "hash": "sha512-Z1EDXnS01P7H5jVrUx+/dBqV0m7dta7bSxLclkOuDuS93pNNQm0IcT4YLUbuvWKPYNxbI8aTG0p5Br30GSKDgA==",
       "installPath": "node_modules/@aws-sdk/middleware-eventstream",
-      "url": "https://registry.npmjs.org/@aws-sdk/middleware-eventstream/-/middleware-eventstream-3.972.25.tgz"
-    },
-    "@aws-sdk/middleware-eventstream/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/middleware-eventstream/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/middleware-eventstream/-/middleware-eventstream-3.972.28.tgz"
     },
     "@aws-sdk/middleware-websocket": {
-      "hash": "sha512-n29++15Vma64Kd0enp9Bo8a6LTm8TvUoMbJEwqXtIksv0oEs+SUCRMm3gozDfPD1Ly0k/sSBughxarlLlRF6Xw==",
+      "hash": "sha512-jdgP3jR5Q96j1jjZ98GGwpGg1CBNFIO2YE+vXg8cg8PvNY4NvgQNYJsqDaRX2PYv5gSUX/+C0D58Fhspj9ELMQ==",
       "installPath": "node_modules/@aws-sdk/middleware-websocket",
-      "url": "https://registry.npmjs.org/@aws-sdk/middleware-websocket/-/middleware-websocket-3.972.43.tgz"
-    },
-    "@aws-sdk/middleware-websocket/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/middleware-websocket/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/middleware-websocket/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/middleware-websocket/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
-    },
-    "@aws-sdk/middleware-websocket/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/middleware-websocket/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
-    },
-    "@aws-sdk/middleware-websocket/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/middleware-websocket/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/middleware-websocket/-/middleware-websocket-3.972.51.tgz"
     },
     "@aws-sdk/nested-clients": {
-      "hash": "sha512-2MJfseVG/aXvIyOIBlYA/Oaf6qFDdsu4D8RKsEUdOQpVuLaor0BdxIBBtJLBNQQEe6Ku3YMvLljwb1MwVUpzRw==",
+      "hash": "sha512-bit+VpqWNyi3wHxFoTsTliNXimCSL2r2OeDTm7ZrG+YsTZ2D7ofDJ6r/t9PVBn80i6/v0X2h9Tgw6QP2MAKfPw==",
       "installPath": "node_modules/@aws-sdk/nested-clients",
-      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.35.tgz"
-    },
-    "@aws-sdk/nested-clients/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/nested-clients/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/nested-clients/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/nested-clients/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region": {
-      "hash": "sha512-lKekx8bLBXSv4O+cslk9Zfnw2XKSkWBs3uWL5QGhH2ZAQfNS7FE0vcSSN2vD/AhxX54ZTywWxR4STThoeOXlBA==",
-      "installPath": "node_modules/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region",
-      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.43.tgz"
-    },
-    "@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/nested-clients/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/nested-clients/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
-    },
-    "@aws-sdk/nested-clients/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/nested-clients/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
-    },
-    "@aws-sdk/nested-clients/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/nested-clients/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.43.tgz"
     },
     "@aws-sdk/signature-v4-multi-region": {
-      "hash": "sha512-DBV4naZP6HYBlAvPpoQzOP12Wvfou/5rN8yJPXjBTBylU5qwCbh/tXr2MddHoIjgoRkEl/eS+IljiUqvmwey1Q==",
+      "hash": "sha512-bBuyztukzXq6plzFGHAWiQt0QXo+HL8b8lX5cFTzkez/74PtS1c0qPFCIVuHkyoT+miH2qOjAcm1/yoro2ESPA==",
       "installPath": "node_modules/@aws-sdk/signature-v4-multi-region",
-      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.42.tgz"
-    },
-    "@aws-sdk/signature-v4-multi-region/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/signature-v4-multi-region/@smithy/signature-v4/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.45.tgz"
     },
     "@aws-sdk/token-providers": {
-      "hash": "sha512-65SudS6y4nzaYHybtqcpm3sHe5jLhdMn68HRKS1nUx690BtQeaAQOoujQ+dpOjBATIVGVgKKjEP8tR+U06QJQA==",
+      "hash": "sha512-6PJbuH46F+qxL4Dup9ecsj2DD+JkYdF0ziv/ska/fJxIP2/NYIxff5utlPgaeKRVcSIacVNUP5NMRjCuJn92GA==",
       "installPath": "node_modules/@aws-sdk/token-providers",
-      "url": "https://registry.npmjs.org/@aws-sdk/token-providers/-/token-providers-3.1095.0.tgz"
-    },
-    "@aws-sdk/token-providers/@aws-sdk/core": {
-      "hash": "sha512-QiaJV4/zDrB4ZY2mfeSXSzSTc36W16sZXcGz+SPFk0CJ26gziO0cS+4LjJUMAbdeeBOvS0k0Aq1cZpfGdUXxSw==",
-      "installPath": "node_modules/@aws-sdk/token-providers/@aws-sdk/core",
-      "url": "https://registry.npmjs.org/@aws-sdk/core/-/core-3.977.6.tgz"
-    },
-    "@aws-sdk/token-providers/@aws-sdk/core/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/token-providers/@aws-sdk/core/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/token-providers/@aws-sdk/nested-clients": {
-      "hash": "sha512-RDHqPGQWlF6tatA/Tp3rg6oIwtgN9IVderxE+9av2Y93Dfyu+mO1hZ5Bu2jpfZg2rwdNbsssnwM+sLafIczMlQ==",
-      "installPath": "node_modules/@aws-sdk/token-providers/@aws-sdk/nested-clients",
-      "url": "https://registry.npmjs.org/@aws-sdk/nested-clients/-/nested-clients-3.997.41.tgz"
-    },
-    "@aws-sdk/token-providers/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region": {
-      "hash": "sha512-lKekx8bLBXSv4O+cslk9Zfnw2XKSkWBs3uWL5QGhH2ZAQfNS7FE0vcSSN2vD/AhxX54ZTywWxR4STThoeOXlBA==",
-      "installPath": "node_modules/@aws-sdk/token-providers/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region",
-      "url": "https://registry.npmjs.org/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.996.43.tgz"
-    },
-    "@aws-sdk/token-providers/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4": {
-      "hash": "sha512-I6KLtq3H0qqSuV9vLglfi8puHqzygzWHOnI4z/Rdoo+q50vvo18vBRdPAvvEtcaKROz7Zn6qnPa14kRfPH6PcQ==",
-      "installPath": "node_modules/@aws-sdk/token-providers/@aws-sdk/nested-clients/@aws-sdk/signature-v4-multi-region/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.12.tgz"
-    },
-    "@aws-sdk/token-providers/@aws-sdk/nested-clients/@smithy/fetch-http-handler": {
-      "hash": "sha512-4fW86pEUOMbrD5nkbyl/tTvPHHWJFbuB2odl6ps9lWfHoXf9HWh3Q/Smh59qH1g7+c/BSZghX6bbUk4gsiMs8A==",
-      "installPath": "node_modules/@aws-sdk/token-providers/@aws-sdk/nested-clients/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.13.tgz"
-    },
-    "@aws-sdk/token-providers/@aws-sdk/nested-clients/@smithy/node-http-handler": {
-      "hash": "sha512-Nmd/Nl35zfYrd+a6OO2cDJb3GPh9bgTjIUhcM+JFfjpp8/osCgboDV5nCT1I01Pv6R13eSKDKLSoVa5ZB6Zsfw==",
-      "installPath": "node_modules/@aws-sdk/token-providers/@aws-sdk/nested-clients/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.13.tgz"
-    },
-    "@aws-sdk/token-providers/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@aws-sdk/token-providers/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/token-providers/-/token-providers-3.1112.0.tgz"
     },
     "@aws-sdk/types": {
-      "hash": "sha512-3W6IUtSxFbH6X7Wb7DzGCV5QiFQsd0g8bOfntpmDxQlzBoKWUMBu/JPQR0DwkE+Hpnxd6db1tXbOwdeHddG6cA==",
+      "hash": "sha512-dSFDNG00MEz0/xl5gxL62giLd1iYyJsTxZ1I1DOj6lC+bbgLB4TRsYClJg3b62dhXT1uATzsTNXPnC+33EJV3A==",
       "installPath": "node_modules/@aws-sdk/types",
-      "url": "https://registry.npmjs.org/@aws-sdk/types/-/types-3.974.2.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/types/-/types-3.974.4.tgz"
     },
     "@aws-sdk/util-locate-window": {
       "hash": "sha512-uUbMs1cBZPafD0ohUj6EwNf0fPZ534NvBxHox4hjX+0Rxq5paSYUem7+hi833pYrzrcnBATKIYpR02MDXT5M9g==",
@@ -986,9 +251,9 @@
       "url": "https://registry.npmjs.org/@aws-sdk/util-locate-window/-/util-locate-window-3.965.8.tgz"
     },
     "@aws-sdk/xml-builder": {
-      "hash": "sha512-zKq4HQum8JwDyEuyfuI4bbiAcU0KxP6qy+9PR/IsR92IyE/DaBAikzAS50tjxip4bqIIANpCcG+Yyj6CVhXupg==",
+      "hash": "sha512-FTti8DS5MMWXNUWiRwXAJeYS+0GHHiMy0+7XOhcwk63ILHmfS2UFy2z/HNpZCSOJJ3P3dnWY6hfYNW3DF0nXUA==",
       "installPath": "node_modules/@aws-sdk/xml-builder",
-      "url": "https://registry.npmjs.org/@aws-sdk/xml-builder/-/xml-builder-3.972.37.tgz"
+      "url": "https://registry.npmjs.org/@aws-sdk/xml-builder/-/xml-builder-3.972.39.tgz"
     },
     "@aws/lambda-invoke-store": {
       "hash": "sha512-sl4Bm6yiMNYrZKkqqDFWN0UfnWhlS8ivKxrYl+6t0gCLrqr8y3B2IqZZbFRkfaVVp7C/baApyh71P+LeE1A2sQ==",
@@ -1416,19 +681,19 @@
       "url": "https://registry.npmjs.org/@bramus/specificity/-/specificity-2.4.2.tgz"
     },
     "@bufbuild/protobuf": {
-      "hash": "sha512-acq7c49vxfm1ggJ95P70TX7ABDM0vxr1SYD3BB0o0jnBLB4OAqeHyKuN+cD3w80gXEDQ2zxHpR6CUeA+O/aU9g==",
+      "hash": "sha512-C3UGsiCwSprE2NKIIFA3hCDlpXTMCAXRZuEVp88L1GY36Y41+rYL5fryE+nOFhp4p4JPQvdV8PQ4DWgHgeTE+w==",
       "installPath": "node_modules/@bufbuild/protobuf",
-      "url": "https://registry.npmjs.org/@bufbuild/protobuf/-/protobuf-2.13.0.tgz"
+      "url": "https://registry.npmjs.org/@bufbuild/protobuf/-/protobuf-2.14.0.tgz"
     },
     "@clack/core": {
-      "hash": "sha512-7Wctjq6f7c1CPz8sPpkwUnz8yRgVANkpNupb81q432FjcJg4l+Sw7XANdNSdWfAKq0IHI0JTcUeK5dxs/HrGPw==",
+      "hash": "sha512-/kr3UWNtdJfxZtPgDqUOmG2pvwlmcLGheex5yiZKdwbzZJxhV+HMNR9QNmyY5cGwTNV6LrR7Jtp+KjhUAP1qBQ==",
       "installPath": "node_modules/@clack/core",
-      "url": "https://registry.npmjs.org/@clack/core/-/core-1.4.0.tgz"
+      "url": "https://registry.npmjs.org/@clack/core/-/core-1.4.3.tgz"
     },
     "@clack/prompts": {
-      "hash": "sha512-wKh+wTjmrUoUdkZg8KpJO5X+p9PWV+KE9mePseq9UYWkukgTKsGS47RRL2HstwVcvDQH+PenrPJWII8+MfiiyA==",
+      "hash": "sha512-y7/yvZ2TPAnR9+jnc00klvNNLkJiXFFrQA/hlLCcxA9a2A4zQIOimyFQ9XfwYKiGD1fb5GY8vbKIIgO8d5Tb2A==",
       "installPath": "node_modules/@clack/prompts",
-      "url": "https://registry.npmjs.org/@clack/prompts/-/prompts-1.5.0.tgz"
+      "url": "https://registry.npmjs.org/@clack/prompts/-/prompts-1.7.0.tgz"
     },
     "@code-yeongyu/comment-checker": {
       "bin": {
@@ -1442,14 +707,14 @@
       "bin": {
         "senpi": "dist/cli.js"
       },
-      "hash": "sha512-Uo+oI3DeYNn43ehmaLBFn9zDB+TojNtOecrTTrjE9iouxhIvMgee6yiMPveVIU5e5rk6sX3T96POOSTR/9eODQ==",
+      "hash": "sha512-lLQfCYwgBBQdC3sEBA2v/WLerfQ8+U8irkUosTEZlwsf91OXmGu/uau8jwfqmZt9pjm1REe8frLn9lBirEEARQ==",
       "installPath": "node_modules/@code-yeongyu/senpi",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi/-/senpi-2026.8.19.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi/-/senpi-2026.8.20-2.tgz"
     },
     "@code-yeongyu/senpi-codemode": {
-      "hash": "sha512-YfoOBQvkPr4Vufnr2QsolG/EQ5u2V7nPC0UgPDU+cRUY039BeS8xZmar25QiF8C/efVjjtrnMeFGfdA0PBjb4w==",
+      "hash": "sha512-usBCLmXYnv7GP7T3rer2O4jOcRK5l2aI3n7mQpdfe2RdejuGJafc3rgqOLMZdEukf3+r/5UU/siK/+DEkwJXfw==",
       "installPath": "node_modules/@code-yeongyu/senpi-codemode",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-codemode/-/senpi-codemode-2026.8.19.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-codemode/-/senpi-codemode-2026.8.20-2.tgz"
     },
     "@code-yeongyu/senpi-codemode/typebox": {
       "hash": "sha512-xYaJgF0KMvBViKWRaKTAtfR6sDt/yH6xAjGAHXYJxKxUF4pVyPXZZhIlwOg6cDIE81N7L0pyIHs136RHBm6rLQ==",
@@ -1457,19 +722,9 @@
       "url": "https://registry.npmjs.org/typebox/-/typebox-1.3.8.tgz"
     },
     "@code-yeongyu/senpi/@earendil-works/pi-tui": {
-      "hash": "sha512-SuXWhNzlo22JPHTWDpn104IO5Q/zd5wy4+ktN9d0tpfiY3F2paUsnpeCmtImIkSjIq7bEJyA5mVKpkhAnxJJXg==",
+      "hash": "sha512-xkBlU+x0BmWEer0wipRwf2Dc2O6xczseUG2qHjVNkkvyfHiGPd9YjHXeNe5wtjNLX/9rmfYeseo+uq4lEkk/JQ==",
       "installPath": "node_modules/@code-yeongyu/senpi/@earendil-works/pi-tui",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-tui/-/senpi-tui-2026.8.19.tgz"
-    },
-    "@code-yeongyu/senpi/@modelcontextprotocol/sdk": {
-      "hash": "sha512-xKd8OIzlqNzcqcNumGAa6g+PW2kjD5vrpcKOnfldAUPP3j7lnqMPwlTXQm8gF+UwH72z0lqaRbjr9hqGz0eITA==",
-      "installPath": "node_modules/@code-yeongyu/senpi/@modelcontextprotocol/sdk",
-      "url": "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.30.0.tgz"
-    },
-    "@code-yeongyu/senpi/picomatch": {
-      "hash": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
-      "installPath": "node_modules/@code-yeongyu/senpi/picomatch",
-      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-tui/-/senpi-tui-2026.8.20-2.tgz"
     },
     "@code-yeongyu/senpi/typebox": {
       "hash": "sha512-xYaJgF0KMvBViKWRaKTAtfR6sDt/yH6xAjGAHXYJxKxUF4pVyPXZZhIlwOg6cDIE81N7L0pyIHs136RHBm6rLQ==",
@@ -1512,9 +767,9 @@
       "url": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz"
     },
     "@earendil-works/pi-agent-core": {
-      "hash": "sha512-uuFN09aOOT/o5OpRjkvJhMjifVtsq9ZPRQpYs/HHrQz1iECAfOduhplas3s2EXmz7dAyXN7bCNc/gkYzLpQpaA==",
+      "hash": "sha512-hEScqlCkcTyro8nfEqBk3jbWhQ9pty27Bl0Mryi0nC2A4qrpqAxe6gYcSxp9r0v3ivrzEEUWGnwRYzW3TaUPsw==",
       "installPath": "node_modules/@earendil-works/pi-agent-core",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-agent-core/-/senpi-agent-core-2026.8.19.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-agent-core/-/senpi-agent-core-2026.8.20-2.tgz"
     },
     "@earendil-works/pi-agent-core/typebox": {
       "hash": "sha512-xYaJgF0KMvBViKWRaKTAtfR6sDt/yH6xAjGAHXYJxKxUF4pVyPXZZhIlwOg6cDIE81N7L0pyIHs136RHBm6rLQ==",
@@ -1525,9 +780,9 @@
       "bin": {
         "pi-ai": "dist/cli.js"
       },
-      "hash": "sha512-Dk+wyY/hbpxmPtMMC1PgUu8KJn3a/W3JX/p64dBEnBgXkuDg7o4gjIMWvDFxTJCqmkCkzjgvjhdxYKcgLdeboA==",
+      "hash": "sha512-qD6DQBWpVmLHyfd2rf/7xTDTH0+K/eX5mJdpB6+3qJpWJdqVs0qQ+xhlA5eQfKot+zCTq+HYybHkE9bawd9LCw==",
       "installPath": "node_modules/@earendil-works/pi-ai",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-ai/-/senpi-ai-2026.8.19.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-ai/-/senpi-ai-2026.8.20-2.tgz"
     },
     "@earendil-works/pi-ai/@google/genai": {
       "hash": "sha512-GM7C8Kaomvjz05x5JEO6+l3d/pciL9LxAG9dUjJLD7nTPZ9X0Cfsf2Z7eET6UjgWyUmxXCHtYnQoQ77F9+ZIOQ==",
@@ -1554,30 +809,20 @@
       "installPath": "node_modules/@earendil-works/pi-ai/@google/genai/protobufjs",
       "url": "https://registry.npmjs.org/protobufjs/-/protobufjs-7.6.4.tgz"
     },
-    "@earendil-works/pi-ai/@google/genai/protobufjs/@types/node": {
-      "hash": "sha512-xfrlY7UD5rMJk3ZVJP8BNzS28J36YJg+xp+LPXV1TdWxr8uMH5A860QNxYDGQe/ylDSgjxE52Q9VnO7p75tJxg==",
-      "installPath": "node_modules/@earendil-works/pi-ai/@google/genai/protobufjs/@types/node",
-      "url": "https://registry.npmjs.org/@types/node/-/node-25.9.1.tgz"
-    },
-    "@earendil-works/pi-ai/@google/genai/protobufjs/@types/node/undici-types": {
-      "hash": "sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==",
-      "installPath": "node_modules/@earendil-works/pi-ai/@google/genai/protobufjs/@types/node/undici-types",
-      "url": "https://registry.npmjs.org/undici-types/-/undici-types-7.24.6.tgz"
-    },
     "@earendil-works/pi-ai/typebox": {
       "hash": "sha512-xYaJgF0KMvBViKWRaKTAtfR6sDt/yH6xAjGAHXYJxKxUF4pVyPXZZhIlwOg6cDIE81N7L0pyIHs136RHBm6rLQ==",
       "installPath": "node_modules/@earendil-works/pi-ai/typebox",
       "url": "https://registry.npmjs.org/typebox/-/typebox-1.3.8.tgz"
     },
     "@earendil-works/pi-pty": {
-      "hash": "sha512-XQAPQewfmXdOhbWbbqO4IHf5NxQqTxt2PoA6Dtn7r91WMv5tbHxNaZED5RdsC+eG8mlrEJ95ObfjC713esQF6Q==",
+      "hash": "sha512-y+ui9IvYmkpZQprK0s6OEhNx3qUEZX0tWO5K5Ts5+lXWMAIllmkLgBi32gu/4pD3sLtSSulqkpdoMnvGDWa8gQ==",
       "installPath": "node_modules/@earendil-works/pi-pty",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-pty/-/senpi-pty-2026.8.19.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-pty/-/senpi-pty-2026.8.20-2.tgz"
     },
     "@earendil-works/pi-telemetry": {
-      "hash": "sha512-AUf0pwQk7dHmc74IPJhGtQ9bqQbjUCcimV98HzxwOH+LYh3xgZVFYpVxxy2uOcFrWPOGCmnXseQ1SMgYQ7esmg==",
+      "hash": "sha512-qHCJWfQgHYBKKRX5QUEq+o/bZdbCmmiK4GS3ZWZanxMKh/YD2yGAhnKrsnIUQIz5qZH3pNbBrpq+WFZ05aQM3g==",
       "installPath": "node_modules/@earendil-works/pi-telemetry",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-telemetry/-/senpi-telemetry-2026.8.19.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-telemetry/-/senpi-telemetry-2026.8.20-2.tgz"
     },
     "@earendil-works/pi-tui": {
       "hash": "sha512-ds2TLihOnM5sLJB3VpXV6y0uR5efVuHf4MN7yDpsty6hA2DUO/EDVzjp/0od0G2JslzVLMjT8T8zavtxVb+qbg==",
@@ -1636,16 +881,6 @@
       "hash": "sha512-RJJPTTpvFfHcWLkIa2JFWK4XvtSzS0yEWDmunqHXli1h3JlkbcQZXDZdcWxv+JK3Xsl5/UFDPZ0iGm7DAengYw==",
       "installPath": "node_modules/@google/genai/protobufjs",
       "url": "https://registry.npmjs.org/protobufjs/-/protobufjs-7.6.4.tgz"
-    },
-    "@google/genai/protobufjs/@types/node": {
-      "hash": "sha512-xfrlY7UD5rMJk3ZVJP8BNzS28J36YJg+xp+LPXV1TdWxr8uMH5A860QNxYDGQe/ylDSgjxE52Q9VnO7p75tJxg==",
-      "installPath": "node_modules/@google/genai/protobufjs/@types/node",
-      "url": "https://registry.npmjs.org/@types/node/-/node-25.9.1.tgz"
-    },
-    "@google/genai/protobufjs/@types/node/undici-types": {
-      "hash": "sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==",
-      "installPath": "node_modules/@google/genai/protobufjs/@types/node/undici-types",
-      "url": "https://registry.npmjs.org/undici-types/-/undici-types-7.24.6.tgz"
     },
     "@google/genai/ws": {
       "hash": "sha512-Vsp28b7DRcimFQvrqu2Wek3z1iYxDCWqHYB8Qsnk/S4RfaCQzPGPyBNuVjJV3cd6UiKtUtp6sNM77gWvzcCH+g==",
@@ -2296,9 +1531,9 @@
       "url": "https://registry.npmjs.org/@mixmark-io/domino/-/domino-2.2.0.tgz"
     },
     "@modelcontextprotocol/sdk": {
-      "hash": "sha512-zo37mZA9hJWpULgkRpowewez1y6ML5GsXJPY8FI0tBBCd77HEvza4jDqRKOXgHNn867PVGCyTdzqpz0izu5ZjQ==",
+      "hash": "sha512-xKd8OIzlqNzcqcNumGAa6g+PW2kjD5vrpcKOnfldAUPP3j7lnqMPwlTXQm8gF+UwH72z0lqaRbjr9hqGz0eITA==",
       "installPath": "node_modules/@modelcontextprotocol/sdk",
-      "url": "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.29.0.tgz"
+      "url": "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.30.0.tgz"
     },
     "@mozilla/readability": {
       "hash": "sha512-juG5VWh4qAivzTAeMzvY9xs9HY5rAcr2E4I7tiSSCokRFi7XIZCAu92ZkSTsIj1OPceCifL3cpfteP3pDT9/QQ==",
@@ -2345,70 +1580,25 @@
       "installPath": "packages/ast-grep-mcp/node_modules/bun-types",
       "url": "https://registry.npmjs.org/bun-types/-/bun-types-1.3.12.tgz"
     },
-    "@oh-my-opencode/ast-grep-mcp/bun-types/@types/node": {
-      "hash": "sha512-xfrlY7UD5rMJk3ZVJP8BNzS28J36YJg+xp+LPXV1TdWxr8uMH5A860QNxYDGQe/ylDSgjxE52Q9VnO7p75tJxg==",
-      "installPath": "packages/ast-grep-mcp/node_modules/bun-types/@types/node",
-      "url": "https://registry.npmjs.org/@types/node/-/node-25.9.1.tgz"
-    },
-    "@oh-my-opencode/ast-grep-mcp/bun-types/@types/node/undici-types": {
-      "hash": "sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==",
-      "installPath": "packages/ast-grep-mcp/node_modules/bun-types/@types/node/undici-types",
-      "url": "https://registry.npmjs.org/undici-types/-/undici-types-7.24.6.tgz"
-    },
     "@oh-my-opencode/git-bash-mcp/bun-types": {
       "hash": "sha512-HqOLj5PoFajAQciOMRiIZGNoKxDJSr6qigAttOX40vJuSp6DN/CxWp9s3C1Xwm4oH7ybueITwiaOcWXoYVoRkA==",
       "installPath": "packages/git-bash-mcp/node_modules/bun-types",
       "url": "https://registry.npmjs.org/bun-types/-/bun-types-1.3.12.tgz"
     },
-    "@oh-my-opencode/git-bash-mcp/bun-types/@types/node": {
-      "hash": "sha512-xfrlY7UD5rMJk3ZVJP8BNzS28J36YJg+xp+LPXV1TdWxr8uMH5A860QNxYDGQe/ylDSgjxE52Q9VnO7p75tJxg==",
-      "installPath": "packages/git-bash-mcp/node_modules/bun-types/@types/node",
-      "url": "https://registry.npmjs.org/@types/node/-/node-25.9.1.tgz"
-    },
-    "@oh-my-opencode/git-bash-mcp/bun-types/@types/node/undici-types": {
-      "hash": "sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==",
-      "installPath": "packages/git-bash-mcp/node_modules/bun-types/@types/node/undici-types",
-      "url": "https://registry.npmjs.org/undici-types/-/undici-types-7.24.6.tgz"
-    },
-    "@oh-my-opencode/mcp-client-core/@modelcontextprotocol/sdk": {
-      "hash": "sha512-xKd8OIzlqNzcqcNumGAa6g+PW2kjD5vrpcKOnfldAUPP3j7lnqMPwlTXQm8gF+UwH72z0lqaRbjr9hqGz0eITA==",
-      "installPath": "packages/mcp-client-core/node_modules/@modelcontextprotocol/sdk",
-      "url": "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.30.0.tgz"
+    "@oh-my-opencode/mcp-client-core/bun-types": {
+      "hash": "sha512-4N0ig0fEomHt5R0KCFWjovxow98rIoRwKolrYdCcknNwMekCXRnWEUvgu5soYV8QXtVsrUD8B95MBOZGPvr6KQ==",
+      "installPath": "packages/mcp-client-core/node_modules/bun-types",
+      "url": "https://registry.npmjs.org/bun-types/-/bun-types-1.3.14.tgz"
     },
     "@oh-my-opencode/mcp-stdio-core/bun-types": {
       "hash": "sha512-HqOLj5PoFajAQciOMRiIZGNoKxDJSr6qigAttOX40vJuSp6DN/CxWp9s3C1Xwm4oH7ybueITwiaOcWXoYVoRkA==",
       "installPath": "packages/mcp-stdio-core/node_modules/bun-types",
       "url": "https://registry.npmjs.org/bun-types/-/bun-types-1.3.12.tgz"
     },
-    "@oh-my-opencode/mcp-stdio-core/bun-types/@types/node": {
-      "hash": "sha512-xfrlY7UD5rMJk3ZVJP8BNzS28J36YJg+xp+LPXV1TdWxr8uMH5A860QNxYDGQe/ylDSgjxE52Q9VnO7p75tJxg==",
-      "installPath": "packages/mcp-stdio-core/node_modules/bun-types/@types/node",
-      "url": "https://registry.npmjs.org/@types/node/-/node-25.9.1.tgz"
-    },
-    "@oh-my-opencode/mcp-stdio-core/bun-types/@types/node/undici-types": {
-      "hash": "sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==",
-      "installPath": "packages/mcp-stdio-core/node_modules/bun-types/@types/node/undici-types",
-      "url": "https://registry.npmjs.org/undici-types/-/undici-types-7.24.6.tgz"
-    },
-    "@oh-my-opencode/omo-opencode/@modelcontextprotocol/sdk": {
-      "hash": "sha512-xKd8OIzlqNzcqcNumGAa6g+PW2kjD5vrpcKOnfldAUPP3j7lnqMPwlTXQm8gF+UwH72z0lqaRbjr9hqGz0eITA==",
-      "installPath": "packages/omo-opencode/node_modules/@modelcontextprotocol/sdk",
-      "url": "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.30.0.tgz"
-    },
-    "@oh-my-opencode/omo-opencode/picomatch": {
-      "hash": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
-      "installPath": "packages/omo-opencode/node_modules/picomatch",
-      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz"
-    },
-    "@oh-my-opencode/omo-senpi/@code-yeongyu/lsp-daemon/@types/node": {
-      "hash": "sha512-OScDchr2fwuUmWdf4kZ9h7PcJiYDVInhJizG/biAq3cAvqwYktuy/TYGGdZNMtNTFUP7rnb0NU4TUdm82kt4Rg==",
-      "installPath": "packages/omo-senpi/node_modules/@code-yeongyu/lsp-daemon/@types/node",
-      "url": "https://registry.npmjs.org/@types/node/-/node-25.9.5.tgz"
-    },
-    "@oh-my-opencode/omo-senpi/@code-yeongyu/lsp-daemon/@types/node/undici-types": {
-      "hash": "sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==",
-      "installPath": "packages/omo-senpi/node_modules/@code-yeongyu/lsp-daemon/@types/node/undici-types",
-      "url": "https://registry.npmjs.org/undici-types/-/undici-types-7.24.6.tgz"
+    "@oh-my-opencode/omo-codex/bun-types": {
+      "hash": "sha512-4N0ig0fEomHt5R0KCFWjovxow98rIoRwKolrYdCcknNwMekCXRnWEUvgu5soYV8QXtVsrUD8B95MBOZGPvr6KQ==",
+      "installPath": "packages/omo-codex/node_modules/bun-types",
+      "url": "https://registry.npmjs.org/bun-types/-/bun-types-1.3.14.tgz"
     },
     "@oh-my-opencode/omo-senpi/@code-yeongyu/lsp-daemon/typescript": {
       "bin": {
@@ -2418,16 +1608,6 @@
       "hash": "sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==",
       "installPath": "packages/omo-senpi/node_modules/@code-yeongyu/lsp-daemon/typescript",
       "url": "https://registry.npmjs.org/typescript/-/typescript-6.0.3.tgz"
-    },
-    "@oh-my-opencode/rules-engine/picomatch": {
-      "hash": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
-      "installPath": "packages/rules-engine/node_modules/picomatch",
-      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz"
-    },
-    "@oh-my-opencode/skills-loader-core/picomatch": {
-      "hash": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
-      "installPath": "packages/skills-loader-core/node_modules/picomatch",
-      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz"
     },
     "@opencode-ai/plugin": {
       "hash": "sha512-NFwZGhmxIPijtfz9swPJXDmhOpq4UWP8WjEE7GEMr7FwtJrK/hv6v36nFimed5+OKk+pQCrTJn/vhRW7Io72IA==",
@@ -2518,14 +1698,14 @@
       "url": "https://registry.npmjs.org/@oxc-project/types/-/types-0.139.0.tgz"
     },
     "@posthog/core": {
-      "hash": "sha512-mGIN4Du1a8fKxV5WfnEtogq3VOQLa4PfWMUg5uMIMDD+fp5bhTA4QG4oYAea4vBTZ1ZOanQbjXcX4b5k2X93Qw==",
+      "hash": "sha512-lvSO1nrxxakrAfB51fetHC29gSqdDtT+AyRrGlnc5nDSWhiBGtyqKNjDqsbnlTQoj14bAaWXS7RtzuGoTo5IsQ==",
       "installPath": "node_modules/@posthog/core",
-      "url": "https://registry.npmjs.org/@posthog/core/-/core-1.30.3.tgz"
+      "url": "https://registry.npmjs.org/@posthog/core/-/core-1.48.6.tgz"
     },
     "@posthog/types": {
-      "hash": "sha512-QJLzyV22iZKy5eEXKn9IB1swSVo2JigIawebBha+BmsePsY3XA0HAcq2B+D8Km5BHnbE+SGm5aHxFG3DlVE1yg==",
+      "hash": "sha512-4rZ/taVXKQxs9Jrf7ZjlCRgrOSL69oKAgIWJQa5kRNJ6wll1UANbrJTSY+Su1e88LIG4zZVjKKKjyQHCkHdHcw==",
       "installPath": "node_modules/@posthog/types",
-      "url": "https://registry.npmjs.org/@posthog/types/-/types-1.379.0.tgz"
+      "url": "https://registry.npmjs.org/@posthog/types/-/types-1.405.0.tgz"
     },
     "@protobufjs/aspromise": {
       "hash": "sha512-j+gKExEuLmKwvz3OgROXtrJ2UG2x8Ch2YZUxahh+s1F2HZ+wAceUNLkvy6zKCPVRkU++ZWQrdxsUeQXmcg4uoQ==",
@@ -2576,9 +1756,9 @@
       "bin": {
         "browsers": "lib/main-cli.js"
       },
-      "hash": "sha512-B/gKoqlFkzhvzsI6jo9K1cZz9o5ypviVv/xu8CwA4grZzyVwN+XfkT+tu8T1zrauuEXv6VhS2oGX+6NL95WcKA==",
+      "hash": "sha512-KDz+3qDRdBAlRlMjmKyj6dEs33YHTk/xRHEENSXq6TNnhgoU15ruSHtEBeVF6OZ9tBDY55Se4P0nFMNsipzU9A==",
       "installPath": "node_modules/@puppeteer/browsers",
-      "url": "https://registry.npmjs.org/@puppeteer/browsers/-/browsers-3.0.6.tgz"
+      "url": "https://registry.npmjs.org/@puppeteer/browsers/-/browsers-3.2.1.tgz"
     },
     "@rolldown/binding-android-arm64": {
       "hash": "sha512-lZg8fqIv2v7FF237bwMgzGZEJvGL79/s5knJ/i6FmsGF4XXlzccZ4jb+TrFIxtSSxFtIpdsgrPZeMk1I9AFcyQ==",
@@ -2666,29 +1846,19 @@
       "url": "https://registry.npmjs.org/@silvia-odwyer/photon-node/-/photon-node-0.3.4.tgz"
     },
     "@smithy/core": {
-      "hash": "sha512-dl2yRglDxfzH9uJ4fSo4zTaAHa0zH7+V7BZMRWy8hEYIKT1BiqMUK/CN6T3ADQ3kbA5N1tmUulroJ2UtONS7Kw==",
+      "hash": "sha512-CUGXpnPkVdjUCbix+83sWLW9VFgQOm44MDOx/ihITJMAnOZKvL8YYIc7DR9pP/tZ8CIRvMiON/TucvygqbHO3w==",
       "installPath": "node_modules/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.30.0.tgz"
+      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.33.2.tgz"
     },
     "@smithy/credential-provider-imds": {
-      "hash": "sha512-QgbuahIb2qxQeZQvNK0sw3aF3JH5zwH8j2lLp5DUasVXexGGMWULAR+7z0omPXFolCP/m5wN9M5lm9EGdSviTQ==",
+      "hash": "sha512-A9uSdn72ozbRUSit0eib0TW7nXuNPlaeM0zcGkJ+nE6tFcSDbnmtwoxbTCFBukVQcszDAyvsd7+rTduPTXpygg==",
       "installPath": "node_modules/@smithy/credential-provider-imds",
-      "url": "https://registry.npmjs.org/@smithy/credential-provider-imds/-/credential-provider-imds-4.4.14.tgz"
-    },
-    "@smithy/credential-provider-imds/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@smithy/credential-provider-imds/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
+      "url": "https://registry.npmjs.org/@smithy/credential-provider-imds/-/credential-provider-imds-4.5.2.tgz"
     },
     "@smithy/fetch-http-handler": {
-      "hash": "sha512-o0Zkj1nKqJAoq+a+BrkhU39tRftMNjLwpc/z06Frfl43wpbHrJMaSAVZE4vTqlxtVkNaGaT0bIDxOp7tkFTuQQ==",
+      "hash": "sha512-nZyWTmSpJEXl6VtWVMBJve/7x12DZu6sIX1z1a+ZMaHlQQRs9Zpu6NbTe/gmxYXVRpkjxyDYpZ5gx2IM6f/Wkw==",
       "installPath": "node_modules/@smithy/fetch-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.6.11.tgz"
-    },
-    "@smithy/fetch-http-handler/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@smithy/fetch-http-handler/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
+      "url": "https://registry.npmjs.org/@smithy/fetch-http-handler/-/fetch-http-handler-5.7.2.tgz"
     },
     "@smithy/is-array-buffer": {
       "hash": "sha512-GGP3O9QFD24uGeAXYUjwSTXARoqpZykHadOmA8G5vfJPK0/DC67qa//0qvqrJzL1xc8WQWX7/yc7fwudjPHPhA==",
@@ -2696,29 +1866,19 @@
       "url": "https://registry.npmjs.org/@smithy/is-array-buffer/-/is-array-buffer-2.2.0.tgz"
     },
     "@smithy/node-http-handler": {
-      "hash": "sha512-slbzbz8taEOzoXv/9y34YNBoE+ZHmddLykCgjDAjvMAsu2nM5s2Gzwa5OGF721tD8s+CKeFUBds5lSj9lcbuDg==",
+      "hash": "sha512-avwAh9HM3h2lcfjvP3zYIZGf+XVgLQ91wOJ2qoFbNpW1UZeZb33aGlhTZvtkANHfcGhJroRY64525OjfgOg30g==",
       "installPath": "node_modules/@smithy/node-http-handler",
-      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.9.11.tgz"
-    },
-    "@smithy/node-http-handler/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@smithy/node-http-handler/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
+      "url": "https://registry.npmjs.org/@smithy/node-http-handler/-/node-http-handler-4.11.2.tgz"
     },
     "@smithy/signature-v4": {
-      "hash": "sha512-EXhWePm3SXJAX38npIy4TXL2Aex/OVgCClTjelN2QHw/U+8CQUH8C7AaxsVzQcYieYPseywn48s89DmvuGjiAg==",
+      "hash": "sha512-P7Ki6px6OOrxVtx8K7nLmyx4SlXUW/uTKDdMG44UHefmPGSRMBKe2v+TM59WdLcpUIrBrnuCsIqiM2MbsZjmhw==",
       "installPath": "node_modules/@smithy/signature-v4",
-      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.6.10.tgz"
-    },
-    "@smithy/signature-v4/@smithy/core": {
-      "hash": "sha512-CyogUINxvi7C7LDsh8Syo6hVJOT9ckz4rG8dRZfTJ8r91HkMY59PnNooaj7WcHyxEkxPfBAmbgztZU+xTo76lg==",
-      "installPath": "node_modules/@smithy/signature-v4/@smithy/core",
-      "url": "https://registry.npmjs.org/@smithy/core/-/core-3.31.1.tgz"
+      "url": "https://registry.npmjs.org/@smithy/signature-v4/-/signature-v4-5.7.2.tgz"
     },
     "@smithy/types": {
-      "hash": "sha512-0JFs3V2y2M9tKW5na/qxe69Zv+uxLMO7QBbhxF/FHu/Gp2NFZAAL9tWl9PU02xxo07pb3G9FTyjNc6D5uZrJIg==",
+      "hash": "sha512-FOKpVZob9MPTn2znRzGrnsMHv7BOsKVw3XiP/cOyYLDVZ9qKp4nifIiSCuUU/fIj5Vu0UOAxCFr+qRAtG0NUkA==",
       "installPath": "node_modules/@smithy/types",
-      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.16.1.tgz"
+      "url": "https://registry.npmjs.org/@smithy/types/-/types-4.17.2.tgz"
     },
     "@smithy/util-buffer-from": {
       "hash": "sha512-IJdWBbTcMQ6DA0gdNhh/BwrLkDR+ADW5Kr1aZmd4k3DIF6ezMV4R2NIAmT08wQJ3yUK82thHWmC/TnK/wpMMIA==",
@@ -2804,16 +1964,6 @@
       "hash": "sha512-oJoftv0LSuaDZE3Le4DbKX+KS9G36NzOeSap90UIK0yMA/NhKJhqlSGtNDORNRaIbQfzjXDrQa0ytJ6mNRGz/Q==",
       "installPath": "node_modules/@types/yauzl",
       "url": "https://registry.npmjs.org/@types/yauzl/-/yauzl-2.10.3.tgz"
-    },
-    "@types/yauzl/@types/node": {
-      "hash": "sha512-xfrlY7UD5rMJk3ZVJP8BNzS28J36YJg+xp+LPXV1TdWxr8uMH5A860QNxYDGQe/ylDSgjxE52Q9VnO7p75tJxg==",
-      "installPath": "node_modules/@types/yauzl/@types/node",
-      "url": "https://registry.npmjs.org/@types/node/-/node-25.9.1.tgz"
-    },
-    "@types/yauzl/@types/node/undici-types": {
-      "hash": "sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==",
-      "installPath": "node_modules/@types/yauzl/@types/node/undici-types",
-      "url": "https://registry.npmjs.org/undici-types/-/undici-types-7.24.6.tgz"
     },
     "@typescript/native-preview": {
       "bin": {
@@ -3233,19 +2383,9 @@
       "url": "https://registry.npmjs.org/bun-ffi-structs/-/bun-ffi-structs-0.2.2.tgz"
     },
     "bun-types": {
-      "hash": "sha512-4N0ig0fEomHt5R0KCFWjovxow98rIoRwKolrYdCcknNwMekCXRnWEUvgu5soYV8QXtVsrUD8B95MBOZGPvr6KQ==",
+      "hash": "sha512-iIKw23BspnQQYd3prITOBxeUsxBHnwzX6YJfGMuNOZzeNcMmVqzIIVGRm1l69ogaPQmb4wB6BN8mA5bE9YuC5Q==",
       "installPath": "node_modules/bun-types",
-      "url": "https://registry.npmjs.org/bun-types/-/bun-types-1.3.14.tgz"
-    },
-    "bun-types/@types/node": {
-      "hash": "sha512-xfrlY7UD5rMJk3ZVJP8BNzS28J36YJg+xp+LPXV1TdWxr8uMH5A860QNxYDGQe/ylDSgjxE52Q9VnO7p75tJxg==",
-      "installPath": "node_modules/bun-types/@types/node",
-      "url": "https://registry.npmjs.org/@types/node/-/node-25.9.1.tgz"
-    },
-    "bun-types/@types/node/undici-types": {
-      "hash": "sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==",
-      "installPath": "node_modules/bun-types/@types/node/undici-types",
-      "url": "https://registry.npmjs.org/undici-types/-/undici-types-7.24.6.tgz"
+      "url": "https://registry.npmjs.org/bun-types/-/bun-types-1.4.0.tgz"
     },
     "bytes": {
       "hash": "sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==",
@@ -3278,9 +2418,9 @@
       "url": "https://registry.npmjs.org/chalk/-/chalk-6.0.0.tgz"
     },
     "chromium-bidi": {
-      "hash": "sha512-J63PGu/9PpeCwLIcKYyzWP6yaVL5pxuBc0shlYCYM8BaAkmlwiQboXO1iNbOgSDbVklEyYFfNEcHD8oOAWacUA==",
+      "hash": "sha512-5v9GQFhTktFvotn/OFNJBmKLKRAb6n9r0bVCwf7sHgWc3/JryK0bj1nn93L3pHFrfgcsu6Be6EWsDi+1XHTGDg==",
       "installPath": "node_modules/chromium-bidi",
-      "url": "https://registry.npmjs.org/chromium-bidi/-/chromium-bidi-16.0.1.tgz"
+      "url": "https://registry.npmjs.org/chromium-bidi/-/chromium-bidi-17.0.2.tgz"
     },
     "chromium-bidi/zod": {
       "hash": "sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==",
@@ -3461,9 +2601,9 @@
       "url": "https://registry.npmjs.org/detect-libc/-/detect-libc-2.1.2.tgz"
     },
     "devtools-protocol": {
-      "hash": "sha512-mXwg4Fqnv0WR4iuAT/gYUmctNkjILwXFHyZ+m7Ty1dfr0ezZt2U3gnrrJTfRobJTHoXf+IbuFvFITzLrLFjwJA==",
+      "hash": "sha512-gCcO42XCHKEs7Ag0S7aGYsnJ7hlgrO3qderYqeiY0Eqk+0GFfuvT13IA0hHreJTa2KCdDVyGMeOhdMNmrrTjVg==",
       "installPath": "node_modules/devtools-protocol",
-      "url": "https://registry.npmjs.org/devtools-protocol/-/devtools-protocol-0.0.1638949.tgz"
+      "url": "https://registry.npmjs.org/devtools-protocol/-/devtools-protocol-0.0.1666840.tgz"
     },
     "diff": {
       "hash": "sha512-svtcdpS8CgJyqAjEQIXdb3OjhFVVYjzGAPO8WGCmRbrml64SPw/jJD4GoE98aR7r25A0XcgrK3F02yw9R/vhQw==",
@@ -4021,9 +3161,9 @@
       "bin": {
         "js-yaml": "bin/js-yaml.js"
       },
-      "hash": "sha512-ePWsvanv0DWuDRsW8dnt+R4jQ31SCRCQ7hhNcPXZPsoBZiemuZNYGf7adZdqX2D86j6rvKp3RpCxVTSb8WQlOw==",
+      "hash": "sha512-CY6crGq313MX8GkwvB7tzgp99vjQxY1++5y10/BKN/GUfHqWaOGQMNZkBvqSzsZKWk/ijwHlWzzkLulsGHhjWQ==",
       "installPath": "node_modules/js-yaml",
-      "url": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.2.0.tgz"
+      "url": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.3.1.tgz"
     },
     "jsdom": {
       "hash": "sha512-ECi4Fi2f7BdJtUKTflYRTiaMxIB0O6zfR1fX0GXpUrf6flp8QIYn1UT20YQqdSOfk2dfkCwS8LAFoJDEppNK5Q==",
@@ -4250,9 +3390,9 @@
       "url": "https://registry.npmjs.org/mitt/-/mitt-3.0.1.tgz"
     },
     "modern-tar": {
-      "hash": "sha512-sweCIVXzx1aIGTCdzcMlSZt1h8k5Tmk08VNAuRk3IU28XamGiOH5ypi11g6De2CH7PhYqSSnGy2A/EFhbWnVKg==",
+      "hash": "sha512-gN54ddmyzEg10orwZ2u4OOv+bjpMWdIl5jIkodK97bMq8QBSL5c0D7YX0lT1Ooz+99S7+PvFbnxzdjgHo1r41g==",
       "installPath": "node_modules/modern-tar",
-      "url": "https://registry.npmjs.org/modern-tar/-/modern-tar-0.7.6.tgz"
+      "url": "https://registry.npmjs.org/modern-tar/-/modern-tar-0.8.4.tgz"
     },
     "ms": {
       "hash": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==",
@@ -4349,66 +3489,6 @@
       "hash": "sha512-9miFgM2OFba7hB+pRgvtV84pYTBaoTHohvmIgiRt6dRIzbwEOIaNaP+dIlGs2fNFoB0SeISs0Jz5WFVRid6Xyg==",
       "installPath": "node_modules/obug",
       "url": "https://registry.npmjs.org/obug/-/obug-2.1.3.tgz"
-    },
-    "oh-my-opencode-darwin-arm64": {
-      "hash": "sha512-W8YmTXR/FuTSVxEqxZ5vDi5G5GT9kYzKbxHjxF/1rUPSWqO4vDzZlh52LiZKfuFamipChefiXw5hDLIvWqD15g==",
-      "installPath": "node_modules/oh-my-opencode-darwin-arm64",
-      "url": "https://registry.npmjs.org/oh-my-opencode-darwin-arm64/-/oh-my-opencode-darwin-arm64-5.0.0-beta.12.tgz"
-    },
-    "oh-my-opencode-darwin-x64": {
-      "hash": "sha512-92mFYJi/0d3n4lxDwX3MG0X491JnTopARVJ968aQ9667nzZXjNX2iWzdbleSHyiODi7PiCBez0egH/+vBQe7EA==",
-      "installPath": "node_modules/oh-my-opencode-darwin-x64",
-      "url": "https://registry.npmjs.org/oh-my-opencode-darwin-x64/-/oh-my-opencode-darwin-x64-5.0.0-beta.12.tgz"
-    },
-    "oh-my-opencode-darwin-x64-baseline": {
-      "hash": "sha512-JJSXtY4fsnEWrbM8phLJe/jDETOI6ai8WVEYTUpFsRZnan6zcJZOYV6bvc7n7FkeDGDrmoQEWfU6BVr/a11KWA==",
-      "installPath": "node_modules/oh-my-opencode-darwin-x64-baseline",
-      "url": "https://registry.npmjs.org/oh-my-opencode-darwin-x64-baseline/-/oh-my-opencode-darwin-x64-baseline-5.0.0-beta.12.tgz"
-    },
-    "oh-my-opencode-linux-arm64": {
-      "hash": "sha512-OZmGWddm/0/9rUPb6pOmcihWxbOki3GnsJ+/CFFhN2ximjSrvQMOcWF3hjbCfJZ6bCEujUwgIA9CYPctxJ+44A==",
-      "installPath": "node_modules/oh-my-opencode-linux-arm64",
-      "url": "https://registry.npmjs.org/oh-my-opencode-linux-arm64/-/oh-my-opencode-linux-arm64-5.0.0-beta.12.tgz"
-    },
-    "oh-my-opencode-linux-arm64-musl": {
-      "hash": "sha512-8cWW61AaGmSCVdRCAx/ms4w1MGFNrbmL9HokFY0e5TE8PaBQSfv0iR4E1sDk+OvoMKc8FZRoRVknWzJXQXToig==",
-      "installPath": "node_modules/oh-my-opencode-linux-arm64-musl",
-      "url": "https://registry.npmjs.org/oh-my-opencode-linux-arm64-musl/-/oh-my-opencode-linux-arm64-musl-5.0.0-beta.12.tgz"
-    },
-    "oh-my-opencode-linux-x64": {
-      "hash": "sha512-MbujmQNzgJK4OemP2y/Iny2X8EDbBDlKNmvxrcpY27At8rXi5hR6AfFEqTPnmbAjQJNEB0j7CtQLMcn1LHgWjA==",
-      "installPath": "node_modules/oh-my-opencode-linux-x64",
-      "url": "https://registry.npmjs.org/oh-my-opencode-linux-x64/-/oh-my-opencode-linux-x64-5.0.0-beta.12.tgz"
-    },
-    "oh-my-opencode-linux-x64-baseline": {
-      "hash": "sha512-NkjeiZUm4lUrh9jByts8ganARBb4xlbIN8TvQveeA49AcZ4D4pmWkoDltZPeo2uIpdhKkKb3LXkQ3sfCoO8tZg==",
-      "installPath": "node_modules/oh-my-opencode-linux-x64-baseline",
-      "url": "https://registry.npmjs.org/oh-my-opencode-linux-x64-baseline/-/oh-my-opencode-linux-x64-baseline-5.0.0-beta.12.tgz"
-    },
-    "oh-my-opencode-linux-x64-musl": {
-      "hash": "sha512-t5fzlBtTnNt9JzaqSfJpGHJ3pavVZw5TBz5gpxoxcKgXSAhHGH1a9Uw2Do+r7OR2UBM5DT6Rofvzmo5qzV1ehg==",
-      "installPath": "node_modules/oh-my-opencode-linux-x64-musl",
-      "url": "https://registry.npmjs.org/oh-my-opencode-linux-x64-musl/-/oh-my-opencode-linux-x64-musl-5.0.0-beta.12.tgz"
-    },
-    "oh-my-opencode-linux-x64-musl-baseline": {
-      "hash": "sha512-bdodJbFEAz87hCuTAOgsN2HfpTzbHOqtDT36yyzVoK61RsNwQPIzDp/+j6jaBAvZpEnEeGq8IaPW+tVCuixP/Q==",
-      "installPath": "node_modules/oh-my-opencode-linux-x64-musl-baseline",
-      "url": "https://registry.npmjs.org/oh-my-opencode-linux-x64-musl-baseline/-/oh-my-opencode-linux-x64-musl-baseline-5.0.0-beta.12.tgz"
-    },
-    "oh-my-opencode-windows-arm64": {
-      "hash": "sha512-OkaF/kFmL6VKfIalBM2UThn6GVpRypn0CkIf+YZN1u2rEYMTfpqWK1JlFJGiEM4O4QOLESE1GFk5WEIUhYG6DQ==",
-      "installPath": "node_modules/oh-my-opencode-windows-arm64",
-      "url": "https://registry.npmjs.org/oh-my-opencode-windows-arm64/-/oh-my-opencode-windows-arm64-5.0.0-beta.12.tgz"
-    },
-    "oh-my-opencode-windows-x64": {
-      "hash": "sha512-jzIEvG1cYEomWeK4bDg5VToUwCrB6sp+HnNoU/gSX8AzVDvK9nWWi7BrVGOEdwGr8kv9Wz8yujqBYBV7yZ+7vA==",
-      "installPath": "node_modules/oh-my-opencode-windows-x64",
-      "url": "https://registry.npmjs.org/oh-my-opencode-windows-x64/-/oh-my-opencode-windows-x64-5.0.0-beta.12.tgz"
-    },
-    "oh-my-opencode-windows-x64-baseline": {
-      "hash": "sha512-aLOWmc+f62Jiqd1QXy7JZlvsriOz6azK+VyZK2Vsej5YaopRO6ltxh7++Sm3irhNIDaQAVflhsFwIthrdx4PXQ==",
-      "installPath": "node_modules/oh-my-opencode-windows-x64-baseline",
-      "url": "https://registry.npmjs.org/oh-my-opencode-windows-x64-baseline/-/oh-my-opencode-windows-x64-baseline-5.0.0-beta.12.tgz"
     },
     "on-finished": {
       "hash": "sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==",
@@ -4539,9 +3619,9 @@
       "url": "https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz"
     },
     "picomatch": {
-      "hash": "sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==",
+      "hash": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
       "installPath": "node_modules/picomatch",
-      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.4.tgz"
+      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz"
     },
     "pkce-challenge": {
       "hash": "sha512-wQ0b/W4Fr01qtpHlqSqspcj3EhBvimsdh0KlHhH8HRZnMsEa0ea2fTULOXOS9ccQr3om+GcGRk4e+isrZWV8qQ==",
@@ -4559,9 +3639,9 @@
       "url": "https://registry.npmjs.org/postcss/-/postcss-8.5.19.tgz"
     },
     "posthog-node": {
-      "hash": "sha512-WLbeUdSDpERDENBgaDahMo9sqwjo8Gc1f1dnM01HciwdP8OnGlbcVs8zrqjz6Z9GvBnTnRTa0Q2bBQeXrBIeHg==",
+      "hash": "sha512-+ihwLaB+zoP7mOdk8bOV8phWhoS/U9zG9tnA49B0BGLjNt9rQ05zp9DPnwSYjh9wZkN8zD2V+LMYV6W9pQosVg==",
       "installPath": "node_modules/posthog-node",
-      "url": "https://registry.npmjs.org/posthog-node/-/posthog-node-5.35.12.tgz"
+      "url": "https://registry.npmjs.org/posthog-node/-/posthog-node-5.49.2.tgz"
     },
     "proper-lockfile": {
       "hash": "sha512-TjNPblN4BwAWMXU8s9AEz4JmQxnD1NNL7bNOY/AKUzyamc379FWASUhc/K1pL2noVb+XmZKLL68cjzLsiOAMaA==",
@@ -4629,14 +3709,9 @@
       "url": "https://registry.npmjs.org/punycode/-/punycode-2.3.1.tgz"
     },
     "puppeteer-core": {
-      "hash": "sha512-fm+wpUr2oigH1PXZvwgATrM2tYWHMDG8ASzTEe9uukCye4X5Ldx1K5BTHPFKITrIWvQQAQ256d1NpbEveBcKjA==",
+      "hash": "sha512-LDOrawV8vfCVk+yLj2ozvajNP4Sv3OV9y3Tpiyy2g2Z+aQlbcozP6KJfI4iSBq7YQER+86ihEtPa5ioiZyWxMQ==",
       "installPath": "node_modules/puppeteer-core",
-      "url": "https://registry.npmjs.org/puppeteer-core/-/puppeteer-core-25.3.0.tgz"
-    },
-    "puppeteer-core/ws": {
-      "hash": "sha512-Vsp28b7DRcimFQvrqu2Wek3z1iYxDCWqHYB8Qsnk/S4RfaCQzPGPyBNuVjJV3cd6UiKtUtp6sNM77gWvzcCH+g==",
-      "installPath": "node_modules/puppeteer-core/ws",
-      "url": "https://registry.npmjs.org/ws/-/ws-8.21.0.tgz"
+      "url": "https://registry.npmjs.org/puppeteer-core/-/puppeteer-core-25.8.0.tgz"
     },
     "pure-rand": {
       "hash": "sha512-IoM8YF/jY0hiugFo/wOWqfmarlE6J0wc6fDK1PhftMk7MGhVZl88sZimmqBBFomLOCSmcCCpsfj7wXASCpvK9A==",
@@ -4925,11 +4000,6 @@
       "installPath": "node_modules/tinyglobby",
       "url": "https://registry.npmjs.org/tinyglobby/-/tinyglobby-0.2.17.tgz"
     },
-    "tinyglobby/picomatch": {
-      "hash": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
-      "installPath": "node_modules/tinyglobby/picomatch",
-      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz"
-    },
     "tinyrainbow": {
       "hash": "sha512-Bf+ILmBgretUrdJxzXM0SgXLZ3XfiaUuOj/IKQHuTXip+05Xn+uyEYdVg0kYDipTBcLrCVyUzAPz7QmArb0mmw==",
       "installPath": "node_modules/tinyrainbow",
@@ -5083,11 +4153,6 @@
       "installPath": "node_modules/vite",
       "url": "https://registry.npmjs.org/vite/-/vite-8.1.4.tgz"
     },
-    "vite/picomatch": {
-      "hash": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
-      "installPath": "node_modules/vite/picomatch",
-      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.5.tgz"
-    },
     "vitest": {
       "bin": {
         "vitest": "./vitest.mjs"
@@ -5095,6 +4160,11 @@
       "hash": "sha512-R9jUTe5S4Qb0HCd4TNqpC7oGcrMssMRGXLW80ubjWsW9VH5GF8y1Y0SFLY9AbqSk6nt0PnOx4H4WNJYZ13GUPw==",
       "installPath": "node_modules/vitest",
       "url": "https://registry.npmjs.org/vitest/-/vitest-4.1.10.tgz"
+    },
+    "vitest/picomatch": {
+      "hash": "sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==",
+      "installPath": "node_modules/vitest/picomatch",
+      "url": "https://registry.npmjs.org/picomatch/-/picomatch-4.0.4.tgz"
     },
     "w3c-xmlserializer": {
       "hash": "sha512-o8qghlI8NZHU1lLPrpi2+Uq7abh4GGPpYANlalzWxyWteJOCsr/P+oPBA49TOLu5FTZO4d3F9MnWJfiMo4BkmA==",
