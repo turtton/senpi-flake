@@ -201,6 +201,7 @@ The CI workflow verifies the build on every PR and push to `main`:
   - `omo ulw-loop status --json` in an empty directory exits 1 with a `ULW_LOOP_PLAN_MISSING` JSON body, proving the wrapper's `CODEX_LOCAL_BIN_DIR` default delegates to the bundled component CLI
   - `comment-checker --help` runs (no `--version` flag upstream)
 - Real senpi startup with the store path registered must emit omo's `omo-senpi ` component log lines (a path-only check would pass even if the bundle could not load), and with `result-omo-cli/bin` on PATH the log must **not** contain `omo binary not found`
+- The real startup check selects `cerebras/gemma-4-31b` explicitly because current senpi validates model authentication before omo-senpi emits its initialization logs. CI therefore requires a repository Actions secret named `CEREBRAS_API_KEY`; the check fails explicitly when it is absent.
 
 `nix build --rebuild` passes for both `omo-senpi` and `omo-cli` at the current pin (see Packaging quirks). CI does not gate on it — a full second build would double CI time — but run it locally after any `update-omo.sh` bump; a mismatch means upstream regressed bundle determinism.
 
