@@ -98,16 +98,16 @@ jobs:
       # A path-only check would still pass if the extension bundle could not be
       # loaded from a read-only store path, so drive a real senpi startup and
       # require omo's own component log lines. Senpi now validates model auth
-      # before those lines are emitted, so use an explicitly selected Cerebras
-      # model. result-omo-cli/bin is on PATH so the ulw-loop component must also
-      # find the bundled omo binary.
+      # before those lines are emitted, so use OpenRouter's free model router.
+      # result-omo-cli/bin is on PATH so the ulw-loop component must also find
+      # the bundled omo binary.
       - name: Verify senpi loads the store-path plugin
         env:
-          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
           set -euo pipefail
-          if [ -z "$CEREBRAS_API_KEY" ]; then
-            echo "::error::CEREBRAS_API_KEY repository secret is required for the senpi startup check"
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "::error::OPENROUTER_API_KEY repository secret is required for the senpi startup check"
             exit 1
           fi
 
@@ -123,7 +123,7 @@ jobs:
           log="$RUNNER_TEMP/omo-load.log"
           set +e
           PATH="$omoBin:$PATH" SENPI_CODING_AGENT_DIR="$agentDir" \
-            ./result/bin/senpi -p --no-session --provider cerebras --model gemma-4-31b 'hi' \
+            ./result/bin/senpi -p --no-session --provider openrouter --model openrouter/free 'hi' \
             > "$log" 2>&1
           rc=$?
           set -e
