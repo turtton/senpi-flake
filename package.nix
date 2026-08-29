@@ -159,6 +159,11 @@ buildNpmPackage {
       --prefix PATH : ${lib.makeBinPath [ nodejs_24 ]}
 
     # pi alias for compatibility with upstream's binary name.
+    # Since senpi 2026.8.25 the npm tarball ships its own bin/pi (the legacy
+    # entry point dist/bundle/cli.js); buildNpmPackage installs it, so remove
+    # it and place the alias to the wrapped senpi, which guarantees Node.js 24
+    # is on PATH at runtime (upstream's bare pi script is not wrapped).
+    rm -f $out/bin/pi
     ln -s $out/bin/senpi $out/bin/pi
   '';
 
