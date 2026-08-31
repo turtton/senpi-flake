@@ -688,19 +688,19 @@
         "pi": "dist/bundle/cli.js",
         "senpi": "dist/cli.js"
       },
-      "hash": "sha512-zBIeKIJ7YMoxO0P7q46pc7lmbUgrnxAs+pkyqBahmtk5amfw7WJ1wgixq6vBvB7kJ5yuQMP6avacQM/HZMmzdw==",
+      "hash": "sha512-GSif6dj5AkB2m+JQNRMEXNx7/Zb3wZkm2vD1d7OOHHH52dB1hWHPPvVCPR8WMTU63VVbYjOAj2qMoJyYV4Fcug==",
       "installPath": "node_modules/@code-yeongyu/senpi",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi/-/senpi-2026.8.28-2.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi/-/senpi-2026.8.30-3.tgz"
     },
     "@code-yeongyu/senpi-codemode": {
-      "hash": "sha512-rM71DLGhiBSUkNtTkHXx1hNeZopzz3eud9/3QIvi+UBfORFfzbDa+e/ZBTh3DY0hOPzFQJs4tcPaH0kU51POuQ==",
+      "hash": "sha512-0p8uNmq21tlX7ou7lf+dnrIxzWBhMbSqcOmTnSnWIVtSfV/aDEpuYIXm45FE/5Mnk8sqJ3NYFjtz0ae/q76z6w==",
       "installPath": "node_modules/@code-yeongyu/senpi-codemode",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-codemode/-/senpi-codemode-2026.8.28-2.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-codemode/-/senpi-codemode-2026.8.30-3.tgz"
     },
     "@code-yeongyu/senpi/@earendil-works/pi-tui": {
-      "hash": "sha512-CEouXijv7cLUq54ScOEQaeHmHvNh+VmHESIghyRzIbBp9GRJ/rtX0YH5AAj4/s7M5uoql2BcwMdAgVag1g7+tw==",
+      "hash": "sha512-b0GUX+Y7USQnWMaWvZR3Na4jJmz/z5tTmWRH77doQwPg/jJPLoOGrkCkUrALZ2Hl83gLkJx+4B6i5ze4Ny1mEw==",
       "installPath": "node_modules/@code-yeongyu/senpi/@earendil-works/pi-tui",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-tui/-/senpi-tui-2026.8.28-2.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-tui/-/senpi-tui-2026.8.30-3.tgz"
     },
     "@code-yeongyu/senpi/picomatch": {
       "hash": "sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==",
@@ -738,27 +738,27 @@
       "url": "https://registry.npmjs.org/@csstools/css-tokenizer/-/css-tokenizer-4.0.0.tgz"
     },
     "@earendil-works/pi-agent-core": {
-      "hash": "sha512-Y6gk95levtVL+v3okxqQEWBSC0e5hW1bqQzRg2kMqpinmiXoHzYYiAujSOAAZYyZg1G9UeQ8C8lwic8CsGpaCQ==",
+      "hash": "sha512-PhVOVUVT2wpxzjdDl6VhpP0sOhBrWmCw8LyenyTHIBrlxwB/As2fXMKWTwKDNTAgkr8cHe5qulY1SOTu6B6D7g==",
       "installPath": "node_modules/@earendil-works/pi-agent-core",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-agent-core/-/senpi-agent-core-2026.8.28-2.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-agent-core/-/senpi-agent-core-2026.8.30-3.tgz"
     },
     "@earendil-works/pi-ai": {
       "bin": {
         "pi-ai": "dist/cli.js"
       },
-      "hash": "sha512-WuBwBv8ZgvfgEqfuFJyRcHhqZgwKoxyVvfMVb4GOL4rBcMNwB5iOXTSl855VvJNRQdeiZDA89vTsZYuc1uzvMw==",
+      "hash": "sha512-ocmNpPAGWsMP7RA6dVo7KNU9IohzmyWhnjgATg3YIqTBoZpplj4PlYyafkgFeYyCmg4PvzWB/PJ7KqiEz3ezjA==",
       "installPath": "node_modules/@earendil-works/pi-ai",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-ai/-/senpi-ai-2026.8.28-2.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-ai/-/senpi-ai-2026.8.30-3.tgz"
     },
     "@earendil-works/pi-pty": {
-      "hash": "sha512-iKdUgFLyTZ31iWH7Ehy9A2D07ur26ubBwcjTtfzqZFkzr7J42ERth+p30slTbO86kfq91malVJiidoDifDollg==",
+      "hash": "sha512-xF9YByrwcv2ELd63lkBpvZNb7pI8yqZxbYFLKdWTJuHIxlSB9m7O+kdaX3p3ZzhkX5jxCTv5cgn5ANT502Ld1g==",
       "installPath": "node_modules/@earendil-works/pi-pty",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-pty/-/senpi-pty-2026.8.28-2.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-pty/-/senpi-pty-2026.8.30-3.tgz"
     },
     "@earendil-works/pi-telemetry": {
-      "hash": "sha512-rwNqwVVxjbu8nngHsYI6E22yLiOj8wCG59Q3tdIDs58JxI/HruRfvJgJaOoYzeJdE+SpmovMwXiChHJBxvnbqg==",
+      "hash": "sha512-UXVgEug/UVW2UGa+TR3qyCrnn4kQNmnhnC55syR1UlfLk5eFCkGNKYcP3cP2uGt8qJkk6GKCbs2wQ+D+muefnA==",
       "installPath": "node_modules/@earendil-works/pi-telemetry",
-      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-telemetry/-/senpi-telemetry-2026.8.28-2.tgz"
+      "url": "https://registry.npmjs.org/@code-yeongyu/senpi-telemetry/-/senpi-telemetry-2026.8.30-3.tgz"
     },
     "@earendil-works/pi-tui": {
       "hash": "sha512-ds2TLihOnM5sLJB3VpXV6y0uR5efVuHf4MN7yDpsty6hA2DUO/EDVzjp/0od0G2JslzVLMjT8T8zavtxVb+qbg==",
