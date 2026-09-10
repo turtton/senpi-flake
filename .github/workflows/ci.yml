@@ -75,12 +75,14 @@ jobs:
           fi
 
           # `omo ulw-loop` must delegate to the bundled component CLI through
-          # the wrapper's CODEX_LOCAL_BIN_DIR default.  In an empty directory
-          # the correct idle answer is the ULW_LOOP_PLAN_MISSING JSON error
-          # with exit status 1 — anything else means the delegation broke.
+          # the wrapper's CODEX_LOCAL_BIN_DIR default.  Upstream now scopes
+          # ulw-loop state per session, so status without a session id answers
+          # ULW_LOOP_SESSION_SCOPE_REQUIRED; with an explicit --session-id the
+          # correct idle answer is the ULW_LOOP_PLAN_MISSING JSON error — both
+          # with exit status 1.  Anything else means the delegation broke.
           tmp="$(mktemp -d)"
           set +e
-          output="$(cd "$tmp" && env -u CODEX_LOCAL_BIN_DIR "$OLDPWD/result-omo-cli/bin/omo" ulw-loop status --json 2>&1)"
+          output="$(cd "$tmp" && env -u CODEX_LOCAL_BIN_DIR "$OLDPWD/result-omo-cli/bin/omo" ulw-loop status --json --session-id ci-probe 2>&1)"
           rc=$?
           set -e
           rm -rf "$tmp"

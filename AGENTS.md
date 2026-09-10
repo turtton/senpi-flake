@@ -77,7 +77,7 @@ senpi install "$(realpath ./result)/lib/omo-senpi"
 # its bin/ is on PATH (omo-senpi discovers the binaries via PATH lookup)
 NIXPKGS_ALLOW_UNFREE=1 nix build .#omo-cli --impure
 ./result/bin/omo --version
-./result/bin/omo ulw-loop status --json   # JSON; ULW_LOOP_PLAN_MISSING + exit 1 when idle
+./result/bin/omo ulw-loop status --json --session-id demo   # JSON; ULW_LOOP_PLAN_MISSING + exit 1 when idle (no --session-id → ULW_LOOP_SESSION_SCOPE_REQUIRED)
 ./result/bin/comment-checker --help       # no --version flag upstream
 ```
 
@@ -198,7 +198,7 @@ The CI workflow verifies the build on every PR and push to `main`:
 - `nix build .#omo-senpi` — builds the plugin, then asserts the artifacts `scripts/install.mjs` validates
 - `nix build .#omo-cli` — builds the CLI bundle, then:
   - `omo --version` matches `version` in `omo-hashes.json`
-  - `omo ulw-loop status --json` in an empty directory exits 1 with a `ULW_LOOP_PLAN_MISSING` JSON body, proving the wrapper's `CODEX_LOCAL_BIN_DIR` default delegates to the bundled component CLI
+  - `omo ulw-loop status --json --session-id ci-probe` in an empty directory exits 1 with a `ULW_LOOP_PLAN_MISSING` JSON body, proving the wrapper's `CODEX_LOCAL_BIN_DIR` default delegates to the bundled component CLI (upstream scopes ulw-loop state per session; without `--session-id` it answers `ULW_LOOP_SESSION_SCOPE_REQUIRED`)
   - `comment-checker --help` runs (no `--version` flag upstream)
 - Real senpi startup with the store path registered must emit omo's `omo-senpi ` component log lines (a path-only check would pass even if the bundle could not load), and with `result-omo-cli/bin` on PATH the log must **not** contain `omo binary not found`
 - The real startup check selects provider `openrouter` and model `openrouter/free` explicitly because current senpi validates model authentication before omo-senpi emits its initialization logs. CI therefore requires a repository Actions secret named `OPENROUTER_API_KEY`; the check fails explicitly when it is absent. The model request's exit status is not itself a test condition (rate-limit, availability, or transient API failures are outside this plugin-load check); the emitted omo-senpi logs remain authoritative.
