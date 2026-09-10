@@ -240,14 +240,11 @@ if [ "$omo_changed" -eq 1 ]; then
   curl -fsSL "https://raw.githubusercontent.com/${REPO}/${latest_rev}/bun.lock" > "$bun_lock"
   python3 generate-npm-packages.py "$bun_lock" omo-npm-packages.json
 
-  # packages/lsp-daemon and packages/omo-codex/plugin each keep their own npm
-  # lockfile consumed via fetchNpmDeps; those hashes still need placeholder
-  # discovery.  Discover lsp-daemon first (it exists on every rev); the codex
-  # plugin hash is only added from 5.0.0-beta.2 on.
+  # packages/lsp-daemon keeps its own npm lockfile consumed via fetchNpmDeps;
+  # that hash still needs placeholder discovery.  The codex plugin is a pure
+  # bun workspace now (no npm ci in the staged build), so no codex hash exists.
   echo "Discovering lspDaemonNpmDepsHash..."
   discover_hash lspDaemonNpmDepsHash omo-senpi-lsp-daemon-npm-deps
-  echo "Discovering codexPluginNpmDepsHash..."
-  discover_hash codexPluginNpmDepsHash omo-senpi-codex-plugin-npm-deps
 fi
 
 # omo-cli embeds the comment-checker binary and shares the monorepo pin, so

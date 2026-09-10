@@ -22,28 +22,6 @@ let
     src = "${src}/packages/lsp-daemon";
     hash = hashesData.lspDaemonNpmDepsHash;
   };
-
-  # packages/omo-codex/plugin is a separate npm workspace (components/*) whose
-  # deps stage-agent-toolkit.mjs installs via `npm ci` (added upstream in
-  # 5.0.0-beta.2).  Provide them as a FOD and strip the network-bound npm ci
-  # in postPatch, mirroring lspDaemonNpmDeps.  fetcherVersion 2 is required:
-  # the lockfile is a workspace lockfile, so npm needs cached packuments to
-  # resolve the components/* workspace members offline.
-  #
-  # The hash field is absent on older pins (no stage-agent-toolkit.mjs yet);
-  # update-omo.sh discovers it on every rev bump, so the FOD only materializes
-  # once the pinned upstream rev actually needs it.
-  codexPluginNpmDeps =
-    if hashesData ? codexPluginNpmDepsHash
-    then
-      fetchNpmDeps {
-        name = "omo-senpi-codex-plugin-npm-deps";
-        src = "${src}/packages/omo-codex/plugin";
-        hash = hashesData.codexPluginNpmDepsHash;
-        fetcherVersion = 2;
-      }
-    else
-      null;
 in
 stdenvNoCC.mkDerivation {
   pname = "omo-senpi";
@@ -76,19 +54,6 @@ stdenvNoCC.mkDerivation {
       --replace-fail \
         'npm --prefix packages/lsp-daemon ci && npm --prefix packages/lsp-daemon run build' \
         'npm --prefix packages/lsp-daemon run build'
-
-    # 5.0.0-beta.2+: stage-agent-toolkit.mjs runs `npm ci` (and, from
-    # beta.5, an `rm` of the plugin node_modules) in packages/omo-codex/plugin
-    # to build the ulw-loop component.  Its deps are provided by the
-    # codexPluginNpmDeps FOD (see configurePhase), so force needsInstall off —
-    # replacing only the npm ci line would still let the beta.5 `rm` wipe the
-    # assembled node_modules.  Guarded: older pins predate the script.
-    if [ -f packages/omo-senpi/plugin/scripts/stage-agent-toolkit.mjs ]; then
-      substituteInPlace packages/omo-senpi/plugin/scripts/stage-agent-toolkit.mjs \
-        --replace-fail \
-          '  const needsInstall = !(await filesEqual(packageLock, installedPackageLock)) || !(await fileExists(compiler))' \
-          '  const needsInstall = false // senpi-flake: node_modules assembled from codexPluginNpmDeps in configurePhase'
-    fi
   '';
 
   configurePhase = ''
@@ -115,14 +80,6 @@ stdenvNoCC.mkDerivation {
     export HOME=$TMPDIR/home
     mkdir -p "$HOME"
 
-    # 5.0.0-beta.2+: assemble packages/omo-codex/plugin node_modules from the
-    # codexPluginNpmDeps FOD (offline).  npmConfigHook only serves one npmRoot
-    # (packages/lsp-daemon), so this workspace install is done by hand.
-    ${lib.optionalString (codexPluginNpmDeps != null) ''
-      npm_config_cache=${codexPluginNpmDeps} \
-        npm --prefix packages/omo-codex/plugin ci --offline --ignore-scripts
-    ''}
-
     runHook postConfigure
   '';
 
@@ -148,8 +105,20 @@ stdenvNoCC.mkDerivation {
     # scripts/install.mjs validates before registering the package.
     for artifact in \
       extensions/omo.js \
+      extensions/omo-task.js \
+      extensions/omo-member.js \
       skills/ast-grep/SKILL.md \
+      skills/ulw-loop/SKILL.md \
+      skills-conditional/x-search/SKILL.md \
+      runtime/agent-toolkit/cli.js \
+      runtime/agent-toolkit/ulw-loop/cli.js \
+      runtime/agent-toolkit/omo-agent-toolkit \
+      runtime/agent-toolkit/omo-agent-toolkit.cmd \
+      runtime/ast-grep-mcp/cli.js \
       runtime/lsp-daemon/dist/cli.js \
+      runtime/lsp-daemon/dist/index.js \
+      runtime/lsp-daemon/dist/daemon-client.js \
+      runtime/lsp-daemon/dist/package.json \
       runtime/lsp-daemon/dist/.omo-runtime-manifest.json
     do
       if [ ! -f "$out/lib/omo-senpi/$artifact" ]; then
