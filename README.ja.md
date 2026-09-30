@@ -1,10 +1,10 @@
 # senpi-flake
 
-[code-yeongyu/senpi](https://github.com/code-yeongyu/senpi) のコーディングエージェント CLI 向け Nix flake です。
+[OmO Native](https://github.com/code-yeongyu/oh-my-openagent) と、そのエンジンである [senpi](https://github.com/code-yeongyu/senpi) の Nix flake です。
 
-npm registry に公開されている `@code-yeongyu/senpi` を [`buildNpmPackage`](https://nixos.org/manual/nixpkgs/stable/#javascript-buildNpmPackage) でパッケージ化します。実行には Node.js 24 を同梱しており、`senpi` ラッパーが自動で `PATH` を解決します。
+既定パッケージは npm 公開版の `omo-ai` です。公式の通常インストールと同じく、`omo` ランチャー、バージョンが固定された senpi、プラグイン一式をまとめて提供します。senpi 単体も利用できます。
 
-English README: see [README.md](./README.md).
+English README: [README.md](./README.md).
 
 ## 対応システム
 
@@ -13,62 +13,57 @@ English README: see [README.md](./README.md).
 - `x86_64-darwin`
 - `aarch64-darwin`
 
+OmO Native は nixpkgs では unfree ライセンス扱いのため、flake の評価時に `NIXPKGS_ALLOW_UNFREE=1` と `--impure` が必要です。
+
 ## 使い方
 
-### 直接実行
+OmO Native を直接実行:
 
 ```sh
-nix run github:turtton/senpi-flake -- --version
+NIXPKGS_ALLOW_UNFREE=1 nix run --impure github:turtton/senpi-flake -- --version
 ```
 
-### プロファイルにインストール
+プロファイルにインストール:
 
 ```sh
-nix profile install github:turtton/senpi-flake
+NIXPKGS_ALLOW_UNFREE=1 nix profile install --impure github:turtton/senpi-flake
+omo
 ```
 
-### flake input として利用
+設定は `~/.omo/agent` に保存されます。既存の OpenCode などから移行する場合は `omo setup`、導入状況の確認には `omo doctor` を使用します。
 
-```nix
-{
-  inputs.senpi.url = "github:turtton/senpi-flake";
-
-  outputs = { self, nixpkgs, senpi, ... }: {
-    # パッケージとして
-    # packages.x86_64-linux.default = senpi.packages.x86_64-linux.default;
-
-    # あるいは overlay 経由
-    # nixpkgs.overlays = [ senpi.overlays.default ];
-  };
-}
-```
-
-公開されるバイナリ:
-
-- `senpi` — 正式名
-- `pi` — upstream 互換のためのエイリアス（`senpi` へのシンボリックリンク）
-
-## 自動アップデート
-
-`.github/workflows/update.yml` が毎日 cron で実行され、npm registry 上の `@code-yeongyu/senpi` の最新バージョンを検出すると以下を更新します:
-
-- `hashes.json`（`version` / `sourceHash` / `assetsSourceHash` / `npmDepsHash`）
-- `package-lock.json`（最新 tarball から再生成）
-
-> パッケージは **dual-source** 構成です。本体は npm tarball（`sourceHash`）由来ですが、upstream の `copy-assets` ビルドスクリプトが生成する静的アセット（テーマ JSON / PNG / HTML テンプレート / vendored JS）が npm tarball に含まれません。そのため、同じバージョンの GitHub tag アーカイブ（`assetsSourceHash`）からそれらを取り出し、`postPatch` で `dist/` に注入しています。
-
-そのうえで `nix flake check` と `nix build .#senpi` で検証し、`senpi --version` の出力が新バージョンと一致することを確認したうえで Pull Request を作成します。
-
-ローカルで手動更新する場合:
+OmO を使わず senpi 単体を実行する場合:
 
 ```sh
-./update.sh
-nix build .#senpi
+nix run github:turtton/senpi-flake#senpi -- --version
 ```
 
-> 必要コマンド: `curl`, `jq`, `nix`, `nix-prefetch-url`, `npm`, `tar`。
+公開パッケージ:
+
+| パッケージ | 内容 |
+|---|---|
+| `default`, `omo-native` | npm 公開版 OmO Native のランチャー・エンジン・プラグイン |
+| `senpi` | senpi 単体の CLI（`senpi`、`pi`） |
+| `comment-checker` | バージョン固定のビルド済みバイナリ |
+| `omo-cli` | `omo-native` の互換エイリアス |
+| `omo-senpi` | `lib/omo-senpi` に配置した互換プラグイン |
+
+overlay も同じ名前を公開します。既存の senpi 単体利用は `.#senpi` を使い、新たな OmO 導入には既定出力または `.#omo-native` を使用してください。
+
+## 更新
+
+毎日の [更新ワークフロー](.github/workflows/update.yml) は npm の安定版 `omo-ai` を取得し、そのパッケージが正確に指定する senpi バージョンと一緒に更新します。tarball と npm 依存関係のハッシュを `omo-hashes.json` / `hashes.json` に保存し、両方の lockfile を再生成してビルドを検証した後、Pull Request を作成します。
+
+手動更新:
+
+```sh
+NIXPKGS_ALLOW_UNFREE=1 ./update-omo.sh
+./update.sh "$(jq -r '.senpiVersion' omo-hashes.json)"
+NIXPKGS_ALLOW_UNFREE=1 nix flake check --impure
+```
+
+senpi 単体パッケージでは、npm tarball に欠けている静的アセットを対応する GitHub タグから補います。
 
 ## ライセンス
 
-この flake（パッケージング用コード）は as-is で提供されます。
-パッケージ化される `senpi` バイナリ自体は upstream のライセンスに従います — 詳細は [senpi リポジトリ](https://github.com/code-yeongyu/senpi) を参照してください。
+この flake はパッケージング用コードです。OmO Native と senpi にはそれぞれ upstream のライセンスが適用されます。詳細は [OmO](https://github.com/code-yeongyu/oh-my-openagent) と [senpi](https://github.com/code-yeongyu/senpi) のリポジトリを参照してください。

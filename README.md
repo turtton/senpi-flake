@@ -1,10 +1,8 @@
 # senpi-flake
 
-Nix flake for [code-yeongyu/senpi](https://github.com/code-yeongyu/senpi) — a coding agent CLI.
+A Nix flake for [OmO Native](https://github.com/code-yeongyu/oh-my-openagent) and its [senpi](https://github.com/code-yeongyu/senpi) engine.
 
-Packages the `@code-yeongyu/senpi` release published on the npm registry via
-[`buildNpmPackage`](https://nixos.org/manual/nixpkgs/stable/#javascript-buildNpmPackage).
-Node.js 24 is bundled and a `senpi` wrapper resolves `PATH` automatically.
+The default package is the published `omo-ai` npm release. It provides the `omo` launcher, its exact-pinned senpi engine, and the complete plugin payload in one package, matching upstream's normal OmO Native install. Standalone `senpi` is also available.
 
 日本語版 README は [README.ja.md](./README.ja.md) を参照してください。
 
@@ -15,70 +13,57 @@ Node.js 24 is bundled and a `senpi` wrapper resolves `PATH` automatically.
 - `x86_64-darwin`
 - `aarch64-darwin`
 
+OmO Native uses a nonfree license in nixpkgs, so set `NIXPKGS_ALLOW_UNFREE=1` and pass `--impure` when evaluating this flake.
+
 ## Usage
 
-### Run directly
+Run OmO Native:
 
 ```sh
-nix run github:turtton/senpi-flake -- --version
+NIXPKGS_ALLOW_UNFREE=1 nix run --impure github:turtton/senpi-flake -- --version
 ```
 
-### Install into a profile
+Install it into a profile:
 
 ```sh
-nix profile install github:turtton/senpi-flake
+NIXPKGS_ALLOW_UNFREE=1 nix profile install --impure github:turtton/senpi-flake
+omo
 ```
 
-### As a flake input
+OmO Native stores its agent configuration under `~/.omo/agent`. Run `omo setup` to migrate an existing OpenCode or other supported agent configuration, and `omo doctor` to inspect the installation.
 
-```nix
-{
-  inputs.senpi.url = "github:turtton/senpi-flake";
-
-  outputs = { self, nixpkgs, senpi, ... }: {
-    # As a package
-    # packages.x86_64-linux.default = senpi.packages.x86_64-linux.default;
-
-    # Or via the overlay
-    # nixpkgs.overlays = [ senpi.overlays.default ];
-  };
-}
-```
-
-Binaries exposed:
-
-- `senpi` — canonical name
-- `pi` — upstream-compatible alias (symlink to `senpi`)
-
-## Auto-update
-
-`.github/workflows/update.yml` runs on a daily cron. When it detects a new
-version of `@code-yeongyu/senpi` on the npm registry, it updates:
-
-- `hashes.json` (`version` / `sourceHash` / `assetsSourceHash` / `npmDepsHash` / `bundledDependencies`)
-- `package-lock.json` (regenerated from the latest tarball)
-
-> The package is built from **dual sources**. The main bundle comes from the
-> npm tarball (`sourceHash`). Because the npm tarball does **not** ship the
-> static assets produced by upstream's `copy-assets` build script (theme JSON,
-> PNGs, HTML templates, vendored JS), this flake additionally fetches the
-> matching GitHub tag archive (`assetsSourceHash`) and injects those assets
-> into `dist/` during `postPatch`.
-
-The workflow then runs `nix flake check` and `nix build .#senpi`, verifies
-`senpi --version` matches the new version, and opens a pull request.
-
-To run the update locally:
+To use senpi without OmO:
 
 ```sh
-./update.sh
-nix build .#senpi
+nix run github:turtton/senpi-flake#senpi -- --version
 ```
 
-> Required tools: `curl`, `jq`, `nix`, `nix-prefetch-url`, `npm`, `tar`.
+Packages exposed by the flake:
+
+| Package | Contents |
+|---|---|
+| `default`, `omo-native` | Published OmO Native launcher, engine, and plugin |
+| `senpi` | Standalone senpi CLI (`senpi`, `pi`) |
+| `comment-checker` | Pinned prebuilt comment checker |
+| `omo-cli` | Compatibility alias for `omo-native` |
+| `omo-senpi` | Compatibility plugin path at `lib/omo-senpi` |
+
+The overlay exposes the same names. Existing configurations that invoke `senpi` directly can continue to use `.#senpi`; new OmO installations should use `.#omo-native` or the default output.
+
+## Updating
+
+The daily [update workflow](.github/workflows/update.yml) reads the stable `omo-ai` release from npm and updates it together with the exact senpi version declared by that release. It records the tarball and npm dependency hashes in `omo-hashes.json` / `hashes.json`, regenerates both committed lockfiles, builds both packages, and opens a pull request.
+
+To update locally:
+
+```sh
+NIXPKGS_ALLOW_UNFREE=1 ./update-omo.sh
+./update.sh "$(jq -r '.senpiVersion' omo-hashes.json)"
+NIXPKGS_ALLOW_UNFREE=1 nix flake check --impure
+```
+
+The standalone senpi package still injects source assets from the matching GitHub tag when the npm tarball omits them.
 
 ## License
 
-This flake (the packaging code) is provided as-is.
-The packaged `senpi` binary is distributed under its upstream license — see the
-[senpi repository](https://github.com/code-yeongyu/senpi).
+This flake contains packaging code. OmO Native and senpi retain their respective upstream licenses; see the [OmO repository](https://github.com/code-yeongyu/oh-my-openagent) and the [senpi repository](https://github.com/code-yeongyu/senpi).

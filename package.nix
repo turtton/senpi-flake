@@ -50,8 +50,10 @@ let
     # transitive dependencies (some of which, like @google/genai, are not
     # declared in the root package.json and therefore won't be re-installed).
     # Stashing the whole tree lets us merge it back after npm install.
-    mkdir -p $out/.bundled-deps
-    cp -r $out/node_modules $out/.bundled-deps/
+    if [ -d $out/node_modules ]; then
+      mkdir -p $out/.bundled-deps
+      cp -r $out/node_modules $out/.bundled-deps/
+    fi
 
     tmp=$(mktemp)
     jq --argjson deps '${builtins.toJSON (versionData.bundledDependencies or versionData.bundleDependencies or [])}' '
@@ -132,25 +134,29 @@ buildNpmPackage {
     bundledDir=$out/lib/node_modules/@code-yeongyu/senpi/node_modules
     srcDir=${srcWithLock}/.bundled-deps/node_modules
 
-    # Copy unscoped packages absent from npm's tree
-    for dir in "$srcDir"/*; do
-      name=$(basename "$dir")
-      if [ ! -e "$bundledDir/$name" ]; then
-        cp -a "$dir" "$bundledDir/$name"
-      fi
-    done
-
-    # Copy @scoped packages absent from npm's tree
-    for scopedDir in "$srcDir"/@*; do
-      scope=$(basename "$scopedDir")
-      mkdir -p "$bundledDir/$scope"
-      for pkg in "$scopedDir"/*; do
-        name=$(basename "$pkg")
-        if [ ! -e "$bundledDir/$scope/$name" ]; then
-          cp -a "$pkg" "$bundledDir/$scope/$name"
+    # Newer senpi releases publish their former bundled dependencies as npm
+    # aliases and ship no node_modules/ in the tarball.
+    if [ -d "$srcDir" ]; then
+      # Copy unscoped packages absent from npm's tree
+      for dir in "$srcDir"/*; do
+        name=$(basename "$dir")
+        if [ ! -e "$bundledDir/$name" ]; then
+          cp -a "$dir" "$bundledDir/$name"
         fi
       done
-    done
+
+      # Copy @scoped packages absent from npm's tree
+      for scopedDir in "$srcDir"/@*; do
+        scope=$(basename "$scopedDir")
+        mkdir -p "$bundledDir/$scope"
+        for pkg in "$scopedDir"/*; do
+          name=$(basename "$pkg")
+          if [ ! -e "$bundledDir/$scope/$name" ]; then
+            cp -a "$pkg" "$bundledDir/$scope/$name"
+          fi
+        done
+      done
+    fi
   '';
 
   # senpi requires Node.js 24+ at runtime.

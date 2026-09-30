@@ -1,262 +1,152 @@
 #!/usr/bin/env bash
-# Update the omo-senpi package to the latest oh-my-openagent commit.
-#
-# Strategy:
-# 1. Resolve the default branch HEAD of code-yeongyu/oh-my-openagent.
-# 2. Prefetch the source with submodules (packages/shared-skills/upstreams/*).
-# 3. Regenerate omo-npm-packages.json from the new bun.lock
-#    (generate-npm-packages.py).  Every npm tarball is fetched with its
-#    lockfile integrity hash, so the dependency tree needs no hash discovery.
-# 4. Stamp the lsp-daemon npm deps hash with a placeholder and let
-#    `nix build` report the real value (the only remaining discovery FOD).
-# 5. Rewrite omo-hashes.json atomically and verify with a real build.
-#
-# The comment-checker binary (omo-cli/comment-checker.nix) is versioned
-# independently of the monorepo, so its update is tracked separately: query
-# the npm registry for @code-yeongyu/comment-checker/latest and prefetch the
-# four per-platform release archives with plain nix-prefetch-url.  These are
-# ordinary fetchurl inputs — no placeholder/discovery build is needed, which
-# also means a comment-checker-only update runs even when the monorepo pin is
-# unchanged.
-#
-# omo-senpi carries the Sustainable Use License, so every nix invocation here
-# sets NIXPKGS_ALLOW_UNFREE=1 --impure.
+# Track the published OmO Native release, including its exact senpi engine pin.
+# The npm tarball already contains the built plugin; no monorepo HEAD, submodules,
+# Bun build, or workspace dependency regeneration is needed.
 set -euo pipefail
+cd "$(dirname "${BASH_SOURCE[0]}")"
 
-REPO="code-yeongyu/oh-my-openagent"
-COMMENT_CHECKER_REPO="code-yeongyu/go-claude-code-comment-checker"
-HASHES_JSON="omo-hashes.json"
-DUMMY_HASH="sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
-
+HASHES_JSON=omo-hashes.json
+LOCKFILE=omo-package-lock.json
+DUMMY_HASH=sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+COMMENT_CHECKER_REPO=code-yeongyu/go-claude-code-comment-checker
 export NIXPKGS_ALLOW_UNFREE=1
 
-_cleanup_items=()
-
-register_temp() {
-  for item in "$@"; do
-    _cleanup_items+=("$item")
-  done
-}
-
+task_tmp=$(mktemp -d)
+published=0
+verified=0
+cp "$HASHES_JSON" "$task_tmp/original-hashes.json"
+if [ -e "$LOCKFILE" ]; then cp "$LOCKFILE" "$task_tmp/original-lock.json"; fi
 cleanup() {
-  local item
-  for item in "${_cleanup_items[@]:-}"; do
-    if [ -e "$item" ] || [ -L "$item" ]; then
-      rm -rf -- "$item"
+  if [ "$published" -eq 1 ] && [ "$verified" -eq 0 ]; then
+    cp "$task_tmp/original-hashes.json" "$HASHES_JSON"
+    if [ -e "$task_tmp/original-lock.json" ]; then
+      cp "$task_tmp/original-lock.json" "$LOCKFILE"
+    else
+      rm -f "$LOCKFILE"
     fi
-  done
+    echo "Update failed; restored the previous OmO Native pins and lockfile." >&2
+  fi
+  rm -rf "$task_tmp"
 }
-
 trap cleanup EXIT
 
-require_cmd() {
-  for cmd in "$@"; do
-    if ! command -v "$cmd" >/dev/null 2>&1; then
-      echo "Missing required command: $cmd" >&2
-      exit 1
-    fi
-  done
-}
-
-require_cmd curl jq nix nix-prefetch-url python3
+for command in curl jq nix nix-prefetch-url tar; do
+  command -v "$command" >/dev/null || { echo "Missing required command: $command" >&2; exit 1; }
+done
 
 nix_build() {
-  nix build .#omo-senpi --impure "$@"
+  # path: includes a newly generated lockfile before Git has staged it.
+  nix --extra-experimental-features 'nix-command flakes' build "path:$PWD#omo-native" --impure "$@"
 }
 
-# Prefetch a plain (non-unpacked) URL and print its SRI hash.  Matches the
-# conversion idiom used by update.sh.
 prefetch_sri() {
-  local url="$1" hex
-  hex=$(nix-prefetch-url --type sha256 "$url" 2>/dev/null | tail -n1)
-  if [ -z "$hex" ]; then
-    echo "nix-prefetch-url failed for $url" >&2
-    exit 1
-  fi
-  nix --extra-experimental-features nix-command hash convert \
-    --hash-algo sha256 --to sri "$hex"
+  local hash
+  hash=$(nix-prefetch-url --type sha256 "$1" 2>/dev/null | tail -n1)
+  nix --extra-experimental-features nix-command hash convert --hash-algo sha256 --to sri "$hash"
 }
 
 set_hash() {
-  local key="$1" value="$2" tmp
-  tmp=$(mktemp)
-  register_temp "$tmp"
-  jq --arg v "$value" ".${key} = \$v" "$HASHES_JSON" > "$tmp"
-  mv "$tmp" "$HASHES_JSON"
+  jq --arg key "$1" --arg value "$2" '.[$key] = $value' "$HASHES_JSON" > "$task_tmp/hashes-next.json"
+  mv "$task_tmp/hashes-next.json" "$HASHES_JSON"
 }
 
-discover_hash() {
-  local key="$1" fod_name="$2" log new
-  set_hash "$key" "$DUMMY_HASH"
-  log=$(mktemp)
-  register_temp "$log"
-
-  if nix_build --no-link 2> "$log"; then
-    echo "Build unexpectedly succeeded with a placeholder $key" >&2
-    exit 1
-  fi
-
-  # Stock Nix reports fixed-output mismatches per-derivation:
-  #   error: hash mismatch in fixed-output derivation '...<fod_name>.drv':
-  #     specified: sha256-...
-  #     got:       sha256-...
-  # Match on the derivation name (2 lines after the error) so multiple
-  # discovery FODs don't interfere.
-  new=$(
-    grep -A2 "hash mismatch in fixed-output derivation.*${fod_name}\.drv" "$log" \
-      | grep -oE 'got:[[:space:]]+sha256-[A-Za-z0-9+/=]+' \
-      | head -n1 \
-      | sed -E 's/.*(sha256-[A-Za-z0-9+/=]+).*/\1/'
-  )
-
-  # Determinate Nix (what nix-installer-action puts on CI runners) reports
-  # fixed-output mismatches in a different wording than stock Nix:
-  #   error: To correct the hash mismatch for <fod_name>, use "sha256-..."
-  if [ -z "$new" ]; then
-    new=$(
-      grep -oE "To correct the hash mismatch for ${fod_name}, use \"sha256-[A-Za-z0-9+/=]+\"" "$log" \
-        | head -n1 \
-        | sed -E 's/.*use "(sha256-[A-Za-z0-9+/=]+)".*/\1/'
-    )
-  fi
-
-  if [ -z "$new" ]; then
-    echo "Failed to discover $key. Build log tail:" >&2
-    tail -n 30 "$log" >&2
-    exit 1
-  fi
-
-  echo "Discovered $key: $new" >&2
-  set_hash "$key" "$new"
-}
-
-current_rev=$(jq -r '.rev' "$HASHES_JSON")
+requested_version=${1:-latest}
+if [ "$#" -gt 1 ] || [[ ! "$requested_version" =~ ^(latest|[0-9]+\.[0-9]+\.[0-9]+([-+][A-Za-z0-9.+-]+)?)$ ]]; then
+  echo "Usage: $0 [version] (default: latest stable npm release)" >&2
+  exit 1
+fi
+curl -fsSL "https://registry.npmjs.org/omo-ai/$requested_version" > "$task_tmp/metadata.json"
+latest_version=$(jq -er '.version' "$task_tmp/metadata.json")
+senpi_version=$(jq -er '.dependencies["@code-yeongyu/senpi"] | select(test("^[0-9]+\\.[0-9]+\\.[0-9]+([-+][A-Za-z0-9.+-]+)?$"))' "$task_tmp/metadata.json")
+tarball_url=$(jq -er '.dist.tarball' "$task_tmp/metadata.json")
+if [ "$tarball_url" != "https://registry.npmjs.org/omo-ai/-/omo-ai-$latest_version.tgz" ]; then
+  echo "Unexpected omo-ai tarball URL: $tarball_url" >&2
+  exit 1
+fi
+current_version=$(jq -r '.version' "$HASHES_JSON")
 current_cc=$(jq -r '.commentChecker.version' "$HASHES_JSON")
-
-echo "Resolving $REPO HEAD..."
-head_json=$(mktemp)
-register_temp "$head_json"
-curl -fsSL "https://api.github.com/repos/${REPO}/commits/HEAD" > "$head_json"
-
-latest_rev=$(jq -r '.sha' "$head_json")
-if [ -z "$latest_rev" ] || [ "$latest_rev" = "null" ]; then
-  echo "Failed to resolve HEAD for $REPO" >&2
-  exit 1
-fi
-
-echo "Resolving latest @code-yeongyu/comment-checker version..."
-cc_json=$(mktemp)
-register_temp "$cc_json"
-curl -fsSL "https://registry.npmjs.org/@code-yeongyu/comment-checker/latest" > "$cc_json"
-
-latest_cc=$(jq -r '.version' "$cc_json")
-if [ -z "$latest_cc" ] || [ "$latest_cc" = "null" ]; then
-  echo "Failed to resolve latest comment-checker version" >&2
-  exit 1
-fi
-
-echo "Current: $current_rev (comment-checker $current_cc)"
-echo "Latest:  $latest_rev (comment-checker $latest_cc)"
+echo "OmO Native: $current_version -> $latest_version (senpi $senpi_version)"
 
 omo_changed=0
-cc_changed=0
-if [ "$current_rev" != "$latest_rev" ]; then
+if [ "$current_version" != "$latest_version" ] \
+  || [ "$(jq -r '.senpiVersion // ""' "$HASHES_JSON")" != "$senpi_version" ] \
+  || ! jq -e --arg dummy "$DUMMY_HASH" '.sourceHash and .npmDepsHash and .npmDepsHash != $dummy' "$HASHES_JSON" >/dev/null \
+  || [ ! -f "$LOCKFILE" ] \
+  || ! jq -e --arg version "$latest_version" --arg engine "$senpi_version" '.version == $version and .packages[""].dependencies["@code-yeongyu/senpi"] == $engine' "$LOCKFILE" >/dev/null; then
   omo_changed=1
 fi
-if [ "$current_cc" != "$latest_cc" ]; then
-  cc_changed=1
-fi
-
-if [ "$omo_changed" -eq 0 ] && [ "$cc_changed" -eq 0 ]; then
-  echo "Already up to date"
+if [ "$omo_changed" -eq 0 ]; then
+  echo 'Already up to date'
   exit 0
 fi
 
-# comment-checker is pinned per platform with plain fetchurl hashes, so a
-# direct prefetch is authoritative — it never goes through discover_hash.
-if [ "$cc_changed" -eq 1 ]; then
-  echo "Prefetching comment-checker $latest_cc release archives..."
-  cc_base="https://github.com/${COMMENT_CHECKER_REPO}/releases/download/v${latest_cc}/comment-checker_v${latest_cc}"
-  sri_linux_amd64=$(prefetch_sri "${cc_base}_linux_amd64.tar.gz")
-  sri_linux_arm64=$(prefetch_sri "${cc_base}_linux_arm64.tar.gz")
-  sri_darwin_amd64=$(prefetch_sri "${cc_base}_darwin_amd64.tar.gz")
-  sri_darwin_arm64=$(prefetch_sri "${cc_base}_darwin_arm64.tar.gz")
+if [ "$omo_changed" -eq 1 ]; then
+  source_hash=$(prefetch_sri "$tarball_url")
+  curl -fsSL "$tarball_url" -o "$task_tmp/omo.tgz"
+  mkdir "$task_tmp/package"
+  tar xzf "$task_tmp/omo.tgz" -C "$task_tmp/package" --strip-components=1
+  jq -e --arg version "$latest_version" --arg engine "$senpi_version" \
+    '.name == "omo-ai" and .version == $version and .dependencies["@code-yeongyu/senpi"] == $engine' \
+    "$task_tmp/package/package.json" >/dev/null
+  # Native's bundled downloader pins its own tested checker release. Follow
+  # that pin rather than an independent npm dist-tag. Fail on an unfamiliar
+  # bundle layout so an update cannot silently select an unrelated version.
+  latest_cc=$(jq -Rers '[match("(?:var|let|const) [A-Za-z_$][A-Za-z0-9_$]*=\"(?<version>[0-9]+\\.[0-9]+\\.[0-9]+)\",[A-Za-z_$][A-Za-z0-9_$]*=\\{\"darwin-arm64\""; "g").captures[] | select(.name == "version").string] | if length == 1 then .[0] else error("comment-checker pin layout changed") end' "$task_tmp/package/plugin/extensions/omo.js")
+  echo "comment-checker: $current_cc -> $latest_cc (Native bundled pin)"
+  rm -f "$task_tmp/package/npm-shrinkwrap.json" "$task_tmp/package/package-lock.json"
+  # Pin npm as well as Node to the flake's nixpkgs, independently of the user's
+  # installed npm version. Node 24 is the engine floor for both omo and senpi.
+  # shellcheck disable=SC2016 # This interpolation belongs to Nix.
+  node_package=$(nix --extra-experimental-features 'nix-command flakes' build --no-link --print-out-paths --impure \
+    --expr '(builtins.getFlake (toString ./.)).inputs.nixpkgs.legacyPackages.${builtins.currentSystem}.nodejs_24')
+  (cd "$task_tmp/package" && PATH="$node_package/bin:$PATH" npm install --package-lock-only --ignore-scripts --no-audit --no-fund)
 
-  tmp_hashes=$(mktemp)
-  register_temp "$tmp_hashes"
-  jq --arg v "$latest_cc" \
-     --arg xl "$sri_linux_amd64" \
-     --arg al "$sri_linux_arm64" \
-     --arg xd "$sri_darwin_amd64" \
-     --arg ad "$sri_darwin_arm64" \
-     '.commentChecker = {version: $v, hashes: {"x86_64-linux": $xl, "aarch64-linux": $al, "x86_64-darwin": $xd, "aarch64-darwin": $ad}}' \
-     "$HASHES_JSON" > "$tmp_hashes"
-  mv "$tmp_hashes" "$HASHES_JSON"
+  jq --arg version "$latest_version" --arg engine "$senpi_version" --arg hash "$source_hash" --arg dummy "$DUMMY_HASH" \
+    '{version: $version, senpiVersion: $engine, sourceHash: $hash, npmDepsHash: $dummy, commentChecker: .commentChecker}' \
+    "$HASHES_JSON" > "$task_tmp/hashes-next.json"
+  published=1
+  cp "$task_tmp/package/package-lock.json" "$LOCKFILE"
+  mv "$task_tmp/hashes-next.json" "$HASHES_JSON"
+fi
+
+if [ "$current_cc" != "$latest_cc" ]; then
+  cc_base="https://github.com/$COMMENT_CHECKER_REPO/releases/download/v$latest_cc/comment-checker_v$latest_cc"
+  cc_xl=$(prefetch_sri "${cc_base}_linux_amd64.tar.gz")
+  cc_al=$(prefetch_sri "${cc_base}_linux_arm64.tar.gz")
+  cc_xd=$(prefetch_sri "${cc_base}_darwin_amd64.tar.gz")
+  cc_ad=$(prefetch_sri "${cc_base}_darwin_arm64.tar.gz")
+  jq --arg version "$latest_cc" --arg xl "$cc_xl" --arg al "$cc_al" --arg xd "$cc_xd" --arg ad "$cc_ad" \
+    '.commentChecker = {version: $version, hashes: {"x86_64-linux": $xl, "aarch64-linux": $al, "x86_64-darwin": $xd, "aarch64-darwin": $ad}}' \
+    "$HASHES_JSON" > "$task_tmp/hashes-next.json"
+  published=1
+  mv "$task_tmp/hashes-next.json" "$HASHES_JSON"
 fi
 
 if [ "$omo_changed" -eq 1 ]; then
-  # Version comes from the monorepo root package.json at that revision.
-  latest_version=$(
-    curl -fsSL "https://raw.githubusercontent.com/${REPO}/${latest_rev}/package.json" \
-      | jq -r '.version'
-  )
-  if [ -z "$latest_version" ] || [ "$latest_version" = "null" ]; then
-    echo "Failed to read version from root package.json at $latest_rev" >&2
+  echo 'Discovering npm dependency hash...'
+  if nix_build --no-link > "$task_tmp/discovery.log" 2>&1; then
+    echo 'Build unexpectedly succeeded with a placeholder npmDepsHash' >&2
     exit 1
   fi
-
-  # Submodules are required, so prefetch through nix-prefetch-git rather than
-  # the GitHub archive tarball (which omits them).
-  echo "Prefetching source with submodules (this clones the repo)..."
-  prefetch_json=$(
-    nix --extra-experimental-features 'nix-command flakes' \
-      run nixpkgs#nix-prefetch-git -- \
-      --url "https://github.com/${REPO}" \
-      --rev "$latest_rev" \
-      --fetch-submodules \
-      --quiet
-  )
-  new_src_hash=$(jq -r '.hash' <<< "$prefetch_json")
-  if [ -z "$new_src_hash" ] || [ "$new_src_hash" = "null" ]; then
-    echo "nix-prefetch-git did not report a hash" >&2
+  # Handle both stock Nix and Determinate Nix without a failing grep pipeline
+  # aborting under set -o pipefail before the alternative format is inspected.
+  npm_hash=$(awk -v name="omo-native-$latest_version-npm-deps" '
+    /To correct the hash mismatch/ && index($0, name) {
+      sub(/^.*use "/, ""); sub(/".*$/, ""); print; exit
+    }
+    /hash mismatch in fixed-output derivation/ { matching = index($0, name) > 0 }
+    matching && /got:[[:space:]]+sha256-/ {
+      sub(/^.*got:[[:space:]]+/, ""); sub(/[[:space:]]+$/, ""); print; exit
+    }
+  ' "$task_tmp/discovery.log")
+  if [[ ! "$npm_hash" =~ ^sha256-[A-Za-z0-9+/=]+$ ]]; then
+    echo 'Failed to discover npmDepsHash. Build log:' >&2
+    tail -n 80 "$task_tmp/discovery.log" >&2
     exit 1
   fi
-
-  tmp_hashes=$(mktemp)
-  register_temp "$tmp_hashes"
-  jq --arg rev "$latest_rev" \
-     --arg v "$latest_version" \
-     --arg sh "$new_src_hash" \
-     '. + {rev: $rev, version: $v, srcHash: $sh}' \
-     "$HASHES_JSON" > "$tmp_hashes"
-  mv "$tmp_hashes" "$HASHES_JSON"
-
-  # bun.lock moved with the rev: regenerate the per-tarball package data.
-  # When the lockfile is unchanged the generator output is byte-identical,
-  # so this costs nothing in the no-op case.
-  echo "Regenerating omo-npm-packages.json from bun.lock at $latest_rev..."
-  bun_lock=$(mktemp)
-  register_temp "$bun_lock"
-  curl -fsSL "https://raw.githubusercontent.com/${REPO}/${latest_rev}/bun.lock" > "$bun_lock"
-  python3 generate-npm-packages.py "$bun_lock" omo-npm-packages.json
-
-  # packages/lsp-daemon keeps its own npm lockfile consumed via fetchNpmDeps;
-  # that hash still needs placeholder discovery.  The codex plugin is a pure
-  # bun workspace now (no npm ci in the staged build), so no codex hash exists.
-  echo "Discovering lspDaemonNpmDepsHash..."
-  discover_hash lspDaemonNpmDepsHash omo-senpi-lsp-daemon-npm-deps
+  set_hash npmDepsHash "$npm_hash"
 fi
 
-# omo-cli embeds the comment-checker binary and shares the monorepo pin, so
-# any change above can affect it; omo-senpi itself is unchanged in a
-# checker-only run, in which case this build is a cache hit.
-echo "Verifying with real build..."
 nix_build --no-link
-nix build .#omo-cli --impure --no-link
-
-if [ "$omo_changed" -eq 1 ]; then
-  echo "Updated omo-senpi to $latest_version ($latest_rev)"
-fi
-if [ "$cc_changed" -eq 1 ]; then
-  echo "Updated comment-checker to $latest_cc"
-fi
+verified=1
+echo "Updated OmO Native to $latest_version (senpi $senpi_version)."
