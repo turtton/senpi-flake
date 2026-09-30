@@ -1,5 +1,5 @@
-# Prebuilt comment-checker binary consumed by omo-senpi's comment-checker
-# component (and symlinked into omo-cli's bin/).
+# Prebuilt comment-checker binary supplied to the OmO Native plugin and
+# exposed alongside its launcher.
 #
 # The component resolves the binary in this order:
 #   1. OMO_COMMENT_CHECKER_BIN (absolute path)
@@ -83,7 +83,7 @@ stdenv.mkDerivation {
   '';
 
   meta = {
-    description = "Multi-language comment detection hook — native tree-sitter binary used by omo-senpi's comment-checker component";
+    description = "Multi-language comment detection hook used by OmO Native";
     homepage = "https://github.com/code-yeongyu/go-claude-code-comment-checker";
     license = lib.licenses.mit;
     # Prebuilt upstream binary, not compiled from source here.

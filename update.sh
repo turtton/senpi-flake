@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Update senpi-flake to the latest @code-yeongyu/senpi version on npm.
+# Update senpi-flake to a specific @code-yeongyu/senpi version (latest by default).
 #
 # Strategy:
 # 1. Query the npm registry for the latest version + tarball integrity (SRI base64).
@@ -15,6 +15,11 @@ set -euo pipefail
 NPM_PACKAGE="@code-yeongyu/senpi"
 HASHES_JSON="hashes.json"
 LOCKFILE="package-lock.json"
+REQUESTED_VERSION="${1:-latest}"
+if [ "$#" -gt 1 ]; then
+  echo "Usage: $0 [senpi-version]" >&2
+  exit 2
+fi
 
 DUMMY_HASH="sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
 
@@ -55,7 +60,7 @@ meta_json=$(mktemp)
 register_temp "$meta_json"
 
 latest_version=$(
-  curl -fsSL "https://registry.npmjs.org/${NPM_PACKAGE}/latest" \
+  curl -fsSL "https://registry.npmjs.org/${NPM_PACKAGE}/${REQUESTED_VERSION}" \
     | tee "$meta_json" \
     | jq -r '.version'
 )
@@ -173,12 +178,19 @@ if nix build .#senpi --no-link 2> "$build_log"; then
   exit 1
 fi
 
-# Extract the actual hash from "got: sha256-..." in the build log.
+# Stock Nix reports "got: sha256-..."; Determinate Nix (used in CI)
+# reports 'To correct the hash mismatch for <name>, use "sha256-..."'.
+# sed exits successfully with no match, allowing the fallback to run.
 new_npm_deps_hash=$(
-  grep -E '^[[:space:]]*got:[[:space:]]+sha256-' "$build_log" \
-    | head -n1 \
-    | sed -E 's/.*got:[[:space:]]+(sha256-[A-Za-z0-9+/=]+).*/\1/'
+  sed -nE 's/^[[:space:]]*got:[[:space:]]+(sha256-[A-Za-z0-9+/=]+).*/\1/p' "$build_log" \
+    | head -n1
 )
+if [ -z "$new_npm_deps_hash" ]; then
+  new_npm_deps_hash=$(
+    sed -nE 's/.*To correct the hash mismatch for [^,]+, use "(sha256-[A-Za-z0-9+/=]+)".*/\1/p' "$build_log" \
+      | head -n1
+  )
+fi
 
 if [ -z "$new_npm_deps_hash" ]; then
   echo "Failed to discover npmDepsHash. Build log tail:" >&2

@@ -1,8 +1,8 @@
 {
-  "rev": "1ee26636fa686f864b7ba752f236bb59ef8a241b",
-  "version": "5.0.0-beta.49",
-  "srcHash": "sha256-nBkJ+G56oS7+qRVXGwRjYpXTnbvncUz02y+LhpQuL3A=",
-  "lspDaemonNpmDepsHash": "sha256-Fw5IZx3Pd0Hq3ts+ZXCFMbiLXXOP0p8LHKYi587CUmE=",
+  "version": "5.1.4",
+  "senpiVersion": "2026.9.29-5",
+  "sourceHash": "sha256-DntOLmwCH5FoTfiKsddXPEYnv74KSdlvGl8NLedww/o=",
+  "npmDepsHash": "sha256-8GlU9IkZEeVlPM/K4dHvMnOMjCNCDWfjhDky0Co6zG8=",
   "commentChecker": {
     "version": "0.8.0",
     "hashes": {

@@ -17,7 +17,6 @@ jobs:
       pr_number: ${{ steps.cpr.outputs.pull-request-number }}
       version: ${{ steps.check.outputs.version }}
       omo_version: ${{ steps.check.outputs.omo_version }}
-      omo_rev: ${{ steps.check.outputs.omo_rev }}
       cc_version: ${{ steps.check.outputs.cc_version }}
     steps:
       - uses: actions/checkout@f548e57e544e1ff5a4c46bf1e1b8685f8e4a348a # v4
@@ -26,29 +25,24 @@ jobs:
 
       - uses: DeterminateSystems/nix-installer-action@33c9ab3ef95cd57c164d9d6eb1f9a46338538d41 # main
 
-      # senpi and omo-senpi are updated in lockstep: omo pins senpi peer
-      # versions exactly, so shipping one without the other is what silently
-      # disables the task/team components.
+      # omo-ai pins its senpi engine exactly; resolve that version first.
       - name: Check for updates
         id: check
         env:
           NIXPKGS_ALLOW_UNFREE: "1"
         run: |
           set -euo pipefail
-          ./update.sh
           ./update-omo.sh
+          ./update.sh "$(jq -r '.senpiVersion' omo-hashes.json)"
           if git diff --quiet; then
             echo "updated=false" >> "$GITHUB_OUTPUT"
           else
-            VERSION=$(jq -r '.version' hashes.json)
-            OMO_VERSION=$(jq -r '.version' omo-hashes.json)
-            OMO_REV=$(jq -r '.rev' omo-hashes.json)
-            CC_VERSION=$(jq -r '.commentChecker.version' omo-hashes.json)
-            echo "updated=true" >> "$GITHUB_OUTPUT"
-            echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-            echo "omo_version=$OMO_VERSION" >> "$GITHUB_OUTPUT"
-            echo "omo_rev=$OMO_REV" >> "$GITHUB_OUTPUT"
-            echo "cc_version=$CC_VERSION" >> "$GITHUB_OUTPUT"
+            {
+              echo "updated=true"
+              echo "version=$(jq -r '.version' hashes.json)"
+              echo "omo_version=$(jq -r '.version' omo-hashes.json)"
+              echo "cc_version=$(jq -r '.commentChecker.version' omo-hashes.json)"
+            } >> "$GITHUB_OUTPUT"
           fi
 
       - name: Verify build after update
@@ -58,49 +52,23 @@ jobs:
         run: |
           set -euo pipefail
           nix flake check --impure
-          nix build .#senpi
-          test -x ./result/bin/senpi
-          test -L ./result/bin/pi
-          expected="${{ steps.check.outputs.version }}"
-          actual="$(./result/bin/senpi --version 2>&1)"
-          if [ "$actual" != "$expected" ]; then
-            echo "Version mismatch: expected '$expected', got '$actual'"
-            exit 1
-          fi
-          ./result/bin/senpi --help 2>&1 | grep -qi 'senpi'
+          nix build .#senpi --out-link result-senpi
+          test -x ./result-senpi/bin/senpi
+          test -L ./result-senpi/bin/pi
+          test "$(./result-senpi/bin/senpi --version 2>&1)" = "${{ steps.check.outputs.version }}"
+          ./result-senpi/bin/senpi --help 2>&1 | grep -qi senpi
 
-          nix build .#omo-senpi --impure --out-link result-omo
-          test -f ./result-omo/lib/omo-senpi/extensions/omo.js
-          test -f ./result-omo/lib/omo-senpi/runtime/lsp-daemon/dist/cli.js
-          test -d ./result-omo/lib/omo-senpi/skills/ast-grep
-
-          nix build .#omo-cli --impure --out-link result-omo-cli
-          test -x ./result-omo-cli/bin/omo
-          test -x ./result-omo-cli/bin/omo-ulw-loop
-          test -x ./result-omo-cli/bin/comment-checker
-          omo_cli_version="$(./result-omo-cli/bin/omo --version 2>&1)"
-          if [ "$omo_cli_version" != "${{ steps.check.outputs.omo_version }}" ]; then
-            echo "omo CLI version mismatch: expected '${{ steps.check.outputs.omo_version }}', got '$omo_cli_version'"
-            exit 1
-          fi
-          # Delegation through the wrapper's CODEX_LOCAL_BIN_DIR default must
-          # reach the bundled component CLI; the empty-directory idle answer
-          # is the ULW_LOOP_PLAN_MISSING JSON error with exit status 1.
-          tmp="$(mktemp -d)"
-          set +e
-          output="$(cd "$tmp" && env -u CODEX_LOCAL_BIN_DIR "$OLDPWD/result-omo-cli/bin/omo" ulw-loop status --json 2>&1)"
-          rc=$?
-          set -e
-          rm -rf "$tmp"
-          if [ "$rc" -ne 1 ]; then
-            echo "omo ulw-loop status exited $rc, expected 1 (ULW_LOOP_PLAN_MISSING)"
-            echo "$output"
-            exit 1
-          fi
-          echo "$output" | jq -e . > /dev/null
-          echo "$output" | grep -q 'ULW_LOOP_PLAN_MISSING'
-          # No --version flag upstream; --help proves the patched binary runs.
-          ./result-omo-cli/bin/comment-checker --help > /dev/null
+          nix build .#omo-native --impure --out-link result-omo
+          test -x ./result-omo/bin/omo
+          test -x ./result-omo/bin/comment-checker
+          pkg=./result-omo/lib/node_modules/omo-ai
+          test -f "$pkg/plugin/extensions/omo.js"
+          test -f "$pkg/plugin/runtime/lsp-daemon/dist/cli.js"
+          jq -e --arg v "${{ steps.check.outputs.version }}" \
+            '.dependencies["@code-yeongyu/senpi"] == $v' "$pkg/package.json" > /dev/null
+          ./result-omo/bin/omo --version 2>&1 | grep -F "omo ${{ steps.check.outputs.omo_version }}"
+          ./result-omo/bin/omo --help > /dev/null
+          ./result-omo/bin/comment-checker --help > /dev/null
 
       - name: Create Pull Request
         id: cpr
@@ -108,22 +76,15 @@ jobs:
         uses: peter-evans/create-pull-request@c66b8cb0050a39d19695bb3389f91c393c60f7f7 # v7
         with:
           token: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
-          commit-message: "chore: update senpi to ${{ steps.check.outputs.version }} and omo-senpi to ${{ steps.check.outputs.omo_version }}"
-          title: "chore: update senpi to ${{ steps.check.outputs.version }} and omo-senpi to ${{ steps.check.outputs.omo_version }}"
+          commit-message: "chore: update OmO Native to ${{ steps.check.outputs.omo_version }} and senpi to ${{ steps.check.outputs.version }}"
+          title: "chore: update OmO Native to ${{ steps.check.outputs.omo_version }} and senpi to ${{ steps.check.outputs.version }}"
           body: |
-            Automated lockstep update of senpi and omo-senpi.
+            Automated update to the published OmO Native package and its exact-pinned senpi engine.
 
+            - **OmO Native**: ${{ steps.check.outputs.omo_version }} — [npm](https://www.npmjs.com/package/omo-ai/v/${{ steps.check.outputs.omo_version }})
             - **senpi**: ${{ steps.check.outputs.version }} — [npm](https://www.npmjs.com/package/@code-yeongyu/senpi/v/${{ steps.check.outputs.version }})
-            - **omo-senpi**: ${{ steps.check.outputs.omo_version }} — [`${{ steps.check.outputs.omo_rev }}`](https://github.com/code-yeongyu/oh-my-openagent/commit/${{ steps.check.outputs.omo_rev }})
             - **comment-checker**: ${{ steps.check.outputs.cc_version }} — [release](https://github.com/code-yeongyu/go-claude-code-comment-checker/releases/tag/v${{ steps.check.outputs.cc_version }})
 
-            Built successfully; CI (`.github/workflows/ci.yml`) verifies both on pull_request.
+            Built successfully; CI verifies both on pull_request.
           branch: auto-update
           delete-branch: true
-
-  # No per-system hash discovery job exists anymore: the bun dependency tree
-  # is fetched per-tarball with lockfile integrity hashes (see omo-common.nix
-  # and generate-npm-packages.py), which are platform-independent.  The
-  # remaining discovery FODs (lsp-daemon npm deps and the omo-codex plugin npm
-  # workspace deps, from 5.0.0-beta.2) are resolved inside update-omo.sh on
-  # the ubuntu runner above.
