@@ -1,7 +1,7 @@
 {
-  "version": "2026.10.11",
-  "sourceHash": "sha256-zZzc/gAN9kU61UvzzQdWnjzyBIXzM1UimsSe8OIiEZE=",
-  "npmDepsHash": "sha256-DDu3T7VO0jJBMqwN0YxXYzTSJcYZH71KzFVYM/gn4As=",
-  "assetsSourceHash": "sha256-FXHNCMg9GrhPbJKVCU1mPdCxSTrHQwRECN4WoEhdbQA=",
+  "version": "2026.10.13",
+  "sourceHash": "sha256-MeZ++E0N3F6zKSvdNLsguLwhx+b3JAuwrRRlt4u2c4c=",
+  "npmDepsHash": "sha256-qduUXL3yop68lzQFHeK87Qr8gPYBvfE3EeSQwYC9nZI=",
+  "assetsSourceHash": "sha256-Nf3x6nL2bX2BUhXprNeMNGUCtbiyliFCVVehSpUWFNE=",
   "bundledDependencies": []
 }
