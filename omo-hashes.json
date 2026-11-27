@@ -1,8 +1,8 @@
 {
-  "version": "5.1.83",
+  "version": "5.1.84",
   "senpiVersion": "2026.11.23",
-  "sourceHash": "sha256-B67A6kXu7X62U99F7GieD6/KdpvtrsF1TCwhmDlNHwc=",
-  "npmDepsHash": "sha256-yH7PJOzgnxlihYJBLfefaelupH7I7iCJUXdNeH3s7xY=",
+  "sourceHash": "sha256-kCuInQPbFEXnw4OL4RP3mb2Hs+6HjNyElyvUWvKT0+A=",
+  "npmDepsHash": "sha256-i7Ym1q1lwCdfjoGcVeesxQaFKAxoGXYUd4Ri7C4Wyic=",
   "commentChecker": {
     "version": "0.8.0",
     "hashes": {
